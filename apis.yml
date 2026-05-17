@@ -45,7 +45,7 @@ apis:
         url: https://developer.employmenthero.com/api-references
       - type: Developer Portal
         url: https://developer.employmenthero.com
-      - type: Getting Started
+      - type: GettingStarted
         url: https://help.employmenthero.com/hc/en-au/articles/15142240450703-Accessing-the-Employment-Hero-API-and-Developer-Portal
   - aid: employment-hero:payroll-api
     name: Employment Hero Payroll API (KeyPay)
@@ -74,7 +74,7 @@ common:
     url: https://developer.employmenthero.com
   - type: Pricing
     url: https://employmenthero.com/pricing
-  - type: Sign Up
+  - type: SignUp
     url: https://employmenthero.com/get-started
 maintainers:
   - FN: Kin Lane
