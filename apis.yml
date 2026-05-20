@@ -64,6 +64,10 @@ apis:
         url: https://api.keypay.com.au/australia/guides/Home
 
 common:
+  - type: GitHubOrganization
+    url: https://github.com/Thinkei
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/employment-hero
   - type: Website
     url: https://employmenthero.com
   - type: Documentation
