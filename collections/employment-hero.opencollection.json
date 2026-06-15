@@ -1,0 +1,653 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Employment Hero REST API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://oauth.employmenthero.com/oauth2/authorize",
+      "accessTokenUrl": "https://oauth.employmenthero.com/oauth2/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Employees",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List employees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/employees",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List employees"
+        },
+        {
+          "info": {
+            "name": "Get employee",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/employees/:id",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get employee"
+        },
+        {
+          "info": {
+            "name": "Quick add employee",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/employees/quick_add_employee",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Quick add employee"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Bank Accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get employee bank accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v2/organisations/:organisation_id/employees/:employee_id/bank_accounts",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get employee bank accounts"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Certifications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List certifications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/certifications",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List certifications"
+        },
+        {
+          "info": {
+            "name": "Create certification",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/certifications",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create certification"
+        },
+        {
+          "info": {
+            "name": "Get certification",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/certifications/:certification_id",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "certification_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get certification"
+        },
+        {
+          "info": {
+            "name": "Update certification",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/certifications/:certification_id",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "certification_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update certification"
+        },
+        {
+          "info": {
+            "name": "Delete certification",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/certifications/:certification_id",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "certification_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete certification"
+        },
+        {
+          "info": {
+            "name": "Certification async polling status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/certifications/polling_status",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Certification async polling status"
+        },
+        {
+          "info": {
+            "name": "Archive or unarchive certification",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/certifications/:certification_id/archive_status",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "certification_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Archive or unarchive certification"
+        },
+        {
+          "info": {
+            "name": "Upload certification file",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/certifications/file_uploads",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upload certification file"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Job Histories",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get contractor job history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/employees/:employee_id/job_histories",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get contractor job history"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Cost Centres",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List cost centres",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/cost_centres",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List cost centres"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Custom Fields",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List custom fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/custom_fields",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List custom fields"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Forms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List forms",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/forms",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List forms"
+        },
+        {
+          "info": {
+            "name": "Get form",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/forms/:form_id",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "form_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get form"
+        },
+        {
+          "info": {
+            "name": "List form responses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/forms/:form_id/responses",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "form_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List form responses"
+        },
+        {
+          "info": {
+            "name": "Get form response",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/forms/:form_id/responses/:response_id",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "form_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "response_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get form response"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Departments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create department",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/departments",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create department"
+        },
+        {
+          "info": {
+            "name": "Update department",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/departments/:department_id",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "department_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update department"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List employee documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/employees/:employee_id/documents",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List employee documents"
+        },
+        {
+          "info": {
+            "name": "Upload employee document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/employees/:employee_id/documents",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upload employee document"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Emergency Contacts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List employee emergency contacts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/employees/:employee_id/emergency_contacts",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List employee emergency contacts"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
