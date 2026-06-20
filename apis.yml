@@ -9,7 +9,7 @@ description: >-
   Hero API is a versioned REST API authenticated via OAuth 2.0 with short-
   lived (15-minute) access tokens and refresh tokens.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - HR
   - HRIS
