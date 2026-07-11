@@ -64,6 +64,8 @@ apis:
         url: https://api.keypay.com.au/australia/guides/Home
 
 common:
+  - type: OAuthScopes
+    url: scopes/employment-hero-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/Thinkei
   - type: LinkedIn
@@ -80,6 +82,8 @@ common:
     url: https://employmenthero.com/pricing
   - type: Signup
     url: https://employmenthero.com/get-started
+  - url: https://employmenthero.com/feed/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
