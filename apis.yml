@@ -64,6 +64,12 @@ apis:
         url: https://api.keypay.com.au/australia/guides/Home
 
 common:
+  - type: VulnerabilityDisclosure
+    url: security/employment-hero-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/employment-hero-domain-security.yml
+  - type: Authentication
+    url: authentication/employment-hero-authentication.yml
   - type: OAuthScopes
     url: scopes/employment-hero-scopes.yml
   - type: GitHubOrganization

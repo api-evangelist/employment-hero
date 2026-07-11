@@ -1,0 +1,18 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/employment-hero-openapi.yml
+summary:
+  types:
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+schemes:
+- name: oauth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://oauth.employmenthero.com/oauth2/authorize
+    tokenUrl: https://oauth.employmenthero.com/oauth2/token
+    scopes: 0
+  sources:
+  - openapi/employment-hero-openapi.yml
