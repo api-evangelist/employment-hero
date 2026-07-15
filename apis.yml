@@ -64,6 +64,8 @@ apis:
         url: https://api.keypay.com.au/australia/guides/Home
 
 common:
+  - type: AgenticAccess
+    url: agentic-access/employment-hero-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/employment-hero-vulnerability-disclosure.yml
   - type: DomainSecurity
