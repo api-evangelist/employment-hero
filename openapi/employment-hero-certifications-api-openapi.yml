@@ -1,0 +1,160 @@
+openapi: 3.1.0
+info:
+  title: Employment Hero REST Bank Accounts Certifications API
+  description: 'Employment Hero is an AI-powered Employment Operating System covering HR, payroll, recruitment, onboarding, learning, and employee benefits. This versioned REST API exposes organisations, employees, departments, documents, custom fields, forms, certifications, cost centres, emergency contacts, contractor job histories, and bank account data. Authentication is OAuth 2.0 with short-lived (15-minute) bearer access tokens.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Employment Hero Developer Portal
+    url: https://developer.employmenthero.com
+servers:
+- url: https://api.employmenthero.com
+security:
+- oauth2: []
+tags:
+- name: Certifications
+paths:
+  /api/v1/organisations/{organisation_id}/certifications:
+    get:
+      summary: List certifications
+      operationId: listCertifications
+      tags:
+      - Certifications
+      parameters:
+      - $ref: '#/components/parameters/OrganisationId'
+      responses:
+        '200':
+          description: Certifications
+    post:
+      summary: Create certification
+      operationId: createCertification
+      tags:
+      - Certifications
+      parameters:
+      - $ref: '#/components/parameters/OrganisationId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Certification created
+  /api/v1/organisations/{organisation_id}/certifications/{certification_id}:
+    get:
+      summary: Get certification
+      operationId: getCertification
+      tags:
+      - Certifications
+      parameters:
+      - $ref: '#/components/parameters/OrganisationId'
+      - $ref: '#/components/parameters/CertificationId'
+      responses:
+        '200':
+          description: Certification
+    patch:
+      summary: Update certification
+      operationId: updateCertification
+      tags:
+      - Certifications
+      parameters:
+      - $ref: '#/components/parameters/OrganisationId'
+      - $ref: '#/components/parameters/CertificationId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Certification updated
+    delete:
+      summary: Delete certification
+      operationId: deleteCertification
+      tags:
+      - Certifications
+      parameters:
+      - $ref: '#/components/parameters/OrganisationId'
+      - $ref: '#/components/parameters/CertificationId'
+      responses:
+        '204':
+          description: Certification deleted
+  /api/v1/organisations/{organisation_id}/certifications/polling_status:
+    get:
+      summary: Certification async polling status
+      operationId: certificationPollingStatus
+      tags:
+      - Certifications
+      parameters:
+      - $ref: '#/components/parameters/OrganisationId'
+      responses:
+        '200':
+          description: Polling status
+  /api/v1/organisations/{organisation_id}/certifications/{certification_id}/archive_status:
+    patch:
+      summary: Archive or unarchive certification
+      operationId: certificationArchiveStatus
+      tags:
+      - Certifications
+      parameters:
+      - $ref: '#/components/parameters/OrganisationId'
+      - $ref: '#/components/parameters/CertificationId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                archived:
+                  type: boolean
+      responses:
+        '200':
+          description: Archive status updated
+  /api/v1/organisations/{organisation_id}/certifications/file_uploads:
+    post:
+      summary: Upload certification file
+      operationId: uploadCertificationFile
+      tags:
+      - Certifications
+      parameters:
+      - $ref: '#/components/parameters/OrganisationId'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '201':
+          description: File uploaded
+components:
+  parameters:
+    CertificationId:
+      name: certification_id
+      in: path
+      required: true
+      schema:
+        type: string
+    OrganisationId:
+      name: organisation_id
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://oauth.employmenthero.com/oauth2/authorize
+          tokenUrl: https://oauth.employmenthero.com/oauth2/token
+          refreshUrl: https://oauth.employmenthero.com/oauth2/token
+          scopes: {}

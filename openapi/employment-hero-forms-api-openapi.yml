@@ -1,0 +1,92 @@
+openapi: 3.1.0
+info:
+  title: Employment Hero REST Bank Accounts Forms API
+  description: 'Employment Hero is an AI-powered Employment Operating System covering HR, payroll, recruitment, onboarding, learning, and employee benefits. This versioned REST API exposes organisations, employees, departments, documents, custom fields, forms, certifications, cost centres, emergency contacts, contractor job histories, and bank account data. Authentication is OAuth 2.0 with short-lived (15-minute) bearer access tokens.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Employment Hero Developer Portal
+    url: https://developer.employmenthero.com
+servers:
+- url: https://api.employmenthero.com
+security:
+- oauth2: []
+tags:
+- name: Forms
+paths:
+  /api/v1/organisations/{organisation_id}/forms:
+    get:
+      summary: List forms
+      operationId: listForms
+      tags:
+      - Forms
+      parameters:
+      - $ref: '#/components/parameters/OrganisationId'
+      responses:
+        '200':
+          description: Forms
+  /api/v1/organisations/{organisation_id}/forms/{form_id}:
+    get:
+      summary: Get form
+      operationId: getForm
+      tags:
+      - Forms
+      parameters:
+      - $ref: '#/components/parameters/OrganisationId'
+      - $ref: '#/components/parameters/FormId'
+      responses:
+        '200':
+          description: Form details
+  /api/v1/organisations/{organisation_id}/forms/{form_id}/responses:
+    get:
+      summary: List form responses
+      operationId: listFormResponses
+      tags:
+      - Forms
+      parameters:
+      - $ref: '#/components/parameters/OrganisationId'
+      - $ref: '#/components/parameters/FormId'
+      responses:
+        '200':
+          description: Form responses
+  /api/v1/organisations/{organisation_id}/forms/{form_id}/responses/{response_id}:
+    get:
+      summary: Get form response
+      operationId: getFormResponse
+      tags:
+      - Forms
+      parameters:
+      - $ref: '#/components/parameters/OrganisationId'
+      - $ref: '#/components/parameters/FormId'
+      - name: response_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Form response
+components:
+  parameters:
+    OrganisationId:
+      name: organisation_id
+      in: path
+      required: true
+      schema:
+        type: string
+    FormId:
+      name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://oauth.employmenthero.com/oauth2/authorize
+          tokenUrl: https://oauth.employmenthero.com/oauth2/token
+          refreshUrl: https://oauth.employmenthero.com/oauth2/token
+          scopes: {}

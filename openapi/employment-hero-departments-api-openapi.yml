@@ -1,0 +1,73 @@
+openapi: 3.1.0
+info:
+  title: Employment Hero REST Bank Accounts Departments API
+  description: 'Employment Hero is an AI-powered Employment Operating System covering HR, payroll, recruitment, onboarding, learning, and employee benefits. This versioned REST API exposes organisations, employees, departments, documents, custom fields, forms, certifications, cost centres, emergency contacts, contractor job histories, and bank account data. Authentication is OAuth 2.0 with short-lived (15-minute) bearer access tokens.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Employment Hero Developer Portal
+    url: https://developer.employmenthero.com
+servers:
+- url: https://api.employmenthero.com
+security:
+- oauth2: []
+tags:
+- name: Departments
+paths:
+  /api/v1/organisations/{organisation_id}/departments:
+    post:
+      summary: Create department
+      operationId: createDepartment
+      tags:
+      - Departments
+      parameters:
+      - $ref: '#/components/parameters/OrganisationId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Department created
+  /api/v1/organisations/{organisation_id}/departments/{department_id}:
+    patch:
+      summary: Update department
+      operationId: updateDepartment
+      tags:
+      - Departments
+      parameters:
+      - $ref: '#/components/parameters/OrganisationId'
+      - name: department_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Department updated
+components:
+  parameters:
+    OrganisationId:
+      name: organisation_id
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://oauth.employmenthero.com/oauth2/authorize
+          tokenUrl: https://oauth.employmenthero.com/oauth2/token
+          refreshUrl: https://oauth.employmenthero.com/oauth2/token
+          scopes: {}

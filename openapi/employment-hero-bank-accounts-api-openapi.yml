@@ -1,0 +1,52 @@
+openapi: 3.1.0
+info:
+  title: Employment Hero REST Bank Accounts API
+  description: 'Employment Hero is an AI-powered Employment Operating System covering HR, payroll, recruitment, onboarding, learning, and employee benefits. This versioned REST API exposes organisations, employees, departments, documents, custom fields, forms, certifications, cost centres, emergency contacts, contractor job histories, and bank account data. Authentication is OAuth 2.0 with short-lived (15-minute) bearer access tokens.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Employment Hero Developer Portal
+    url: https://developer.employmenthero.com
+servers:
+- url: https://api.employmenthero.com
+security:
+- oauth2: []
+tags:
+- name: Bank Accounts
+paths:
+  /api/v2/organisations/{organisation_id}/employees/{employee_id}/bank_accounts:
+    get:
+      summary: Get employee bank accounts
+      operationId: getEmployeeBankAccounts
+      tags:
+      - Bank Accounts
+      parameters:
+      - $ref: '#/components/parameters/OrganisationId'
+      - $ref: '#/components/parameters/EmployeeId'
+      responses:
+        '200':
+          description: Bank account details
+components:
+  parameters:
+    EmployeeId:
+      name: employee_id
+      in: path
+      required: true
+      schema:
+        type: string
+    OrganisationId:
+      name: organisation_id
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://oauth.employmenthero.com/oauth2/authorize
+          tokenUrl: https://oauth.employmenthero.com/oauth2/token
+          refreshUrl: https://oauth.employmenthero.com/oauth2/token
+          scopes: {}
