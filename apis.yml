@@ -9,7 +9,19 @@ description: >-
   Hero API is a versioned REST API authenticated via OAuth 2.0 with short-
   lived (15-minute) access tokens and refresh tokens.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/employment-hero.png
 tags:
   - HR
   - HRIS
@@ -24,45 +36,142 @@ created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.19'
 apis:
-  - aid: employment-hero:rest-api
-    name: Employment Hero REST API
-    description: >-
-      Versioned REST API (v1) for accessing Employment Hero HR, payroll, and
-      employee data including organisations, employees, teams, leave, pay
-      runs, and onboarding. Apps register through the Developer Portal to
-      obtain OAuth 2.0 client credentials; access tokens are sent via the
-      Authorization header and expire after 15 minutes, refreshed via refresh
-      tokens.
-    humanURL: https://developer.employmenthero.com/api-references
-    baseURL: https://api.employmenthero.com/api/v1
-    tags:
-      - HR
-      - HRIS
-      - Payroll
-      - Employees
-    properties:
-      - type: Documentation
-        url: https://developer.employmenthero.com/api-references
-      - type: DeveloperPortal
-        url: https://developer.employmenthero.com
-      - type: GettingStarted
-        url: https://help.employmenthero.com/hc/en-au/articles/15142240450703-Accessing-the-Employment-Hero-API-and-Developer-Portal
-  - aid: employment-hero:payroll-api
-    name: Employment Hero Payroll API (KeyPay)
-    description: >-
-      Employment Hero Payroll (formerly KeyPay) REST API for managing
-      businesses, employees, pay runs, leave, timesheets, super, tax, and
-      reporting across the AU, UK, NZ, and SG payroll regions.
-    humanURL: https://api.keypay.com.au/australia/guides/Home
-    baseURL: https://api.keypay.com.au/api/v2
-    tags:
-      - Payroll
-      - HR
-      - Employees
-    properties:
-      - type: Documentation
-        url: https://api.keypay.com.au/australia/guides/Home
-
+- aid: employment-hero:rest-api
+  name: Employment Hero REST API
+  description: >-
+    Versioned REST API (v1) for accessing Employment Hero HR, payroll, and employee data including organisations,
+    employees, teams, leave, pay runs, and onboarding. Apps register through the Developer Portal to obtain
+    OAuth 2.0 client credentials; access tokens are sent via the Authorization header and expire after
+    15 minutes, refreshed via refresh tokens.
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - HR
+  - HRIS
+  - Payroll
+  - Employees
+  properties:
+  - type: Documentation
+    url: https://developer.employmenthero.com/api-references
+  - type: DeveloperPortal
+    url: https://developer.employmenthero.com
+  - type: GettingStarted
+    url: >-
+      https://help.employmenthero.com/hc/en-au/articles/15142240450703-Accessing-the-Employment-Hero-API-and-Developer-Portal
+- aid: employment-hero:payroll-api
+  name: Employment Hero Payroll API (KeyPay)
+  description: >-
+    Employment Hero Payroll (formerly KeyPay) REST API for managing businesses, employees, pay runs, leave,
+    timesheets, super, tax, and reporting across the AU, UK, NZ, and SG payroll regions.
+  humanURL: https://api.keypay.com.au/australia/guides/Home
+  baseURL: https://api.keypay.com.au/api/v2
+  tags:
+  - Payroll
+  - HR
+  - Employees
+  properties:
+  - type: Documentation
+    url: https://api.keypay.com.au/australia/guides/Home
+- aid: employment-hero:employment-hero-bank-accounts-api
+  name: Employment Hero Bank Accounts API
+  description: The Bank Accounts API from Employment Hero — 1 operation(s) for bank accounts.
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Bank Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-bank-accounts-api-openapi.yml
+- aid: employment-hero:employment-hero-certifications-api
+  name: Employment Hero Certifications API
+  description: The Certifications API from Employment Hero — 5 operation(s) for certifications.
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Certifications
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-certifications-api-openapi.yml
+- aid: employment-hero:employment-hero-cost-centres-api
+  name: Employment Hero Cost Centres API
+  description: The Cost Centres API from Employment Hero — 1 operation(s) for cost centres.
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Cost Centres
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-cost-centres-api-openapi.yml
+- aid: employment-hero:employment-hero-custom-fields-api
+  name: Employment Hero Custom Fields API
+  description: The Custom Fields API from Employment Hero — 1 operation(s) for custom fields.
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Custom Fields
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-custom-fields-api-openapi.yml
+- aid: employment-hero:employment-hero-departments-api
+  name: Employment Hero Departments API
+  description: The Departments API from Employment Hero — 2 operation(s) for departments.
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Departments
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-departments-api-openapi.yml
+- aid: employment-hero:employment-hero-documents-api
+  name: Employment Hero Documents API
+  description: The Documents API from Employment Hero — 1 operation(s) for documents.
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Documents
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-documents-api-openapi.yml
+- aid: employment-hero:employment-hero-emergency-contacts-api
+  name: Employment Hero Emergency Contacts API
+  description: The Emergency Contacts API from Employment Hero — 1 operation(s) for emergency contacts.
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Emergency Contacts
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-emergency-contacts-api-openapi.yml
+- aid: employment-hero:employment-hero-employees-api
+  name: Employment Hero Employees API
+  description: The Employees API from Employment Hero — 3 operation(s) for employees.
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Employees
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employees-api-openapi.yml
+- aid: employment-hero:employment-hero-forms-api
+  name: Employment Hero Forms API
+  description: The Forms API from Employment Hero — 4 operation(s) for forms.
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Forms
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-forms-api-openapi.yml
+- aid: employment-hero:employment-hero-job-histories-api
+  name: Employment Hero Job Histories API
+  description: The Job Histories API from Employment Hero — 1 operation(s) for job histories.
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Job Histories
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-job-histories-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/employment-hero-agentic-access.yml
