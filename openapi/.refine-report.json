@@ -1,0 +1,32 @@
+{
+  "provider": "employment-hero",
+  "sources": [
+    "employment-hero-bank-accounts-api-openapi.yml",
+    "employment-hero-certifications-api-openapi.yml",
+    "employment-hero-cost-centres-api-openapi.yml",
+    "employment-hero-custom-fields-api-openapi.yml",
+    "employment-hero-departments-api-openapi.yml",
+    "employment-hero-documents-api-openapi.yml",
+    "employment-hero-emergency-contacts-api-openapi.yml",
+    "employment-hero-employees-api-openapi.yml",
+    "employment-hero-forms-api-openapi.yml",
+    "employment-hero-job-histories-api-openapi.yml"
+  ],
+  "outputs": [
+    "employment-hero-bank-accounts-api-openapi.yml",
+    "employment-hero-certifications-api-openapi.yml",
+    "employment-hero-cost-centres-api-openapi.yml",
+    "employment-hero-custom-fields-api-openapi.yml",
+    "employment-hero-departments-api-openapi.yml",
+    "employment-hero-documents-api-openapi.yml",
+    "employment-hero-emergency-contacts-api-openapi.yml",
+    "employment-hero-employees-api-openapi.yml",
+    "employment-hero-forms-api-openapi.yml",
+    "employment-hero-job-histories-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,0 +1,377 @@
+openapi: 3.1.0
+info:
+  title: Employment Hero REST API
+  description: >
+    Employment Hero is an AI-powered Employment Operating System covering HR,
+    payroll, recruitment, onboarding, learning, and employee benefits. This
+    versioned REST API exposes organisations, employees, departments,
+    documents, custom fields, forms, certifications, cost centres,
+    emergency contacts, contractor job histories, and bank account data.
+    Authentication is OAuth 2.0 with short-lived (15-minute) bearer
+    access tokens.
+  version: "1.0.0"
+  contact:
+    name: Employment Hero Developer Portal
+    url: https://developer.employmenthero.com
+servers:
+  - url: https://api.employmenthero.com
+security:
+  - oauth2: []
+paths:
+  /api/v1/organisations/{organisation_id}/employees:
+    get:
+      summary: List employees
+      operationId: listEmployees
+      tags: [Employees]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+      responses:
+        "200":
+          description: Employee list
+  /api/v1/organisations/{organisation_id}/employees/{id}:
+    get:
+      summary: Get employee
+      operationId: getEmployee
+      tags: [Employees]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Employee details
+  /api/v1/organisations/{organisation_id}/employees/quick_add_employee:
+    post:
+      summary: Quick add employee
+      operationId: quickAddEmployee
+      tags: [Employees]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "201":
+          description: Employee created
+  /api/v2/organisations/{organisation_id}/employees/{employee_id}/bank_accounts:
+    get:
+      summary: Get employee bank accounts
+      operationId: getEmployeeBankAccounts
+      tags: [Bank Accounts]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+        - $ref: "#/components/parameters/EmployeeId"
+      responses:
+        "200":
+          description: Bank account details
+  /api/v1/organisations/{organisation_id}/certifications:
+    get:
+      summary: List certifications
+      operationId: listCertifications
+      tags: [Certifications]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+      responses:
+        "200":
+          description: Certifications
+    post:
+      summary: Create certification
+      operationId: createCertification
+      tags: [Certifications]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "201":
+          description: Certification created
+  /api/v1/organisations/{organisation_id}/certifications/{certification_id}:
+    get:
+      summary: Get certification
+      operationId: getCertification
+      tags: [Certifications]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+        - $ref: "#/components/parameters/CertificationId"
+      responses:
+        "200":
+          description: Certification
+    patch:
+      summary: Update certification
+      operationId: updateCertification
+      tags: [Certifications]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+        - $ref: "#/components/parameters/CertificationId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Certification updated
+    delete:
+      summary: Delete certification
+      operationId: deleteCertification
+      tags: [Certifications]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+        - $ref: "#/components/parameters/CertificationId"
+      responses:
+        "204":
+          description: Certification deleted
+  /api/v1/organisations/{organisation_id}/certifications/polling_status:
+    get:
+      summary: Certification async polling status
+      operationId: certificationPollingStatus
+      tags: [Certifications]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+      responses:
+        "200":
+          description: Polling status
+  /api/v1/organisations/{organisation_id}/certifications/{certification_id}/archive_status:
+    patch:
+      summary: Archive or unarchive certification
+      operationId: certificationArchiveStatus
+      tags: [Certifications]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+        - $ref: "#/components/parameters/CertificationId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                archived:
+                  type: boolean
+      responses:
+        "200":
+          description: Archive status updated
+  /api/v1/organisations/{organisation_id}/certifications/file_uploads:
+    post:
+      summary: Upload certification file
+      operationId: uploadCertificationFile
+      tags: [Certifications]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        "201":
+          description: File uploaded
+  /api/v1/organisations/{organisation_id}/employees/{employee_id}/job_histories:
+    get:
+      summary: Get contractor job history
+      operationId: getJobHistories
+      tags: [Job Histories]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+        - $ref: "#/components/parameters/EmployeeId"
+      responses:
+        "200":
+          description: Job histories
+  /api/v1/organisations/{organisation_id}/cost_centres:
+    get:
+      summary: List cost centres
+      operationId: listCostCentres
+      tags: [Cost Centres]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+      responses:
+        "200":
+          description: Cost centres
+  /api/v1/organisations/{organisation_id}/custom_fields:
+    get:
+      summary: List custom fields
+      operationId: listCustomFields
+      tags: [Custom Fields]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+      responses:
+        "200":
+          description: Custom fields
+  /api/v1/organisations/{organisation_id}/forms:
+    get:
+      summary: List forms
+      operationId: listForms
+      tags: [Forms]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+      responses:
+        "200":
+          description: Forms
+  /api/v1/organisations/{organisation_id}/forms/{form_id}:
+    get:
+      summary: Get form
+      operationId: getForm
+      tags: [Forms]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+        - $ref: "#/components/parameters/FormId"
+      responses:
+        "200":
+          description: Form details
+  /api/v1/organisations/{organisation_id}/forms/{form_id}/responses:
+    get:
+      summary: List form responses
+      operationId: listFormResponses
+      tags: [Forms]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+        - $ref: "#/components/parameters/FormId"
+      responses:
+        "200":
+          description: Form responses
+  /api/v1/organisations/{organisation_id}/forms/{form_id}/responses/{response_id}:
+    get:
+      summary: Get form response
+      operationId: getFormResponse
+      tags: [Forms]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+        - $ref: "#/components/parameters/FormId"
+        - name: response_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Form response
+  /api/v1/organisations/{organisation_id}/departments:
+    post:
+      summary: Create department
+      operationId: createDepartment
+      tags: [Departments]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "201":
+          description: Department created
+  /api/v1/organisations/{organisation_id}/departments/{department_id}:
+    patch:
+      summary: Update department
+      operationId: updateDepartment
+      tags: [Departments]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+        - name: department_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Department updated
+  /api/v1/organisations/{organisation_id}/employees/{employee_id}/documents:
+    get:
+      summary: List employee documents
+      operationId: listEmployeeDocuments
+      tags: [Documents]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+        - $ref: "#/components/parameters/EmployeeId"
+      responses:
+        "200":
+          description: Documents
+    post:
+      summary: Upload employee document
+      operationId: uploadEmployeeDocument
+      tags: [Documents]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+        - $ref: "#/components/parameters/EmployeeId"
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        "201":
+          description: Document uploaded
+  /api/v1/organisations/{organisation_id}/employees/{employee_id}/emergency_contacts:
+    get:
+      summary: List employee emergency contacts
+      operationId: listEmergencyContacts
+      tags: [Emergency Contacts]
+      parameters:
+        - $ref: "#/components/parameters/OrganisationId"
+        - $ref: "#/components/parameters/EmployeeId"
+      responses:
+        "200":
+          description: Emergency contacts
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://oauth.employmenthero.com/oauth2/authorize
+          tokenUrl: https://oauth.employmenthero.com/oauth2/token
+          refreshUrl: https://oauth.employmenthero.com/oauth2/token
+          scopes: {}
+  parameters:
+    OrganisationId:
+      name: organisation_id
+      in: path
+      required: true
+      schema:
+        type: string
+    EmployeeId:
+      name: employee_id
+      in: path
+      required: true
+      schema:
+        type: string
+    CertificationId:
+      name: certification_id
+      in: path
+      required: true
+      schema:
+        type: string
+    FormId:
+      name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
