@@ -1,0 +1,122 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Employment Hero REST Bank Accounts Forms API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://oauth.employmenthero.com/oauth2/authorize",
+      "accessTokenUrl": "https://oauth.employmenthero.com/oauth2/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Forms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List forms",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/forms",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List forms"
+        },
+        {
+          "info": {
+            "name": "Get form",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/forms/:form_id",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "form_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get form"
+        },
+        {
+          "info": {
+            "name": "List form responses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/forms/:form_id/responses",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "form_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List form responses"
+        },
+        {
+          "info": {
+            "name": "Get form response",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/forms/:form_id/responses/:response_id",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "form_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "response_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get form response"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

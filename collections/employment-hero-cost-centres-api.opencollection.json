@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Employment Hero REST Bank Accounts Cost Centres API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://oauth.employmenthero.com/oauth2/authorize",
+      "accessTokenUrl": "https://oauth.employmenthero.com/oauth2/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Cost Centres",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List cost centres",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/cost_centres",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List cost centres"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

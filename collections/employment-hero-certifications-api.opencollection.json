@@ -1,0 +1,216 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Employment Hero REST Bank Accounts Certifications API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://oauth.employmenthero.com/oauth2/authorize",
+      "accessTokenUrl": "https://oauth.employmenthero.com/oauth2/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Certifications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List certifications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/certifications",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List certifications"
+        },
+        {
+          "info": {
+            "name": "Create certification",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/certifications",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create certification"
+        },
+        {
+          "info": {
+            "name": "Get certification",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/certifications/:certification_id",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "certification_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get certification"
+        },
+        {
+          "info": {
+            "name": "Update certification",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/certifications/:certification_id",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "certification_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update certification"
+        },
+        {
+          "info": {
+            "name": "Delete certification",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/certifications/:certification_id",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "certification_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete certification"
+        },
+        {
+          "info": {
+            "name": "Certification async polling status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/certifications/polling_status",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Certification async polling status"
+        },
+        {
+          "info": {
+            "name": "Archive or unarchive certification",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/certifications/:certification_id/archive_status",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "certification_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Archive or unarchive certification"
+        },
+        {
+          "info": {
+            "name": "Upload certification file",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.employmenthero.com/api/v1/organisations/:organisation_id/certifications/file_uploads",
+            "params": [
+              {
+                "name": "organisation_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upload certification file"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

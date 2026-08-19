@@ -1,0 +1,142 @@
+{
+  "item": [
+    {
+      "id": "5a4f7a2c-8c13-4579-86ef-530e29a03d73",
+      "name": "Custom Fields",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "35b670f0-32d3-4ca4-bf7a-8f6c2fc56b48",
+          "name": "List custom fields",
+          "request": {
+            "name": "List custom fields",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "organisations",
+                ":organisation_id",
+                "custom_fields"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organisation_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8e35115c-ecc6-46d8-95de-732e7a8ee2f6",
+              "name": "Custom fields",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "organisations",
+                    ":organisation_id",
+                    "custom_fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organisation_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.employmenthero.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "redirect_uri",
+        "value": "https://oauth.employmenthero.com/oauth2/token"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth.employmenthero.com/oauth2/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://oauth.employmenthero.com/oauth2/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bfd5b2cd-27eb-4690-b679-80ee1ea0e784",
+    "name": "Employment Hero REST Bank Accounts Custom Fields API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Employment Hero is an AI-powered Employment Operating System covering HR, payroll, recruitment, onboarding, learning, and employee benefits. This versioned REST API exposes organisations, employees, departments, documents, custom fields, forms, certifications, cost centres, emergency contacts, contractor job histories, and bank account data. Authentication is OAuth 2.0 with short-lived (15-minute) bearer access tokens.\n\n\nContact Support:\n Name: Employment Hero Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}
