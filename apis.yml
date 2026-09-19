@@ -35,6 +35,13 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/employment-hero.png
 tags:
+  - Human Resources
+  - HRIS
+  - Payroll
+  - Recruitment
+  - Employee Benefits
+  - Workforce Management
+tags_raw:
   - HR
   - HRIS
   - Payroll
@@ -58,6 +65,11 @@ apis:
   humanURL: https://developer.employmenthero.com/api-references
   baseURL: https://api.employmenthero.com/api/v1
   tags:
+  - Human Resources
+  - HRIS
+  - Payroll
+  - Employees
+  tags_raw:
   - HR
   - HRIS
   - Payroll
@@ -78,6 +90,10 @@ apis:
   humanURL: https://api.keypay.com.au/australia/guides/Home
   baseURL: https://api.keypay.com.au/api/v2
   tags:
+  - Payroll
+  - Human Resources
+  - Employees
+  tags_raw:
   - Payroll
   - HR
   - Employees
@@ -100,6 +116,8 @@ apis:
   humanURL: https://developer.employmenthero.com/api-references
   baseURL: https://api.employmenthero.com/api/v1
   tags:
+  - Certification
+  tags_raw:
   - Certifications
   properties:
   - type: OpenAPI
