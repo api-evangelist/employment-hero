@@ -1,0 +1,31 @@
+# Front Door AI Index — employment-hero — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: employment-hero
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: employmenthero.com
+  final_host: employmenthero.com
+  ownership: own
+  owner: employment-hero
+  shares_host_with:
+  - humica
+  inherited_from: null
+  verdict: scored
+  score: 57
+  host_score: 57
+  density: 18.91
+  words: 3014
+  tiers:
+    agentic: 3
+    core: 54
+    model: 0
+  ambiguous: 21
+  top_terms:
+    AI: 54
+    agent: 19
+    prompts: 2
+    AI agent: 1
+    automation: 1
+    smart: 1

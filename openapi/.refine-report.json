@@ -1,16 +1,7 @@
 {
   "provider": "employment-hero",
   "sources": [
-    "employment-hero-bank-accounts-api-openapi.yml",
-    "employment-hero-certifications-api-openapi.yml",
-    "employment-hero-cost-centres-api-openapi.yml",
-    "employment-hero-custom-fields-api-openapi.yml",
-    "employment-hero-departments-api-openapi.yml",
-    "employment-hero-documents-api-openapi.yml",
-    "employment-hero-emergency-contacts-api-openapi.yml",
-    "employment-hero-employees-api-openapi.yml",
-    "employment-hero-forms-api-openapi.yml",
-    "employment-hero-job-histories-api-openapi.yml"
+    "_original/employment-hero-openapi.yml"
   ],
   "outputs": [
     "employment-hero-bank-accounts-api-openapi.yml",
@@ -27,6 +18,31 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "employment-hero-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "employment-hero-openapi.yml: declared missing tag: Bank Accounts",
+    "employment-hero-openapi.yml: declared missing tag: Certifications",
+    "employment-hero-openapi.yml: declared missing tag: Cost Centres",
+    "employment-hero-openapi.yml: declared missing tag: Custom Fields",
+    "employment-hero-openapi.yml: declared missing tag: Departments",
+    "employment-hero-openapi.yml: declared missing tag: Documents",
+    "employment-hero-openapi.yml: declared missing tag: Emergency Contacts",
+    "employment-hero-openapi.yml: declared missing tag: Employees",
+    "employment-hero-openapi.yml: declared missing tag: Forms",
+    "employment-hero-openapi.yml: declared missing tag: Job Histories",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "employment-hero-bank-accounts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "employment-hero-certifications-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "employment-hero-cost-centres-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "employment-hero-custom-fields-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "employment-hero-departments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "employment-hero-documents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "employment-hero-emergency-contacts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "employment-hero-employees-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "employment-hero-forms-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "employment-hero-job-histories-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
