@@ -38,9 +38,10 @@ tags:
   - Human Resources
   - HRIS
   - Payroll
-  - Recruitment
+  - Recruiting
   - Employee Benefits
   - Workforce Management
+  - Australia
 tags_raw:
   - HR
   - HRIS
@@ -49,6 +50,7 @@ tags_raw:
   - Employee Benefits
   - Workforce Management
   - HR Tech
+  - Australia
 url: >-
   https://raw.githubusercontent.com/api-evangelist/employment-hero/refs/heads/main/apis.yml
 created: '2026-05-11'
