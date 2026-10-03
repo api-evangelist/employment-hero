@@ -48,14 +48,14 @@ paths:
           description: Document uploaded
 components:
   parameters:
-    EmployeeId:
-      name: employee_id
+    OrganisationId:
+      name: organisation_id
       in: path
       required: true
       schema:
         type: string
-    OrganisationId:
-      name: organisation_id
+    EmployeeId:
+      name: employee_id
       in: path
       required: true
       schema:
