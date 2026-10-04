@@ -205,6 +205,9 @@ apis:
   - type: OpenAPI
     url: openapi/employment-hero-job-histories-api-openapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/employment-hero-capability-edges.yml
+    name: Employment Hero Business Capability Map
   - type: AgenticAccess
     url: agentic-access/employment-hero-agentic-access.yml
   - type: VulnerabilityDisclosure

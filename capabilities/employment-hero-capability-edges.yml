@@ -1,0 +1,63 @@
+slug: employment-hero
+provider: Employment Hero
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 5
+edges:
+- tag: Employees
+  spec_file: employment-hero-employees-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.85
+  evidence: listEmployees  List employees; getEmployee  Get employee; quickAddEmployee  Quick add employee
+  reason: Core employee record CRUD in an HR/payroll Employment OS — employee records and HR service delivery
+    (HR Operations Management).
+- tag: Bank Accounts
+  spec_file: employment-hero-bank-accounts-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.78
+  evidence: GET /api/v2/organisations/{organisation_id}/employees/{employee_id}/bank_accounts  getEmployeeBankAccounts  Get
+    employee bank accounts
+  reason: Employee bank account records in an HR/payroll platform support payroll administration and employee
+    master records, not treasury banking.
+- tag: Documents
+  spec_file: employment-hero-documents-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.75
+  evidence: POST /api/v1/organisations/{organisation_id}/employees/{employee_id}/documents  uploadEmployeeDocument  Upload
+    employee document
+  reason: Employee document storage and retrieval is employee record-keeping in HR operations, not generic
+    document management.
+- tag: Emergency Contacts
+  spec_file: employment-hero-emergency-contacts-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.75
+  evidence: GET /api/v1/organisations/{organisation_id}/employees/{employee_id}/emergency_contacts  List
+    employee emergency contacts
+  reason: Employee emergency contact records held in an HR platform; this is employee master-record keeping
+    within HR operations, not a generic contact directory.
+- tag: Job Histories
+  spec_file: employment-hero-job-histories-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.75
+  evidence: getJobHistories  Get contractor job history
+  reason: Employment/job history records attached to an employee record — HR record administration rather
+    than recruitment or talent processes.
