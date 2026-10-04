@@ -135,14 +135,14 @@ paths:
           description: File uploaded
 components:
   parameters:
-    OrganisationId:
-      name: organisation_id
+    CertificationId:
+      name: certification_id
       in: path
       required: true
       schema:
         type: string
-    CertificationId:
-      name: certification_id
+    OrganisationId:
+      name: organisation_id
       in: path
       required: true
       schema:
