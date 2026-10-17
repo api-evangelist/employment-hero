@@ -67,14 +67,14 @@ paths:
           description: Form response
 components:
   parameters:
-    OrganisationId:
-      name: organisation_id
+    FormId:
+      name: form_id
       in: path
       required: true
       schema:
         type: string
-    FormId:
-      name: form_id
+    OrganisationId:
+      name: organisation_id
       in: path
       required: true
       schema:
