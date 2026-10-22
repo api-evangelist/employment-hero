@@ -1,5 +1,7 @@
 aid: employment-hero
+
 name: Employment Hero
+
 description: >-
   Employment Hero is an AI-powered Employment Operating System for Australian
   and international businesses combining HR, payroll, recruitment, onboarding,
@@ -8,7 +10,9 @@ description: >-
   mobile app, and the HeroForce managed employment service. The Employment
   Hero API is a versioned REST API authenticated via OAuth 2.0 with short-
   lived (15-minute) access tokens and refresh tokens.
+
 type: Index
+
 deliveryModel:
   model: saas
   open_source: false
@@ -21,6 +25,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: unknown
   onboarding: self-serve
@@ -33,7 +38,9 @@ accessModel:
   - authentication
   generated: '2026-07-22'
   method: derived
+
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/employment-hero.png
+
 tags:
   - Human Resources
   - HRIS
@@ -42,6 +49,7 @@ tags:
   - Employee Benefits
   - Workforce Management
   - Australia
+
 tags_raw:
   - HR
   - HRIS
@@ -51,11 +59,111 @@ tags_raw:
   - Workforce Management
   - HR Tech
   - Australia
+
 url: >-
   https://raw.githubusercontent.com/api-evangelist/employment-hero/refs/heads/main/apis.yml
+
 created: '2026-05-11'
-modified: '2026-05-11'
+
+modified: '2026-10-20'
+
 specificationVersion: '0.23'
+
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+
+common:
+  - type: RateLimits
+    url: rate-limits/employment-hero-rate-limits.yml
+  - type: Plans
+    url: plans/employment-hero-plans-pricing.yml
+  - type: AgentSkill
+    url: skills/_index.yml
+  - type: DataModel
+    url: data-model/employment-hero-data-model.yml
+  - type: Conventions
+    url: conventions/employment-hero-conventions.yml
+  - type: Sandbox
+    url: sandbox/employment-hero-sandbox.yml
+  - type: Security
+    url: https://docs.google.com/document/d/10JdrewYyHzmB5C9qxqFDr-2Ya5g0cShWwz8ZeEukXnk
+  - type: Deprecation
+    url: lifecycle/employment-hero-lifecycle.yml
+  - type: Lifecycle
+    url: lifecycle/employment-hero-lifecycle.yml
+  - type: ErrorCatalog
+    url: errors/employment-hero-problem-types.yml
+  - type: Conformance
+    url: conformance/employment-hero-conformance.yml
+  - type: Overlay
+    url: overlays/employment-hero-bank-accounts-overlay.yaml
+  - type: LLMsTxt
+    url: llms/employment-hero-llms.txt
+  - type: SecurityTxt
+    url: well-known/employment-hero-security.txt
+  - type: WellKnown
+    url: well-known/employment-hero-well-known.yml
+  - type: Hosts
+    url: hosts/employment-hero-hosts.yml
+  - type: IntegrationEdges
+    url: integrations/employment-hero-integration-edges.yml
+  - type: Vendors
+    url: vendors/employment-hero-vendors.yml
+  - type: Leadership
+    url: https://employmenthero.com/work/management/
+  - type: GettingStarted
+    url: https://employmenthero.com/solutions/onboarding-software/
+  - type: CapabilityMap
+    url: capabilities/employment-hero-capability-edges.yml
+    name: Employment Hero Business Capability Map
+  - type: AgenticAccess
+    url: agentic-access/employment-hero-agentic-access.yml
+  - type: VulnerabilityDisclosure
+    url: security/employment-hero-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/employment-hero-domain-security.yml
+  - type: Authentication
+    url: authentication/employment-hero-authentication.yml
+  - type: OAuthScopes
+    url: scopes/employment-hero-scopes.yml
+  - type: GitHubOrganization
+    url: https://github.com/Thinkei
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/employment-hero
+  - type: Website
+    url: https://employmenthero.com
+  - type: Documentation
+    url: https://help.employmenthero.com
+  - type: APIReference
+    url: https://developer.employmenthero.com/api-references
+  - type: DeveloperPortal
+    url: https://developer.employmenthero.com
+  - type: Pricing
+    url: https://employmenthero.com/pricing/
+  - type: Login
+    url: https://secure.employmenthero.com/users/sign_in
+  - type: Blog
+    url: https://employmenthero.com/blog/
+  - type: BlogFeed
+    url: https://employmenthero.com/feed/
+  - type: Support
+    url: https://help.employmenthero.com/hc/en-au
+  - type: Contact
+    url: https://employmenthero.com/contact/
+  - type: StatusPage
+    url: https://status.employmenthero.com/
+  - type: TrustCenter
+    url: https://trust.employmenthero.com/
+  - type: Newsroom
+    url: https://employmenthero.com/news/
+  - type: TermsOfService
+    url: https://employmenthero.com/legals/terms-conditions/
+  - type: PrivacyPolicy
+    url: https://employmenthero.com/legals/privacy-policy
+  - type: PartnerGuides
+    url: https://developer.employmenthero.com/partner-guides
+
 apis:
 - aid: employment-hero:rest-api
   name: Employment Hero REST API
@@ -84,24 +192,6 @@ apis:
   - type: GettingStarted
     url: >-
       https://help.employmenthero.com/hc/en-au/articles/15142240450703-Accessing-the-Employment-Hero-API-and-Developer-Portal
-- aid: employment-hero:payroll-api
-  name: Employment Hero Payroll API (KeyPay)
-  description: >-
-    Employment Hero Payroll (formerly KeyPay) REST API for managing businesses, employees, pay runs, leave,
-    timesheets, super, tax, and reporting across the AU, UK, NZ, and SG payroll regions.
-  humanURL: https://api.keypay.com.au/australia/guides/Home
-  baseURL: https://api.keypay.com.au/api/v2
-  tags:
-  - Payroll
-  - Human Resources
-  - Employees
-  tags_raw:
-  - Payroll
-  - HR
-  - Employees
-  properties:
-  - type: Documentation
-    url: https://api.keypay.com.au/australia/guides/Home
 - aid: employment-hero:employment-hero-bank-accounts-api
   name: Employment Hero Bank Accounts API
   description: The Bank Accounts API from Employment Hero — 1 operation(s) for bank accounts.
@@ -204,38 +294,1515 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/employment-hero-job-histories-api-openapi.yml
-common:
-  - type: CapabilityMap
-    url: capabilities/employment-hero-capability-edges.yml
-    name: Employment Hero Business Capability Map
-  - type: AgenticAccess
-    url: agentic-access/employment-hero-agentic-access.yml
-  - type: VulnerabilityDisclosure
-    url: security/employment-hero-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/employment-hero-domain-security.yml
-  - type: Authentication
-    url: authentication/employment-hero-authentication.yml
-  - type: OAuthScopes
-    url: scopes/employment-hero-scopes.yml
-  - type: GitHubOrganization
-    url: https://github.com/Thinkei
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/employment-hero
-  - type: Website
-    url: https://employmenthero.com
+- aid: employment-hero:employment-hero-abasettings-api
+  name: Employment Hero Aba Settings API
+  description: ABA Settings
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - AbaSettings
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-abasettings-api-openapi.yml
   - type: Documentation
-    url: https://help.employmenthero.com
-  - type: API Documentation
-    url: https://developer.employmenthero.com/api-references
-  - type: DeveloperPortal
-    url: https://developer.employmenthero.com
-  - type: Pricing
-    url: https://employmenthero.com/pricing
-  - type: Signup
-    url: https://employmenthero.com/get-started
-  - url: https://employmenthero.com/feed/
-    type: Blog
-maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-authentication-api
+  name: Employment Hero Authentication API
+  description: Authentication
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-authentication-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-award-api
+  name: Employment Hero Award API
+  description: Award
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Award
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-award-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-benefitcategory-api
+  name: Employment Hero Benefit Category API
+  description: Benefit Categories
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - BenefitCategory
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-benefitcategory-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-brand-api
+  name: Employment Hero Brand API
+  description: Brand
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Brand
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-brand-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-business-api
+  name: Employment Hero Business API
+  description: Business
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Business
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-business-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-contractor-api
+  name: Employment Hero Contractor API
+  description: Contractor
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Contractor
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-contractor-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-deductioncategories-api
+  name: Employment Hero Deduction Categories API
+  description: Deduction Categories
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - DeductionCategories
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-deductioncategories-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employee-api
+  name: Employment Hero Employee API
+  description: Employee
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Employee
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employee-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeeaccess-api
+  name: Employment Hero Employee Access API
+  description: Employee Access
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeeAccess
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeeaccess-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeebankaccount-api
+  name: Employment Hero Employee Bank Account API
+  description: Employee Bank Accounts
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeeBankAccount
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeebankaccount-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeebenefitcategory-api
+  name: Employment Hero Employee Benefit Category API
+  description: Employee Benefit Categories
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeeBenefitCategory
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeebenefitcategory-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeebenefitsinkind-api
+  name: Employment Hero Employee Benefits In Kind API
+  description: Employee Benefits In Kind
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeeBenefitsInKind
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeebenefitsinkind-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeedocument-api
+  name: Employment Hero Employee Document API
+  description: Employee Documents
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeeDocument
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeedocument-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeeearningslinesplit-api
+  name: Employment Hero Employee Earnings Line Split API
+  description: Employee Earnings Line Split
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeeEarningsLineSplit
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeeearningslinesplit-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeeexpensecategories-api
+  name: Employment Hero Employee Expense Categories API
+  description: Employee Expense Categories
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeeExpenseCategories
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeeexpensecategories-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeeexpenserequest-api
+  name: Employment Hero Employee Expense Request API
+  description: Employee Expense Requests
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeeExpenseRequest
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeeexpenserequest-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeegainsorprofitsemployeeshareplan-api
+  name: Employment Hero Employee Gains Or Profits Employee Share Plan API
+  description: Employee Gains Or Profits Employee Share Plan
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeeGainsOrProfitsEmployeeSharePlan
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeegainsorprofitsemployeeshareplan-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeegroups-api
+  name: Employment Hero Employee Groups API
+  description: Employee Groups
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeeGroups
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeegroups-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeeincomefromoverseassubjecttotaxremission-api
+  name: Employment Hero Employee Income From Overseas Subject To Tax Remission API
+  description: Employee Income From Overseas Subject To Tax Remission
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeeIncomeFromOverseasSubjectToTaxRemission
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeeincomefromoverseassubjecttotaxremission-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeeincometaxbornebyemployer-api
+  name: Employment Hero Employee Income Tax Borne By Employer API
+  description: Employee Income Tax Borne By Employer
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeeIncomeTaxBorneByEmployer
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeeincometaxbornebyemployer-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeeiraslumpsum-api
+  name: Employment Hero Employee Iras Lump Sum API
+  description: Employee Iras Lump Sum
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeeIrasLumpSum
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeeiraslumpsum-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeeleaveallowances-api
+  name: Employment Hero Employee Leave Allowances API
+  description: Employee Leave Allowances
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeeLeaveAllowances
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeeleaveallowances-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeeonboarding-api
+  name: Employment Hero Employee Onboarding API
+  description: Employee Onboarding
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeeOnboarding
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeeonboarding-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeepayrateschedule-api
+  name: Employment Hero Employee Pay Rate Schedule API
+  description: Employee Pay Rate Schedule
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeePayRateSchedule
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeepayrateschedule-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeequalifications-api
+  name: Employment Hero Employee Qualifications API
+  description: Employee Qualifications
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeeQualifications
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeequalifications-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeerecurringtransactions-api
+  name: Employment Hero Employee Recurring Transactions API
+  description: Pay Run Inclusions
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeeRecurringTransactions
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeerecurringtransactions-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeereportingdimensionearningslinesplit-api
+  name: Employment Hero Employee Reporting Dimension Earnings Line Split API
+  description: Employee Reporting Dimension Earnings Line Split
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeeReportingDimensionEarningsLineSplit
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeereportingdimensionearningslinesplit-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeeselfmanagedsuperfund-api
+  name: Employment Hero Employee Self Managed Super Fund API
+  description: Employee Self Managed Super Funds
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeeSelfManagedSuperFund
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeeselfmanagedsuperfund-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employeesuperfund-api
+  name: Employment Hero Employee Super Fund API
+  description: Employee Super Funds
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployeeSuperFund
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employeesuperfund-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employerliabilitycategories-api
+  name: Employment Hero Employer Liability Categories API
+  description: Employer Liability Categories
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployerLiabilityCategories
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employerliabilitycategories-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employingentities-api
+  name: Employment Hero Employing Entities API
+  description: Employing Entities
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmployingEntities
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employingentities-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-employmentagreement-api
+  name: Employment Hero Employment Agreement API
+  description: Employment Agreement
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - EmploymentAgreement
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-employmentagreement-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-ess-api
+  name: Employment Hero Ess API
+  description: Employee Self Setup
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Ess
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-ess-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-invoices-api
+  name: Employment Hero Invoices API
+  description: Invoices
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Invoices
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-invoices-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-leaveallowance-api
+  name: Employment Hero Leave Allowance API
+  description: Leave Allowances
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - LeaveAllowance
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-leaveallowance-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-leavecategories-api
+  name: Employment Hero Leave Categories API
+  description: Leave Categories
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - LeaveCategories
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-leavecategories-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-leaverequests-api
+  name: Employment Hero Leave Requests API
+  description: Leave Requests
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - LeaveRequests
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-leaverequests-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-location-api
+  name: Employment Hero Location API
+  description: Location
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Location
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-location-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-lookupdata-api
+  name: Employment Hero Lookup Data API
+  description: Lookup Data
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - LookupData
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-lookupdata-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-manager-api
+  name: Employment Hero Manager API
+  description: Manager
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Manager
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-manager-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-other-api
+  name: Employment Hero Other API
+  description: The Other API from Employment Hero — 8 operation(s) for other.
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Other
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-other-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-paycategory-api
+  name: Employment Hero Pay Category API
+  description: Pay Category
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - PayCategory
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-paycategory-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-paycondition-api
+  name: Employment Hero Pay Condition API
+  description: Pay Condition
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - PayCondition
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-paycondition-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-payconditioncomparison-api
+  name: Employment Hero Pay Condition Comparison API
+  description: Pay Conditions Comparison
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - PayConditionComparison
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-payconditioncomparison-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-payescheme-api
+  name: Employment Hero Paye Scheme API
+  description: PayeScheme
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - PayeScheme
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-payescheme-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-paymentsummary-api
+  name: Employment Hero Payment Summary API
+  description: Payment Summaries
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - PaymentSummary
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-paymentsummary-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-payratetemplate-api
+  name: Employment Hero Pay Rate Template API
+  description: Pay Rate Templates
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - PayRateTemplate
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-payratetemplate-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-payrun-api
+  name: Employment Hero Pay Run API
+  description: Pay Run
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - PayRun
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-payrun-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-payschedule-api
+  name: Employment Hero Pay Schedule API
+  description: Pay Schedules
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - PaySchedule
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-payschedule-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-pensionsettings-api
+  name: Employment Hero Pension Settings API
+  description: Pension Settings
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - PensionSettings
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-pensionsettings-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-publicholiday-api
+  name: Employment Hero Public Holiday API
+  description: Public Holiday
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - PublicHoliday
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-publicholiday-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-qualifications-api
+  name: Employment Hero Qualifications API
+  description: Qualifications
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Qualifications
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-qualifications-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-reporting-api
+  name: Employment Hero Reporting API
+  description: Reporting
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Reporting
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-reporting-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-reportingdimensions-api
+  name: Employment Hero Reporting Dimensions API
+  description: Dimensions
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - ReportingDimensions
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-reportingdimensions-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-reseller-api
+  name: Employment Hero Reseller API
+  description: Reseller
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Reseller
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-reseller-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-rostershift-api
+  name: Employment Hero Roster Shift API
+  description: Roster Shifts
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - RosterShift
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-rostershift-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-subcontractor-api
+  name: Employment Hero Subcontractor API
+  description: Subcontractor
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Subcontractor
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-subcontractor-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-superfund-api
+  name: Employment Hero Super Fund API
+  description: Super Funds
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - SuperFund
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-superfund-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-tieredleaveallowance-api
+  name: Employment Hero Tiered Leave Allowance API
+  description: Tiered Leave Allowances
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - TieredLeaveAllowance
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-tieredleaveallowance-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-timeandattendance-api
+  name: Employment Hero Time And Attendance API
+  description: Time and Attendance
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - TimeAndAttendance
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-timeandattendance-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-timesheets-api
+  name: Employment Hero Timesheets API
+  description: Timesheets
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Timesheets
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-timesheets-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-unavailability-api
+  name: Employment Hero Unavailability API
+  description: Unavailability
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Unavailability
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-unavailability-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-user-api
+  name: Employment Hero User API
+  description: User
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - User
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-user-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-webhook-api
+  name: Employment Hero Webhook API
+  description: Webhook
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Webhook
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-webhook-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-whitelabel-api
+  name: Employment Hero White Label API
+  description: White Label
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - WhiteLabel
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-whitelabel-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-worktype-api
+  name: Employment Hero Work Type API
+  description: Work Types
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - WorkType
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-worktype-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+- aid: employment-hero:employment-hero-chart-of-accounts-api
+  name: Employment Hero Chart Of Accounts API
+  description: Chart of Accounts
+  humanURL: https://developer.employmenthero.com/api-references
+  baseURL: https://api.employmenthero.com/api/v1
+  tags:
+  - Chart Of Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/employment-hero-chart-of-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://api.keypay.com.au/guides/Home.html
+  - type: APIReference
+    url: https://api.keypay.com.au/
+  - type: APIReference
+    url: https://api.keypay.com.au/new-zealand/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/united-kingdom/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/singapore/reference.html
+  - type: APIReference
+    url: https://api.keypay.com.au/malaysia/reference.html
+x-coverage:
+  state: covered
+  reason: identity-verified
+  detail: Website and link pointers verified by GET on 2026-10-20; dead /get-started signup pointer removed; legacy KeyPay guides URL (S3 AccessDenied) replaced by the live Payroll API reference.
+  evidence:
+  - {url: 'https://employmenthero.com', status: 200}
+  - {url: 'https://employmenthero.com/get-started', status: 404}
+  - {url: 'https://api.keypay.com.au/australia/guides/Home', status: 403}
+  - {url: 'https://api.keypay.com.au/guides/Home.html', status: 200}
+  - {url: 'https://help.employmenthero.com/hc/en-au', status: 403, note: Cloudflare browser challenge; page exists (preflight 200)}
+x-enrichment:
+  date: '2026-10-20'
+  status: enriched
+  artifacts_added: 38
+  pass: modular-v1
+  engine: identity=anthropic,contract=anthropic,surfaces=anthropic,docs=anthropic,regulatory=anthropic

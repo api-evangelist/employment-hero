@@ -1,0 +1,12 @@
+generated: '2026-10-20'
+method: searched
+source: https://developer.employmenthero.com/llms.txt
+description: >-
+  No self-serve sandbox or test-key mode is documented. The developer docs index (llms.txt) lists a partner
+  guide titled "How to request an HR organisation for testing", i.e. test organisations are provisioned on
+  request, but that page returned HTTP 404 on 2026-10-20 (plain and rendered fetch), so its procedure could not
+  be read. The API introduction recommends testing with Postman and a Bearer token.
+docs: https://developer.employmenthero.com/partner-guides/setup-and-account-management/how-to-request.md
+docs_status: 404
+test_values: []
+modes: []

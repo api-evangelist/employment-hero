@@ -1,0 +1,265 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Qualifications API
+  version: '1.0'
+  description: 'Operations tagged Qualifications across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: Qualifications
+  description: Qualifications
+paths:
+  /api/v2/business/{businessId}/qualification:
+    get:
+      tags:
+      - Qualifications
+      summary: List Qualifications
+      description: 'Lists all of the qualifications for the business.
+
+
+        This operation supports OData queries (only $filter, $orderby, $top, $skip).'
+      operationId: Qualification_GetQualifications
+      parameters:
+      - in: query
+        name: query
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<QualificationModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/QualificationModel'
+            application/xml:
+              schema:
+                title: IEnumerable<QualificationModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/QualificationModel'
+            text/plain:
+              schema:
+                title: IEnumerable<QualificationModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/QualificationModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<QualificationModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/QualificationModel'
+            text/json:
+              schema:
+                title: IEnumerable<QualificationModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/QualificationModel'
+    post:
+      tags:
+      - Qualifications
+      summary: Create Qualification
+      description: Creates a new employee qualification for the business.
+      operationId: Qualification_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QualificationModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/QualificationModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/QualificationModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/QualificationModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/QualificationModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/QualificationModel'
+  /api/v2/business/{businessId}/qualification/{id}:
+    get:
+      tags:
+      - Qualifications
+      summary: Get Qualification by ID
+      description: Gets the qualification with the specified ID.
+      operationId: Qualification_GetQualification
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QualificationModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/QualificationModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/QualificationModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/QualificationModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/QualificationModel'
+    put:
+      tags:
+      - Qualifications
+      summary: Update Qualification
+      description: Updates the qualification with the specified ID.
+      operationId: Qualification_Put_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QualificationModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/QualificationModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/QualificationModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/QualificationModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/QualificationModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/QualificationModel'
+    delete:
+      tags:
+      - Qualifications
+      summary: Delete Qualification
+      description: Deletes the qualification with the specified ID.
+      operationId: Qualification_Delete_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    QualificationModel:
+      title: QualificationModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

@@ -1,0 +1,801 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Other API
+  version: '1.0'
+  description: 'Operations tagged Other across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: Other
+paths:
+  /api/v2/business/{businessId}/report/paymentfile:
+    get:
+      tags:
+      - Other
+      summary: Get Payment Files by Finalised Pay Run Id
+      description: Gets the payment files for a finalised pay run with the specified Id.
+      operationId: PaymentFileReport_Get
+      parameters:
+      - in: query
+        name: PayRunId
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: PaymentFileId
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /api/v2/user/create-direct-account:
+    post:
+      tags:
+      - Other
+      summary: Create a new direct billing user
+      operationId: PublicUser_CreateDirectAccount
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewUserCreatedModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/NewUserCreatedModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/NewUserCreatedModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/NewUserCreatedModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/NewUserCreatedModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDirectAccountNewUserModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreateDirectAccountNewUserModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/CreateDirectAccountNewUserModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CreateDirectAccountNewUserModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CreateDirectAccountNewUserModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CreateDirectAccountNewUserModel'
+  /api/v2/bank:
+    get:
+      tags:
+      - Other
+      summary: List banks
+      operationId: MyBank_List
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<MyBankModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/MyBankModel'
+            application/xml:
+              schema:
+                title: IEnumerable<MyBankModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/MyBankModel'
+            text/plain:
+              schema:
+                title: IEnumerable<MyBankModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/MyBankModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<MyBankModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/MyBankModel'
+            text/json:
+              schema:
+                title: IEnumerable<MyBankModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/MyBankModel'
+  /api/v2/ess/{employeeId}/statutorydetails:
+    get:
+      tags:
+      - Other
+      summary: Get Statutory Details
+      description: Gets the statutory details for the employee.
+      operationId: MyEssStatutoryDetails_Get
+      parameters:
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MyEssStatutoryDetailsModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MyEssStatutoryDetailsModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/MyEssStatutoryDetailsModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/MyEssStatutoryDetailsModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/MyEssStatutoryDetailsModel'
+  /api/v2/business/{businessId}/advanced:
+    get:
+      tags:
+      - Other
+      summary: Get business advanced settings
+      operationId: NzBusinessAdvancedSettings_Get
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NzBusinessAdvancedSettingsModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/NzBusinessAdvancedSettingsModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/NzBusinessAdvancedSettingsModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/NzBusinessAdvancedSettingsModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/NzBusinessAdvancedSettingsModel'
+    put:
+      tags:
+      - Other
+      summary: Update business advanced settings
+      operationId: NzBusinessAdvancedSettings_Put_2
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NzBusinessAdvancedSettingsModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/NzBusinessAdvancedSettingsModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/NzBusinessAdvancedSettingsModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/NzBusinessAdvancedSettingsModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/NzBusinessAdvancedSettingsModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NzBusinessAdvancedSettingsModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/NzBusinessAdvancedSettingsModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/NzBusinessAdvancedSettingsModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/NzBusinessAdvancedSettingsModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/NzBusinessAdvancedSettingsModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/NzBusinessAdvancedSettingsModel'
+  /api/v2/bank/branch:
+    get:
+      tags:
+      - Other
+      summary: Get Specific Bank Branch Details
+      description: Search for bank branch based on a Bank Swift, Branch Code and Account Number.
+      operationId: SgBank_BranchDetails
+      parameters:
+      - in: query
+        name: BankSwift
+        required: true
+        title: String
+        schema:
+          type: string
+      - in: query
+        name: BranchCode
+        required: true
+        title: String
+        schema:
+          type: string
+      - in: query
+        name: AccountNumber
+        required: true
+        title: String
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GiroBankBranchModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GiroBankBranchModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GiroBankBranchModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/GiroBankBranchModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GiroBankBranchModel'
+  /api/v2/bank/branches:
+    get:
+      tags:
+      - Other
+      summary: List Bank Branches
+      description: Lists bank branches matching the specified filter criteria.
+      operationId: SgBank_Branches
+      parameters:
+      - in: query
+        name: BankSwift
+        required: true
+        title: String
+        schema:
+          type: string
+      - in: query
+        name: AccountNumber
+        required: true
+        title: String
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<GiroBankBranchModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/GiroBankBranchModel'
+            application/xml:
+              schema:
+                title: IEnumerable<GiroBankBranchModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/GiroBankBranchModel'
+            text/plain:
+              schema:
+                title: IEnumerable<GiroBankBranchModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/GiroBankBranchModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<GiroBankBranchModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/GiroBankBranchModel'
+            text/json:
+              schema:
+                title: IEnumerable<GiroBankBranchModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/GiroBankBranchModel'
+  /api/v2/bank/details:
+    get:
+      tags:
+      - Other
+      summary: Get Specific Bank Details
+      description: Search for bank based on a Bank Swift
+      operationId: SgBank_BankDetails
+      parameters:
+      - in: query
+        name: BankSwift
+        required: true
+        title: String
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GiroBankModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GiroBankModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GiroBankModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/GiroBankModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GiroBankModel'
+components:
+  schemas:
+    NewUserCreatedModel:
+      title: NewUserCreatedModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        username:
+          title: String
+          type: string
+          x-title: String
+        displayName:
+          title: String
+          type: string
+          x-title: String
+        timeZone:
+          title: String
+          type: string
+          x-title: String
+        apiKey:
+          title: String
+          type: string
+          x-title: String
+        email:
+          title: String
+          type: string
+          x-title: String
+        emailConfirmed:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    CreateDirectAccountNewUserModel:
+      title: CreateDirectAccountNewUserModel
+      required:
+      - displayName
+      - username
+      type: object
+      properties:
+        createNewUserSecret:
+          title: String
+          type: string
+          x-title: String
+        password:
+          title: String
+          type: string
+          x-title: String
+        externalUserSessionReference:
+          title: String
+          type: string
+          x-title: String
+        username:
+          title: String
+          minLength: 1
+          type: string
+          x-title: String
+        displayName:
+          title: String
+          minLength: 1
+          type: string
+          x-title: String
+        timeZone:
+          title: String
+          type: string
+          x-title: String
+        apiOnly:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        email:
+          title: String
+          type: string
+          x-title: String
+        emailConfirmed:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    MyBankModel:
+      title: MyBankModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        code:
+          title: String
+          type: string
+          x-title: String
+        name:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    MyEssStatutoryDetailsModel:
+      title: MyEssStatutoryDetailsModel
+      type: object
+      properties:
+        itn:
+          title: String
+          type: string
+          x-title: String
+        employmentType:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employmentTypeDescription:
+          title: String
+          type: string
+          x-title: String
+        workerStatus:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        workerStatusDescription:
+          title: String
+          type: string
+          x-title: String
+        nationality:
+          title: String
+          type: string
+          x-title: String
+        residenceStatus:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        residenceStatusDescription:
+          title: String
+          type: string
+          x-title: String
+        residenceType:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        residenceTypeDescription:
+          title: String
+          type: string
+          x-title: String
+        identityCardNumber:
+          title: String
+          type: string
+          x-title: String
+        passportNumber:
+          title: String
+          type: string
+          x-title: String
+        passportIssuingCountry:
+          title: String
+          type: string
+          x-title: String
+        passportExpiry:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        workPassType:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        workPassTypeDescription:
+          title: String
+          type: string
+          x-title: String
+        applyOld11PercentForNonMalaysian:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        socsoScheme:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        socsoSchemeDescription:
+          title: String
+          type: string
+          x-title: String
+        socialSecurityForeignWorkerNumber:
+          title: String
+          type: string
+          x-title: String
+        epfNumber:
+          title: String
+          type: string
+          x-title: String
+        epfContributionType:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        epfContributionTypeDescription:
+          title: String
+          type: string
+          x-title: String
+        epfRate:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        epfRateDescription:
+          title: String
+          type: string
+          x-title: String
+        maritalStatus:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        maritalStatusDescription:
+          title: String
+          type: string
+          x-title: String
+        dependentChildren:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        spouseFirstName:
+          title: String
+          type: string
+          x-title: String
+        spouseSurname:
+          title: String
+          type: string
+          x-title: String
+        spouseResidenceStatus:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        spouseResidenceStatusDescription:
+          title: String
+          type: string
+          x-title: String
+        spouseIdentityCardNumber:
+          title: String
+          type: string
+          x-title: String
+        spousePassportNumber:
+          title: String
+          type: string
+          x-title: String
+        spouseItn:
+          title: String
+          type: string
+          x-title: String
+        eisExempt:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        pcbBorneByEmployer:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    NzBusinessAdvancedSettingsModel:
+      title: NzBusinessAdvancedSettingsModel
+      type: object
+      properties:
+        enableContractorManagement:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        hasContractorSetup:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        otherwiseWorkingDayOccurrences:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        otherwiseWorkingDayPeriod:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        publicHolidayAutomationForAutoPayEmployees:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        enableRSEEmployment:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        showRSEEmploymentOption:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        allowMultipleTopLevelLocations:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        uniqueExternalIdsForEmployee:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        uniqueExternalIdsForPayCategory:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        uniqueExternalIdsForLeaveCategory:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        uniqueExternalIdsForDeductionCategory:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        uniqueExternalIdsForEmployeeExpenseCategory:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        uniqueExternalIdsForEmployerLiabilityCategory:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        uniqueExternalIdsForLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        uniqueExternalIdsForWorkType:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        enableClockInClockOutWebhooks:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    GiroBankBranchModel:
+      title: GiroBankBranchModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        code:
+          title: String
+          type: string
+          x-title: String
+        name:
+          title: String
+          type: string
+          x-title: String
+        accountNumber:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    GiroBankModel:
+      title: GiroBankModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        swift:
+          title: String
+          type: string
+          x-title: String
+        code:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

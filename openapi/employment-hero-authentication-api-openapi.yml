@@ -1,0 +1,292 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Authentication API
+  version: '1.0'
+  description: 'Operations tagged Authentication across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: Authentication
+  description: Authentication
+paths:
+  /api/v2/business/{businessId}/employee/{employeeId}/singlesignon:
+    post:
+      tags:
+      - Authentication
+      summary: Single Sign On
+      description: 'Request for SSO URL that provides authenticated access to KeyPay.
+
+        See the guide on SSO Requests for more details.'
+      operationId: SingleSignOn_RequestSsoUrl
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SingleSignOnResponseModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SingleSignOnResponseModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SingleSignOnResponseModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/SingleSignOnResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SingleSignOnResponseModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SingleSignOnRequestModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SingleSignOnRequestModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/SingleSignOnRequestModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SingleSignOnRequestModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SingleSignOnRequestModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SingleSignOnRequestModel'
+  /api/v2/business/{businessId}/singlesignon:
+    post:
+      tags:
+      - Authentication
+      summary: Single Sign On
+      description: 'Request for SSO URL that provides authenticated access to KeyPay.
+
+        See the guide on SSO Requests for more details.'
+      operationId: SingleSignOn_RequestSsoUrl_2
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SingleSignOnResponseModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SingleSignOnResponseModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SingleSignOnResponseModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/SingleSignOnResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SingleSignOnResponseModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SingleSignOnRequestModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SingleSignOnRequestModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/SingleSignOnRequestModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SingleSignOnRequestModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SingleSignOnRequestModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SingleSignOnRequestModel'
+  /api/v2/singlesignon:
+    post:
+      tags:
+      - Authentication
+      summary: Single Sign On
+      description: 'Request for SSO URL that provides authenticated access to KeyPay.
+
+        See the guide on SSO Requests for more details.'
+      operationId: SingleSignOn_RequestSsoUrl_3
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SingleSignOnResponseModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SingleSignOnResponseModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SingleSignOnResponseModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/SingleSignOnResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SingleSignOnResponseModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SingleSignOnRequestModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SingleSignOnRequestModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/SingleSignOnRequestModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SingleSignOnRequestModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SingleSignOnRequestModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SingleSignOnRequestModel'
+  /oauth/token:
+    post:
+      tags:
+      - Authentication
+      summary: OAuth Token
+      description: See the guide on OAuth2 authentication for more details.
+      operationId: Token_Post
+      responses:
+        '200':
+          description: OK
+  /oauth/token/revoke:
+    post:
+      tags:
+      - Authentication
+      summary: Revoke OAuth2 Token (RFC 7009)
+      description: 'Invalidates all active OAuth2 tokens for the user associated with the provided token.
+
+        Returns HTTP 200 regardless of token validity, per RFC 7009.'
+      operationId: Token_Revoke
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+components:
+  schemas:
+    SingleSignOnResponseModel:
+      title: SingleSignOnResponseModel
+      type: object
+      properties:
+        url:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    SingleSignOnRequestModel:
+      title: SingleSignOnRequestModel
+      type: object
+      properties:
+        businessId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        userName:
+          title: String
+          type: string
+          x-title: String
+        url:
+          title: String
+          type: string
+          x-title: String
+        navigation:
+          title: NavigationDisplayEnum
+          enum:
+          - Full
+          - Primary
+          - Secondary
+          - None
+          - HideInternalPageNav
+          type: string
+        hostName:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

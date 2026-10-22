@@ -1,0 +1,2169 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Roster Shift API
+  version: '1.0'
+  description: 'Operations tagged RosterShift across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: RosterShift
+  description: Roster Shifts
+paths:
+  /api/v2/business/{businessId}/rostershift:
+    get:
+      tags:
+      - RosterShift
+      summary: Get Roster Shifts
+      description: 'Gets roster shifts, optionally filtered by a number of parameters. Query parameters ''fromDate'' and ''toDate'' are required.
+
+        NOTE: By default, only shifts with no role assigned are returned. To return shifts with roles, either specify some SelectedRoles,
+
+        or specify SelectAllRoles = true.'
+      operationId: AuRosterShift_Get
+      parameters:
+      - in: query
+        name: FromDate
+        title: DateTime
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: ToDate
+        title: DateTime
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: ShiftStatus
+        title: RosterShiftStatus
+        schema:
+          type: string
+          enum:
+          - All
+          - Published
+          - Unpublished
+          - Accepted
+      - in: query
+        name: ShiftStatuses
+        title: IList<RosterShiftStatus>
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            title: RosterShiftStatus
+            enum:
+            - All
+            - Published
+            - Unpublished
+            - Accepted
+            type: string
+            x-title: RosterShiftStatus
+      - in: query
+        name: SelectedLocations
+        title: IList<String>
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+      - in: query
+        name: SelectedEmployees
+        title: IList<String>
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+      - in: query
+        name: SelectedRoles
+        title: IList<String>
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+      - in: query
+        name: EmployeeId
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: LocationId
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: EmployeeGroupId
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: UnassignedShiftsOnly
+        title: Boolean
+        schema:
+          type: boolean
+      - in: query
+        name: SelectAllRoles
+        title: Boolean
+        schema:
+          type: boolean
+      - in: query
+        name: ExcludeShiftsOverlappingFromDate
+        title: Boolean
+        schema:
+          type: boolean
+      - in: query
+        name: PageSize
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: CurrentPage
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: IncludeWarnings
+        title: Boolean
+        schema:
+          type: boolean
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: List<AuRosterShiftGenerateTimesheetModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuRosterShiftGenerateTimesheetModel'
+                x-title: List<AuRosterShiftGenerateTimesheetModel>
+            application/xml:
+              schema:
+                title: List<AuRosterShiftGenerateTimesheetModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuRosterShiftGenerateTimesheetModel'
+                x-title: List<AuRosterShiftGenerateTimesheetModel>
+            text/plain:
+              schema:
+                title: List<AuRosterShiftGenerateTimesheetModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuRosterShiftGenerateTimesheetModel'
+                x-title: List<AuRosterShiftGenerateTimesheetModel>
+            application/octet-stream:
+              schema:
+                title: List<AuRosterShiftGenerateTimesheetModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuRosterShiftGenerateTimesheetModel'
+                x-title: List<AuRosterShiftGenerateTimesheetModel>
+            text/json:
+              schema:
+                title: List<AuRosterShiftGenerateTimesheetModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuRosterShiftGenerateTimesheetModel'
+                x-title: List<AuRosterShiftGenerateTimesheetModel>
+    post:
+      tags:
+      - RosterShift
+      summary: Create roster shift
+      description: Create or update an individual roster shift
+      operationId: AuRosterShift_Post_2
+      parameters:
+      - in: query
+        name: publish
+        title: Boolean
+        schema:
+          type: boolean
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuEssRosterShiftModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuEssRosterShiftModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuEssRosterShiftModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuEssRosterShiftModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuEssRosterShiftModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                title: String
+                type: string
+                x-title: String
+            application/xml:
+              schema:
+                title: String
+                type: string
+                x-title: String
+            text/plain:
+              schema:
+                title: String
+                type: string
+                x-title: String
+            application/octet-stream:
+              schema:
+                title: String
+                type: string
+                x-title: String
+            text/json:
+              schema:
+                title: String
+                type: string
+                x-title: String
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuRosterShiftEditModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuRosterShiftEditModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuRosterShiftEditModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuRosterShiftEditModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuRosterShiftEditModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuRosterShiftEditModel'
+  /api/v2/business/{businessId}/rostershift/{employeeId}/matchingclockoff:
+    get:
+      tags:
+      - RosterShift
+      summary: Find Matching Clock Off Roster Shift
+      description: 'If a roster shift exists that could match for this employee to clock off at this time
+
+        given kiosk settings for shift matching, returns that shift.
+
+        Otherwise, the Shift result will be null.
+
+        Note that if the time matches a shift exactly, the Shift result will also be null.'
+      operationId: AuRosterShift_MatchingClockOffRosterShift
+      parameters:
+      - in: path
+        name: employeeId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: kioskId
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: dateUtc
+        title: DateTime
+        schema:
+          type: string
+          format: date-time
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuRosterShiftMatchingResultModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuRosterShiftMatchingResultModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuRosterShiftMatchingResultModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuRosterShiftMatchingResultModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuRosterShiftMatchingResultModel'
+  /api/v2/business/{businessId}/rostershift/{employeeId}/matchingclockon:
+    get:
+      tags:
+      - RosterShift
+      summary: Find Matching Clock On Roster Shift
+      description: 'If a roster shift exists that could match for this employee to clock on at this time
+
+        given kiosk settings for shift matching, returns that shift.
+
+        Otherwise, the Shift result will be null.
+
+        Note that if the time matches a shift exactly, the Shift result will also be null.'
+      operationId: AuRosterShift_MatchingClockOnRosterShift
+      parameters:
+      - in: path
+        name: employeeId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: kioskId
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: dateUtc
+        title: DateTime
+        schema:
+          type: string
+          format: date-time
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuRosterShiftMatchingResultModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuRosterShiftMatchingResultModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuRosterShiftMatchingResultModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuRosterShiftMatchingResultModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuRosterShiftMatchingResultModel'
+  /api/v2/business/{businessId}/rostershift/{employeeId}/nearby:
+    get:
+      tags:
+      - RosterShift
+      summary: Find Nearby Roster Shifts
+      description: Finds any of the employee's roster shifts that are nearby to the specified local time.
+      operationId: AuRosterShift_NearbyRosterShifts
+      parameters:
+      - in: path
+        name: employeeId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: localTime
+        title: DateTime
+        schema:
+          type: string
+          format: date-time
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<AuEssRosterShiftModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEssRosterShiftModel'
+                x-title: IList<AuEssRosterShiftModel>
+            application/xml:
+              schema:
+                title: IList<AuEssRosterShiftModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEssRosterShiftModel'
+                x-title: IList<AuEssRosterShiftModel>
+            text/plain:
+              schema:
+                title: IList<AuEssRosterShiftModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEssRosterShiftModel'
+                x-title: IList<AuEssRosterShiftModel>
+            application/octet-stream:
+              schema:
+                title: IList<AuEssRosterShiftModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEssRosterShiftModel'
+                x-title: IList<AuEssRosterShiftModel>
+            text/json:
+              schema:
+                title: IList<AuEssRosterShiftModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEssRosterShiftModel'
+                x-title: IList<AuEssRosterShiftModel>
+  /api/v2/business/{businessId}/rostershift/{rosterShiftId}:
+    put:
+      tags:
+      - RosterShift
+      summary: Update roster shift
+      description: Update an individual roster shift
+      operationId: AuRosterShift_Put_3
+      parameters:
+      - in: path
+        name: rosterShiftId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: publish
+        title: Boolean
+        schema:
+          type: boolean
+      - in: query
+        name: clearBreaks
+        title: Nullable<Boolean>
+        schema:
+          type: boolean
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuEssRosterShiftModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuEssRosterShiftModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuEssRosterShiftModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuEssRosterShiftModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuEssRosterShiftModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                title: String
+                type: string
+                x-title: String
+            application/xml:
+              schema:
+                title: String
+                type: string
+                x-title: String
+            text/plain:
+              schema:
+                title: String
+                type: string
+                x-title: String
+            application/octet-stream:
+              schema:
+                title: String
+                type: string
+                x-title: String
+            text/json:
+              schema:
+                title: String
+                type: string
+                x-title: String
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuRosterShiftEditModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuRosterShiftEditModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuRosterShiftEditModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuRosterShiftEditModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuRosterShiftEditModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuRosterShiftEditModel'
+  /api/v2/business/{businessId}/rostershift/{rosterShiftId}/stub:
+    post:
+      tags:
+      - RosterShift
+      summary: Stub Shift Timesheets
+      description: Generates timesheets for the roster shift with the specified ID.
+      operationId: AuRosterShift_StubShiftTimesheets
+      parameters:
+      - in: path
+        name: rosterShiftId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StubRosterShiftViewModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/StubRosterShiftViewModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/StubRosterShiftViewModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/StubRosterShiftViewModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/StubRosterShiftViewModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/StubRosterShiftViewModel'
+components:
+  schemas:
+    StubRosterShiftViewModel:
+      title: StubRosterShiftViewModel
+      type: object
+      properties:
+        note:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    RosterShiftBreakApiModel:
+      title: RosterShiftBreakApiModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        startTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        isPaidBreak:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    AuRosterShiftEditModel:
+      title: AuRosterShiftEditModel
+      type: object
+      properties:
+        classificationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        classificationName:
+          title: String
+          type: string
+          x-title: String
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        qualifications:
+          title: IList<QualificationModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/QualificationModel'
+          x-title: IList<QualificationModel>
+        breaks:
+          title: IList<RosterShiftBreakApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/RosterShiftBreakApiModel'
+          x-title: IList<RosterShiftBreakApiModel>
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeName:
+          title: String
+          type: string
+          x-title: String
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        locationName:
+          title: String
+          type: string
+          x-title: String
+        workTypeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        workTypeName:
+          title: String
+          type: string
+          x-title: String
+        role:
+          $ref: '#/components/schemas/RosterShiftRole'
+        startTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        notes:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    AuRosterShiftMatchingResultModel:
+      title: AuRosterShiftMatchingResultModel
+      type: object
+      properties:
+        shift:
+          $ref: '#/components/schemas/AuEssRosterShiftModel'
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+    RosterShiftSwapModel:
+      title: RosterShiftSwapModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        fromEmployee:
+          title: String
+          type: string
+          x-title: String
+        toEmployee:
+          title: String
+          type: string
+          x-title: String
+        fromEmployeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        toEmployeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        dateCreated:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        note:
+          title: String
+          type: string
+          x-title: String
+        rejectedReason:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        statusDescription:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    AuRosterShiftGenerateTimesheetModel:
+      title: AuRosterShiftGenerateTimesheetModel
+      type: object
+      properties:
+        classificationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        classificationName:
+          title: String
+          type: string
+          x-title: String
+        description:
+          title: String
+          type: string
+          readOnly: true
+          x-title: String
+        isDifferent:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        fullyQualifiedLocationName:
+          title: String
+          type: string
+          x-title: String
+        warnings:
+          title: List<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: List<String>
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        token:
+          title: String
+          type: string
+          x-title: String
+        qualifications:
+          title: IList<QualificationModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/QualificationModel'
+          x-title: IList<QualificationModel>
+        breaks:
+          title: IList<RosterShiftBreakApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/RosterShiftBreakApiModel'
+          x-title: IList<RosterShiftBreakApiModel>
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeName:
+          title: String
+          type: string
+          x-title: String
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        locationName:
+          title: String
+          type: string
+          x-title: String
+        workTypeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        workTypeName:
+          title: String
+          type: string
+          x-title: String
+        role:
+          $ref: '#/components/schemas/RosterShiftRole'
+        startTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        notes:
+          title: String
+          type: string
+          x-title: String
+        published:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        accepted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        pendingSwap:
+          $ref: '#/components/schemas/RosterShiftSwapModel'
+        datePublished:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        biddable:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        shiftSwapCutoffTime:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        shiftAssignmentStatus:
+          title: Nullable<ShiftAssignmentStatusEnum>
+          enum:
+          - Pending
+          - Assigned
+          - Bidding
+          - PendingShiftSwap
+          - PendingShiftSwapAwaitingApproval
+          - ProposedShiftSwap
+          - ProposedShiftSwapAwaitingApproval
+          type: string
+          x-title: Nullable<ShiftAssignmentStatusEnum>
+      additionalProperties: false
+    AuEssRosterShiftModel:
+      title: AuEssRosterShiftModel
+      type: object
+      properties:
+        classificationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        classificationName:
+          title: String
+          type: string
+          x-title: String
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        token:
+          title: String
+          type: string
+          x-title: String
+        qualifications:
+          title: IList<QualificationModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/QualificationModel'
+        breaks:
+          title: IList<RosterShiftBreakApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/RosterShiftBreakApiModel'
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeName:
+          title: String
+          type: string
+          x-title: String
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        locationName:
+          title: String
+          type: string
+          x-title: String
+        workTypeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        workTypeName:
+          title: String
+          type: string
+          x-title: String
+        role:
+          $ref: '#/components/schemas/RosterShiftRole'
+        startTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        notes:
+          title: String
+          type: string
+          x-title: String
+        published:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        accepted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        pendingSwap:
+          $ref: '#/components/schemas/RosterShiftSwapModel'
+        datePublished:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        biddable:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        shiftSwapCutoffTime:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        shiftAssignmentStatus:
+          title: Nullable<ShiftAssignmentStatusEnum>
+          enum:
+          - Pending
+          - Assigned
+          - Bidding
+          - PendingShiftSwap
+          - PendingShiftSwapAwaitingApproval
+          - ProposedShiftSwap
+          - ProposedShiftSwapAwaitingApproval
+          type: string
+      additionalProperties: false
+    RosterShiftRole:
+      title: RosterShiftRole
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        className:
+          title: String
+          type: string
+          x-title: String
+        hexColourCode:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    QualificationModel:
+      title: QualificationModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    MyRosterShiftMatchingResultModel:
+      title: MyRosterShiftMatchingResultModel
+      type: object
+      properties:
+        shift:
+          $ref: '#/components/schemas/MyEssRosterShiftModel'
+      additionalProperties: false
+    RosterShiftEditModel:
+      title: RosterShiftEditModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        qualifications:
+          title: IList<QualificationModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/QualificationModel'
+          x-title: IList<QualificationModel>
+        breaks:
+          title: IList<RosterShiftBreakApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/RosterShiftBreakApiModel'
+          x-title: IList<RosterShiftBreakApiModel>
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeName:
+          title: String
+          type: string
+          x-title: String
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        locationName:
+          title: String
+          type: string
+          x-title: String
+        workTypeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        workTypeName:
+          title: String
+          type: string
+          x-title: String
+        role:
+          $ref: '#/components/schemas/RosterShiftRole'
+        startTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        notes:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    MyEssRosterShiftModel:
+      title: MyEssRosterShiftModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        token:
+          title: String
+          type: string
+          x-title: String
+        qualifications:
+          title: IList<QualificationModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/QualificationModel'
+          x-title: IList<QualificationModel>
+        breaks:
+          title: IList<RosterShiftBreakApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/RosterShiftBreakApiModel'
+          x-title: IList<RosterShiftBreakApiModel>
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeName:
+          title: String
+          type: string
+          x-title: String
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        locationName:
+          title: String
+          type: string
+          x-title: String
+        workTypeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        workTypeName:
+          title: String
+          type: string
+          x-title: String
+        role:
+          $ref: '#/components/schemas/RosterShiftRole'
+        startTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        notes:
+          title: String
+          type: string
+          x-title: String
+        published:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        accepted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        pendingSwap:
+          $ref: '#/components/schemas/RosterShiftSwapModel'
+        datePublished:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        biddable:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        shiftSwapCutoffTime:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        shiftAssignmentStatus:
+          title: Nullable<ShiftAssignmentStatusEnum>
+          enum:
+          - Pending
+          - Assigned
+          - Bidding
+          - PendingShiftSwap
+          - PendingShiftSwapAwaitingApproval
+          - ProposedShiftSwap
+          - ProposedShiftSwapAwaitingApproval
+          type: string
+          x-title: Nullable<ShiftAssignmentStatusEnum>
+      additionalProperties: false
+    MyRosterShiftGenerateTimesheetModel:
+      title: MyRosterShiftGenerateTimesheetModel
+      type: object
+      properties:
+        description:
+          title: String
+          type: string
+          readOnly: true
+          x-title: String
+        isDifferent:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        fullyQualifiedLocationName:
+          title: String
+          type: string
+          x-title: String
+        warnings:
+          title: List<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: List<String>
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        token:
+          title: String
+          type: string
+          x-title: String
+        qualifications:
+          title: IList<QualificationModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/QualificationModel'
+          x-title: IList<QualificationModel>
+        breaks:
+          title: IList<RosterShiftBreakApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/RosterShiftBreakApiModel'
+          x-title: IList<RosterShiftBreakApiModel>
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeName:
+          title: String
+          type: string
+          x-title: String
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        locationName:
+          title: String
+          type: string
+          x-title: String
+        workTypeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        workTypeName:
+          title: String
+          type: string
+          x-title: String
+        role:
+          $ref: '#/components/schemas/RosterShiftRole'
+        startTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        notes:
+          title: String
+          type: string
+          x-title: String
+        published:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        accepted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        pendingSwap:
+          $ref: '#/components/schemas/RosterShiftSwapModel'
+        datePublished:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        biddable:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        shiftSwapCutoffTime:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        shiftAssignmentStatus:
+          title: Nullable<ShiftAssignmentStatusEnum>
+          enum:
+          - Pending
+          - Assigned
+          - Bidding
+          - PendingShiftSwap
+          - PendingShiftSwapAwaitingApproval
+          - ProposedShiftSwap
+          - ProposedShiftSwapAwaitingApproval
+          type: string
+          x-title: Nullable<ShiftAssignmentStatusEnum>
+      additionalProperties: false
+    NzRosterShiftGenerateTimesheetModel:
+      title: NzRosterShiftGenerateTimesheetModel
+      type: object
+      properties:
+        description:
+          title: String
+          type: string
+          readOnly: true
+          x-title: String
+        isDifferent:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        fullyQualifiedLocationName:
+          title: String
+          type: string
+          x-title: String
+        warnings:
+          title: List<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: List<String>
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        token:
+          title: String
+          type: string
+          x-title: String
+        qualifications:
+          title: IList<QualificationModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/QualificationModel'
+          x-title: IList<QualificationModel>
+        breaks:
+          title: IList<RosterShiftBreakApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/RosterShiftBreakApiModel'
+          x-title: IList<RosterShiftBreakApiModel>
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeName:
+          title: String
+          type: string
+          x-title: String
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        locationName:
+          title: String
+          type: string
+          x-title: String
+        workTypeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        workTypeName:
+          title: String
+          type: string
+          x-title: String
+        role:
+          $ref: '#/components/schemas/RosterShiftRole'
+        startTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        notes:
+          title: String
+          type: string
+          x-title: String
+        published:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        accepted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        pendingSwap:
+          $ref: '#/components/schemas/RosterShiftSwapModel'
+        datePublished:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        biddable:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        shiftSwapCutoffTime:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        shiftAssignmentStatus:
+          title: Nullable<ShiftAssignmentStatusEnum>
+          enum:
+          - Pending
+          - Assigned
+          - Bidding
+          - PendingShiftSwap
+          - PendingShiftSwapAwaitingApproval
+          - ProposedShiftSwap
+          - ProposedShiftSwapAwaitingApproval
+          type: string
+          x-title: Nullable<ShiftAssignmentStatusEnum>
+      additionalProperties: false
+    NzRosterShiftMatchingResultModel:
+      title: NzRosterShiftMatchingResultModel
+      type: object
+      properties:
+        shift:
+          $ref: '#/components/schemas/NzEssRosterShiftModel'
+      additionalProperties: false
+    NzEssRosterShiftModel:
+      title: NzEssRosterShiftModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        token:
+          title: String
+          type: string
+          x-title: String
+        qualifications:
+          title: IList<QualificationModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/QualificationModel'
+          x-title: IList<QualificationModel>
+        breaks:
+          title: IList<RosterShiftBreakApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/RosterShiftBreakApiModel'
+          x-title: IList<RosterShiftBreakApiModel>
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeName:
+          title: String
+          type: string
+          x-title: String
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        locationName:
+          title: String
+          type: string
+          x-title: String
+        workTypeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        workTypeName:
+          title: String
+          type: string
+          x-title: String
+        role:
+          $ref: '#/components/schemas/RosterShiftRole'
+        startTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        notes:
+          title: String
+          type: string
+          x-title: String
+        published:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        accepted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        pendingSwap:
+          $ref: '#/components/schemas/RosterShiftSwapModel'
+        datePublished:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        biddable:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        shiftSwapCutoffTime:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        shiftAssignmentStatus:
+          title: Nullable<ShiftAssignmentStatusEnum>
+          enum:
+          - Pending
+          - Assigned
+          - Bidding
+          - PendingShiftSwap
+          - PendingShiftSwapAwaitingApproval
+          - ProposedShiftSwap
+          - ProposedShiftSwapAwaitingApproval
+          type: string
+          x-title: Nullable<ShiftAssignmentStatusEnum>
+      additionalProperties: false
+    SgEssRosterShiftModel:
+      title: SgEssRosterShiftModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        token:
+          title: String
+          type: string
+          x-title: String
+        qualifications:
+          title: IList<QualificationModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/QualificationModel'
+          x-title: IList<QualificationModel>
+        breaks:
+          title: IList<RosterShiftBreakApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/RosterShiftBreakApiModel'
+          x-title: IList<RosterShiftBreakApiModel>
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeName:
+          title: String
+          type: string
+          x-title: String
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        locationName:
+          title: String
+          type: string
+          x-title: String
+        workTypeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        workTypeName:
+          title: String
+          type: string
+          x-title: String
+        role:
+          $ref: '#/components/schemas/RosterShiftRole'
+        startTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        notes:
+          title: String
+          type: string
+          x-title: String
+        published:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        accepted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        pendingSwap:
+          $ref: '#/components/schemas/RosterShiftSwapModel'
+        datePublished:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        biddable:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        shiftSwapCutoffTime:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        shiftAssignmentStatus:
+          title: Nullable<ShiftAssignmentStatusEnum>
+          enum:
+          - Pending
+          - Assigned
+          - Bidding
+          - PendingShiftSwap
+          - PendingShiftSwapAwaitingApproval
+          - ProposedShiftSwap
+          - ProposedShiftSwapAwaitingApproval
+          type: string
+          x-title: Nullable<ShiftAssignmentStatusEnum>
+      additionalProperties: false
+    SgRosterShiftGenerateTimesheetModel:
+      title: SgRosterShiftGenerateTimesheetModel
+      type: object
+      properties:
+        description:
+          title: String
+          type: string
+          readOnly: true
+          x-title: String
+        isDifferent:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        fullyQualifiedLocationName:
+          title: String
+          type: string
+          x-title: String
+        warnings:
+          title: List<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: List<String>
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        token:
+          title: String
+          type: string
+          x-title: String
+        qualifications:
+          title: IList<QualificationModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/QualificationModel'
+          x-title: IList<QualificationModel>
+        breaks:
+          title: IList<RosterShiftBreakApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/RosterShiftBreakApiModel'
+          x-title: IList<RosterShiftBreakApiModel>
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeName:
+          title: String
+          type: string
+          x-title: String
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        locationName:
+          title: String
+          type: string
+          x-title: String
+        workTypeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        workTypeName:
+          title: String
+          type: string
+          x-title: String
+        role:
+          $ref: '#/components/schemas/RosterShiftRole'
+        startTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        notes:
+          title: String
+          type: string
+          x-title: String
+        published:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        accepted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        pendingSwap:
+          $ref: '#/components/schemas/RosterShiftSwapModel'
+        datePublished:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        biddable:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        shiftSwapCutoffTime:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        shiftAssignmentStatus:
+          title: Nullable<ShiftAssignmentStatusEnum>
+          enum:
+          - Pending
+          - Assigned
+          - Bidding
+          - PendingShiftSwap
+          - PendingShiftSwapAwaitingApproval
+          - ProposedShiftSwap
+          - ProposedShiftSwapAwaitingApproval
+          type: string
+          x-title: Nullable<ShiftAssignmentStatusEnum>
+      additionalProperties: false
+    SgRosterShiftMatchingResultModel:
+      title: SgRosterShiftMatchingResultModel
+      type: object
+      properties:
+        shift:
+          $ref: '#/components/schemas/SgEssRosterShiftModel'
+      additionalProperties: false
+    UkEssRosterShiftModel:
+      title: UkEssRosterShiftModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        token:
+          title: String
+          type: string
+          x-title: String
+        qualifications:
+          title: IList<QualificationModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/QualificationModel'
+          x-title: IList<QualificationModel>
+        breaks:
+          title: IList<RosterShiftBreakApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/RosterShiftBreakApiModel'
+          x-title: IList<RosterShiftBreakApiModel>
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeName:
+          title: String
+          type: string
+          x-title: String
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        locationName:
+          title: String
+          type: string
+          x-title: String
+        workTypeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        workTypeName:
+          title: String
+          type: string
+          x-title: String
+        role:
+          $ref: '#/components/schemas/RosterShiftRole'
+        startTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        notes:
+          title: String
+          type: string
+          x-title: String
+        published:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        accepted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        pendingSwap:
+          $ref: '#/components/schemas/RosterShiftSwapModel'
+        datePublished:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        biddable:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        shiftSwapCutoffTime:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        shiftAssignmentStatus:
+          title: Nullable<ShiftAssignmentStatusEnum>
+          enum:
+          - Pending
+          - Assigned
+          - Bidding
+          - PendingShiftSwap
+          - PendingShiftSwapAwaitingApproval
+          - ProposedShiftSwap
+          - ProposedShiftSwapAwaitingApproval
+          type: string
+          x-title: Nullable<ShiftAssignmentStatusEnum>
+      additionalProperties: false
+    UkRosterShiftGenerateTimesheetModel:
+      title: UkRosterShiftGenerateTimesheetModel
+      type: object
+      properties:
+        description:
+          title: String
+          type: string
+          readOnly: true
+          x-title: String
+        isDifferent:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        fullyQualifiedLocationName:
+          title: String
+          type: string
+          x-title: String
+        warnings:
+          title: List<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: List<String>
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        token:
+          title: String
+          type: string
+          x-title: String
+        qualifications:
+          title: IList<QualificationModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/QualificationModel'
+          x-title: IList<QualificationModel>
+        breaks:
+          title: IList<RosterShiftBreakApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/RosterShiftBreakApiModel'
+          x-title: IList<RosterShiftBreakApiModel>
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeName:
+          title: String
+          type: string
+          x-title: String
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        locationName:
+          title: String
+          type: string
+          x-title: String
+        workTypeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        workTypeName:
+          title: String
+          type: string
+          x-title: String
+        role:
+          $ref: '#/components/schemas/RosterShiftRole'
+        startTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        notes:
+          title: String
+          type: string
+          x-title: String
+        published:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        accepted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        pendingSwap:
+          $ref: '#/components/schemas/RosterShiftSwapModel'
+        datePublished:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        biddable:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        shiftSwapCutoffTime:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        shiftAssignmentStatus:
+          title: Nullable<ShiftAssignmentStatusEnum>
+          enum:
+          - Pending
+          - Assigned
+          - Bidding
+          - PendingShiftSwap
+          - PendingShiftSwapAwaitingApproval
+          - ProposedShiftSwap
+          - ProposedShiftSwapAwaitingApproval
+          type: string
+          x-title: Nullable<ShiftAssignmentStatusEnum>
+      additionalProperties: false
+    UkRosterShiftMatchingResultModel:
+      title: UkRosterShiftMatchingResultModel
+      type: object
+      properties:
+        shift:
+          $ref: '#/components/schemas/UkEssRosterShiftModel'
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

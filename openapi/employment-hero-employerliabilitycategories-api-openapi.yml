@@ -1,0 +1,289 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Employer Liability Categories API
+  version: '1.0'
+  description: 'Operations tagged EmployerLiabilityCategories across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: EmployerLiabilityCategories
+  description: Employer Liability Categories
+paths:
+  /api/v2/business/{businessId}/employerliabilitycategory:
+    get:
+      tags:
+      - EmployerLiabilityCategories
+      summary: List Employer Liability Categories
+      description: 'Lists all the employer liability categories for this business.
+
+
+        This operation supports OData queries (only $filter, $orderby, $top, $skip).'
+      operationId: EmployerLiabilityCategory_GetEmployerLiabilityCategories
+      parameters:
+      - in: query
+        name: query
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<EmployerLiabilityCategoryModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+            application/xml:
+              schema:
+                title: IEnumerable<EmployerLiabilityCategoryModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+            text/plain:
+              schema:
+                title: IEnumerable<EmployerLiabilityCategoryModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<EmployerLiabilityCategoryModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+            text/json:
+              schema:
+                title: IEnumerable<EmployerLiabilityCategoryModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+    post:
+      tags:
+      - EmployerLiabilityCategories
+      summary: Create Employer Liability Category
+      description: Creates an employer liability category for the business.
+      operationId: EmployerLiabilityCategory_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+  /api/v2/business/{businessId}/employerliabilitycategory/{id}:
+    get:
+      tags:
+      - EmployerLiabilityCategories
+      summary: Get Employer Liability Category
+      description: Gets the employer liability category with the specified ID.
+      operationId: EmployerLiabilityCategory_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+    put:
+      tags:
+      - EmployerLiabilityCategories
+      summary: Update Employer Liability Category
+      description: Updates the employer liability category with the specified ID.
+      operationId: EmployerLiabilityCategory_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EmployerLiabilityCategoryModel'
+    delete:
+      tags:
+      - EmployerLiabilityCategories
+      summary: Delete Employer Liability Category
+      description: Deletes the employer liability category with the specified ID.
+      operationId: EmployerLiabilityCategory_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    EmployerLiabilityCategoryModel:
+      title: EmployerLiabilityCategoryModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        externalReferenceId:
+          title: String
+          type: string
+          x-title: String
+        canBeDeleted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        hideFromPaySlips:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        showTotalPayments:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        includeInShiftCosts:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isSuperannuationFund:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

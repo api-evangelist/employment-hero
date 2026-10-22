@@ -1,0 +1,23 @@
+generated: '2026-10-20'
+method: searched
+source: https://developer.employmenthero.com/api-references/authentication.md
+standards:
+- id: oauth2
+  conforms: true
+  evidence: '"The preferred secure way to authenticate against and access the Employment Hero API is by using an OAuth 2.0 protocol ... follows a basic pattern from OAuth 2.0 documentation (RFC 6749)" -- https://developer.employmenthero.com/api-references/authentication.md'
+- id: pkce
+  conforms: true
+  evidence: '"As part of the PKCE mandate rollout (effective 2026-09-30), the code_challenge and code_challenge_method query parameters below, and the code_verifier request body field, are required." -- https://developer.employmenthero.com/api-references/authentication/obtain-access-token.md'
+- id: odata
+  conforms: partial
+  scope: Employment Hero Payroll API
+  evidence: '"The YourPayroll API supports OData (v3) filtering for most GET operations ... Please note that $expand is not supported." -- https://api.keypay.com.au/guides/ODataFiltering.html'
+- id: pagination
+  conforms: true
+  evidence: 'HR API list endpoints take page_index (default 1) and item_per_page (default 20, max 100) and return total_items / total_pages -- https://developer.employmenthero.com/api-references/employee/get-employees/v1.md; Payroll API pages with OData $skip/$top (max 100).'
+- id: webhook-signature-hmac-sha256
+  conforms: true
+  evidence: '"The signature is generated using a hash-based message authentication code (HMAC) with SHA-256, which signs the combination of the request payload and the timestamp." Header X-EmploymentHero-Signature -- https://developer.employmenthero.com/api-references/webhook/verify-webhook-request.md'
+- id: rfc9457
+  conforms: false
+  evidence: 'The errors page documents only HTTP status-code classes (2xx/4xx/5xx); no problem+json envelope is described -- https://developer.employmenthero.com/api-references/introduction/errors.md'

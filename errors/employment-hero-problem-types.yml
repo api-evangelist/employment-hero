@@ -1,0 +1,17 @@
+generated: '2026-10-20'
+method: searched
+source: https://developer.employmenthero.com/api-references/introduction/errors.md
+format: http-status
+envelope: null
+note: The provider publishes no error-code registry or error envelope; only the status-code classes below. Individual operations in the HR spec declare no 4xx/5xx responses.
+problems:
+- status: 2xx
+  title: Success
+  description: '"Codes in the 2xx range indicate success."'
+- status: 4xx
+  title: Client error
+  description: '"Codes in the 4xx range indicate an error that failed given the information provided (e.g., a required parameter was omitted, a charge failed, etc.)."'
+  remediation: Correct the request parameters and retry.
+- status: 5xx
+  title: Server error
+  description: '"Codes in the 5xx range indicate an error with Employment Hero''s servers."'

@@ -1,0 +1,614 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Brand API
+  version: '1.0'
+  description: 'Operations tagged Brand across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: Brand
+  description: Brand
+paths:
+  /api/v2/brand:
+    get:
+      tags:
+      - Brand
+      summary: List Brand Labels
+      description: Lists all the brand labels to which you have access.
+      operationId: Brand_GetWhiteLabels
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<BrandModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BrandModel'
+            application/xml:
+              schema:
+                title: IEnumerable<BrandModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BrandModel'
+            text/plain:
+              schema:
+                title: IEnumerable<BrandModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BrandModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<BrandModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BrandModel'
+            text/json:
+              schema:
+                title: IEnumerable<BrandModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BrandModel'
+  /api/v2/brand/{brandId}/business-templates:
+    get:
+      tags:
+      - Brand
+      summary: List Business Templates
+      operationId: BusinessTemplates_GetBusinessTemplates
+      parameters:
+      - in: path
+        name: brandId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<BusinessTemplateModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BusinessTemplateModel'
+            application/xml:
+              schema:
+                title: IList<BusinessTemplateModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BusinessTemplateModel'
+            text/plain:
+              schema:
+                title: IList<BusinessTemplateModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BusinessTemplateModel'
+            application/octet-stream:
+              schema:
+                title: IList<BusinessTemplateModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BusinessTemplateModel'
+            text/json:
+              schema:
+                title: IList<BusinessTemplateModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BusinessTemplateModel'
+  /api/v2/brand/{brandId}/business/{businessId}/cancel:
+    delete:
+      tags:
+      - Brand
+      summary: Cancel Business
+      description: 'Delete all pay runs and employees. Disassociates users who have access to other businesses or brands. Deactivates users only associated with this business.
+
+        This endpoint is for brand users only.'
+      operationId: CancelBusiness_Cancel
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: brandId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /api/v2/brand/{brandId}/reports/activeemployees:
+    get:
+      tags:
+      - Brand
+      summary: Active Employees Report
+      description: Brand Active Employees Report
+      operationId: AuBrandActiveEmployeeReport_Get
+      parameters:
+      - in: path
+        name: brandId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: EmailAddresses
+        title: String
+        schema:
+          type: string
+      - in: query
+        name: IncludeInactiveBusinesses
+        title: Boolean
+        schema:
+          type: boolean
+      - in: query
+        name: FromDate
+        title: DateTime
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: ToDate
+        title: DateTime
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: LocationId
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: EmployingEntityId
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<AuActiveEmployeesModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuActiveEmployeesModel'
+            application/xml:
+              schema:
+                title: IList<AuActiveEmployeesModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuActiveEmployeesModel'
+            text/plain:
+              schema:
+                title: IList<AuActiveEmployeesModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuActiveEmployeesModel'
+            application/octet-stream:
+              schema:
+                title: IList<AuActiveEmployeesModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuActiveEmployeesModel'
+            text/json:
+              schema:
+                title: IList<AuActiveEmployeesModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuActiveEmployeesModel'
+  /api/v2/brand/{brandId}/reports/signups:
+    get:
+      tags:
+      - Brand
+      summary: Signup Report
+      description: Brand sign up report
+      operationId: BrandReport_Get
+      parameters:
+      - in: path
+        name: brandId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: EmailAddresses
+        title: String
+        schema:
+          type: string
+      - in: query
+        name: FromDate
+        title: DateTime
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: ToDate
+        title: DateTime
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: LocationId
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: EmployingEntityId
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<SignupModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SignupModel'
+            application/xml:
+              schema:
+                title: IList<SignupModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SignupModel'
+            text/plain:
+              schema:
+                title: IList<SignupModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SignupModel'
+            application/octet-stream:
+              schema:
+                title: IList<SignupModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SignupModel'
+            text/json:
+              schema:
+                title: IList<SignupModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SignupModel'
+  /api/v2/brand/{id}:
+    get:
+      tags:
+      - Brand
+      summary: Get Brand Label by ID
+      description: Gets the brand label with the specified ID.
+      operationId: Brand_Get
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BrandModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/BrandModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BrandModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/BrandModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BrandModel'
+components:
+  schemas:
+    SignupModel:
+      title: SignupModel
+      type: object
+      properties:
+        businessId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        businessName:
+          title: String
+          type: string
+          x-title: String
+        dateCreated:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        billingPlan:
+          title: String
+          type: string
+          x-title: String
+        realmId:
+          title: String
+          type: string
+          x-title: String
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        contactEmail:
+          title: String
+          type: string
+          x-title: String
+        emailAddresses:
+          title: String
+          type: string
+          x-title: String
+        userIds:
+          title: String
+          type: string
+          x-title: String
+        numberOfCompleteEmployees:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        numberOfIncompleteEmployees:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        dateLastPayRunFinalised:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+      additionalProperties: false
+    BrandModel:
+      title: BrandModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    AuActiveEmployeesModel:
+      title: AuActiveEmployeesModel
+      type: object
+      properties:
+        abn:
+          title: String
+          type: string
+          x-title: String
+        isStpEnabled:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        businessId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        businessName:
+          title: String
+          type: string
+          x-title: String
+        dateCreated:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        billingPlan:
+          title: String
+          type: string
+          x-title: String
+        realmId:
+          title: String
+          type: string
+          x-title: String
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        emailAddresses:
+          title: String
+          type: string
+          x-title: String
+        userIds:
+          title: String
+          type: string
+          x-title: String
+        numberOfIncompleteEmployees:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        numberOfCompleteEmployees:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        numberOfEmployeesPaid:
+          format: int32
+          title: Int32
+          type: integer
+          readOnly: true
+          x-title: Int32
+        numberOfPayRuns:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        dateLastPayRunFinalised:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          readOnly: true
+          x-title: Nullable<DateTime>
+        dateLastBillableActivity:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        activeEmps:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+      additionalProperties: false
+    BusinessTemplateModel:
+      title: BusinessTemplateModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    CommonActiveEmployeesModel:
+      title: CommonActiveEmployeesModel
+      type: object
+      properties:
+        businessId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        businessName:
+          title: String
+          type: string
+          x-title: String
+        dateCreated:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        billingPlan:
+          title: String
+          type: string
+          x-title: String
+        realmId:
+          title: String
+          type: string
+          x-title: String
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        emailAddresses:
+          title: String
+          type: string
+          x-title: String
+        userIds:
+          title: String
+          type: string
+          x-title: String
+        numberOfIncompleteEmployees:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        numberOfCompleteEmployees:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        numberOfEmployeesPaid:
+          format: int32
+          title: Int32
+          type: integer
+          readOnly: true
+          x-title: Int32
+        numberOfPayRuns:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        dateLastPayRunFinalised:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          readOnly: true
+          x-title: Nullable<DateTime>
+        dateLastBillableActivity:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        activeEmps:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

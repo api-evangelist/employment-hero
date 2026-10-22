@@ -1,0 +1,155 @@
+generated: '2026-10-20'
+method: searched
+source:
+- https://employmenthero.com/legals/privacy-policy
+- https://employmenthero.com/legals/terms-conditions/
+- https://employmenthero.com/legals/privacy-policy/data-processing/
+- https://employmenthero.com/legals/ai-services-statement/
+notes: >-
+  The pre-flight dossier had no legal_pages, so the legal pages were found through the site_links and the
+  /legals/ hub (HTTP 200) and fetched on 2026-10-20 with GET only. The privacy policy states it is
+  "effective from 3 June 2026". trust.employmenthero.com returned 200 but is a JavaScript shell (5 words of
+  text), so no quotes were taken from it. Signals the pages do not address (global_privacy_control,
+  accessibility_conformance, sbom, transparency_report, notice_and_action, support_lifetime,
+  training_data_summary) are left out on purpose.
+signals:
+  data_subject_request:
+    url: https://employmenthero.com/legals/privacy-policy
+    section: 13. Your rights and choices
+    channel: privacy@employmenthero.com
+    rights_named: [access, correction, deletion, restriction, objection, portability (structured machine-readable format)]
+    evidence:
+    - source: https://employmenthero.com/legals/privacy-policy
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: You can also obtain the Personal Data you provide to us on a contractual basis or with your consent, in a structured, machine-readable format.
+    - source: https://employmenthero.com/legals/privacy-policy
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: Where your Personal Data has been provided to us by a third party acting in the capacity of a data controller (such as your employer), you must ask that third party to correct or delete your Personal Data on your behalf.
+    - source: https://employmenthero.com/legals/privacy-policy
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: If you have unresolved concerns, you have the right to complain to a data protection authority where you live, work or where you believe a breach may have occurred.
+    note: >-
+      Names access, correction, deletion, restriction, objection and portability rights. Full deletion requires
+      emailing privacy@employmenthero.com. Employee data that an employer controls has to go through the employer.
+      The policy gives no response time.
+  subprocessors:
+    url: https://employmenthero.com/legals/privacy-policy/data-processing/
+    section: 2.2 Sub-Processors
+    change_notice: opt-in email subscription via the Trust Centre ("Sub-processor List Updates"); 30-day objection window
+    evidence:
+    - source: https://employmenthero.com/legals/privacy-policy/data-processing/
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: If you subscribe, you will receive prior written notice by email of any changes to the Sub-Processor list.
+    - source: https://employmenthero.com/legals/privacy-policy/data-processing/
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: We can at any time and without justification either appoint a new Sub-Processor, or remove or change an existing Sub-Processor.
+    - source: https://employmenthero.com/legals/privacy-policy
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: Providers of those tools may process your Personal Data as sub-processors, subject to strict data protection obligations and prohibitions on model training.
+    note: >-
+      The DPA links to a current sub-processor list, which it treats as pre-approved. Customers only get prior
+      notice of changes if they subscribe through the Trust Centre. The list itself is on the JavaScript-rendered
+      trust site and was not read here.
+  ai_transparency:
+    url: https://employmenthero.com/legals/ai-services-statement/
+    section: AI Services Statement
+    evidence:
+    - source: https://employmenthero.com/legals/ai-services-statement/
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: We do not use Personal Data to train AI models. Where our AI Services process your data, this occurs through inference, your data informs the AI’s output in the moment but does not alter the underlying model.
+    - source: https://employmenthero.com/legals/ai-services-statement/
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: The AI Recruitment Agent is a decision-support tool. It informs recruiter decisions but does not make hiring decisions autonomously.
+    - source: https://employmenthero.com/legals/ai-services-statement/
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: Our AI Services are embedded as core features or services of the EH Platform, and you may not be able to opt out of its inclusion.
+    note: >-
+      A dedicated AI Services Statement, referenced from clause 32 and Appendix C (AI Terms) of the General Terms.
+      It commits to not training on Personal Data, describes human oversight of recruitment AI, and admits that
+      some AI features cannot be opted out of.
+  data_residency:
+    url: https://employmenthero.com/legals/privacy-policy/data-processing/
+    section: Data storage
+    regions: {APAC: [Australia], United Kingdom: [Australia, Ireland], Canada: [Canada, Australia]}
+    evidence:
+    - source: https://employmenthero.com/legals/privacy-policy/data-processing/
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: HR related Personal Data within our platform is located in data centres in Australia and Ireland.
+    - source: https://employmenthero.com/legals/privacy-policy/data-processing/
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: Payroll related Personal Data within our platform is primarily located in data centres in Canada.
+    - source: https://employmenthero.com/legals/privacy-policy
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: Personal Data held by us will be stored and managed on secure data centres in Australia, Ireland and Canada by our third-party storage provider.
+    note: >-
+      The DPA lists data-centre locations by region. APAC data is in Australia. For UK customers, HR data is in
+      Australia and Ireland and payroll data is mainly in Ireland. For Canadian customers, classic Humi data is in
+      Canada; for the Employment Operating System, HR data is in Australia and Canada and payroll is mainly in Canada.
+      Section 9 of the privacy policy covers international transfers.
+  incident_notification:
+    url: https://employmenthero.com/legals/privacy-policy/data-processing/
+    section: 2.4 Data Breach
+    stated_sla: without undue delay (no fixed hours for the provider); customers must notify Employment Hero within 24 hours
+    evidence:
+    - source: https://employmenthero.com/legals/privacy-policy/data-processing/
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: 2.4.1 We will notify you in writing (including via email), without undue delay, if we become aware of a Data Breach that impacts you and requires notice to you under Applicable Law.
+    - source: https://employmenthero.com/legals/terms-conditions/
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: If you believe that there may have been a Data Breach impacting the EH Platform, you must notify us as soon as possible and in any event within 24 hours of you becoming aware of the Data Breach.
+    note: >-
+      Employment Hero only commits to notify "without undue delay", and only where the law requires notice. The
+      customer has a fixed 24-hour obligation. General Terms clause 21 also bars the customer from notifying
+      regulators without consent unless the law requires it.
+  exit_assistance:
+    url: https://employmenthero.com/legals/terms-conditions/
+    section: 18. Your Data on termination
+    evidence:
+    - source: https://employmenthero.com/legals/terms-conditions/
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: You may access and download Your Data while you have an account with us. After your account has been terminated, we will have no obligation to store or provide access to Your Data or any parts of the EH Platform.
+    - source: https://employmenthero.com/legals/privacy-policy/data-processing/
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: at your written request, delete or return to you any Customer Personal Data within the agreed period of time after the end of the provision of the Services as set out in the Agreement (or within a reasonable period of time if the Agreement is silent on this point), unless Applicable Law requires
+    note: >-
+      The General Terms offer self-service download only while the account is active, and no obligation to keep
+      data after termination. The DPA adds a written-request route to have Customer Personal Data returned or
+      deleted after the service ends.
+  data_retention:
+    url: https://employmenthero.com/legals/privacy-policy
+    section: 12. Data retention
+    evidence:
+    - source: https://employmenthero.com/legals/privacy-policy
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: We retain data for as long as necessary to provide our Services and in accordance with our internal Data Retention Policy.
+    - source: https://employmenthero.com/legals/privacy-policy
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: You can delete some data whenever you like, some data is deleted automatically, and some data we retain for longer periods of time.
+    note: Retention is decided case by case under an internal policy that is not published. No fixed retention periods are stated.
+  age_assurance:
+    url: https://employmenthero.com/legals/privacy-policy
+    section: 6. Children’s Privacy
+    evidence:
+    - source: https://employmenthero.com/legals/privacy-policy
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: We do not knowingly collect Personal Data from anyone under the age of 16 (or the applicable minimum age in your jurisdiction) without verifiable parental or guardian consent.
+    note: The policy sets a minimum age of 16 and requires parental consent below it. It describes no age-verification mechanism.

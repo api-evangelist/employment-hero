@@ -1,0 +1,49 @@
+generated: '2026-10-20'
+method: searched
+source: https://employmenthero.com/pricing/
+name: Employment Hero pricing
+audience: business-product
+pricing_basis: per-seat
+published: true
+delivery:
+  delivery: managed
+api_access:
+  docs_statement: '"API access is currently available on a Platinum subscription and above." (https://developer.employmenthero.com/api-references/introduction.md)'
+  pricing_page_feature: 'API Portal Access -- "Integrate with external systems via API." -- ticked for HR Elite and Employment Unlimited only in the pricing page feature comparison'
+  note: The developer docs still use the legacy "Platinum" tier name, which no longer appears on the pricing page.
+plan_count: 5
+plans:
+- name: HR Essentials
+  description: Designed for teams moving away from spreadsheets and manual processes.
+  price_text: "$10"
+  price: 10
+  features: [Leave management, Employee records, Document management, Onboarding and offboarding, Policies and compliance tools, Help centre and chat support]
+  limits: []
+  api_access: false
+- name: HR Engage
+  description: Everything in HR Essentials, plus tools to support engagement, performance and growth.
+  price_text: "$14"
+  price: 14
+  features: [Recruitment, Expenses, "Performance Management (Reviews, 1:1s, Feedback)", Learning Management, "Advanced HR (Hero Points, Assets, Reports)", Recruitment Agent]
+  limits: []
+  api_access: false
+- name: HR Elite
+  description: Everything in HR Engage, plus advanced automation, reporting and security.
+  price_text: Custom
+  price: Contact sales
+  features: [API Portal Access, "Talent Development (Workforce Planning, Compensation Management, Goals, 360 Reviews)", Advanced Analytics and Reporting, Workflows]
+  limits: []
+  api_access: true
+- name: Employment Unlimited
+  description: Our most comprehensive plan.
+  price_text: Custom
+  price: Contact sales
+  features: [API Portal Access, Payroll, Employee Assistance Program, Priority support services, HR Advisory, Learning Bundle, Team Chat]
+  limits: ["Minimums apply: Your subscription must include a minimum of 10 Users."]
+  api_access: true
+- name: Payroll
+  price_text: "$10"
+  price: 10
+  features: []
+  limits: ["Minimums apply: Your subscription must include a minimum of 10 Users."]
+note: The page shows HR tier prices as "$10" / "$14" followed by "* Conditions apply" without stating the billing unit beside them; add-ons are priced "per employee/month*". Add-ons (Chat $2, Rostering & Time and Attendance $4, Managed Payroll $20, EAP Standard $8 per employee/month) are not API-relevant and are omitted.

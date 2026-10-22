@@ -1,0 +1,1443 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Pay Condition API
+  version: '1.0'
+  description: 'Operations tagged PayCondition across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: PayCondition
+  description: Pay Condition
+paths:
+  /api/v2/business/{businessId}/payconditionruleset:
+    get:
+      tags:
+      - PayCondition
+      summary: List Pay Condition Rule Sets
+      description: 'Lists all pay condition rule sets for the business. Supports OData queries ($filter, $orderby, $top, $skip).
+
+
+        This operation supports OData queries (only $filter, $orderby, $top, $skip).'
+      operationId: AuPayConditionRuleSet_GetPayConditionRuleSets
+      parameters:
+      - in: query
+        name: query
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<AuPayConditionRuleSetApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+            application/xml:
+              schema:
+                title: IEnumerable<AuPayConditionRuleSetApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+            text/plain:
+              schema:
+                title: IEnumerable<AuPayConditionRuleSetApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<AuPayConditionRuleSetApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+            text/json:
+              schema:
+                title: IEnumerable<AuPayConditionRuleSetApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+    post:
+      tags:
+      - PayCondition
+      summary: Create Pay Condition Rule Set
+      description: 'Creates a new pay condition rule set. Note: Cannot create award-based rule sets via API.'
+      operationId: AuPayConditionRuleSet_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUpdatePayConditionRuleSetRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreateUpdatePayConditionRuleSetRequest'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/CreateUpdatePayConditionRuleSetRequest'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CreateUpdatePayConditionRuleSetRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CreateUpdatePayConditionRuleSetRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CreateUpdatePayConditionRuleSetRequest'
+  /api/v2/business/{businessId}/payconditionruleset/clone:
+    post:
+      tags:
+      - PayCondition
+      summary: Clone Pay Condition Rule Set
+      description: 'Clones an existing pay condition rule set. The cloned rule set will have the same rules and settings as the original,
+
+        but will not be associated with any award package. If no name is provided, the name will be ''{original name} - Copy''.'
+      operationId: AuPayConditionRuleSet_Clone
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClonePayConditionRuleSetRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ClonePayConditionRuleSetRequest'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/ClonePayConditionRuleSetRequest'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ClonePayConditionRuleSetRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ClonePayConditionRuleSetRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ClonePayConditionRuleSetRequest'
+  /api/v2/business/{businessId}/payconditionruleset/{id}:
+    get:
+      tags:
+      - PayCondition
+      summary: Get Pay Condition Rule Set by ID
+      description: Gets the pay condition rule set with the specified ID.
+      operationId: AuPayConditionRuleSet_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+    put:
+      tags:
+      - PayCondition
+      summary: Update Pay Condition Rule Set
+      description: Updates the pay condition rule set with the specified ID. Cannot modify locked award-based rule sets.
+      operationId: AuPayConditionRuleSet_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuPayConditionRuleSetApiModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUpdatePayConditionRuleSetRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreateUpdatePayConditionRuleSetRequest'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/CreateUpdatePayConditionRuleSetRequest'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CreateUpdatePayConditionRuleSetRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CreateUpdatePayConditionRuleSetRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CreateUpdatePayConditionRuleSetRequest'
+components:
+  schemas:
+    AuPayConditionRuleSetApiModel:
+      title: AuPayConditionRuleSetApiModel
+      type: object
+      properties:
+        businessAwardPackageId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        businessAwardPackageName:
+          title: String
+          type: string
+          x-title: String
+        periods:
+          title: IList<PayConditionRuleSetPeriodApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/PayConditionRuleSetPeriodApiModel'
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        description:
+          title: String
+          type: string
+          x-title: String
+        periodType:
+          title: RuleSetPeriodType
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - CalendarMonth
+          - FourWeekly
+          - SixWeekly
+          - ThreeWeekly
+          - EightWeekly
+          type: string
+        periodEnding:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        dayOfWeekEnding:
+          title: Nullable<DayOfWeek>
+          enum:
+          - Sunday
+          - Monday
+          - Tuesday
+          - Wednesday
+          - Thursday
+          - Friday
+          - Saturday
+          type: string
+        dayOfMonthEnding:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        currentPeriod:
+          $ref: '#/components/schemas/ShiftPeriod'
+        shiftConsolidationOption:
+          title: ShiftConsolidationOption
+          enum:
+          - None
+          - Duration
+          - SameDay
+          type: string
+        shiftConsolidationMinutes:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        disabledRules:
+          title: IList<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: IList<String>
+      additionalProperties: false
+    CreateUpdatePayConditionRuleSetRequest:
+      title: CreateUpdatePayConditionRuleSetRequest
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          title: String
+          type: string
+          x-title: String
+        description:
+          title: String
+          type: string
+          x-title: String
+        periodType:
+          title: RuleSetPeriodType
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - CalendarMonth
+          - FourWeekly
+          - SixWeekly
+          - ThreeWeekly
+          - EightWeekly
+          type: string
+          x-title: RuleSetPeriodType
+        periodEnding:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        dayOfWeekEnding:
+          title: Nullable<DayOfWeek>
+          enum:
+          - Sunday
+          - Monday
+          - Tuesday
+          - Wednesday
+          - Thursday
+          - Friday
+          - Saturday
+          type: string
+          x-title: Nullable<DayOfWeek>
+        dayOfMonthEnding:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        shiftConsolidationOption:
+          title: ShiftConsolidationOption
+          enum:
+          - None
+          - Duration
+          - SameDay
+          type: string
+          x-title: ShiftConsolidationOption
+        shiftConsolidationMinutes:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        periods:
+          title: IList<CreateUpdatePayConditionRuleSetPeriodRequest>
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateUpdatePayConditionRuleSetPeriodRequest'
+      additionalProperties: false
+    ClonePayConditionRuleSetRequest:
+      title: ClonePayConditionRuleSetRequest
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    PayConditionRuleSetPeriodApiModel:
+      title: PayConditionRuleSetPeriodApiModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        periodType:
+          title: RuleSetPeriodType
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - CalendarMonth
+          - FourWeekly
+          - SixWeekly
+          - ThreeWeekly
+          - EightWeekly
+          type: string
+          x-title: RuleSetPeriodType
+        periodEnding:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        dayOfWeekEnding:
+          title: Nullable<DayOfWeek>
+          enum:
+          - Sunday
+          - Monday
+          - Tuesday
+          - Wednesday
+          - Thursday
+          - Friday
+          - Saturday
+          type: string
+          x-title: Nullable<DayOfWeek>
+        dayOfMonthEnding:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        payScheduleId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        payScheduleName:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    ShiftPeriod:
+      title: ShiftPeriod
+      type: object
+      properties:
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        toDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+    CreateUpdatePayConditionRuleSetPeriodRequest:
+      title: CreateUpdatePayConditionRuleSetPeriodRequest
+      type: object
+      properties:
+        periodType:
+          title: RuleSetPeriodType
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - CalendarMonth
+          - FourWeekly
+          - SixWeekly
+          - ThreeWeekly
+          - EightWeekly
+          type: string
+          x-title: RuleSetPeriodType
+        periodEnding:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        dayOfWeekEnding:
+          title: Nullable<DayOfWeek>
+          enum:
+          - Sunday
+          - Monday
+          - Tuesday
+          - Wednesday
+          - Thursday
+          - Friday
+          - Saturday
+          type: string
+          x-title: Nullable<DayOfWeek>
+        dayOfMonthEnding:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        payScheduleId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+      additionalProperties: false
+    MyPayConditionRuleSetApiModel:
+      title: MyPayConditionRuleSetApiModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        description:
+          title: String
+          type: string
+          x-title: String
+        periodType:
+          title: RuleSetPeriodType
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - CalendarMonth
+          - FourWeekly
+          - SixWeekly
+          - ThreeWeekly
+          - EightWeekly
+          type: string
+          x-title: RuleSetPeriodType
+        periodEnding:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        dayOfWeekEnding:
+          title: Nullable<DayOfWeek>
+          enum:
+          - Sunday
+          - Monday
+          - Tuesday
+          - Wednesday
+          - Thursday
+          - Friday
+          - Saturday
+          type: string
+          x-title: Nullable<DayOfWeek>
+        dayOfMonthEnding:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        currentPeriod:
+          $ref: '#/components/schemas/ShiftPeriod'
+        shiftConsolidationOption:
+          title: ShiftConsolidationOption
+          enum:
+          - None
+          - Duration
+          - SameDay
+          type: string
+          x-title: ShiftConsolidationOption
+        shiftConsolidationMinutes:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        disabledRules:
+          title: IList<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: IList<String>
+      additionalProperties: false
+    CreateUpdatePayConditionRuleSetRequest_2:
+      title: CreateUpdatePayConditionRuleSetRequest
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          title: String
+          type: string
+          x-title: String
+        description:
+          title: String
+          type: string
+          x-title: String
+        periodType:
+          title: RuleSetPeriodType
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - CalendarMonth
+          - FourWeekly
+          - SixWeekly
+          - ThreeWeekly
+          - EightWeekly
+          type: string
+          x-title: RuleSetPeriodType
+        periodEnding:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        dayOfWeekEnding:
+          title: Nullable<DayOfWeek>
+          enum:
+          - Sunday
+          - Monday
+          - Tuesday
+          - Wednesday
+          - Thursday
+          - Friday
+          - Saturday
+          type: string
+          x-title: Nullable<DayOfWeek>
+        dayOfMonthEnding:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        shiftConsolidationOption:
+          title: ShiftConsolidationOption
+          enum:
+          - None
+          - Duration
+          - SameDay
+          type: string
+        shiftConsolidationMinutes:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        periods:
+          title: IList<CreateUpdatePayConditionRuleSetPeriodRequest>
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateUpdatePayConditionRuleSetPeriodRequest_2'
+      additionalProperties: false
+    CreateUpdatePayConditionRuleSetPeriodRequest_2:
+      title: CreateUpdatePayConditionRuleSetPeriodRequest
+      type: object
+      properties:
+        periodType:
+          title: RuleSetPeriodType
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - CalendarMonth
+          - FourWeekly
+          - SixWeekly
+          - ThreeWeekly
+          - EightWeekly
+          type: string
+        periodEnding:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        dayOfWeekEnding:
+          title: Nullable<DayOfWeek>
+          enum:
+          - Sunday
+          - Monday
+          - Tuesday
+          - Wednesday
+          - Thursday
+          - Friday
+          - Saturday
+          type: string
+        dayOfMonthEnding:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        payScheduleId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+      additionalProperties: false
+    NzPayConditionRuleSetApiModel:
+      title: NzPayConditionRuleSetApiModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        description:
+          title: String
+          type: string
+          x-title: String
+        periodType:
+          title: RuleSetPeriodType
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - CalendarMonth
+          - FourWeekly
+          - SixWeekly
+          - ThreeWeekly
+          - EightWeekly
+          type: string
+          x-title: RuleSetPeriodType
+        periodEnding:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        dayOfWeekEnding:
+          title: Nullable<DayOfWeek>
+          enum:
+          - Sunday
+          - Monday
+          - Tuesday
+          - Wednesday
+          - Thursday
+          - Friday
+          - Saturday
+          type: string
+          x-title: Nullable<DayOfWeek>
+        dayOfMonthEnding:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        currentPeriod:
+          $ref: '#/components/schemas/ShiftPeriod'
+        shiftConsolidationOption:
+          title: ShiftConsolidationOption
+          enum:
+          - None
+          - Duration
+          - SameDay
+          type: string
+          x-title: ShiftConsolidationOption
+        shiftConsolidationMinutes:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        disabledRules:
+          title: IList<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: IList<String>
+      additionalProperties: false
+    CreateUpdatePayConditionRuleSetRequest_3:
+      title: CreateUpdatePayConditionRuleSetRequest
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          title: String
+          type: string
+          x-title: String
+        description:
+          title: String
+          type: string
+          x-title: String
+        periodType:
+          title: RuleSetPeriodType
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - CalendarMonth
+          - FourWeekly
+          - SixWeekly
+          - ThreeWeekly
+          - EightWeekly
+          type: string
+          x-title: RuleSetPeriodType
+        periodEnding:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        dayOfWeekEnding:
+          title: Nullable<DayOfWeek>
+          enum:
+          - Sunday
+          - Monday
+          - Tuesday
+          - Wednesday
+          - Thursday
+          - Friday
+          - Saturday
+          type: string
+          x-title: Nullable<DayOfWeek>
+        dayOfMonthEnding:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        shiftConsolidationOption:
+          title: ShiftConsolidationOption
+          enum:
+          - None
+          - Duration
+          - SameDay
+          type: string
+        shiftConsolidationMinutes:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        periods:
+          title: IList<CreateUpdatePayConditionRuleSetPeriodRequest>
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateUpdatePayConditionRuleSetPeriodRequest_3'
+      additionalProperties: false
+    CreateUpdatePayConditionRuleSetPeriodRequest_3:
+      title: CreateUpdatePayConditionRuleSetPeriodRequest
+      type: object
+      properties:
+        periodType:
+          title: RuleSetPeriodType
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - CalendarMonth
+          - FourWeekly
+          - SixWeekly
+          - ThreeWeekly
+          - EightWeekly
+          type: string
+        periodEnding:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        dayOfWeekEnding:
+          title: Nullable<DayOfWeek>
+          enum:
+          - Sunday
+          - Monday
+          - Tuesday
+          - Wednesday
+          - Thursday
+          - Friday
+          - Saturday
+          type: string
+        dayOfMonthEnding:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        payScheduleId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+      additionalProperties: false
+    CreateUpdatePayConditionRuleSetRequest_4:
+      title: CreateUpdatePayConditionRuleSetRequest
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          title: String
+          type: string
+          x-title: String
+        description:
+          title: String
+          type: string
+          x-title: String
+        periodType:
+          title: RuleSetPeriodType
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - CalendarMonth
+          - FourWeekly
+          - SixWeekly
+          - ThreeWeekly
+          - EightWeekly
+          type: string
+          x-title: RuleSetPeriodType
+        periodEnding:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        dayOfWeekEnding:
+          title: Nullable<DayOfWeek>
+          enum:
+          - Sunday
+          - Monday
+          - Tuesday
+          - Wednesday
+          - Thursday
+          - Friday
+          - Saturday
+          type: string
+          x-title: Nullable<DayOfWeek>
+        dayOfMonthEnding:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        shiftConsolidationOption:
+          title: ShiftConsolidationOption
+          enum:
+          - None
+          - Duration
+          - SameDay
+          type: string
+        shiftConsolidationMinutes:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        periods:
+          title: IList<CreateUpdatePayConditionRuleSetPeriodRequest>
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateUpdatePayConditionRuleSetPeriodRequest_4'
+      additionalProperties: false
+    SgPayConditionRuleSetApiModel:
+      title: SgPayConditionRuleSetApiModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        description:
+          title: String
+          type: string
+          x-title: String
+        periodType:
+          title: RuleSetPeriodType
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - CalendarMonth
+          - FourWeekly
+          - SixWeekly
+          - ThreeWeekly
+          - EightWeekly
+          type: string
+          x-title: RuleSetPeriodType
+        periodEnding:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        dayOfWeekEnding:
+          title: Nullable<DayOfWeek>
+          enum:
+          - Sunday
+          - Monday
+          - Tuesday
+          - Wednesday
+          - Thursday
+          - Friday
+          - Saturday
+          type: string
+          x-title: Nullable<DayOfWeek>
+        dayOfMonthEnding:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        currentPeriod:
+          $ref: '#/components/schemas/ShiftPeriod'
+        shiftConsolidationOption:
+          title: ShiftConsolidationOption
+          enum:
+          - None
+          - Duration
+          - SameDay
+          type: string
+          x-title: ShiftConsolidationOption
+        shiftConsolidationMinutes:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        disabledRules:
+          title: IList<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: IList<String>
+      additionalProperties: false
+    CreateUpdatePayConditionRuleSetPeriodRequest_4:
+      title: CreateUpdatePayConditionRuleSetPeriodRequest
+      type: object
+      properties:
+        periodType:
+          title: RuleSetPeriodType
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - CalendarMonth
+          - FourWeekly
+          - SixWeekly
+          - ThreeWeekly
+          - EightWeekly
+          type: string
+        periodEnding:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        dayOfWeekEnding:
+          title: Nullable<DayOfWeek>
+          enum:
+          - Sunday
+          - Monday
+          - Tuesday
+          - Wednesday
+          - Thursday
+          - Friday
+          - Saturday
+          type: string
+        dayOfMonthEnding:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        payScheduleId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+      additionalProperties: false
+    CreateUpdatePayConditionRuleSetRequest_5:
+      title: CreateUpdatePayConditionRuleSetRequest
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          title: String
+          type: string
+          x-title: String
+        description:
+          title: String
+          type: string
+          x-title: String
+        periodType:
+          title: RuleSetPeriodType
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - CalendarMonth
+          - FourWeekly
+          - SixWeekly
+          - ThreeWeekly
+          - EightWeekly
+          type: string
+          x-title: RuleSetPeriodType
+        periodEnding:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        dayOfWeekEnding:
+          title: Nullable<DayOfWeek>
+          enum:
+          - Sunday
+          - Monday
+          - Tuesday
+          - Wednesday
+          - Thursday
+          - Friday
+          - Saturday
+          type: string
+          x-title: Nullable<DayOfWeek>
+        dayOfMonthEnding:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        shiftConsolidationOption:
+          title: ShiftConsolidationOption
+          enum:
+          - None
+          - Duration
+          - SameDay
+          type: string
+        shiftConsolidationMinutes:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        periods:
+          title: IList<CreateUpdatePayConditionRuleSetPeriodRequest>
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateUpdatePayConditionRuleSetPeriodRequest_5'
+      additionalProperties: false
+    UkPayConditionRuleSetApiModel:
+      title: UkPayConditionRuleSetApiModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        description:
+          title: String
+          type: string
+          x-title: String
+        periodType:
+          title: RuleSetPeriodType
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - CalendarMonth
+          - FourWeekly
+          - SixWeekly
+          - ThreeWeekly
+          - EightWeekly
+          type: string
+          x-title: RuleSetPeriodType
+        periodEnding:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        dayOfWeekEnding:
+          title: Nullable<DayOfWeek>
+          enum:
+          - Sunday
+          - Monday
+          - Tuesday
+          - Wednesday
+          - Thursday
+          - Friday
+          - Saturday
+          type: string
+          x-title: Nullable<DayOfWeek>
+        dayOfMonthEnding:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        currentPeriod:
+          $ref: '#/components/schemas/ShiftPeriod'
+        shiftConsolidationOption:
+          title: ShiftConsolidationOption
+          enum:
+          - None
+          - Duration
+          - SameDay
+          type: string
+          x-title: ShiftConsolidationOption
+        shiftConsolidationMinutes:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        disabledRules:
+          title: IList<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: IList<String>
+      additionalProperties: false
+    CreateUpdatePayConditionRuleSetPeriodRequest_5:
+      title: CreateUpdatePayConditionRuleSetPeriodRequest
+      type: object
+      properties:
+        periodType:
+          title: RuleSetPeriodType
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - CalendarMonth
+          - FourWeekly
+          - SixWeekly
+          - ThreeWeekly
+          - EightWeekly
+          type: string
+        periodEnding:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        dayOfWeekEnding:
+          title: Nullable<DayOfWeek>
+          enum:
+          - Sunday
+          - Monday
+          - Tuesday
+          - Wednesday
+          - Thursday
+          - Friday
+          - Saturday
+          type: string
+        dayOfMonthEnding:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        payScheduleId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

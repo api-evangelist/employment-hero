@@ -1,0 +1,640 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Employee Leave Allowances API
+  version: '1.0'
+  description: 'Operations tagged EmployeeLeaveAllowances across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: EmployeeLeaveAllowances
+  description: Employee Leave Allowances
+paths:
+  /api/v2/business/{businessId}/employee/{employeeId}/leaveallowances:
+    get:
+      tags:
+      - EmployeeLeaveAllowances
+      summary: Get Leave Allowances
+      description: Gets the leave allowances for the specified employee
+      operationId: AuEmployeeLeaveAllowance_Get
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<AuLeaveAllowanceModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuLeaveAllowanceModel'
+            application/xml:
+              schema:
+                title: IEnumerable<AuLeaveAllowanceModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuLeaveAllowanceModel'
+            text/plain:
+              schema:
+                title: IEnumerable<AuLeaveAllowanceModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuLeaveAllowanceModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<AuLeaveAllowanceModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuLeaveAllowanceModel'
+            text/json:
+              schema:
+                title: IEnumerable<AuLeaveAllowanceModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuLeaveAllowanceModel'
+    put:
+      tags:
+      - EmployeeLeaveAllowances
+      summary: Set Leave Allowances
+      description: Sets the leave allowances for the specified employee
+      operationId: AuEmployeeLeaveAllowance_Put_2
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: IEnumerable<AuLeaveAllowanceModel>
+              type: array
+              items:
+                $ref: '#/components/schemas/AuLeaveAllowanceModel'
+              x-title: IEnumerable<AuLeaveAllowanceModel>
+          application/xml:
+            schema:
+              title: IEnumerable<AuLeaveAllowanceModel>
+              type: array
+              items:
+                $ref: '#/components/schemas/AuLeaveAllowanceModel'
+              x-title: IEnumerable<AuLeaveAllowanceModel>
+          text/plain:
+            schema:
+              title: IEnumerable<AuLeaveAllowanceModel>
+              type: array
+              items:
+                $ref: '#/components/schemas/AuLeaveAllowanceModel'
+              x-title: IEnumerable<AuLeaveAllowanceModel>
+          application/json-patch+json:
+            schema:
+              title: IEnumerable<AuLeaveAllowanceModel>
+              type: array
+              items:
+                $ref: '#/components/schemas/AuLeaveAllowanceModel'
+              x-title: IEnumerable<AuLeaveAllowanceModel>
+          text/json:
+            schema:
+              title: IEnumerable<AuLeaveAllowanceModel>
+              type: array
+              items:
+                $ref: '#/components/schemas/AuLeaveAllowanceModel'
+              x-title: IEnumerable<AuLeaveAllowanceModel>
+          application/*+json:
+            schema:
+              title: IEnumerable<AuLeaveAllowanceModel>
+              type: array
+              items:
+                $ref: '#/components/schemas/AuLeaveAllowanceModel'
+              x-title: IEnumerable<AuLeaveAllowanceModel>
+components:
+  schemas:
+    AuLeaveAccrualRuleModel:
+      title: AuLeaveAccrualRuleModel
+      type: object
+      properties:
+        leaveYearOffsetAmount:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        capType:
+          title: LeaveAccrualCapType
+          enum:
+          - NotLimited
+          - Limited
+          type: string
+        unitCap:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        carryOverBehaviour:
+          title: LeaveAccrualCarryOverBehaviour
+          enum:
+          - CarryEntireAmount
+          - CarryHours
+          type: string
+        carryOverAmount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        accrueInAdvance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        accrualType:
+          title: LeaveAccrualType
+          enum:
+          - Ongoing
+          - Yearly
+          - BasedOnLengthOfService
+          - Monthly
+          type: string
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+    AuLeaveAllowanceModel:
+      title: AuLeaveAllowanceModel
+      type: object
+      properties:
+        leaveLoading:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        leaveAccrualRule:
+          $ref: '#/components/schemas/AuLeaveAccrualRuleModel'
+        leaveCategoryId:
+          title: String
+          type: string
+          x-title: String
+        leaveCategoryName:
+          title: String
+          type: string
+          x-title: String
+        units:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        unitType:
+          title: String
+          type: string
+          x-title: String
+        leaveUnitType:
+          title: String
+          type: string
+          x-title: String
+        hoursPerYear:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        automaticallyAccrues:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        canApplyForLeave:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    MyLeaveAllowanceModel:
+      title: MyLeaveAllowanceModel
+      type: object
+      properties:
+        leaveCategoryId:
+          title: String
+          type: string
+          x-title: String
+        leaveCategoryName:
+          title: String
+          type: string
+          x-title: String
+        units:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        unitType:
+          title: String
+          type: string
+          x-title: String
+        leaveUnitType:
+          title: String
+          type: string
+          x-title: String
+        hoursPerYear:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        automaticallyAccrues:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        canApplyForLeave:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    NzLeaveAccrualRuleModel:
+      title: NzLeaveAccrualRuleModel
+      type: object
+      properties:
+        leaveYearOffsetAmount:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        capType:
+          title: LeaveAccrualCapType
+          enum:
+          - NotLimited
+          - Limited
+          type: string
+        unitCap:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        carryOverBehaviour:
+          title: LeaveAccrualCarryOverBehaviour
+          enum:
+          - CarryEntireAmount
+          - CarryHours
+          type: string
+        carryOverAmount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        accrueInAdvance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        accrualType:
+          title: LeaveAccrualType
+          enum:
+          - Ongoing
+          - Yearly
+          - BasedOnLengthOfService
+          - Monthly
+          type: string
+      additionalProperties: false
+    NzLeaveAllowanceModel:
+      title: NzLeaveAllowanceModel
+      type: object
+      properties:
+        leaveAccrualRule:
+          $ref: '#/components/schemas/NzLeaveAccrualRuleModel'
+        leaveAnniversaryDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        isUsingDefaultAnniversaryDate:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        adjustedLeaveEntitlementDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        leaveCategoryId:
+          title: String
+          type: string
+          x-title: String
+        leaveCategoryName:
+          title: String
+          type: string
+          x-title: String
+        units:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        unitType:
+          title: String
+          type: string
+          x-title: String
+        leaveUnitType:
+          title: String
+          type: string
+          x-title: String
+        hoursPerYear:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        automaticallyAccrues:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        canApplyForLeave:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    SgLeaveAllowanceModel:
+      title: SgLeaveAllowanceModel
+      type: object
+      properties:
+        leaveAccrualRule:
+          $ref: '#/components/schemas/SgLeaveAccrualRuleModel'
+        leaveCategoryId:
+          title: String
+          type: string
+          x-title: String
+        leaveCategoryName:
+          title: String
+          type: string
+          x-title: String
+        units:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        unitType:
+          title: String
+          type: string
+          x-title: String
+        leaveUnitType:
+          title: String
+          type: string
+          x-title: String
+        hoursPerYear:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        automaticallyAccrues:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        canApplyForLeave:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    SgLeaveAccrualRuleModel:
+      title: SgLeaveAccrualRuleModel
+      type: object
+      properties:
+        leaveYearOffsetAmount:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        capType:
+          title: LeaveAccrualCapType
+          enum:
+          - NotLimited
+          - Limited
+          type: string
+        unitCap:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        carryOverBehaviour:
+          title: LeaveAccrualCarryOverBehaviour
+          enum:
+          - CarryEntireAmount
+          - CarryHours
+          type: string
+        carryOverAmount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        accrueInAdvance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        accrualType:
+          title: LeaveAccrualType
+          enum:
+          - Ongoing
+          - Yearly
+          - BasedOnLengthOfService
+          - Monthly
+          type: string
+      additionalProperties: false
+    UkLeaveAllowanceModel:
+      title: UkLeaveAllowanceModel
+      type: object
+      properties:
+        leaveAccrualRule:
+          $ref: '#/components/schemas/UkLeaveAccrualRuleModel'
+        leaveCategoryId:
+          title: String
+          type: string
+          x-title: String
+        leaveCategoryName:
+          title: String
+          type: string
+          x-title: String
+        units:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        unitType:
+          title: String
+          type: string
+          x-title: String
+        leaveUnitType:
+          title: String
+          type: string
+          x-title: String
+        hoursPerYear:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        automaticallyAccrues:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        canApplyForLeave:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    UkLeaveAccrualRuleModel:
+      title: UkLeaveAccrualRuleModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        capType:
+          title: LeaveAccrualCapType
+          enum:
+          - NotLimited
+          - Limited
+          type: string
+          x-title: LeaveAccrualCapType
+        unitCap:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        carryOverBehaviour:
+          title: LeaveAccrualCarryOverBehaviour
+          enum:
+          - CarryEntireAmount
+          - CarryHours
+          type: string
+          x-title: LeaveAccrualCarryOverBehaviour
+        carryOverAmount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        accrueInAdvance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        accrualType:
+          title: LeaveAccrualType
+          enum:
+          - Ongoing
+          - Yearly
+          - BasedOnLengthOfService
+          - Monthly
+          type: string
+          x-title: LeaveAccrualType
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

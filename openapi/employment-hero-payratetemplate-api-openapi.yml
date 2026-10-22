@@ -1,0 +1,505 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Pay Rate Template API
+  version: '1.0'
+  description: 'Operations tagged PayRateTemplate across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: PayRateTemplate
+  description: Pay Rate Templates
+paths:
+  /api/v2/business/{businessId}/payratetemplate:
+    get:
+      tags:
+      - PayRateTemplate
+      summary: List Pay Rate Templates
+      description: 'Lists all the pay rate templates for the business.
+
+
+        This operation supports OData queries (only $filter, $orderby, $top, $skip).'
+      operationId: AuPayRateTemplate_GetPayRateTemplates
+      parameters:
+      - in: query
+        name: query
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<AuPayRateTemplateModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuPayRateTemplateModel'
+            application/xml:
+              schema:
+                title: IEnumerable<AuPayRateTemplateModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuPayRateTemplateModel'
+            text/plain:
+              schema:
+                title: IEnumerable<AuPayRateTemplateModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuPayRateTemplateModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<AuPayRateTemplateModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuPayRateTemplateModel'
+            text/json:
+              schema:
+                title: IEnumerable<AuPayRateTemplateModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuPayRateTemplateModel'
+    post:
+      tags:
+      - PayRateTemplate
+      summary: Create Pay Rate Template
+      description: Creates a new pay rate template for the business.
+      operationId: AuPayRateTemplate_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuPayRateTemplateModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuPayRateTemplateModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuPayRateTemplateModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuPayRateTemplateModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuPayRateTemplateModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuPayRateTemplateModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuPayRateTemplateModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuPayRateTemplateModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuPayRateTemplateModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuPayRateTemplateModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuPayRateTemplateModel'
+  /api/v2/business/{businessId}/payratetemplate/{id}:
+    get:
+      tags:
+      - PayRateTemplate
+      summary: Get Pay Rate Template by ID
+      description: Gets the pay rate template with the specified ID.
+      operationId: AuPayRateTemplate_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuPayRateTemplateModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuPayRateTemplateModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuPayRateTemplateModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuPayRateTemplateModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuPayRateTemplateModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    put:
+      tags:
+      - PayRateTemplate
+      summary: Update Pay Rate Template
+      description: Updates the pay rate template with the specified ID.
+      operationId: AuPayRateTemplate_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuPayRateTemplateModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuPayRateTemplateModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuPayRateTemplateModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuPayRateTemplateModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuPayRateTemplateModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuPayRateTemplateModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuPayRateTemplateModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuPayRateTemplateModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuPayRateTemplateModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuPayRateTemplateModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuPayRateTemplateModel'
+    delete:
+      tags:
+      - PayRateTemplate
+      summary: Delete Pay Rate Template
+      description: Deletes the pay rate template with the specified ID.
+      operationId: AuPayRateTemplate_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+components:
+  schemas:
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+    PayRateTemplatePayCategoryExportModel:
+      title: PayRateTemplatePayCategoryExportModel
+      type: object
+      properties:
+        payCategoryId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        userSuppliedRate:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        calculatedRate:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        standardWeeklyHours:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+      additionalProperties: false
+    AuPayRateTemplateModel:
+      title: AuPayRateTemplateModel
+      type: object
+      properties:
+        superThresholdAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        maximumQuarterlySuperContributionsBase:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        maximumAnnualSuperContributionsBase:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        higherOfSuperEnabled:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        higherOfSuperWeeklyAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        primaryPayCategoryId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        payCategories:
+          title: List<PayRateTemplatePayCategoryExportModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/PayRateTemplatePayCategoryExportModel'
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        reapplyToLinkedEmployees:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    PayRateTemplateExportModel:
+      title: PayRateTemplateExportModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        primaryPayCategoryId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        payCategories:
+          title: List<PayRateTemplatePayCategoryExportModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/PayRateTemplatePayCategoryExportModel'
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        reapplyToLinkedEmployees:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

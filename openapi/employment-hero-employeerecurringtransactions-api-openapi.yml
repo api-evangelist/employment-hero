@@ -1,0 +1,4331 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Employee Recurring Transactions API
+  version: '1.0'
+  description: 'Operations tagged EmployeeRecurringTransactions across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: EmployeeRecurringTransactions
+  description: Pay Run Inclusions
+paths:
+  /api/v2/business/{businessId}/employee/deduction:
+    post:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: List Employee Deductions By External Reference Id
+      description: Lists all the recurring employee deductions that have a matching external reference ID
+      operationId: AuEmployeeRecurringDeductionList_List
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<AuEmployeeRecurringDeductionModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+            application/xml:
+              schema:
+                title: IEnumerable<AuEmployeeRecurringDeductionModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+            text/plain:
+              schema:
+                title: IEnumerable<AuEmployeeRecurringDeductionModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<AuEmployeeRecurringDeductionModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+            text/json:
+              schema:
+                title: IEnumerable<AuEmployeeRecurringDeductionModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: IList<String>
+              type: array
+              items:
+                title: String
+                type: string
+                x-title: String
+          application/xml:
+            schema:
+              title: IList<String>
+              type: array
+              items:
+                title: String
+                type: string
+                x-title: String
+          text/plain:
+            schema:
+              title: IList<String>
+              type: array
+              items:
+                title: String
+                type: string
+                x-title: String
+          application/json-patch+json:
+            schema:
+              title: IList<String>
+              type: array
+              items:
+                title: String
+                type: string
+                x-title: String
+          text/json:
+            schema:
+              title: IList<String>
+              type: array
+              items:
+                title: String
+                type: string
+                x-title: String
+          application/*+json:
+            schema:
+              title: IList<String>
+              type: array
+              items:
+                title: String
+                type: string
+                x-title: String
+  /api/v2/business/{businessId}/employee/{employeeId}/additional-earnings:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: List Employee Additional Earnings
+      description: Lists all the additional earnings for the employee
+      operationId: EmployeeRecurringAdditionalEarnings_List
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<AdditionalEarningsModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AdditionalEarningsModel'
+            application/xml:
+              schema:
+                title: IEnumerable<AdditionalEarningsModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AdditionalEarningsModel'
+            text/plain:
+              schema:
+                title: IEnumerable<AdditionalEarningsModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AdditionalEarningsModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<AdditionalEarningsModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AdditionalEarningsModel'
+            text/json:
+              schema:
+                title: IEnumerable<AdditionalEarningsModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AdditionalEarningsModel'
+    post:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Create Employee Additional Earning
+      description: Creates a new additional earning for the employee.
+      operationId: EmployeeRecurringAdditionalEarnings_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdditionalEarningsModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AdditionalEarningsModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AdditionalEarningsModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AdditionalEarningsModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AdditionalEarningsModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdditionalEarningsInputModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AdditionalEarningsInputModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AdditionalEarningsInputModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AdditionalEarningsInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AdditionalEarningsInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AdditionalEarningsInputModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/additional-earnings/{id}:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Get Employee Additional Earning by ID
+      description: Gets the employee's additional earning with the specified ID.
+      operationId: EmployeeRecurringAdditionalEarnings_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int64
+        schema:
+          type: integer
+          format: int64
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdditionalEarningsModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AdditionalEarningsModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AdditionalEarningsModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AdditionalEarningsModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AdditionalEarningsModel'
+    put:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Update Employee Additional Earning
+      description: Updates the employee's additional earning with the specified ID.
+      operationId: EmployeeRecurringAdditionalEarnings_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int64
+        schema:
+          type: integer
+          format: int64
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdditionalEarningsModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AdditionalEarningsModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AdditionalEarningsModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AdditionalEarningsModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AdditionalEarningsModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdditionalEarningsInputModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AdditionalEarningsInputModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AdditionalEarningsInputModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AdditionalEarningsInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AdditionalEarningsInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AdditionalEarningsInputModel'
+    delete:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Delete Employee Additional Earning
+      description: Deletes the employee's additional earning with the specified ID.
+      operationId: EmployeeRecurringAdditionalEarnings_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int64
+        schema:
+          type: integer
+          format: int64
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /api/v2/business/{businessId}/employee/{employeeId}/deduction:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: List Employee Deductions
+      description: Lists all the recurring employee deductions for the employee
+      operationId: AuEmployeeRecurringDeduction_List
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<AuEmployeeRecurringDeductionModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+                x-title: IEnumerable<AuEmployeeRecurringDeductionModel>
+            application/xml:
+              schema:
+                title: IEnumerable<AuEmployeeRecurringDeductionModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+                x-title: IEnumerable<AuEmployeeRecurringDeductionModel>
+            text/plain:
+              schema:
+                title: IEnumerable<AuEmployeeRecurringDeductionModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+                x-title: IEnumerable<AuEmployeeRecurringDeductionModel>
+            application/octet-stream:
+              schema:
+                title: IEnumerable<AuEmployeeRecurringDeductionModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+                x-title: IEnumerable<AuEmployeeRecurringDeductionModel>
+            text/json:
+              schema:
+                title: IEnumerable<AuEmployeeRecurringDeductionModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+                x-title: IEnumerable<AuEmployeeRecurringDeductionModel>
+    post:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Create Employee Deduction
+      description: Creates a new recurring deduction for the employee.
+      operationId: AuEmployeeRecurringDeduction_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/deduction/{externalReferenceId}:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Get Employee Deduction by External Reference Id
+      description: Gets the employee's recurring deduction with the specified external reference ID.
+      operationId: AuEmployeeRecurringDeduction_GetByExternalReferenceId
+      parameters:
+      - in: path
+        name: externalReferenceId
+        required: true
+        title: String
+        schema:
+          type: string
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/deduction/{id}:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Get Employee Deduction by ID
+      description: Gets the employee's recurring deduction with the specified ID.
+      operationId: AuEmployeeRecurringDeduction_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+    put:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Update Employee Deduction
+      description: Updates the employee's recurring deduction with the specified ID.
+      operationId: AuEmployeeRecurringDeduction_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeRecurringDeductionModel'
+    delete:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Delete Employee Deduction
+      description: Deletes the employee recurring deduction with the specified ID.
+      operationId: AuEmployeeRecurringDeduction_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /api/v2/business/{businessId}/employee/{employeeId}/employerliability:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: List Employer liabilities
+      description: Lists all the recurring employer liabilities for the employee
+      operationId: Employerrecurringliability_List
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<EmployerRecurringLiabilityModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+            application/xml:
+              schema:
+                title: IEnumerable<EmployerRecurringLiabilityModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+            text/plain:
+              schema:
+                title: IEnumerable<EmployerRecurringLiabilityModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<EmployerRecurringLiabilityModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+            text/json:
+              schema:
+                title: IEnumerable<EmployerRecurringLiabilityModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+    post:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Create Employer liability
+      description: Creates a new recurring employer liability for the employee.
+      operationId: Employerrecurringliability_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/employerliability/{id}:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Get Employer liability by ID
+      description: Gets the employee's recurring employer liabilities with the specified ID.
+      operationId: Employerrecurringliability_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+    put:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Update Employer liability
+      description: Updates the employee's recurring employer liability with the specified ID.
+      operationId: Employerrecurringliability_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EmployerRecurringLiabilityModel'
+    delete:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Delete Employer liability
+      description: Deletes the recurring employer liability with the specified ID.
+      operationId: Employerrecurringliability_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /api/v2/business/{businessId}/employee/{employeeId}/expense:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: List Employee Expenses
+      description: Lists all the recurring employee expenses for the employee
+      operationId: EmployeeRecurringExpense_List
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<EmployeeRecurringExpenseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+            application/xml:
+              schema:
+                title: IEnumerable<EmployeeRecurringExpenseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+            text/plain:
+              schema:
+                title: IEnumerable<EmployeeRecurringExpenseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<EmployeeRecurringExpenseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+            text/json:
+              schema:
+                title: IEnumerable<EmployeeRecurringExpenseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+    post:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Create Employee Expense
+      description: Creates a new recurring expense for the employee.
+      operationId: EmployeeRecurringExpense_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/expense/{id}:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Get Employee Expense by ID
+      description: Gets the employee's recurring expense with the specified ID.
+      operationId: EmployeeRecurringExpense_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+    put:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Update Employee Expense
+      description: Updates the employee's recurring expense with the specified ID.
+      operationId: EmployeeRecurringExpense_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringExpenseModel'
+    delete:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Delete Employee Expense
+      description: Deletes the employee recurring expense with the specified ID.
+      operationId: EmployeeRecurringExpense_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /api/v2/business/{businessId}/employee/{employeeId}/superadjustment:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: List Employee Super Adjustments
+      description: Lists all the recurring employee super adjustments for the employee
+      operationId: AuEmployeeRecurringSuperAdjustment_List
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<EmployeeRecurringSuperAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+            application/xml:
+              schema:
+                title: IEnumerable<EmployeeRecurringSuperAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+            text/plain:
+              schema:
+                title: IEnumerable<EmployeeRecurringSuperAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<EmployeeRecurringSuperAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+            text/json:
+              schema:
+                title: IEnumerable<EmployeeRecurringSuperAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+    post:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Create Employee Super Adjustment
+      description: Creates a new recurring super adjustment for the employee.
+      operationId: AuEmployeeRecurringSuperAdjustment_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/superadjustment/{id}:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Get Employee Super Adjustment by ID
+      description: Gets the employee's recurring super adjustment with the specified ID.
+      operationId: AuEmployeeRecurringSuperAdjustment_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    put:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Update Employee Super Adjustment
+      description: Updates the employee's recurring super adjustment with the specified ID.
+      operationId: AuEmployeeRecurringSuperAdjustment_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringSuperAdjustmentModel'
+    delete:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Delete Employee Super Adjustment
+      description: Deletes the employee's recurring super adjustment with the specified ID.
+      operationId: AuEmployeeRecurringSuperAdjustment_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /api/v2/business/{businessId}/employee/{employeeId}/taxadjustment:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: List Employee Tax Adjustments
+      description: Lists all the recurring employee tax adjustments for the employee
+      operationId: EmployeeRecurringTaxAdjustment_List
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<EmployeeRecurringTaxAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+            application/xml:
+              schema:
+                title: IEnumerable<EmployeeRecurringTaxAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+            text/plain:
+              schema:
+                title: IEnumerable<EmployeeRecurringTaxAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<EmployeeRecurringTaxAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+            text/json:
+              schema:
+                title: IEnumerable<EmployeeRecurringTaxAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+    post:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Create Employee Tax Adjustment
+      description: Creates a new recurring tax adjustment for the employee.
+      operationId: EmployeeRecurringTaxAdjustment_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/taxadjustment/{id}:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Get Employee Tax Adjustment by ID
+      description: Gets the employee's recurring tax adjustment with the specified ID.
+      operationId: EmployeeRecurringTaxAdjustment_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+    put:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Update Employee Tax Adjustment
+      description: Updates the employee's recurring tax adjustment with the specified ID.
+      operationId: EmployeeRecurringTaxAdjustment_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxAdjustmentModel'
+    delete:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Delete Employee Tax Adjustment
+      description: Deletes the employee recurring tax adjustment with the specified ID.
+      operationId: EmployeeRecurringTaxAdjustment_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /api/v2/business/{businessId}/employee/{employeeId}/benefitsinkindadjustment:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: List Employee Benefits In Kind Adjustments
+      description: Lists all the recurring employee benefits in kind adjustments for the employee
+      operationId: EmployeeRecurringBenefitsInKindAdjustment_List
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<EmployeeRecurringBenefitsInKindAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+            application/xml:
+              schema:
+                title: IEnumerable<EmployeeRecurringBenefitsInKindAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+            text/plain:
+              schema:
+                title: IEnumerable<EmployeeRecurringBenefitsInKindAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<EmployeeRecurringBenefitsInKindAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+            text/json:
+              schema:
+                title: IEnumerable<EmployeeRecurringBenefitsInKindAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+    post:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Create Employee Benefits In Kind Adjustment
+      description: Creates a new recurring benefits in kind adjustment for the employee.
+      operationId: EmployeeRecurringBenefitsInKindAdjustment_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/benefitsinkindadjustment/{id}:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Get Employee Benefits In Kind Adjustment by ID
+      description: Gets the employee's recurring benefits in kind adjustment with the specified ID.
+      operationId: EmployeeRecurringBenefitsInKindAdjustment_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+    put:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Update Employee Benefits In Kind Adjustment
+      description: Updates the employee's recurring benefits in kind adjustment with the specified ID.
+      operationId: EmployeeRecurringBenefitsInKindAdjustment_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringBenefitsInKindAdjustmentModel'
+    delete:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Delete Employee Benefits In Kind Adjustment
+      description: Deletes the employee's recurring benefits in kind adjustment with the specified ID.
+      operationId: EmployeeRecurringBenefitsInKindAdjustment_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /api/v2/business/{businessId}/employee/{employeeId}/statutorycontributionadjustment:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: List Employee Statutory Contribution Adjustments
+      description: Lists all the recurring employee statutory contribution adjustments for the employee
+      operationId: EmployeeRecurringStatutoryContributionAdjustment_List
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<EmployeeRecurringStatutoryContributionAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+            application/xml:
+              schema:
+                title: IEnumerable<EmployeeRecurringStatutoryContributionAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+            text/plain:
+              schema:
+                title: IEnumerable<EmployeeRecurringStatutoryContributionAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<EmployeeRecurringStatutoryContributionAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+            text/json:
+              schema:
+                title: IEnumerable<EmployeeRecurringStatutoryContributionAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+    post:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Create Employee Statutory Contribution Adjustment
+      description: Creates a new recurring statutory contribution adjustment for the employee.
+      operationId: EmployeeRecurringStatutoryContributionAdjustment_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/statutorycontributionadjustment/{id}:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Get Employee Statutory Contribution Adjustment by ID
+      description: Gets the employee's recurring statutory contribution adjustment with the specified ID.
+      operationId: EmployeeRecurringStatutoryContributionAdjustment_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+    put:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Update Employee Statutory Contribution Adjustment
+      description: Updates the employee's recurring statutory contribution adjustment with the specified ID.
+      operationId: EmployeeRecurringStatutoryContributionAdjustment_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringStatutoryContributionAdjustmentModel'
+    delete:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Delete Employee Statutory Contribution Adjustment
+      description: Deletes the employee recurring statutory contribution adjustment with the specified ID.
+      operationId: EmployeeRecurringStatutoryContributionAdjustment_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /api/v2/business/{businessId}/employee/{employeeId}/taxreliefadjustment:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: List Employee Tax Relief Adjustments
+      description: Lists all the recurring employee tax relief adjustments for the employee
+      operationId: EmployeeRecurringTaxReliefAdjustments_List
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<EmployeeRecurringTaxReliefAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+            application/xml:
+              schema:
+                title: IEnumerable<EmployeeRecurringTaxReliefAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+            text/plain:
+              schema:
+                title: IEnumerable<EmployeeRecurringTaxReliefAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<EmployeeRecurringTaxReliefAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+            text/json:
+              schema:
+                title: IEnumerable<EmployeeRecurringTaxReliefAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+    post:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Create Employee Tax Relief Adjustment
+      description: Creates a new recurring tax relief adjustment for the employee.
+      operationId: EmployeeRecurringTaxReliefAdjustments_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/taxreliefadjustment/{id}:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Get Employee Tax Relief Adjustment by ID
+      description: Gets the employee's recurring tax relief adjustment with the specified ID.
+      operationId: EmployeeRecurringTaxReliefAdjustments_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+    put:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Update Employee Tax Relief Adjustment
+      description: Updates the employee's recurring tax relief adjustment with the specified ID.
+      operationId: EmployeeRecurringTaxReliefAdjustments_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringTaxReliefAdjustmentModel'
+    delete:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Delete Employee Tax Relief Adjustment
+      description: Deletes the employee recurring tax relief adjustment with the specified ID.
+      operationId: EmployeeRecurringTaxReliefAdjustments_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /api/v2/business/{businessId}/employee/{employeeId}/hmrcadjustment:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: List Hmrc Adjustments
+      description: List all the HMRC adjustments for the employee
+      operationId: UkEmployeeHmrcAdjustment_List
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<EmployeeRecurringHmrcAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+            application/xml:
+              schema:
+                title: IEnumerable<EmployeeRecurringHmrcAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+            text/plain:
+              schema:
+                title: IEnumerable<EmployeeRecurringHmrcAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<EmployeeRecurringHmrcAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+            text/json:
+              schema:
+                title: IEnumerable<EmployeeRecurringHmrcAdjustmentModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+    post:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Create Or Update Employee HMRC Adjustment
+      description: Creates a recurring HMRC adjustment for an employee
+      operationId: UkEmployeeHmrcAdjustment_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+        required: true
+  /api/v2/business/{businessId}/employee/{employeeId}/hmrcadjustment/{externalReferenceId}:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Get Employee HMRC adjustment by External Reference Id
+      description: Gets the employee's recurring HMRC adjustment with the specified external reference ID.
+      operationId: UkEmployeeHmrcAdjustment_GetByExternalReferenceId
+      parameters:
+      - in: path
+        name: externalReferenceId
+        required: true
+        title: String
+        schema:
+          type: string
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/hmrcadjustment/{id}:
+    get:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Get Hmrc Adjustment By Id
+      description: Gets a HMRC adjustment by a specific ID
+      operationId: UkEmployeeHmrcAdjustment_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeRecurringHmrcAdjustmentModel'
+    delete:
+      tags:
+      - EmployeeRecurringTransactions
+      summary: Delete Employee Hmrc Adjustment
+      description: Deletes the employee HMRC adjustment with the specified ID.
+      operationId: UkEmployeeHmrcAdjustment_Delete_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    AuEmployeeRecurringDeductionModel:
+      title: AuEmployeeRecurringDeductionModel
+      type: object
+      properties:
+        deductionType:
+          title: DeductionTypeEnum
+          enum:
+          - NotSet
+          - Fixed
+          - PercentageGross
+          - PercentageOTE
+          - PercentageNet
+          type: string
+        paidTo:
+          title: AuEmployeeRecurringDeductionPaidToEnum
+          enum:
+          - Manual
+          - BankAccount
+          - SuperFund
+          - Bpay
+          type: string
+        name:
+          title: String
+          type: string
+          x-title: String
+        deductionCategoryId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        paidToAccountId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        externalReferenceId:
+          title: String
+          type: string
+          x-title: String
+        preservedEarningsAmountNotReachedAction:
+          title: DeductionAmountNotReachedEnum
+          enum:
+          - DoNotPay
+          - PayToLimit
+          type: string
+        carryForwardUnpaidDeductions:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        carryForwardUnusedPreservedEarnings:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        paymentReference:
+          title: String
+          type: string
+          x-title: String
+        preservedEarnings:
+          title: PreservedEarningsCalculationTypeEnum
+          enum:
+          - Never
+          - Amount
+          - Percentage
+          type: string
+        preservedEarningsAmount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        additionalData:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        priority:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        deleted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        id:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        amount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        expiryDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        maximumAmountPaid:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        totalAmountPaid:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        isActive:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        notes:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    EmployeeRecurringSuperAdjustmentModel:
+      title: EmployeeRecurringSuperAdjustmentModel
+      type: object
+      properties:
+        contributionType:
+          title: SuperContributionType
+          enum:
+          - SuperGuarantee
+          - SalarySacrifice
+          - MemberVoluntary
+          - EmployerContribution
+          - NonRescEmployerContribution
+          type: string
+        adjustmentType:
+          title: SuperAdjustmentTypeEnum
+          enum:
+          - Fixed
+          - PercentageGross
+          - PercentageOTE
+          - PercentageTaxableEarnings
+          type: string
+        id:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        amount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        expiryDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        maximumAmountPaid:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        totalAmountPaid:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        isActive:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        notes:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    AdditionalEarningsModel:
+      title: AdditionalEarningsModel
+      type: object
+      properties:
+        id:
+          format: int64
+          title: Int64
+          type: integer
+          x-title: Int64
+        name:
+          title: String
+          type: string
+          x-title: String
+        payCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        amount:
+          format: currency
+          title: Decimal
+          type: number
+          x-title: Decimal
+        startDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        expiryDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        maximumAmountPaid:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        isActive:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        notes:
+          title: String
+          type: string
+          x-title: String
+        expirationType:
+          title: ExpirationTypeEnum
+          enum:
+          - None
+          - DateExpiry
+          - AmountExpiry
+          type: string
+          readOnly: true
+        totalAmountPaid:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        units:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        locationName:
+          title: String
+          type: string
+          x-title: String
+        superRate:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        overrideSuperRate:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    AdditionalEarningsInputModel:
+      title: AdditionalEarningsInputModel
+      type: object
+      properties:
+        id:
+          format: int64
+          title: Int64
+          type: integer
+          x-title: Int64
+        payCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        amount:
+          format: double
+          title: Decimal
+          type: number
+        expiryDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        maximumAmountPaid:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        notes:
+          title: String
+          type: string
+          x-title: String
+        units:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        superRate:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        overrideSuperRate:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    EmployeeRecurringExpenseModel:
+      title: EmployeeRecurringExpenseModel
+      type: object
+      properties:
+        name:
+          title: String
+          type: string
+          x-title: String
+        expenseCategoryId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        locationId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        taxCode:
+          title: String
+          type: string
+          x-title: String
+        taxCodeDisplayName:
+          title: String
+          type: string
+          x-title: String
+        taxRate:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        id:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        amount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        expiryDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        maximumAmountPaid:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        totalAmountPaid:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        isActive:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        notes:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    EmployerRecurringLiabilityModel:
+      title: EmployerRecurringLiabilityModel
+      type: object
+      properties:
+        employerLiabilityCategoryName:
+          title: String
+          type: string
+          x-title: String
+        employerLiabilityCategoryId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        liabilityType:
+          title: EmployerRecurringLiabilityTypeEnum
+          enum:
+          - Fixed
+          - PercentageGross
+          - PercentageOTE
+          - PercentageSuperannuation
+          type: string
+        externalReferenceId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: ExternalService
+          enum:
+          - None
+          - Saasu
+          - Xero
+          - MYOB
+          - Deputy
+          - EmployeeTimePunch
+          - ClickSuper
+          - IntegratedTimesheets
+          - FileImport
+          - FileExport
+          - QuickBooks
+          - Harmony
+          - AwardStore
+          - Attache
+          - IntegratedRostering
+          - ReckonAccounts
+          - API
+          - MicroPower
+          - RosterLive
+          - NetSuite
+          - Kounta
+          - TimeAndAttendanceKiosk
+          - DetailedFileExport
+          - JonasPremier
+          - WageEasy
+          - Maestrano
+          - WorkZone
+          - EmployeePortal
+          - RosterTemplate
+          - Onboarding
+          - Admin
+          - WorkZoneClockOnOff
+          - NetSuiteOneWorld
+          - Sage50
+          - PensionSync
+          - FinancialsOffice
+          - ProntoXI
+          - PayRunDefault
+          - StandardWorkDay
+          - Beam
+          - PayRunAutomation
+          - BureauDashboard
+          - Wiise
+          - QBOMigrationTool
+          - AbridgedFileImport
+          - QBOForcedMigration
+          - HmrcDpsUpdate
+          - HmrcDpsStudentLoan
+          - HmrcDpsPostGradLoan
+          - Sage50FileImporter
+          - FPSFileImporter
+          - OAuth
+          - FreshBooks
+          - StarFileImporter
+          - ActiveCampaign
+          - SummaryAndDetailsExport
+          - Telleroo
+          - EmployeeAdvancedHoursUpload
+          - BusinessCentral
+          - Paytron
+          - AccessFinancials
+          - Comma
+          - Zoho
+          - FlatFileEmployeeImporter
+          - Twinfield
+          - SageAccounting
+          - Square
+          - Quickfile
+          - Tide
+          - TideSso
+          - FreeAgent
+          - Akahu
+          - InstaPay
+          - Zepto
+          - Slack
+          - Caxton
+          - QuickbooksStandalonePayroll
+          - ImportEmployeeSelfSetup
+          - XeroIdentityPayrollSignUp
+          - XeroIdentityHrSignUp
+          - SageIntacct
+          - InstaPayDaily
+          - Salesforce
+          - AutomatedPublicHolidayNotWorked
+          - EmployeePayRatesUpload
+          - Zapier
+          - StapledSuperFund
+          - Swag
+          - Crezco
+          - KafkaConsumer
+          - EmployeeLeaveRateCalculationMethodUpload
+          - MoneyMovement
+          - PayRunSettingsFlatFileImport
+          - Sage200
+          - RosterCostCalculation
+          - HeroClear
+          - BrightPay
+          - EmployeeLeaveYearStartDatesImport
+          - PayConditionComparisonUpload
+          - GlobalMoneyMovement
+          type: string
+          x-title: ExternalService
+        id:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        amount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        expiryDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        maximumAmountPaid:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        totalAmountPaid:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        isActive:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        notes:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+    EmployeeRecurringTaxAdjustmentModel:
+      title: EmployeeRecurringTaxAdjustmentModel
+      type: object
+      properties:
+        adjustmentType:
+          title: TaxAdjustmentTypeEnum
+          enum:
+          - Fixed
+          - PercentageGross
+          - PercentageTaxableEarnings
+          type: string
+        id:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        amount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        expiryDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        maximumAmountPaid:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        totalAmountPaid:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        isActive:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        notes:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    EmployeeRecurringStatutoryContributionAdjustmentModel:
+      title: EmployeeRecurringStatutoryContributionAdjustmentModel
+      type: object
+      properties:
+        contributionType:
+          title: StatutoryContributionType
+          enum:
+          - EmployerEpf
+          - EmployeeEpf
+          - EmployerSocso
+          - EmployeeSocso
+          - EmployerEis
+          - EmployeeEis
+          - EmployerHrdf
+          - EmployeeSkbbkSocso
+          type: string
+        type:
+          title: MyStatutoryContributionAdjustmentAmountType
+          enum:
+          - Fixed
+          - PercentageOfGrossPay
+          type: string
+        id:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        amount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        expiryDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        maximumAmountPaid:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        totalAmountPaid:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        isActive:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        notes:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    EmployeeRecurringBenefitsInKindAdjustmentModel:
+      title: EmployeeRecurringBenefitsInKindAdjustmentModel
+      type: object
+      properties:
+        taxable:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        type:
+          title: MyBenefitsInKindType
+          enum:
+          - MotorCar
+          - PetrolWithoutCar
+          - DriverProvided
+          - HouseholdFurnishings
+          - BenefitsOrGifts
+          - MonthlyBills
+          - OtherAssets
+          - DentalBenefit
+          - ChildcareBenefit
+          - FoodAndDrink
+          - FreeTransportation
+          - ObligatoryInsurance
+          - GroupInsurance
+          - LeavePassage
+          - BenefitsEmploymentDuties
+          - DiscountsGoodsAndServices
+          - BenefitsMonthlyBills
+          - BenefitsMedicalTreatment
+          - PetrolBenefits
+          - Other
+          - LivingAccommodation
+          type: string
+        specify:
+          title: String
+          type: string
+          x-title: String
+        id:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        amount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        expiryDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        maximumAmountPaid:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        totalAmountPaid:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        isActive:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        notes:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    MyEmployeeRecurringDeductionModel:
+      title: MyEmployeeRecurringDeductionModel
+      type: object
+      properties:
+        deductionFrequency:
+          title: DeductionFrequency
+          enum:
+          - PayRunEarnings
+          - TotalMonthlyEarnings
+          type: string
+        name:
+          title: String
+          type: string
+          x-title: String
+        deductionCategoryId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        paidTo:
+          title: EmployeeRecurringDeductionPaidToEnum
+          enum:
+          - Manual
+          - BankAccount
+          - SuperFund
+          - Bpay
+          - PensionScheme
+          - TaxOffice
+          - CPFB
+          type: string
+        paidToAccountId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        externalReferenceId:
+          title: String
+          type: string
+          x-title: String
+        preservedEarningsAmountNotReachedAction:
+          title: DeductionAmountNotReachedEnum
+          enum:
+          - DoNotPay
+          - PayToLimit
+          type: string
+        carryForwardUnpaidDeductions:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        carryForwardUnusedPreservedEarnings:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        paymentReference:
+          title: String
+          type: string
+          x-title: String
+        preservedEarnings:
+          title: PreservedEarningsCalculationTypeEnum
+          enum:
+          - Never
+          - Amount
+          - Percentage
+          type: string
+        preservedEarningsAmount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        additionalData:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        priority:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        deleted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        deductionType:
+          title: DeductionTypeEnum
+          enum:
+          - NotSet
+          - Fixed
+          - PercentageGross
+          - PercentageOTE
+          - PercentageStudentLoan
+          - PercentageNet
+          - Tiered
+          - Custom
+          - PercentageSuperannuation
+          - PercentageCompensation
+          - PercentagePensionable
+          - PercentageCustomBasis
+          type: string
+        id:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        amount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        expiryDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        maximumAmountPaid:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        totalAmountPaid:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        isActive:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        notes:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    EmployeeRecurringTaxReliefAdjustmentModel:
+      title: EmployeeRecurringTaxReliefAdjustmentModel
+      type: object
+      properties:
+        reliefNumber:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        yearOfAssessment:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        type:
+          title: MyAdjustmentAmountType
+          enum:
+          - Fixed
+          - PercentageOfNetPay
+          - PercentageOfGrossPay
+          type: string
+        id:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        amount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        expiryDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        maximumAmountPaid:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        totalAmountPaid:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        isActive:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        notes:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    NzAdditionalEarningsModel:
+      title: NzAdditionalEarningsModel
+      type: object
+      properties:
+        includeInRdpOrOwp:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        reduceAllowance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        id:
+          format: int64
+          title: Int64
+          type: integer
+          x-title: Int64
+        name:
+          title: String
+          type: string
+          x-title: String
+        payCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        amount:
+          format: currency
+          title: Decimal
+          type: number
+          x-title: Decimal
+        startDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        expiryDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        maximumAmountPaid:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        isActive:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        notes:
+          title: String
+          type: string
+          x-title: String
+        expirationType:
+          title: ExpirationTypeEnum
+          enum:
+          - None
+          - DateExpiry
+          - AmountExpiry
+          type: string
+          readOnly: true
+        totalAmountPaid:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        units:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        locationName:
+          title: String
+          type: string
+          x-title: String
+        superRate:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        overrideSuperRate:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    NzAdditionalEarningsInputModel:
+      title: NzAdditionalEarningsInputModel
+      type: object
+      properties:
+        includeInRdpOrOwp:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        reduceAllowance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        id:
+          format: int64
+          title: Int64
+          type: integer
+          x-title: Int64
+        payCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        amount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        expiryDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        maximumAmountPaid:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        notes:
+          title: String
+          type: string
+          x-title: String
+        units:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        superRate:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        overrideSuperRate:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    NzEmployeeRecurringDeductionModel:
+      title: NzEmployeeRecurringDeductionModel
+      type: object
+      properties:
+        studentLoanDeductionOption:
+          title: Nullable<StudentLoanDeductionOption>
+          enum:
+          - ApplyStudentLoanFirst
+          - ApplyDeductionFirst
+          - DoNotApplyStudentLoan
+          type: string
+        deductionType:
+          title: DeductionTypeEnum
+          enum:
+          - NotSet
+          - Fixed
+          - PercentageGross
+          - PercentageStudentLoan
+          - PercentageNet
+          type: string
+        paidTo:
+          title: NzEmployeeRecurringDeductionPaidToEnum
+          enum:
+          - Manual
+          - BankAccount
+          - TaxOffice
+          type: string
+        name:
+          title: String
+          type: string
+          x-title: String
+        deductionCategoryId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        paidToAccountId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        externalReferenceId:
+          title: String
+          type: string
+          x-title: String
+        preservedEarningsAmountNotReachedAction:
+          title: DeductionAmountNotReachedEnum
+          enum:
+          - DoNotPay
+          - PayToLimit
+          type: string
+        carryForwardUnpaidDeductions:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        carryForwardUnusedPreservedEarnings:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        paymentReference:
+          title: String
+          type: string
+          x-title: String
+        preservedEarnings:
+          title: PreservedEarningsCalculationTypeEnum
+          enum:
+          - Never
+          - Amount
+          - Percentage
+          type: string
+        preservedEarningsAmount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        additionalData:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        priority:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        deleted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        id:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        amount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        expiryDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        maximumAmountPaid:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        totalAmountPaid:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        isActive:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        notes:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    SgEmployeeRecurringDeductionModel:
+      title: SgEmployeeRecurringDeductionModel
+      type: object
+      properties:
+        paidTo:
+          title: SgEmployeeRecurringDeductionPaidToEnum
+          enum:
+          - Manual
+          - BankAccount
+          - CPFB
+          type: string
+        deductionFrequency:
+          title: DeductionFrequency
+          enum:
+          - PayRunEarnings
+          - TotalMonthlyEarnings
+          type: string
+        tieredDeductionSettingsId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        name:
+          title: String
+          type: string
+          x-title: String
+        deductionCategoryId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        paidToAccountId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        externalReferenceId:
+          title: String
+          type: string
+          x-title: String
+        preservedEarningsAmountNotReachedAction:
+          title: DeductionAmountNotReachedEnum
+          enum:
+          - DoNotPay
+          - PayToLimit
+          type: string
+        carryForwardUnpaidDeductions:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        carryForwardUnusedPreservedEarnings:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        paymentReference:
+          title: String
+          type: string
+          x-title: String
+        preservedEarnings:
+          title: PreservedEarningsCalculationTypeEnum
+          enum:
+          - Never
+          - Amount
+          - Percentage
+          type: string
+        preservedEarningsAmount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        additionalData:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        priority:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        deleted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        deductionType:
+          title: DeductionTypeEnum
+          enum:
+          - NotSet
+          - Fixed
+          - PercentageGross
+          - PercentageOTE
+          - PercentageStudentLoan
+          - PercentageNet
+          - Tiered
+          - Custom
+          - PercentageSuperannuation
+          - PercentageCompensation
+          - PercentagePensionable
+          - PercentageCustomBasis
+          type: string
+        id:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        amount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        expiryDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        maximumAmountPaid:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        totalAmountPaid:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        isActive:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        notes:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    UkEmployeeRecurringDeductionModel:
+      title: UkEmployeeRecurringDeductionModel
+      type: object
+      properties:
+        tieredDeductionSettingsId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        studentLoanDeductionOption:
+          title: Nullable<StudentLoanDeductionOption>
+          enum:
+          - ApplyStudentLoanFirst
+          - ApplyDeductionFirst
+          - DoNotApplyStudentLoan
+          type: string
+        deductionType:
+          title: DeductionTypeEnum
+          enum:
+          - NotSet
+          - Fixed
+          - PercentageGross
+          - PercentageNet
+          - Tiered
+          type: string
+        paidTo:
+          title: UkEmployeeRecurringDeductionPaidToEnum
+          enum:
+          - Manual
+          - BankAccount
+          - PensionScheme
+          type: string
+        name:
+          title: String
+          type: string
+          x-title: String
+        deductionCategoryId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        paidToAccountId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        externalReferenceId:
+          title: String
+          type: string
+          x-title: String
+        preservedEarningsAmountNotReachedAction:
+          title: DeductionAmountNotReachedEnum
+          enum:
+          - DoNotPay
+          - PayToLimit
+          type: string
+        carryForwardUnpaidDeductions:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        carryForwardUnusedPreservedEarnings:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        paymentReference:
+          title: String
+          type: string
+          x-title: String
+        preservedEarnings:
+          title: PreservedEarningsCalculationTypeEnum
+          enum:
+          - Never
+          - Amount
+          - Percentage
+          type: string
+        preservedEarningsAmount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        additionalData:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        priority:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        deleted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        id:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        amount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        expiryDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        maximumAmountPaid:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        totalAmountPaid:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        isActive:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        notes:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    EmployeeRecurringHmrcAdjustmentModel:
+      title: EmployeeRecurringHmrcAdjustmentModel
+      type: object
+      properties:
+        contributionType:
+          title: HmrcContributionType
+          enum:
+          - EmployerPensionContribution
+          - EmployeePensionContribution
+          - EmployerNationalInsuranceContribution
+          - EmployeeNationalInsuranceContribution
+          - StudentLoan
+          - PostGradLoan
+          type: string
+        type:
+          title: HmrcAdjustmentTypeEnum
+          enum:
+          - Fixed
+          - PercentageGross
+          - PercentagePensionableEarnings
+          - PercentageTaxableEarnings
+          - PercentageNIableEarnings
+          type: string
+        nationalInsuranceType:
+          title: Nullable<NationalInsuranceType>
+          enum:
+          - A
+          - B
+          - C
+          - H
+          - J
+          - M
+          - X
+          - Z
+          - F
+          - I
+          - L
+          - S
+          - V
+          - D
+          - E
+          - K
+          - N
+          type: string
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        deleted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isFromNIBackCalculation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        applyTaxRelief:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        id:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        amount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        expiryDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        maximumAmountPaid:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        totalAmountPaid:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        isActive:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        notes:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

@@ -1,0 +1,113 @@
+openapi: 3.2.0
+info:
+  title: United Kingdom Paye Scheme API
+  version: UK
+  description: PayeScheme
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: PayeScheme
+  description: PayeScheme
+paths:
+  /api/v2/business/{businessId}/payeschemes:
+    get:
+      tags:
+      - PayeScheme
+      summary: Lists the PAYE Schemes
+      operationId: UkPayeSchemes_List
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<UkPayeSchemeResponseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/UkPayeSchemeResponseModel'
+            application/xml:
+              schema:
+                title: IList<UkPayeSchemeResponseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/UkPayeSchemeResponseModel'
+            text/plain:
+              schema:
+                title: IList<UkPayeSchemeResponseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/UkPayeSchemeResponseModel'
+            application/octet-stream:
+              schema:
+                title: IList<UkPayeSchemeResponseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/UkPayeSchemeResponseModel'
+            text/json:
+              schema:
+                title: IList<UkPayeSchemeResponseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/UkPayeSchemeResponseModel'
+components:
+  schemas:
+    UkPayeSchemeResponseModel:
+      title: UkPayeSchemeResponseModel
+      type: object
+      properties:
+        employerName:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-navigateMethodsByName: true

@@ -1,0 +1,588 @@
+openapi: 3.2.0
+info:
+  title: Australia Payment Summary API
+  version: AU
+  description: Payment Summaries
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: PaymentSummary
+  description: Payment Summaries
+paths:
+  /api/v2/business/{businessId}/paymentsummary/{financialYearEnding}:
+    get:
+      tags:
+      - PaymentSummary
+      summary: List Payment Summaries
+      description: 'Lists all the payment summaries for the specified financial year.
+
+
+        This operation supports OData queries (only $filter, $orderby, $top, $skip).'
+      operationId: AuPaymentSummary_Get
+      parameters:
+      - in: path
+        name: financialYearEnding
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+          pattern: ^2[0-9]{3}$
+      - in: query
+        name: query
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<PaygPaymentSummaryModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/PaygPaymentSummaryModel'
+            application/xml:
+              schema:
+                title: IEnumerable<PaygPaymentSummaryModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/PaygPaymentSummaryModel'
+            text/plain:
+              schema:
+                title: IEnumerable<PaygPaymentSummaryModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/PaygPaymentSummaryModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<PaygPaymentSummaryModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/PaygPaymentSummaryModel'
+            text/json:
+              schema:
+                title: IEnumerable<PaygPaymentSummaryModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/PaygPaymentSummaryModel'
+    put:
+      tags:
+      - PaymentSummary
+      summary: Generate Payment Summaries
+      description: Generates (or regenerates) payment summaries for the specified financial year/business. Only unpublished payment summaries will be regenerated.
+      operationId: AuPaymentSummary_Put_2
+      parameters:
+      - in: path
+        name: financialYearEnding
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+          pattern: ^2[0-9]{3}$
+      - in: query
+        name: employeeId
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: employingEntityId
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: locationId
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaygPaymentSummaryModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/PaygPaymentSummaryModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PaygPaymentSummaryModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/PaygPaymentSummaryModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PaygPaymentSummaryModel'
+    post:
+      tags:
+      - PaymentSummary
+      summary: Publish Payment Summaries
+      description: Publish payment summaries for the specified financial year.
+      operationId: AuPaymentSummary_Post_3
+      parameters:
+      - in: path
+        name: financialYearEnding
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+          pattern: ^2[0-9]{3}$
+      - in: query
+        name: employeeId
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: employingEntityId
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: locationId
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - PaymentSummary
+      summary: Unpublish Payment Summaries
+      description: Unpublish payment summaries for the specified financial year.
+      operationId: AuPaymentSummary_Delete_4
+      parameters:
+      - in: path
+        name: financialYearEnding
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+          pattern: ^2[0-9]{3}$
+      - in: query
+        name: employeeId
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: employingEntityId
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: locationId
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    OtherAmounts:
+      title: OtherAmounts
+      type: object
+      properties:
+        workPlaceGiving:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        exemptForeignExemptIncome:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        deductibleAmountOfUndeductedAnnuityPrice:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+      additionalProperties: false
+    PaygPaymentSummaryModel:
+      title: PaygPaymentSummaryModel
+      type: object
+      properties:
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employingEntityId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        dateGenerated:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        paymentSummaryType:
+          title: PaygPaymentSummaryTypeEnum
+          enum:
+          - BusinessAndPersonalServicesIncome
+          - EmployeeTerminationPayment
+          - ForeignEmployment
+          - IndividualNonBusiness
+          - SuperannuationIncomeStream
+          - SuperannuationLumpSum
+          - PayEvent
+          type: string
+        status:
+          title: PaygPaymentSummaryStatus
+          enum:
+          - Generated
+          - Published
+          - Unpublished
+          type: string
+        etpCode:
+          title: String
+          type: string
+          x-title: String
+        isAmended:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        payeeName:
+          title: String
+          type: string
+          x-title: String
+        payeeAddress:
+          title: String
+          type: string
+          x-title: String
+        payeeAddressLine2:
+          title: String
+          type: string
+          x-title: String
+        payeeSuburb:
+          title: String
+          type: string
+          x-title: String
+        payeePostCode:
+          title: String
+          type: string
+          x-title: String
+        payeeState:
+          title: String
+          type: string
+          x-title: String
+        payeeCountry:
+          title: String
+          type: string
+          x-title: String
+        paymentPeriodStart:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        paymentPeriodEnd:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        financialYearStart:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        financialYearEnd:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        payeeTaxFileNumber:
+          title: String
+          type: string
+          x-title: String
+        totalTaxWithheld:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        grossPayments:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        cdepPayments:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        fringeBenefits:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        isExemptFromFringeBenefitsTax:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        employerSuperContributions:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        totalAllowances:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        lumpSumA:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        lumpSumB:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        lumpSumD:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        lumpSumE:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        lumpSumAType:
+          title: String
+          type: string
+          x-title: String
+        notReportedAmount:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        allowances:
+          title: Dictionary<String,Int32>
+          type: object
+          additionalProperties:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+        unionFeeDeductions:
+          title: Dictionary<String,Int32>
+          type: object
+          additionalProperties:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: Dictionary<String,Int32>
+        workplaceGiving:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        exemptForeignEmploymentIncome:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        deductibleAmountOfUndeductedAnnuityPrice:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        otherAmounts:
+          title: IList<OtherAmounts>
+          type: array
+          items:
+            $ref: '#/components/schemas/OtherAmounts'
+        payerABN:
+          title: String
+          type: string
+          x-title: String
+        payerName:
+          title: String
+          type: string
+          x-title: String
+        payerBranch:
+          title: String
+          type: string
+          x-title: String
+        payerSignatory:
+          title: String
+          type: string
+          x-title: String
+        paymentDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        isTransitionalTerminationPayment:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isPartOfEarlierPayment:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        taxableComponent:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        taxFreeComponent:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        payeeABN:
+          title: String
+          type: string
+          x-title: String
+        paymentType:
+          title: String
+          type: string
+          x-title: String
+        grossPaymentType:
+          title: String
+          type: string
+          x-title: String
+        foreignTaxPaid:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        taxableComponentTaxedElement:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        taxableComponentUntaxedElement:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        taxableComponentTaxFreeComponent:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        taxableComponentTaxOffsetAmount:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        lumpSumInArrearsTaxedElement:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        lumpSumInArrearsUntaxedElement:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        lumpSumInArrearsTaxFreeComponent:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        isDeathBenefit:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        deathBenefitType:
+          title: String
+          type: string
+          x-title: String
+        inputGrossEarnings:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        inputPreTaxDeductionAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        totalDeductions:
+          format: double
+          title: Decimal
+          type: number
+          readOnly: true
+          x-title: Decimal
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-navigateMethodsByName: true

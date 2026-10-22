@@ -1,0 +1,640 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Webhook API
+  version: '1.0'
+  description: 'Operations tagged Webhook across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: Webhook
+  description: Webhook
+paths:
+  /api/v2/business/{businessId}/webhookregistrations:
+    get:
+      tags:
+      - Webhook
+      summary: List Web Hook Registrations
+      description: Returns a collection containing the registered web hook instances for the user.
+      operationId: WebHookRegistrations_GetWebhook
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: List<WebHook>
+                type: array
+                items:
+                  $ref: '#/components/schemas/WebHook'
+            application/xml:
+              schema:
+                title: List<WebHook>
+                type: array
+                items:
+                  $ref: '#/components/schemas/WebHook'
+            text/plain:
+              schema:
+                title: List<WebHook>
+                type: array
+                items:
+                  $ref: '#/components/schemas/WebHook'
+            application/octet-stream:
+              schema:
+                title: List<WebHook>
+                type: array
+                items:
+                  $ref: '#/components/schemas/WebHook'
+            text/json:
+              schema:
+                title: List<WebHook>
+                type: array
+                items:
+                  $ref: '#/components/schemas/WebHook'
+    post:
+      tags:
+      - Webhook
+      summary: Register Web Hook
+      description: Registers a new web hook.
+      operationId: WebHookRegistrations_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WebHook'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/WebHook'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/WebHook'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/WebHook'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/WebHook'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '409':
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal Server Error
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebHook'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/WebHook'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/WebHook'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/WebHook'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/WebHook'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/WebHook'
+    delete:
+      tags:
+      - Webhook
+      summary: Delete all Web Hook Registrations
+      description: Deletes all the web hook registrations.
+      operationId: WebHookRegistrations_DeleteAll
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /api/v2/business/{businessId}/webhookregistrations/{id}:
+    get:
+      tags:
+      - Webhook
+      summary: Get Web Hook Registration by ID
+      description: Gets the registered web hook instance with the specified ID.
+      operationId: WebHookRegistrations_Lookup
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: String
+        schema:
+          type: string
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WebHook'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/WebHook'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/WebHook'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/WebHook'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/WebHook'
+    put:
+      tags:
+      - Webhook
+      summary: Update Web Hook Registration
+      description: Updates the web hook registration with the specified ID.
+      operationId: WebHookRegistrations_Put_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: String
+        schema:
+          type: string
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '409':
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal Server Error
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebHook'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/WebHook'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/WebHook'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/WebHook'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/WebHook'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/WebHook'
+    delete:
+      tags:
+      - Webhook
+      summary: Delete Web Hook Registration
+      description: Deletes the web hook registration with the specified ID.
+      operationId: WebHookRegistrations_Delete_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: String
+        schema:
+          type: string
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '409':
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal Server Error
+  /api/v2/business/{businessId}/webhookregistrations/{id}/test:
+    get:
+      tags:
+      - Webhook
+      summary: Test Web Hook
+      description: Tests a web hook given a registration ID and a filter string.
+      operationId: WebHookRegistrations_Test
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: String
+        schema:
+          type: string
+      - in: query
+        name: filter
+        title: String
+        schema:
+          type: string
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+components:
+  schemas:
+    WebHook:
+      title: WebHook
+      type: object
+      properties:
+        id:
+          title: String
+          type: string
+          x-title: String
+        webHookUri:
+          format: uri
+          title: Uri
+          type: string
+        secret:
+          title: String
+          type: string
+          x-title: String
+        description:
+          title: String
+          type: string
+          x-title: String
+        isPaused:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        filters:
+          title: ISet<String>
+          uniqueItems: true
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          readOnly: true
+        headers:
+          title: IDictionary<String,String>
+          type: object
+          additionalProperties:
+            title: String
+            type: string
+            x-title: String
+          readOnly: true
+        properties:
+          title: IDictionary<String,Object>
+          type: object
+          additionalProperties:
+            title: Object
+            x-title: Object
+            type: object
+          readOnly: true
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

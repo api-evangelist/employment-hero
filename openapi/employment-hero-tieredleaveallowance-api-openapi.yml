@@ -1,0 +1,333 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Tiered Leave Allowance API
+  version: '1.0'
+  description: 'Operations tagged TieredLeaveAllowance across 2 of this provider''s published API definitions: employment-hero-payroll-my-swagger.json, employment-hero-payroll-sg-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: TieredLeaveAllowance
+  description: Tiered Leave Allowances
+paths:
+  /api/v2/business/{businessId}/tieredleaveallowancetemplate:
+    get:
+      tags:
+      - TieredLeaveAllowance
+      summary: List Tiered Leave Allowance Templates
+      description: 'Lists all the Tiered Leave Allowance templates for this business.
+
+
+        This operation supports OData queries (only $filter, $orderby, $top, $skip).'
+      operationId: MyTieredTieredLeaveAllowanceTemplate_GetTieredLeaveAllowanceTemplates
+      parameters:
+      - in: query
+        name: query
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<TieredLeaveAllowanceTemplateApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+            application/xml:
+              schema:
+                title: IEnumerable<TieredLeaveAllowanceTemplateApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+            text/plain:
+              schema:
+                title: IEnumerable<TieredLeaveAllowanceTemplateApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<TieredLeaveAllowanceTemplateApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+            text/json:
+              schema:
+                title: IEnumerable<TieredLeaveAllowanceTemplateApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+    post:
+      tags:
+      - TieredLeaveAllowance
+      summary: Create Tiered Leave Allowance Template
+      description: Creates a new Tiered Leave Allowance template for the business.
+      operationId: MyTieredTieredLeaveAllowanceTemplate_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+  /api/v2/business/{businessId}/tieredleaveallowancetemplate/{id}:
+    get:
+      tags:
+      - TieredLeaveAllowance
+      summary: Get Tiered Leave Allowance Template by ID
+      description: Gets the details for the Tiered Leave Allowance template with the specified ID.
+      operationId: MyTieredTieredLeaveAllowanceTemplate_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+    put:
+      tags:
+      - TieredLeaveAllowance
+      summary: Update Tiered Leave Allowance Template
+      description: Updates the Tiered Leave Allowance template with the specified ID.
+      operationId: MyTieredTieredLeaveAllowanceTemplate_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/TieredLeaveAllowanceTemplateApiModel'
+    delete:
+      tags:
+      - TieredLeaveAllowance
+      summary: Delete Tiered Leave Allowance Template
+      description: Deletes the Tiered Leave Allowance template with the specified ID.
+      operationId: MyTieredTieredLeaveAllowanceTemplate_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    TieredLeaveAllowanceTemplateApiModel:
+      title: TieredLeaveAllowanceTemplateApiModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        tierOption:
+          title: Nullable<TierOptionEnum>
+          enum:
+          - Anniversary
+          - AnniversaryInMonths
+          type: string
+        deleted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        leaveAllowanceTemplateTiers:
+          title: List<TieredLeaveAllowanceTemplateTierApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/TieredLeaveAllowanceTemplateTierApiModel'
+      additionalProperties: false
+    TieredLeaveAllowanceTemplateTierApiModel:
+      title: TieredLeaveAllowanceTemplateTierApiModel
+      type: object
+      properties:
+        minUnit:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        maxUnit:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        leaveAllowanceTemplateId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        leaveAllowanceTemplateName:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-sg-swagger.json

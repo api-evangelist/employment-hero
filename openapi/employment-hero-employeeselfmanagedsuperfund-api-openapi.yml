@@ -1,0 +1,356 @@
+openapi: 3.2.0
+info:
+  title: Australia Employee Self Managed Super Fund API
+  version: AU
+  description: Employee Self Managed Super Funds
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: EmployeeSelfManagedSuperFund
+  description: Employee Self Managed Super Funds
+paths:
+  /api/v2/business/{businessId}/employee/{employeeId}/selfmanagedsuperfund:
+    get:
+      tags:
+      - EmployeeSelfManagedSuperFund
+      summary: List Self Managed Super Funds
+      description: 'Lists all the self managed super funds for the employee.
+
+
+        This operation supports OData queries (only $filter, $orderby, $top, $skip).'
+      operationId: AuEmployeeSelfManagedSuperFund_GetFunds
+      parameters:
+      - in: query
+        name: query
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<SelfManagedSuperFundModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SelfManagedSuperFundModel'
+            application/xml:
+              schema:
+                title: IEnumerable<SelfManagedSuperFundModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SelfManagedSuperFundModel'
+            text/plain:
+              schema:
+                title: IEnumerable<SelfManagedSuperFundModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SelfManagedSuperFundModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<SelfManagedSuperFundModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SelfManagedSuperFundModel'
+            text/json:
+              schema:
+                title: IEnumerable<SelfManagedSuperFundModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SelfManagedSuperFundModel'
+    post:
+      tags:
+      - EmployeeSelfManagedSuperFund
+      summary: Create Employee Self Managed Super Fund
+      description: 'Create a new self managed super fund for the employee.
+
+        To update existing self managed super funds, please use the PUT method.'
+      operationId: AuEmployeeSelfManagedSuperFund_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SelfManagedSuperFundModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SelfManagedSuperFundModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SelfManagedSuperFundModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/SelfManagedSuperFundModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SelfManagedSuperFundModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/selfmanagedsuperfund/{id}:
+    get:
+      tags:
+      - EmployeeSelfManagedSuperFund
+      summary: Get Employee Self Managed Super Fund by id
+      description: Gets the Self Managed Super Fund by the specified id.
+      operationId: AuEmployeeSelfManagedSuperFund_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SelfManagedSuperFundModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SelfManagedSuperFundModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SelfManagedSuperFundModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/SelfManagedSuperFundModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SelfManagedSuperFundModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    put:
+      tags:
+      - EmployeeSelfManagedSuperFund
+      summary: Update Employee Self Managed Super Fund
+      description: Updates the Self Managed Super Fund with the specified ID.
+      operationId: AuEmployeeSelfManagedSuperFund_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+components:
+  schemas:
+    SelfManagedSuperFundModel:
+      title: SelfManagedSuperFundModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        abn:
+          title: String
+          type: string
+          x-title: String
+        fundName:
+          title: String
+          type: string
+          x-title: String
+        accountName:
+          title: String
+          type: string
+          x-title: String
+        accountNumber:
+          title: String
+          type: string
+          x-title: String
+        bsb:
+          title: String
+          type: string
+          x-title: String
+        electronicServiceAddress:
+          title: String
+          type: string
+          x-title: String
+        email:
+          title: String
+          type: string
+          x-title: String
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        externalId:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-navigateMethodsByName: true

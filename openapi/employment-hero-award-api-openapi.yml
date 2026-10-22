@@ -1,0 +1,442 @@
+openapi: 3.2.0
+info:
+  title: Australia Award API
+  version: AU
+  description: Award
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: Award
+  description: Award
+paths:
+  /api/v2/business/{businessId}/award:
+    get:
+      tags:
+      - Award
+      summary: List Awards
+      description: 'Returns all awards available to the business with their current status.
+
+        Use the optional status filter to narrow results (e.g. OutOfDate).'
+      operationId: AuAward_GetAwards
+      parameters:
+      - in: query
+        name: status
+        title: Nullable<AwardImportStatus>
+        schema:
+          type: string
+          enum:
+          - NotImported
+          - UpToDate
+          - OutOfDate
+          - NotAvailable
+          - QueuedForInstall
+          - Installing
+          - InstallationFailed
+          - UpdateFailed
+          - Updating
+          - QueuedForUpdate
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<AwardStatusModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AwardStatusModel'
+            application/xml:
+              schema:
+                title: IList<AwardStatusModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AwardStatusModel'
+            text/plain:
+              schema:
+                title: IList<AwardStatusModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AwardStatusModel'
+            application/octet-stream:
+              schema:
+                title: IList<AwardStatusModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AwardStatusModel'
+            text/json:
+              schema:
+                title: IList<AwardStatusModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AwardStatusModel'
+  /api/v2/business/{businessId}/award/installed:
+    get:
+      tags:
+      - Award
+      summary: List Installed Awards
+      description: Returns the awards currently installed on the business.
+      operationId: AuAward_GetInstalledAwards
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<InstalledAwardModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/InstalledAwardModel'
+            application/xml:
+              schema:
+                title: IList<InstalledAwardModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/InstalledAwardModel'
+            text/plain:
+              schema:
+                title: IList<InstalledAwardModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/InstalledAwardModel'
+            application/octet-stream:
+              schema:
+                title: IList<InstalledAwardModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/InstalledAwardModel'
+            text/json:
+              schema:
+                title: IList<InstalledAwardModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/InstalledAwardModel'
+  /api/v2/business/{businessId}/award/{awardId}/install:
+    put:
+      tags:
+      - Award
+      summary: Install Award
+      description: Installs an award for the specified business. This operation is asynchronous and returns a job ID that can be used to track the installation progress.
+      operationId: AuAward_InstallAward
+      parameters:
+      - in: path
+        name: awardId
+        description: The ID of the award to install
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AwardInstallResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AwardInstallResponse'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AwardInstallResponse'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AwardInstallResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AwardInstallResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal Server Error
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AwardInstallRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AwardInstallRequest'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AwardInstallRequest'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AwardInstallRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AwardInstallRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AwardInstallRequest'
+        description: Installation configuration options
+components:
+  schemas:
+    AwardStatusModel:
+      title: AwardStatusModel
+      required:
+      - name
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        awardId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        status:
+          title: AwardImportStatus
+          enum:
+          - NotImported
+          - UpToDate
+          - OutOfDate
+          - NotAvailable
+          - QueuedForInstall
+          - Installing
+          - InstallationFailed
+          - UpdateFailed
+          - Updating
+          - QueuedForUpdate
+          type: string
+        latestVersionDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+      additionalProperties: false
+    AwardInstallResponse:
+      title: AwardInstallResponse
+      type: object
+      properties:
+        jobId:
+          format: uuid
+          title: Nullable<Guid>
+          type: string
+        employeesWithOverriddenRate:
+          title: IList<EmployeeDto>
+          type: array
+          items:
+            $ref: '#/components/schemas/EmployeeDto'
+      additionalProperties: false
+    AwardInstallRequest:
+      title: AwardInstallRequest
+      type: object
+      properties:
+        awardPackageVersionId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        updateRuleSets:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        updatePayRates:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        reApplyLeaveAllowanceTemplates:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        preserveCustomRules:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        preserveDisabledRules:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        preserveCustomPayCategories:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        preserveCustomRuleSetPeriod:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        preserveCustomWorkTypes:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        preserveCustomLeaveAllowanceTemplates:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        preserveAutoProgressionSettings:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        preserveCustomPayRateTemplates:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        preserveCustomEmploymentAgreements:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+      additionalProperties: false
+    InstalledAwardModel:
+      title: InstalledAwardModel
+      required:
+      - name
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        awardId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+    EmployeeDto:
+      title: EmployeeDto
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        firstName:
+          title: String
+          type: string
+          x-title: String
+        otherName:
+          title: String
+          type: string
+          x-title: String
+        middleName:
+          title: String
+          type: string
+          x-title: String
+        surname:
+          title: String
+          type: string
+          x-title: String
+        name:
+          title: String
+          type: string
+          readOnly: true
+          x-title: String
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-navigateMethodsByName: true

@@ -1,0 +1,636 @@
+openapi: 3.2.0
+info:
+  title: Australia Super Fund API
+  version: AU
+  description: Super Funds
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: SuperFund
+  description: Super Funds
+paths:
+  /api/v2/business/{businessId}/selfmanagedsuperfund:
+    get:
+      tags:
+      - SuperFund
+      summary: List Self Managed Super Funds
+      description: 'Lists all the self managed super funds for the business.
+
+
+        This operation supports OData queries (only $filter, $orderby, $top, $skip).'
+      operationId: AuSelfManagedSuperFund_GetFunds
+      parameters:
+      - in: query
+        name: query
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<SelfManagedSuperFundModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SelfManagedSuperFundModel'
+                x-title: IEnumerable<SelfManagedSuperFundModel>
+            application/xml:
+              schema:
+                title: IEnumerable<SelfManagedSuperFundModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SelfManagedSuperFundModel'
+                x-title: IEnumerable<SelfManagedSuperFundModel>
+            text/plain:
+              schema:
+                title: IEnumerable<SelfManagedSuperFundModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SelfManagedSuperFundModel'
+                x-title: IEnumerable<SelfManagedSuperFundModel>
+            application/octet-stream:
+              schema:
+                title: IEnumerable<SelfManagedSuperFundModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SelfManagedSuperFundModel'
+                x-title: IEnumerable<SelfManagedSuperFundModel>
+            text/json:
+              schema:
+                title: IEnumerable<SelfManagedSuperFundModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SelfManagedSuperFundModel'
+                x-title: IEnumerable<SelfManagedSuperFundModel>
+    post:
+      tags:
+      - SuperFund
+      summary: Create Self Managed Super Fund
+      description: Creates a new self managed super fund for the business.
+      operationId: AuSelfManagedSuperFund_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SelfManagedSuperFundModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SelfManagedSuperFundModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SelfManagedSuperFundModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/SelfManagedSuperFundModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SelfManagedSuperFundModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+  /api/v2/business/{businessId}/selfmanagedsuperfund/{id}:
+    get:
+      tags:
+      - SuperFund
+      summary: Get Self Managed Super Fund by ID
+      description: Gets the self managed super fund with the specified ID.
+      operationId: AuSelfManagedSuperFund_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SelfManagedSuperFundModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SelfManagedSuperFundModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SelfManagedSuperFundModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/SelfManagedSuperFundModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SelfManagedSuperFundModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    put:
+      tags:
+      - SuperFund
+      summary: Update Self Managed Super Fund
+      description: Updates the Self Managed Super Fund by the specified ID
+      operationId: AuSelfManagedSuperFund_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SelfManagedSuperFundModel'
+  /api/v2/business/{businessId}/superfund/electronicserviceaddress:
+    get:
+      tags:
+      - SuperFund
+      summary: List Electronic Service Addresses
+      description: Electronic Service Addresses for Self Managed Super Funds
+      operationId: AuSuperFund_ElectronicServiceAddressIndex
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: List<AuSmsfElectronicServiceAddressModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuSmsfElectronicServiceAddressModel'
+            application/xml:
+              schema:
+                title: List<AuSmsfElectronicServiceAddressModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuSmsfElectronicServiceAddressModel'
+            text/plain:
+              schema:
+                title: List<AuSmsfElectronicServiceAddressModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuSmsfElectronicServiceAddressModel'
+            application/octet-stream:
+              schema:
+                title: List<AuSmsfElectronicServiceAddressModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuSmsfElectronicServiceAddressModel'
+            text/json:
+              schema:
+                title: List<AuSmsfElectronicServiceAddressModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuSmsfElectronicServiceAddressModel'
+  /api/v2/business/{businessId}/superfund/productsearch:
+    get:
+      tags:
+      - SuperFund
+      summary: Search Super Funds
+      description: Search for super funds based on a string, search by defaults to All
+      operationId: AuSuperFund_ProductSearch
+      parameters:
+      - in: query
+        name: term
+        title: String
+        schema:
+          type: string
+      - in: query
+        name: searchBy
+        title: SuperFundSearchBy
+        schema:
+          type: string
+          enum:
+          - All
+          - Usi
+          - Abn
+          - Name
+          default: All
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: List<SuperProductEditModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SuperProductEditModel'
+                x-title: List<SuperProductEditModel>
+            application/xml:
+              schema:
+                title: List<SuperProductEditModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SuperProductEditModel'
+                x-title: List<SuperProductEditModel>
+            text/plain:
+              schema:
+                title: List<SuperProductEditModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SuperProductEditModel'
+                x-title: List<SuperProductEditModel>
+            application/octet-stream:
+              schema:
+                title: List<SuperProductEditModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SuperProductEditModel'
+                x-title: List<SuperProductEditModel>
+            text/json:
+              schema:
+                title: List<SuperProductEditModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SuperProductEditModel'
+                x-title: List<SuperProductEditModel>
+components:
+  schemas:
+    AuSmsfElectronicServiceAddressModel:
+      title: AuSmsfElectronicServiceAddressModel
+      type: object
+      properties:
+        name:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    SelfManagedSuperFundModel:
+      title: SelfManagedSuperFundModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        abn:
+          title: String
+          type: string
+          x-title: String
+        fundName:
+          title: String
+          type: string
+          x-title: String
+        accountName:
+          title: String
+          type: string
+          x-title: String
+        accountNumber:
+          title: String
+          type: string
+          x-title: String
+        bsb:
+          title: String
+          type: string
+          x-title: String
+        electronicServiceAddress:
+          title: String
+          type: string
+          x-title: String
+        email:
+          title: String
+          type: string
+          x-title: String
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        externalId:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+    SuperProductEditModel:
+      title: SuperProductEditModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        abn:
+          title: String
+          type: string
+          x-title: String
+        productCode:
+          title: String
+          type: string
+          x-title: String
+        productType:
+          title: String
+          type: string
+          x-title: String
+        businessName:
+          title: String
+          type: string
+          x-title: String
+        displayName:
+          title: String
+          type: string
+          readOnly: true
+          x-title: String
+        productName:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: ExternalService
+          enum:
+          - None
+          - Saasu
+          - Xero
+          - MYOB
+          - Deputy
+          - EmployeeTimePunch
+          - ClickSuper
+          - IntegratedTimesheets
+          - FileImport
+          - FileExport
+          - QuickBooks
+          - Harmony
+          - AwardStore
+          - Attache
+          - IntegratedRostering
+          - ReckonAccounts
+          - API
+          - MicroPower
+          - RosterLive
+          - NetSuite
+          - Kounta
+          - TimeAndAttendanceKiosk
+          - DetailedFileExport
+          - JonasPremier
+          - WageEasy
+          - Maestrano
+          - WorkZone
+          - EmployeePortal
+          - RosterTemplate
+          - Onboarding
+          - Admin
+          - WorkZoneClockOnOff
+          - NetSuiteOneWorld
+          - Sage50
+          - PensionSync
+          - FinancialsOffice
+          - ProntoXI
+          - PayRunDefault
+          - StandardWorkDay
+          - Beam
+          - PayRunAutomation
+          - BureauDashboard
+          - Wiise
+          - QBOMigrationTool
+          - AbridgedFileImport
+          - QBOForcedMigration
+          - HmrcDpsUpdate
+          - HmrcDpsStudentLoan
+          - HmrcDpsPostGradLoan
+          - Sage50FileImporter
+          - FPSFileImporter
+          - OAuth
+          - FreshBooks
+          - StarFileImporter
+          - ActiveCampaign
+          - SummaryAndDetailsExport
+          - Telleroo
+          - EmployeeAdvancedHoursUpload
+          - BusinessCentral
+          - Paytron
+          - AccessFinancials
+          - Comma
+          - Zoho
+          - FlatFileEmployeeImporter
+          - Twinfield
+          - SageAccounting
+          - Square
+          - Quickfile
+          - Tide
+          - TideSso
+          - FreeAgent
+          - Akahu
+          - InstaPay
+          - Zepto
+          - Slack
+          - Caxton
+          - QuickbooksStandalonePayroll
+          - ImportEmployeeSelfSetup
+          - XeroIdentityPayrollSignUp
+          - XeroIdentityHrSignUp
+          - SageIntacct
+          - InstaPayDaily
+          - Salesforce
+          - AutomatedPublicHolidayNotWorked
+          - EmployeePayRatesUpload
+          - Zapier
+          - StapledSuperFund
+          - Swag
+          - Crezco
+          - KafkaConsumer
+          - EmployeeLeaveRateCalculationMethodUpload
+          - MoneyMovement
+          - PayRunSettingsFlatFileImport
+          - Sage200
+          - RosterCostCalculation
+          - HeroClear
+          - BrightPay
+          - EmployeeLeaveYearStartDatesImport
+          - PayConditionComparisonUpload
+          - GlobalMoneyMovement
+          type: string
+          x-title: ExternalService
+        accountNumber:
+          title: String
+          type: string
+          x-title: String
+        bsb:
+          title: String
+          type: string
+          x-title: String
+        accountName:
+          title: String
+          type: string
+          x-title: String
+        electronicServiceAddress:
+          title: String
+          type: string
+          x-title: String
+        email:
+          title: String
+          type: string
+          x-title: String
+        externalReferenceId:
+          title: String
+          type: string
+          x-title: String
+        superDetailsDefaultFundId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        isMySuper:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-navigateMethodsByName: true

@@ -1,0 +1,1454 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Leave Requests API
+  version: '1.0'
+  description: 'Operations tagged LeaveRequests across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: LeaveRequests
+  description: Leave Requests
+paths:
+  /api/v2/business/{businessId}/employee/{employeeId}/leaverequest:
+    get:
+      tags:
+      - LeaveRequests
+      summary: Get Leave Requests for Employee
+      description: 'Returns all leave requests for this employee, optionally filtered by OData parameters.
+
+
+        This operation supports OData queries (only $filter, $orderby, $top, $skip).'
+      operationId: AuHoursLeaveRequest_GetLeaveRequests
+      parameters:
+      - in: query
+        name: query
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<HourLeaveRequestResponseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+                x-title: IEnumerable<HourLeaveRequestResponseModel>
+            application/xml:
+              schema:
+                title: IEnumerable<HourLeaveRequestResponseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+                x-title: IEnumerable<HourLeaveRequestResponseModel>
+            text/plain:
+              schema:
+                title: IEnumerable<HourLeaveRequestResponseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+                x-title: IEnumerable<HourLeaveRequestResponseModel>
+            application/octet-stream:
+              schema:
+                title: IEnumerable<HourLeaveRequestResponseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+                x-title: IEnumerable<HourLeaveRequestResponseModel>
+            text/json:
+              schema:
+                title: IEnumerable<HourLeaveRequestResponseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+                x-title: IEnumerable<HourLeaveRequestResponseModel>
+    post:
+      tags:
+      - LeaveRequests
+      summary: Create Leave Request
+      description: Creates a new leave request for an employee.
+      operationId: AuHoursLeaveRequest_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HourLeaveRequestModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/HourLeaveRequestModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/HourLeaveRequestModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/HourLeaveRequestModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/HourLeaveRequestModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/HourLeaveRequestModel'
+    put:
+      tags:
+      - LeaveRequests
+      summary: Update Leave Request
+      description: Updates the leave request with the specified ID.
+      operationId: AuHoursLeaveRequest_Put_2
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HourLeaveRequestModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/HourLeaveRequestModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/HourLeaveRequestModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/HourLeaveRequestModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/HourLeaveRequestModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/HourLeaveRequestModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/leaverequest/estimate:
+    get:
+      tags:
+      - LeaveRequests
+      summary: Estimate Leave Hours
+      description: Estimates the leave hours required for a leave request between fromDate and toDate.
+      operationId: AuHoursLeaveRequest_Estimate
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: fromDate
+        title: DateTime
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: toDate
+        title: DateTime
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: leaveCategoryId
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourLeaveEstimateModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourLeaveEstimateModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/HourLeaveEstimateModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/HourLeaveEstimateModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/HourLeaveEstimateModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/leaverequest/{leaveRequestId}:
+    get:
+      tags:
+      - LeaveRequests
+      summary: Get Leave Request by ID
+      description: Gets the details for a leave request with the specified ID.
+      operationId: AuHoursLeaveRequest_Get_3
+      parameters:
+      - in: path
+        name: employeeId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: leaveRequestId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    put:
+      tags:
+      - LeaveRequests
+      summary: Update Leave Request
+      description: Updates the leave request with the specified ID.
+      operationId: AuHoursLeaveRequest_Put_4
+      parameters:
+      - in: path
+        name: leaveRequestId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HourLeaveRequestModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/HourLeaveRequestModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/HourLeaveRequestModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/HourLeaveRequestModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/HourLeaveRequestModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/HourLeaveRequestModel'
+    delete:
+      tags:
+      - LeaveRequests
+      summary: Delete Leave Request
+      description: Deletes the leave request with the specified ID.
+      operationId: AuHoursLeaveRequest_Delete_5
+      parameters:
+      - in: path
+        name: employeeId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: leaveRequestId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /api/v2/business/{businessId}/employee/{employeeId}/leaverequest/{leaveRequestId}/approve:
+    post:
+      tags:
+      - LeaveRequests
+      summary: Approve Leave Request
+      description: Approves the leave request with the specified ID.
+      operationId: AuHoursLeaveRequest_Approve
+      parameters:
+      - in: path
+        name: employeeId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: leaveRequestId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /api/v2/business/{businessId}/employee/{employeeId}/leaverequest/{leaveRequestId}/decline:
+    post:
+      tags:
+      - LeaveRequests
+      summary: Decline Leave Request
+      description: Declines the leave request with the specified ID.
+      operationId: AuHoursLeaveRequest_Decline
+      parameters:
+      - in: path
+        name: employeeId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: leaveRequestId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeclineLeaveRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/DeclineLeaveRequest'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/DeclineLeaveRequest'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/DeclineLeaveRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DeclineLeaveRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DeclineLeaveRequest'
+  /api/v2/business/{businessId}/leaverequest:
+    get:
+      tags:
+      - LeaveRequests
+      summary: List Leave Requests
+      description: Lists all the leave requests for the business.
+      operationId: AuBusinessHoursLeaveRequest_ListLeaveRequests
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: Status
+        title: Nullable<LeaveRequestStatus>
+        schema:
+          type: string
+          enum:
+          - Approved
+          - Pending
+          - Rejected
+          - Cancelled
+      - in: query
+        name: FromDate
+        title: Nullable<DateTime>
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: ToDate
+        title: Nullable<DateTime>
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: LeaveCategoryId
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: LocationId
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: EmployeeId
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: GroupBy
+        title: LeaveRequestGroupBy
+        schema:
+          type: string
+          enum:
+          - Employee
+          - LeaveType
+      - in: query
+        name: RestrictOverlappingLeave
+        title: Boolean
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<HourLeaveRequestResponseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            application/xml:
+              schema:
+                title: IEnumerable<HourLeaveRequestResponseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            text/plain:
+              schema:
+                title: IEnumerable<HourLeaveRequestResponseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<HourLeaveRequestResponseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+            text/json:
+              schema:
+                title: IEnumerable<HourLeaveRequestResponseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/HourLeaveRequestResponseModel'
+components:
+  schemas:
+    HourLeaveEstimateModel:
+      title: HourLeaveEstimateModel
+      type: object
+      properties:
+        hours:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        details:
+          title: IList<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: IList<String>
+      additionalProperties: false
+    HourLeaveRequestModel:
+      title: HourLeaveRequestModel
+      type: object
+      properties:
+        hours:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        automaticallyApprove:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        requireNotesForLeaveRequests:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        attachment:
+          $ref: '#/components/schemas/AttachmentModel'
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        toDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        leaveCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        notes:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    HourLeaveRequestResponseModel:
+      title: HourLeaveRequestResponseModel
+      type: object
+      properties:
+        totalHours:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        hoursApplied:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        leaveCategoryId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employee:
+          title: String
+          type: string
+          x-title: String
+        leaveCategory:
+          title: String
+          type: string
+          x-title: String
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        toDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        notes:
+          title: String
+          type: string
+          x-title: String
+        status:
+          title: String
+          type: string
+          x-title: String
+        attachmentId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    AttachmentModel:
+      title: AttachmentModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        friendlyName:
+          title: String
+          type: string
+          x-title: String
+        dateCreated:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        url:
+          title: String
+          type: string
+          x-title: String
+        dateScanned:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        isInfected:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+    DeclineLeaveRequest:
+      title: DeclineLeaveRequest
+      type: object
+      properties:
+        reason:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    UnitLeaveEstimateModel:
+      title: UnitLeaveEstimateModel
+      type: object
+      properties:
+        units:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        details:
+          title: IList<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: IList<String>
+      additionalProperties: false
+    UnitLeaveRequestResponseModel:
+      title: UnitLeaveRequestResponseModel
+      type: object
+      properties:
+        totalUnits:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        unitsApplied:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        totalHours:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        requestedDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        isStuck:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        leaveCategoryId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employee:
+          title: String
+          type: string
+          x-title: String
+        leaveCategory:
+          title: String
+          type: string
+          x-title: String
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        toDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        notes:
+          title: String
+          type: string
+          x-title: String
+        status:
+          title: String
+          type: string
+          x-title: String
+        attachmentId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    UnitLeaveRequestModel:
+      title: UnitLeaveRequestModel
+      type: object
+      properties:
+        units:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        automaticallyApprove:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        requireNotesForLeaveRequests:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        attachment:
+          $ref: '#/components/schemas/AttachmentModel'
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        toDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        leaveCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        notes:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    NzUnitLeaveRequestModel:
+      title: NzUnitLeaveRequestModel
+      type: object
+      properties:
+        leaveUnitType:
+          title: Nullable<LeaveUnitTypeEnum>
+          enum:
+          - Hours
+          - Days
+          - Weeks
+          type: string
+          x-title: Nullable<LeaveUnitTypeEnum>
+        units:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        automaticallyApprove:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        requireNotesForLeaveRequests:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        attachment:
+          $ref: '#/components/schemas/AttachmentModel'
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        toDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        leaveCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        notes:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    NzUnitLeaveRequestResponseModel:
+      title: NzUnitLeaveRequestResponseModel
+      type: object
+      properties:
+        leaveUnitType:
+          title: LeaveUnitTypeEnum
+          enum:
+          - Hours
+          - Days
+          - Weeks
+          type: string
+          x-title: LeaveUnitTypeEnum
+        totalUnits:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        unitsApplied:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        totalHours:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        requestedDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        isStuck:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        leaveCategoryId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employee:
+          title: String
+          type: string
+          x-title: String
+        leaveCategory:
+          title: String
+          type: string
+          x-title: String
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        toDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        notes:
+          title: String
+          type: string
+          x-title: String
+        status:
+          title: String
+          type: string
+          x-title: String
+        attachmentId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    UkUnitLeaveRequestModel:
+      title: UkUnitLeaveRequestModel
+      type: object
+      properties:
+        units:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        automaticallyApprove:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        requireNotesForLeaveRequests:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        attachment:
+          $ref: '#/components/schemas/AttachmentModel'
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        toDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        leaveCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        notes:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    UkUnitLeaveRequestResponseModel:
+      title: UkUnitLeaveRequestResponseModel
+      type: object
+      properties:
+        totalUnits:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        unitsApplied:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        totalHours:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        requestedDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        isStuck:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        leaveCategoryId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employee:
+          title: String
+          type: string
+          x-title: String
+        leaveCategory:
+          title: String
+          type: string
+          x-title: String
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        notes:
+          title: String
+          type: string
+          x-title: String
+        status:
+          title: String
+          type: string
+          x-title: String
+        attachmentId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

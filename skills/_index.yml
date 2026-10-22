@@ -1,0 +1,49 @@
+name: Employment Hero agent skills
+generated: '2026-10-20'
+method: generated
+source: openapi/
+note: No provider-published skills or AGENTS.md were found (developer.employmenthero.com/AGENTS.md
+  returned 404). These skills are generated from the saved OpenAPI operationIds.
+skills:
+- name: employment-hero-employee-profile-lookup
+  path: skills/employment-hero-employee-profile-lookup.md
+  description: Find an Employment Hero employee in an organisation and assemble their
+    profile, job history, bank accounts and emergency contacts.
+  operations:
+  - listEmployees
+  - getEmployee
+  - getJobHistories
+  - getEmployeeBankAccounts
+  - listEmergencyContacts
+- name: employment-hero-onboard-employee
+  path: skills/employment-hero-onboard-employee.md
+  description: Quick-add a new employee to an Employment Hero organisation and attach
+    their onboarding documents.
+  operations:
+  - quickAddEmployee
+  - listEmployees
+  - getEmployee
+  - uploadEmployeeDocument
+  - listEmployeeDocuments
+- name: employment-hero-manage-certifications
+  path: skills/employment-hero-manage-certifications.md
+  description: Create, update, archive and delete certification types in an Employment
+    Hero organisation.
+  operations:
+  - listCertifications
+  - createCertification
+  - getCertification
+  - updateCertification
+  - certificationArchiveStatus
+  - deleteCertification
+  - uploadCertificationFile
+  - certificationPollingStatus
+- name: employment-hero-collect-form-responses
+  path: skills/employment-hero-collect-form-responses.md
+  description: Read the forms in an Employment Hero organisation and the responses
+    submitted to them.
+  operations:
+  - listForms
+  - getForm
+  - listFormResponses
+  - getFormResponse

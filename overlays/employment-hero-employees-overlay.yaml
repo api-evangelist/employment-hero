@@ -1,0 +1,35 @@
+overlay: 1.0.0
+info:
+  title: Employment Hero Employment Hero REST Employees API overlay
+  version: 1.0.0
+extends: openapi/employment-hero-employees-api-openapi.yml
+generated: '2026-10-20'
+method: generated
+actions:
+- target: $.info
+  update:
+    x-api-evangelist-provider: employment-hero
+    x-agent-surfaces:
+      llms_txt: https://developer.employmenthero.com/llms.txt
+      mcp: none (no official MCP server found 2026-10-20; candidate manifest at mcp/employment-hero-mcp.yml)
+- target: $.paths['/api/v1/organisations/{organisation_id}/employees'].get
+  update:
+    x-agent-hints:
+      readOnly: true
+      destructive: false
+      idempotent: true
+    x-mcp-tool: listEmployees
+- target: $.paths['/api/v1/organisations/{organisation_id}/employees/{id}'].get
+  update:
+    x-agent-hints:
+      readOnly: true
+      destructive: false
+      idempotent: true
+    x-mcp-tool: getEmployee
+- target: $.paths['/api/v1/organisations/{organisation_id}/employees/quick_add_employee'].post
+  update:
+    x-agent-hints:
+      readOnly: false
+      destructive: false
+      idempotent: false
+    x-mcp-tool: quickAddEmployee

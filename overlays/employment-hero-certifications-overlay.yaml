@@ -1,0 +1,70 @@
+overlay: 1.0.0
+info:
+  title: Employment Hero Employment Hero REST Certifications API overlay
+  version: 1.0.0
+extends: openapi/employment-hero-certifications-api-openapi.yml
+generated: '2026-10-20'
+method: generated
+actions:
+- target: $.info
+  update:
+    x-api-evangelist-provider: employment-hero
+    x-agent-surfaces:
+      llms_txt: https://developer.employmenthero.com/llms.txt
+      mcp: none (no official MCP server found 2026-10-20; candidate manifest at mcp/employment-hero-mcp.yml)
+- target: $.paths['/api/v1/organisations/{organisation_id}/certifications'].get
+  update:
+    x-agent-hints:
+      readOnly: true
+      destructive: false
+      idempotent: true
+    x-mcp-tool: listCertifications
+- target: $.paths['/api/v1/organisations/{organisation_id}/certifications'].post
+  update:
+    x-agent-hints:
+      readOnly: false
+      destructive: false
+      idempotent: false
+    x-mcp-tool: createCertification
+- target: $.paths['/api/v1/organisations/{organisation_id}/certifications/{certification_id}'].get
+  update:
+    x-agent-hints:
+      readOnly: true
+      destructive: false
+      idempotent: true
+    x-mcp-tool: getCertification
+- target: $.paths['/api/v1/organisations/{organisation_id}/certifications/{certification_id}'].patch
+  update:
+    x-agent-hints:
+      readOnly: false
+      destructive: false
+      idempotent: false
+    x-mcp-tool: updateCertification
+- target: $.paths['/api/v1/organisations/{organisation_id}/certifications/{certification_id}'].delete
+  update:
+    x-agent-hints:
+      readOnly: false
+      destructive: true
+      idempotent: true
+    x-mcp-tool: deleteCertification
+- target: $.paths['/api/v1/organisations/{organisation_id}/certifications/polling_status'].get
+  update:
+    x-agent-hints:
+      readOnly: true
+      destructive: false
+      idempotent: true
+    x-mcp-tool: certificationPollingStatus
+- target: $.paths['/api/v1/organisations/{organisation_id}/certifications/{certification_id}/archive_status'].patch
+  update:
+    x-agent-hints:
+      readOnly: false
+      destructive: false
+      idempotent: false
+    x-mcp-tool: certificationArchiveStatus
+- target: $.paths['/api/v1/organisations/{organisation_id}/certifications/file_uploads'].post
+  update:
+    x-agent-hints:
+      readOnly: false
+      destructive: false
+      idempotent: false
+    x-mcp-tool: uploadCertificationFile

@@ -1,0 +1,968 @@
+openapi: 3.2.0
+info:
+  title: Australia Contractor API
+  version: AU
+  description: Contractor
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: Contractor
+  description: Contractor
+paths:
+  /api/v2/business/{businessId}/contractor:
+    get:
+      tags:
+      - Contractor
+      summary: List contractors
+      description: List active contractors for the business.
+      operationId: AuContractor_List
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<ContractorSimpleModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ContractorSimpleModel'
+            application/xml:
+              schema:
+                title: IEnumerable<ContractorSimpleModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ContractorSimpleModel'
+            text/plain:
+              schema:
+                title: IEnumerable<ContractorSimpleModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ContractorSimpleModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<ContractorSimpleModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ContractorSimpleModel'
+            text/json:
+              schema:
+                title: IEnumerable<ContractorSimpleModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ContractorSimpleModel'
+    post:
+      tags:
+      - Contractor
+      summary: Create or update contractor
+      description: 'If an ID is passed or an existing contractor is matched, it will
+
+        be updated. Otherwise a new record will be created.
+
+
+        If reporting dimensions are enabled for the business, add primary reporting dimension values using "|" as a separator between values.'
+      operationId: AuContractor_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuContractorUnstructuredModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuContractorUnstructuredModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuContractorUnstructuredModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuContractorUnstructuredModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuContractorUnstructuredModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuContractorUnstructuredModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuContractorUnstructuredModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuContractorUnstructuredModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuContractorUnstructuredModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuContractorUnstructuredModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuContractorUnstructuredModel'
+  /api/v2/business/{businessId}/contractor/{contractorId}:
+    get:
+      tags:
+      - Contractor
+      summary: Get contractor by identifier
+      description: Gets contractor details with the specified identifier
+      operationId: AuContractor_GetById
+      parameters:
+      - in: path
+        name: contractorId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuContractorUnstructuredModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuContractorUnstructuredModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuContractorUnstructuredModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuContractorUnstructuredModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuContractorUnstructuredModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    put:
+      tags:
+      - Contractor
+      summary: Update contractor
+      description: 'Updates the contractor with the specified identifier.
+
+        Only fields to be updated need be specified. Fields left unspecified or null will not be changed.
+
+        To update a field provide the new value, to specifically clear a value use the string "(clear)" or "0".'
+      operationId: AuContractor_PutEmployee
+      parameters:
+      - in: path
+        name: contractorId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuContractorUnstructuredModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuContractorUnstructuredModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuContractorUnstructuredModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuContractorUnstructuredModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuContractorUnstructuredModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuContractorUnstructuredModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuContractorUnstructuredModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuContractorUnstructuredModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuContractorUnstructuredModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuContractorUnstructuredModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuContractorUnstructuredModel'
+  /api/v2/business/{businessId}/contractor/{contractorId}/deactivate:
+    post:
+      tags:
+      - Contractor
+      summary: Deactivate contractor
+      description: Deactivates contractor with the specified identifier.
+      operationId: AuContractor_Deactivate
+      parameters:
+      - in: path
+        name: contractorId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeactivateContractorModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/DeactivateContractorModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/DeactivateContractorModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/DeactivateContractorModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DeactivateContractorModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DeactivateContractorModel'
+components:
+  schemas:
+    AuContractorUnstructuredModel:
+      title: AuContractorUnstructuredModel
+      type: object
+      properties:
+        taxFileNumber:
+          title: String
+          type: string
+          x-title: String
+        residentialSuburb:
+          title: String
+          type: string
+          x-title: String
+        residentialState:
+          title: String
+          type: string
+          x-title: String
+        postalSuburb:
+          title: String
+          type: string
+          x-title: String
+        postalState:
+          title: String
+          type: string
+          x-title: String
+        employingEntityABN:
+          title: String
+          type: string
+          x-title: String
+        employingEntityId:
+          title: String
+          type: string
+          x-title: String
+        bankAccount1_BSB:
+          title: String
+          type: string
+          x-title: String
+        bankAccount2_BSB:
+          title: String
+          type: string
+          x-title: String
+        bankAccount3_BSB:
+          title: String
+          type: string
+          x-title: String
+        superFund1_ProductCode:
+          title: String
+          type: string
+          x-title: String
+        superFund1_FundName:
+          title: String
+          type: string
+          x-title: String
+        superFund1_MemberNumber:
+          title: String
+          type: string
+          x-title: String
+        superFund1_AllocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        superFund1_FixedAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        superFund1_EmployerNominatedFund:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        superFund2_ProductCode:
+          title: String
+          type: string
+          x-title: String
+        superFund2_FundName:
+          title: String
+          type: string
+          x-title: String
+        superFund2_MemberNumber:
+          title: String
+          type: string
+          x-title: String
+        superFund2_AllocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        superFund2_FixedAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        superFund2_EmployerNominatedFund:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        superFund3_ProductCode:
+          title: String
+          type: string
+          x-title: String
+        superFund3_FundName:
+          title: String
+          type: string
+          x-title: String
+        superFund3_MemberNumber:
+          title: String
+          type: string
+          x-title: String
+        superFund3_AllocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        superFund3_FixedAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        superFund3_EmployerNominatedFund:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        abn:
+          title: String
+          type: string
+          x-title: String
+        tradingName:
+          title: String
+          type: string
+          x-title: String
+        registeredForGst:
+          title: String
+          type: string
+          x-title: String
+        commissionerInstalmentRate:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        taxCalculation:
+          title: String
+          type: string
+          x-title: String
+        superThresholdAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        maximumQuarterlySuperContributionsBase:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        maximumAnnualSuperContributionsBase:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        hoursPerDay:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        postalAddressIsOverseas:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        residentialAddressIsOverseas:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        terminationReason:
+          title: String
+          type: string
+          x-title: String
+        payrollId:
+          title: String
+          type: string
+          x-title: String
+        isExemptFromPayrollTax:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        title:
+          title: String
+          type: string
+          x-title: String
+        firstName:
+          title: String
+          type: string
+          x-title: String
+        middleName:
+          title: String
+          type: string
+          x-title: String
+        surname:
+          title: String
+          type: string
+          x-title: String
+        preferredName:
+          title: String
+          type: string
+          x-title: String
+        dateOfBirth:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        residentialStreetAddress:
+          title: String
+          type: string
+          x-title: String
+        residentialAddressLine2:
+          title: String
+          type: string
+          x-title: String
+        residentialPostCode:
+          title: String
+          type: string
+          x-title: String
+        residentialCountry:
+          title: String
+          type: string
+          x-title: String
+        postalStreetAddress:
+          title: String
+          type: string
+          x-title: String
+        postalAddressLine2:
+          title: String
+          type: string
+          x-title: String
+        postalPostCode:
+          title: String
+          type: string
+          x-title: String
+        postalCountry:
+          title: String
+          type: string
+          x-title: String
+        emailAddress:
+          title: String
+          type: string
+          x-title: String
+        homePhone:
+          title: String
+          type: string
+          x-title: String
+        workPhone:
+          title: String
+          type: string
+          x-title: String
+        mobilePhone:
+          title: String
+          type: string
+          x-title: String
+        startDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        endDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        paySchedule:
+          title: String
+          type: string
+          x-title: String
+        primaryPayCategory:
+          title: String
+          type: string
+          x-title: String
+        primaryLocation:
+          title: String
+          type: string
+          x-title: String
+        rate:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        rateUnit:
+          title: String
+          type: string
+          x-title: String
+        hoursPerWeek:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        automaticallyPayEmployee:
+          title: String
+          type: string
+          x-title: String
+        isEnabledForTimesheets:
+          title: String
+          type: string
+          x-title: String
+        locations:
+          title: String
+          type: string
+          x-title: String
+        workTypes:
+          title: String
+          type: string
+          x-title: String
+        emergencyContact1_Name:
+          title: String
+          maxLength: 100
+          minLength: 0
+          type: string
+          x-title: String
+        emergencyContact1_Relationship:
+          title: String
+          maxLength: 100
+          minLength: 0
+          type: string
+          x-title: String
+        emergencyContact1_Address:
+          title: String
+          maxLength: 500
+          minLength: 0
+          type: string
+          x-title: String
+        emergencyContact1_ContactNumber:
+          title: String
+          maxLength: 50
+          minLength: 0
+          type: string
+          x-title: String
+        emergencyContact1_AlternateContactNumber:
+          title: String
+          maxLength: 50
+          minLength: 0
+          type: string
+          x-title: String
+        emergencyContact2_Name:
+          title: String
+          maxLength: 100
+          minLength: 0
+          type: string
+          x-title: String
+        emergencyContact2_Relationship:
+          title: String
+          maxLength: 100
+          minLength: 0
+          type: string
+          x-title: String
+        emergencyContact2_Address:
+          title: String
+          maxLength: 500
+          minLength: 0
+          type: string
+          x-title: String
+        emergencyContact2_ContactNumber:
+          title: String
+          maxLength: 50
+          minLength: 0
+          type: string
+          x-title: String
+        emergencyContact2_AlternateContactNumber:
+          title: String
+          maxLength: 50
+          minLength: 0
+          type: string
+          x-title: String
+        bankAccount1_AccountNumber:
+          title: String
+          type: string
+          x-title: String
+        bankAccount1_AccountName:
+          title: String
+          type: string
+          x-title: String
+        bankAccount1_AllocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        bankAccount1_FixedAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        bankAccount2_AccountNumber:
+          title: String
+          type: string
+          x-title: String
+        bankAccount2_AccountName:
+          title: String
+          type: string
+          x-title: String
+        bankAccount2_AllocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        bankAccount2_FixedAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        bankAccount3_AccountNumber:
+          title: String
+          type: string
+          x-title: String
+        bankAccount3_AccountName:
+          title: String
+          type: string
+          x-title: String
+        bankAccount3_AllocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        bankAccount3_FixedAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        status:
+          title: EmployeeStatusEnum
+          enum:
+          - Active
+          - Terminated
+          - Incomplete
+          type: string
+        dateCreated:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        reportingDimensionValues:
+          title: String
+          type: string
+          x-title: String
+        overrideTemplateRate:
+          title: String
+          type: string
+          x-title: String
+        payRateTemplate:
+          title: String
+          type: string
+          x-title: String
+        payConditionRuleSet:
+          title: String
+          type: string
+          x-title: String
+        tags:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    DeactivateContractorModel:
+      title: DeactivateContractorModel
+      type: object
+      properties:
+        endDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+    ContractorSimpleModel:
+      title: ContractorSimpleModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        firstName:
+          title: String
+          type: string
+          x-title: String
+        surname:
+          title: String
+          type: string
+          x-title: String
+        tradingName:
+          title: String
+          type: string
+          x-title: String
+        abn:
+          title: String
+          type: string
+          x-title: String
+        dateOfBirth:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        startDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-navigateMethodsByName: true

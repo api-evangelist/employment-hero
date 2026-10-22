@@ -1,0 +1,3925 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Time And Attendance API
+  version: '1.0'
+  description: 'Operations tagged TimeAndAttendance across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: TimeAndAttendance
+  description: Time and Attendance
+paths:
+  /api/v2/business/{businessId}/kiosk:
+    get:
+      tags:
+      - TimeAndAttendance
+      summary: List Kiosks
+      description: 'Lists all kiosks for the specified business.
+
+
+        This operation supports OData queries.'
+      operationId: Kiosk_GetAll
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IQueryable<TimeAndAttendanceKioskModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+                x-title: IQueryable<TimeAndAttendanceKioskModel>
+            application/xml:
+              schema:
+                title: IQueryable<TimeAndAttendanceKioskModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+                x-title: IQueryable<TimeAndAttendanceKioskModel>
+            text/plain:
+              schema:
+                title: IQueryable<TimeAndAttendanceKioskModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+                x-title: IQueryable<TimeAndAttendanceKioskModel>
+            application/octet-stream:
+              schema:
+                title: IQueryable<TimeAndAttendanceKioskModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+                x-title: IQueryable<TimeAndAttendanceKioskModel>
+            text/json:
+              schema:
+                title: IQueryable<TimeAndAttendanceKioskModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+                x-title: IQueryable<TimeAndAttendanceKioskModel>
+    post:
+      tags:
+      - TimeAndAttendance
+      summary: Create Kiosk
+      description: Creates a new kiosk for the business.
+      operationId: Kiosk_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+  /api/v2/business/{businessId}/kiosk/hasaccess/{employeeId}:
+    get:
+      tags:
+      - TimeAndAttendance
+      summary: Employee Has Access
+      description: Check if an employee has access to a kiosk.
+      operationId: GenericTimeAndAttendance_GetHasAccess
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: Boolean
+                type: boolean
+                x-title: Boolean
+            application/xml:
+              schema:
+                title: Boolean
+                type: boolean
+                x-title: Boolean
+            text/plain:
+              schema:
+                title: Boolean
+                type: boolean
+                x-title: Boolean
+            application/octet-stream:
+              schema:
+                title: Boolean
+                type: boolean
+                x-title: Boolean
+            text/json:
+              schema:
+                title: Boolean
+                type: boolean
+                x-title: Boolean
+  /api/v2/business/{businessId}/kiosk/shifts:
+    post:
+      tags:
+      - TimeAndAttendance
+      summary: Shifts
+      description: Gets shifts based on certain optional criteria.
+      operationId: AuTimeAndAttendance_GetShifts
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<AuTimeAndAttendanceShiftModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuTimeAndAttendanceShiftModel'
+                x-title: IList<AuTimeAndAttendanceShiftModel>
+            application/xml:
+              schema:
+                title: IList<AuTimeAndAttendanceShiftModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuTimeAndAttendanceShiftModel'
+                x-title: IList<AuTimeAndAttendanceShiftModel>
+            text/plain:
+              schema:
+                title: IList<AuTimeAndAttendanceShiftModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuTimeAndAttendanceShiftModel'
+                x-title: IList<AuTimeAndAttendanceShiftModel>
+            application/octet-stream:
+              schema:
+                title: IList<AuTimeAndAttendanceShiftModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuTimeAndAttendanceShiftModel'
+                x-title: IList<AuTimeAndAttendanceShiftModel>
+            text/json:
+              schema:
+                title: IList<AuTimeAndAttendanceShiftModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuTimeAndAttendanceShiftModel'
+                x-title: IList<AuTimeAndAttendanceShiftModel>
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetShiftsModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GetShiftsModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/GetShiftsModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/GetShiftsModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetShiftsModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetShiftsModel'
+  /api/v2/business/{businessId}/kiosk/{id}:
+    get:
+      tags:
+      - TimeAndAttendance
+      summary: Get Kiosk by ID
+      description: Gets the kiosk with the specified ID.
+      operationId: Kiosk_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+    put:
+      tags:
+      - TimeAndAttendance
+      summary: Update Kiosk
+      description: Updates the kiosk with the specified ID.
+      operationId: Kiosk_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/TimeAndAttendanceKioskModel'
+    delete:
+      tags:
+      - TimeAndAttendance
+      summary: Delete Kiosk
+      description: Deletes the kiosk with the specified ID.
+      operationId: Kiosk_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /api/v2/business/{businessId}/kiosk/{kioskId}/addshift:
+    post:
+      tags:
+      - TimeAndAttendance
+      summary: Add Complete Shift for Employee
+      description: Clocks in / out an employee for a complete shift.
+      operationId: GenericTimeAndAttendance_AddShift
+      parameters:
+      - in: path
+        name: kioskId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddShiftModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AddShiftModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AddShiftModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AddShiftModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AddShiftModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AddShiftModel'
+  /api/v2/business/{businessId}/kiosk/{kioskId}/changepin:
+    post:
+      tags:
+      - TimeAndAttendance
+      summary: Change PIN
+      description: Changes the kiosk PIN for an employee, given their old PIN.
+      operationId: GenericTimeAndAttendance_ChangePin
+      parameters:
+      - in: path
+        name: kioskId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangeKioskPinModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ChangeKioskPinModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/ChangeKioskPinModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ChangeKioskPinModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ChangeKioskPinModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ChangeKioskPinModel'
+  /api/v2/business/{businessId}/kiosk/{kioskId}/checkid:
+    post:
+      tags:
+      - TimeAndAttendance
+      summary: Check Employee
+      description: If the specified employee has kiosk access, returns details about the employee and their current shift.
+      operationId: GenericTimeAndAttendance_CheckId
+      parameters:
+      - in: path
+        name: kioskId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BasicKioskEmployeeModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/BasicKioskEmployeeModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BasicKioskEmployeeModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/BasicKioskEmployeeModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BasicKioskEmployeeModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CheckKioskEmployeeIdModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CheckKioskEmployeeIdModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/CheckKioskEmployeeIdModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CheckKioskEmployeeIdModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CheckKioskEmployeeIdModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CheckKioskEmployeeIdModel'
+  /api/v2/business/{businessId}/kiosk/{kioskId}/checkpin:
+    post:
+      tags:
+      - TimeAndAttendance
+      summary: Verify Kiosk PIN
+      description: Verifies the employee's kiosk PIN. Returns error code 400 if the PIN is incorrect.
+      operationId: GenericTimeAndAttendance_CheckPin
+      parameters:
+      - in: path
+        name: kioskId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CheckKioskPinModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CheckKioskPinModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/CheckKioskPinModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CheckKioskPinModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CheckKioskPinModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CheckKioskPinModel'
+  /api/v2/business/{businessId}/kiosk/{kioskId}/clockoff:
+    post:
+      tags:
+      - TimeAndAttendance
+      summary: Clock Out Employee
+      description: 'Clocks out an employee from their existing shift.
+
+        If they are on a break, it will be ended automatically.'
+      operationId: GenericTimeAndAttendance_ClockOff
+      parameters:
+      - in: path
+        name: kioskId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClockOffModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ClockOffModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/ClockOffModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ClockOffModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ClockOffModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ClockOffModel'
+  /api/v2/business/{businessId}/kiosk/{kioskId}/clockon:
+    post:
+      tags:
+      - TimeAndAttendance
+      summary: Clock In Employee
+      description: Clocks in an employee for a new shift.
+      operationId: GenericTimeAndAttendance_ClockOn
+      parameters:
+      - in: path
+        name: kioskId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClockOnModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ClockOnModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/ClockOnModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ClockOnModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ClockOnModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ClockOnModel'
+  /api/v2/business/{businessId}/kiosk/{kioskId}/discard:
+    post:
+      tags:
+      - TimeAndAttendance
+      summary: Discard current shift
+      description: 'Discards the current shift for an employee.
+
+        If they are on a break, it will be ended automatically.'
+      operationId: GenericTimeAndAttendance_DiscardShift
+      parameters:
+      - in: path
+        name: kioskId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClockOffModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ClockOffModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/ClockOffModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ClockOffModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ClockOffModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ClockOffModel'
+  /api/v2/business/{businessId}/kiosk/{kioskId}/emailreset:
+    post:
+      tags:
+      - TimeAndAttendance
+      summary: Send PIN Reset Email
+      description: Sends kiosk PIN reset instructions to an employee by email.
+      operationId: GenericTimeAndAttendance_EmailReset
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: kioskId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PinResetModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/PinResetModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/PinResetModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/PinResetModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/PinResetModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/PinResetModel'
+  /api/v2/business/{businessId}/kiosk/{kioskId}/endbreak:
+    post:
+      tags:
+      - TimeAndAttendance
+      summary: End Break
+      description: Ends the employee's current break.
+      operationId: GenericTimeAndAttendance_EndBreak
+      parameters:
+      - in: path
+        name: kioskId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EndBreakModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EndBreakModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EndBreakModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EndBreakModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EndBreakModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EndBreakModel'
+  /api/v2/business/{businessId}/kiosk/{kioskId}/lookupdata/{employeeId}:
+    get:
+      tags:
+      - TimeAndAttendance
+      summary: Get Employee Lookup Data
+      description: Gets relevant lookup data for an employee in relation to a kiosk.
+      operationId: AuTimeAndAttendance_GetLookupData
+      parameters:
+      - in: path
+        name: kioskId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: employeeId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuTimeAndAttendanceLookupDataModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuTimeAndAttendanceLookupDataModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuTimeAndAttendanceLookupDataModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuTimeAndAttendanceLookupDataModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuTimeAndAttendanceLookupDataModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /api/v2/business/{businessId}/kiosk/{kioskId}/shift/{shiftId}/notes:
+    get:
+      tags:
+      - TimeAndAttendance
+      summary: Get Shift Notes
+      description: Gets all the notes for a specific shift.
+      operationId: GenericTimeAndAttendance_GetShiftNotes
+      parameters:
+      - in: path
+        name: kioskId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: shiftId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: EmployeeId
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: IsAdminInitiated
+        title: Boolean
+        schema:
+          type: boolean
+      - in: query
+        name: Type
+        title: Nullable<TimeAttendanceShiftNoteType>
+        schema:
+          type: string
+          enum:
+          - Shift
+          - ClockOn
+          - ClockOff
+      - in: query
+        name: Visibility
+        title: Nullable<TimeAttendanceShiftNoteVisibility>
+        schema:
+          type: string
+          enum:
+          - Hidden
+          - Visible
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<ShiftNoteViewModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShiftNoteViewModel'
+                x-title: IList<ShiftNoteViewModel>
+            application/xml:
+              schema:
+                title: IList<ShiftNoteViewModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShiftNoteViewModel'
+                x-title: IList<ShiftNoteViewModel>
+            text/plain:
+              schema:
+                title: IList<ShiftNoteViewModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShiftNoteViewModel'
+                x-title: IList<ShiftNoteViewModel>
+            application/octet-stream:
+              schema:
+                title: IList<ShiftNoteViewModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShiftNoteViewModel'
+                x-title: IList<ShiftNoteViewModel>
+            text/json:
+              schema:
+                title: IList<ShiftNoteViewModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShiftNoteViewModel'
+                x-title: IList<ShiftNoteViewModel>
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    post:
+      tags:
+      - TimeAndAttendance
+      summary: Add Note to Shift
+      description: Adds a note to an existing shift.
+      operationId: GenericTimeAndAttendance_AddNote
+      parameters:
+      - in: path
+        name: kioskId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: shiftId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShiftNoteViewModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ShiftNoteViewModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ShiftNoteViewModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ShiftNoteViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ShiftNoteViewModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddNoteModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AddNoteModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AddNoteModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AddNoteModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AddNoteModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AddNoteModel'
+  /api/v2/business/{businessId}/kiosk/{kioskId}/shift/{shiftId}/notes/read-state:
+    post:
+      tags:
+      - TimeAndAttendance
+      summary: Mark Shift Notes Read
+      description: Marks some shift notes as either read or unread.
+      operationId: GenericTimeAndAttendance_MarkNotesRead
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: kioskId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: shiftId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MarkNotesReadViewModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/MarkNotesReadViewModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/MarkNotesReadViewModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/MarkNotesReadViewModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/MarkNotesReadViewModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/MarkNotesReadViewModel'
+  /api/v2/business/{businessId}/kiosk/{kioskId}/shift/{shiftId}/notes/{noteId}:
+    delete:
+      tags:
+      - TimeAndAttendance
+      summary: Delete Note from Shift
+      description: Deletes a note from an existing shift.
+      operationId: GenericTimeAndAttendance_DeleteShiftNote
+      parameters:
+      - in: path
+        name: kioskId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: shiftId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: noteId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /api/v2/business/{businessId}/kiosk/{kioskId}/smsreset:
+    post:
+      tags:
+      - TimeAndAttendance
+      summary: Send PIN Reset SMS
+      description: Sends kiosk PIN reset instructions to an employee by SMS. Note that the current business must have SMS notifications enabled.
+      operationId: GenericTimeAndAttendance_SmsReset
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: kioskId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PinResetModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/PinResetModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/PinResetModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/PinResetModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/PinResetModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/PinResetModel'
+  /api/v2/business/{businessId}/kiosk/{kioskId}/staff:
+    get:
+      tags:
+      - TimeAndAttendance
+      summary: List Kiosk Staff
+      description: Lists all the staff associated with a kiosk and their current shifts.
+      operationId: GenericTimeAndAttendance_GetStaff
+      parameters:
+      - in: path
+        name: kioskId
+        description: The ID of the kiosk
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: restrictCurrentShiftsToCurrentKioskLocation
+        description: 'The default value is set to false which will return current shifts for employees against this particular location.
+
+          Setting the value to true will return employees shift details with access to this location.'
+        title: Boolean
+        schema:
+          type: boolean
+          default: false
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: List<BasicKioskEmployeeModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BasicKioskEmployeeModel'
+                x-title: List<BasicKioskEmployeeModel>
+            application/xml:
+              schema:
+                title: List<BasicKioskEmployeeModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BasicKioskEmployeeModel'
+                x-title: List<BasicKioskEmployeeModel>
+            text/plain:
+              schema:
+                title: List<BasicKioskEmployeeModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BasicKioskEmployeeModel'
+                x-title: List<BasicKioskEmployeeModel>
+            application/octet-stream:
+              schema:
+                title: List<BasicKioskEmployeeModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BasicKioskEmployeeModel'
+                x-title: List<BasicKioskEmployeeModel>
+            text/json:
+              schema:
+                title: List<BasicKioskEmployeeModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BasicKioskEmployeeModel'
+                x-title: List<BasicKioskEmployeeModel>
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    post:
+      tags:
+      - TimeAndAttendance
+      summary: Add an Employee
+      description: Quickly add an employee with minimal details and kiosk enabled.
+      operationId: GenericTimeAndAttendance_PostStaff
+      parameters:
+      - in: path
+        name: kioskId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BasicKioskEmployeeModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/BasicKioskEmployeeModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BasicKioskEmployeeModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/BasicKioskEmployeeModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BasicKioskEmployeeModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '409':
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KioskCreateEmployeeModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/KioskCreateEmployeeModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/KioskCreateEmployeeModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/KioskCreateEmployeeModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/KioskCreateEmployeeModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/KioskCreateEmployeeModel'
+  /api/v2/business/{businessId}/kiosk/{kioskId}/startbreak:
+    post:
+      tags:
+      - TimeAndAttendance
+      summary: Start Break
+      description: Starts a break for an employee who is clocked on for a shift.
+      operationId: GenericTimeAndAttendance_StartBreak
+      parameters:
+      - in: path
+        name: kioskId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KioskEmployeeModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StartBreakModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/StartBreakModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/StartBreakModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/StartBreakModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/StartBreakModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/StartBreakModel'
+components:
+  schemas:
+    KioskEmployeeModel:
+      title: KioskEmployeeModel
+      type: object
+      properties:
+        pinExpired:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        firstName:
+          title: String
+          type: string
+          x-title: String
+        surname:
+          title: String
+          type: string
+          x-title: String
+        name:
+          title: String
+          type: string
+          x-title: String
+        hasEmail:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        profileImageUrl:
+          title: String
+          type: string
+          x-title: String
+        mobileNumber:
+          title: String
+          type: string
+          x-title: String
+        status:
+          title: TimeAttendanceStatus
+          enum:
+          - NotClockedOn
+          - ClockedOn
+          - OnBreak
+          - ClockedOff
+          type: string
+          x-title: TimeAttendanceStatus
+        longShift:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        clockOnTimeUtc:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        breakStartTimeUtc:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        recordedTimeUtc:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        currentShiftId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeGroupIds:
+          title: IList<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: IList<Int32>
+        employeeStartDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+      additionalProperties: false
+    ClockOnModel:
+      title: ClockOnModel
+      type: object
+      properties:
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        classificationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        workTypeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        shiftConditionIds:
+          title: IList<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: IList<Int32>
+        note:
+          title: String
+          type: string
+          x-title: String
+        dimensionValueIds:
+          title: IList<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: IList<Int32>
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        latitude:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        longitude:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        kioskId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        ipAddress:
+          title: String
+          type: string
+          x-title: String
+        image:
+          format: byte
+          title: Byte[]
+          type: string
+          x-title: Byte[]
+        isAdminInitiated:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        recordedTimeUtc:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        utcOffset:
+          format: date-span
+          title: Nullable<TimeSpan>
+          type: string
+          x-title: Nullable<TimeSpan>
+        noteVisibility:
+          title: Nullable<TimeAttendanceShiftNoteVisibility>
+          enum:
+          - Hidden
+          - Visible
+          type: string
+          x-title: Nullable<TimeAttendanceShiftNoteVisibility>
+      additionalProperties: false
+    LocationSelectModel:
+      title: LocationSelectModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        description:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+    ClockOffModel:
+      title: ClockOffModel
+      type: object
+      properties:
+        note:
+          title: String
+          type: string
+          x-title: String
+        isPaidBreak:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        latitude:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        longitude:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        kioskId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        ipAddress:
+          title: String
+          type: string
+          x-title: String
+        image:
+          format: byte
+          title: Byte[]
+          type: string
+          x-title: Byte[]
+        isAdminInitiated:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        recordedTimeUtc:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        utcOffset:
+          format: date-span
+          title: Nullable<TimeSpan>
+          type: string
+          x-title: Nullable<TimeSpan>
+        noteVisibility:
+          title: Nullable<TimeAttendanceShiftNoteVisibility>
+          enum:
+          - Hidden
+          - Visible
+          type: string
+          x-title: Nullable<TimeAttendanceShiftNoteVisibility>
+      additionalProperties: false
+    ShiftNoteViewModel:
+      title: ShiftNoteViewModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employee:
+          $ref: '#/components/schemas/EmployeeViewModel'
+        date:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        type:
+          title: TimeAttendanceShiftNoteType
+          enum:
+          - Shift
+          - ClockOn
+          - ClockOff
+          type: string
+          x-title: TimeAttendanceShiftNoteType
+        note:
+          title: String
+          type: string
+          x-title: String
+        noteId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        visibility:
+          title: TimeAttendanceShiftNoteVisibility
+          enum:
+          - Hidden
+          - Visible
+          type: string
+          x-title: TimeAttendanceShiftNoteVisibility
+        read:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        createdByAdmin:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    TimeAndAttendanceBreakModel:
+      title: TimeAndAttendanceBreakModel
+      type: object
+      properties:
+        startTimeUtc:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        startTimeLocal:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endTimeUtc:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        endTimeLocal:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        isPaidBreak:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    EndBreakModel:
+      title: EndBreakModel
+      type: object
+      properties:
+        isPaidBreak:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        latitude:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        longitude:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        kioskId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        ipAddress:
+          title: String
+          type: string
+          x-title: String
+        image:
+          format: byte
+          title: Byte[]
+          type: string
+          x-title: Byte[]
+        isAdminInitiated:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        recordedTimeUtc:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        utcOffset:
+          format: date-span
+          title: Nullable<TimeSpan>
+          type: string
+          x-title: Nullable<TimeSpan>
+        noteVisibility:
+          title: Nullable<TimeAttendanceShiftNoteVisibility>
+          enum:
+          - Hidden
+          - Visible
+          type: string
+          x-title: Nullable<TimeAttendanceShiftNoteVisibility>
+      additionalProperties: false
+    CheckKioskEmployeeIdModel:
+      title: CheckKioskEmployeeIdModel
+      type: object
+      properties:
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    EmployeeViewModel:
+      title: EmployeeViewModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        firstName:
+          title: String
+          type: string
+          x-title: String
+        surname:
+          title: String
+          type: string
+          x-title: String
+        profileImageUrl:
+          title: String
+          type: string
+          x-title: String
+        name:
+          title: String
+          type: string
+          readOnly: true
+          x-title: String
+      additionalProperties: false
+    WhiteLabelBrandingModel:
+      title: WhiteLabelBrandingModel
+      type: object
+      properties:
+        logoUrl:
+          title: String
+          type: string
+          x-title: String
+        backgroundImageUrl:
+          title: String
+          type: string
+          x-title: String
+        backgroundColour:
+          title: String
+          type: string
+          x-title: String
+        textColour:
+          title: String
+          type: string
+          x-title: String
+        textHoverColour:
+          title: String
+          type: string
+          x-title: String
+        textSecondaryColour:
+          title: String
+          type: string
+          x-title: String
+        darkModeLogoUrl:
+          title: String
+          type: string
+          x-title: String
+        darkModeBackgroundColour:
+          title: String
+          type: string
+          x-title: String
+        darkModeTextColour:
+          title: String
+          type: string
+          x-title: String
+        darkModeTextSecondaryColour:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    PinResetModel:
+      title: PinResetModel
+      type: object
+      properties:
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+      additionalProperties: false
+    LocationShiftConditionsModel:
+      title: LocationShiftConditionsModel
+      type: object
+      properties:
+        locationId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        shiftConditionIds:
+          title: IList<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: IList<Int32>
+      additionalProperties: false
+    ShiftConditionModel:
+      title: ShiftConditionModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    ShiftConditionSelectModel:
+      title: ShiftConditionSelectModel
+      type: object
+      properties:
+        shortCode:
+          title: String
+          type: string
+          x-title: String
+        businessAwardPackageId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        description:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    BasicKioskEmployeeModel:
+      title: BasicKioskEmployeeModel
+      type: object
+      properties:
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        firstName:
+          title: String
+          type: string
+          x-title: String
+        surname:
+          title: String
+          type: string
+          x-title: String
+        name:
+          title: String
+          type: string
+          x-title: String
+        hasEmail:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        profileImageUrl:
+          title: String
+          type: string
+          x-title: String
+        mobileNumber:
+          title: String
+          type: string
+          x-title: String
+        status:
+          title: TimeAttendanceStatus
+          enum:
+          - NotClockedOn
+          - ClockedOn
+          - OnBreak
+          - ClockedOff
+          type: string
+        longShift:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        clockOnTimeUtc:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        breakStartTimeUtc:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        recordedTimeUtc:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        currentShiftId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeGroupIds:
+          title: IList<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: IList<Int32>
+        employeeStartDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+      additionalProperties: false
+    StartBreakModel:
+      title: StartBreakModel
+      type: object
+      properties:
+        isPaidBreak:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        latitude:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        longitude:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        kioskId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        ipAddress:
+          title: String
+          type: string
+          x-title: String
+        image:
+          format: byte
+          title: Byte[]
+          type: string
+          x-title: Byte[]
+        isAdminInitiated:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        recordedTimeUtc:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        utcOffset:
+          format: date-span
+          title: Nullable<TimeSpan>
+          type: string
+          x-title: Nullable<TimeSpan>
+        noteVisibility:
+          title: Nullable<TimeAttendanceShiftNoteVisibility>
+          enum:
+          - Hidden
+          - Visible
+          type: string
+          x-title: Nullable<TimeAttendanceShiftNoteVisibility>
+      additionalProperties: false
+    AddNoteModel:
+      title: AddNoteModel
+      type: object
+      properties:
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        type:
+          title: TimeAttendanceShiftNoteType
+          enum:
+          - Shift
+          - ClockOn
+          - ClockOff
+          type: string
+        visibility:
+          title: TimeAttendanceShiftNoteVisibility
+          enum:
+          - Hidden
+          - Visible
+          type: string
+        note:
+          title: String
+          type: string
+          x-title: String
+        isAdminInitiated:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    ChangeKioskPinModel:
+      title: ChangeKioskPinModel
+      type: object
+      properties:
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        oldPin:
+          title: String
+          type: string
+          x-title: String
+        newPin:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    CheckKioskPinModel:
+      title: CheckKioskPinModel
+      type: object
+      properties:
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        pin:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    ClassificationLookupModel:
+      title: ClassificationLookupModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        description:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    ShiftBreakModel:
+      title: ShiftBreakModel
+      type: object
+      properties:
+        start:
+          $ref: '#/components/schemas/StartBreakModel'
+        end:
+          $ref: '#/components/schemas/EndBreakModel'
+        isPaidBreak:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        latitude:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        longitude:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        kioskId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        ipAddress:
+          title: String
+          type: string
+          x-title: String
+        image:
+          format: byte
+          title: Byte[]
+          type: string
+          x-title: Byte[]
+        isAdminInitiated:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        recordedTimeUtc:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        utcOffset:
+          format: date-span
+          title: Nullable<TimeSpan>
+          type: string
+          x-title: Nullable<TimeSpan>
+        noteVisibility:
+          title: Nullable<TimeAttendanceShiftNoteVisibility>
+          enum:
+          - Hidden
+          - Visible
+          type: string
+          x-title: Nullable<TimeAttendanceShiftNoteVisibility>
+      additionalProperties: false
+    AuTimeAndAttendanceLookupDataModel:
+      title: AuTimeAndAttendanceLookupDataModel
+      type: object
+      properties:
+        locations:
+          title: IList<LocationSelectModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/LocationSelectModel'
+        workTypes:
+          title: IList<WorkTypeSelectModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/WorkTypeSelectModel'
+        classifications:
+          title: IList<ClassificationLookupModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ClassificationLookupModel'
+        defaultLocation:
+          $ref: '#/components/schemas/LocationSelectModel'
+        shiftConditions:
+          title: IList<ShiftConditionSelectModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ShiftConditionSelectModel'
+        locationShiftConditions:
+          title: IList<LocationShiftConditionsModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/LocationShiftConditionsModel'
+        reportingDimensionsEnabled:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        reportingDimensionGroups:
+          title: IList<NumericNullableSelectListItem>
+          type: array
+          items:
+            $ref: '#/components/schemas/NumericNullableSelectListItem'
+        reportingDimensionValues:
+          title: IList<ReportingDimensionValueSelectModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ReportingDimensionValueSelectModel'
+      additionalProperties: false
+    AddShiftModel:
+      title: AddShiftModel
+      type: object
+      properties:
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        classificationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        workTypeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        shiftConditionIds:
+          title: IList<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+        note:
+          title: String
+          type: string
+          x-title: String
+        recordedStartTimeUtc:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        recordedEndTimeUtc:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        breaks:
+          title: List<ShiftBreakModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ShiftBreakModel'
+        dimensionValueIds:
+          title: IList<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: IList<Int32>
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        latitude:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+        longitude:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        kioskId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        ipAddress:
+          title: String
+          type: string
+          x-title: String
+        image:
+          format: byte
+          title: Byte[]
+          type: string
+          x-title: Byte[]
+        isAdminInitiated:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        recordedTimeUtc:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        utcOffset:
+          format: date-span
+          title: Nullable<TimeSpan>
+          type: string
+        noteVisibility:
+          title: Nullable<TimeAttendanceShiftNoteVisibility>
+          enum:
+          - Hidden
+          - Visible
+          type: string
+          x-title: Nullable<TimeAttendanceShiftNoteVisibility>
+      additionalProperties: false
+    KioskCreateEmployeeModel:
+      title: KioskCreateEmployeeModel
+      type: object
+      properties:
+        firstName:
+          title: String
+          type: string
+          x-title: String
+        surname:
+          title: String
+          type: string
+          x-title: String
+        email:
+          title: String
+          type: string
+          x-title: String
+        mobileNumber:
+          title: String
+          type: string
+          x-title: String
+        pin:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    MarkNotesReadViewModel:
+      title: MarkNotesReadViewModel
+      type: object
+      properties:
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        noteIds:
+          title: Int32[]
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+        read:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    AuTimeAndAttendanceShiftModel:
+      title: AuTimeAndAttendanceShiftModel
+      type: object
+      properties:
+        classificationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        classificationName:
+          title: String
+          type: string
+          x-title: String
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        startTimeLocal:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        startTimeUtc:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endTimeUtc:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        endTimeLocal:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        locationId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        locationFullyQualifiedName:
+          title: String
+          type: string
+          x-title: String
+        workTypeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        workTypeName:
+          title: String
+          type: string
+          x-title: String
+        kioskId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        kioskName:
+          title: String
+          type: string
+          x-title: String
+        timesheetLineId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employee:
+          $ref: '#/components/schemas/BasicKioskEmployeeModel'
+        breaks:
+          title: IList<TimeAndAttendanceBreakModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeAndAttendanceBreakModel'
+        shiftConditions:
+          title: IList<ShiftConditionModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ShiftConditionModel'
+        dimensionValues:
+          title: List<ReportingDimensionValueBaseApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ReportingDimensionValueBaseApiModel'
+      additionalProperties: false
+    NumericNullableSelectListItem:
+      title: NumericNullableSelectListItem
+      type: object
+      properties:
+        value:
+          format: int64
+          title: Nullable<Int64>
+          type: integer
+        text:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    ReportingDimensionValueBaseApiModel:
+      title: ReportingDimensionValueBaseApiModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        reportingDimensionId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+      additionalProperties: false
+    ReportingDimensionValueSelectModel:
+      title: ReportingDimensionValueSelectModel
+      type: object
+      properties:
+        reportingDimensionId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        isDeleted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isNoLongerAllowed:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        value:
+          format: int64
+          title: Nullable<Int64>
+          type: integer
+          x-title: Nullable<Int64>
+        text:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    WorkTypeSelectModel:
+      title: WorkTypeSelectModel
+      type: object
+      properties:
+        isUnitBased:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isLeaveType:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        unitType:
+          title: String
+          type: string
+          x-title: String
+        businessAwardPackageId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        description:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    TimeAndAttendanceKioskModel:
+      title: TimeAndAttendanceKioskModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        name:
+          title: String
+          type: string
+          x-title: String
+        timeZone:
+          title: String
+          type: string
+          x-title: String
+        allowHigherClassificationSelection:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        branding:
+          $ref: '#/components/schemas/WhiteLabelBrandingModel'
+        isLocationRequired:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isWorkTypeRequired:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        restrictLocationsForEmployees:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        allowEmployeeShiftSelection:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        clockOnWindowMinutes:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        clockOffWindowMinutes:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        ianaTimeZone:
+          title: String
+          type: string
+          readOnly: true
+          x-title: String
+        isPhotoRequired:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        canAddEmployees:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        availableToAllRestrictedUsersWithKioskAccess:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        paidBreaksEnabled:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        timesheetDimensionsEnabled:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    GetShiftsModel:
+      title: GetShiftsModel
+      type: object
+      properties:
+        kioskId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        fromDateUtc:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        toDateUtc:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+      additionalProperties: false
+    MyTimeAndAttendanceLookupDataModel:
+      title: MyTimeAndAttendanceLookupDataModel
+      type: object
+      properties:
+        locations:
+          title: IList<LocationSelectModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/LocationSelectModel'
+        workTypes:
+          title: IList<WorkTypeSelectModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/WorkTypeSelectModel'
+        defaultLocation:
+          $ref: '#/components/schemas/LocationSelectModel'
+        shiftConditions:
+          title: IList<ShiftConditionSelectModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ShiftConditionSelectModel'
+        locationShiftConditions:
+          title: IList<LocationShiftConditionsModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/LocationShiftConditionsModel'
+        reportingDimensionsEnabled:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        reportingDimensionGroups:
+          title: IList<NumericNullableSelectListItem>
+          type: array
+          items:
+            $ref: '#/components/schemas/NumericNullableSelectListItem'
+        reportingDimensionValues:
+          title: IList<ReportingDimensionValueSelectModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ReportingDimensionValueSelectModel'
+      additionalProperties: false
+    MyTimeAndAttendanceShiftModel:
+      title: MyTimeAndAttendanceShiftModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        startTimeLocal:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        startTimeUtc:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endTimeUtc:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        endTimeLocal:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        locationId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        locationFullyQualifiedName:
+          title: String
+          type: string
+          x-title: String
+        workTypeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        workTypeName:
+          title: String
+          type: string
+          x-title: String
+        kioskId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        kioskName:
+          title: String
+          type: string
+          x-title: String
+        timesheetLineId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employee:
+          $ref: '#/components/schemas/BasicKioskEmployeeModel'
+        breaks:
+          title: IList<TimeAndAttendanceBreakModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeAndAttendanceBreakModel'
+        shiftConditions:
+          title: IList<ShiftConditionModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ShiftConditionModel'
+        dimensionValues:
+          title: List<ReportingDimensionValueBaseApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ReportingDimensionValueBaseApiModel'
+      additionalProperties: false
+    NzTimeAndAttendanceLookupDataModel:
+      title: NzTimeAndAttendanceLookupDataModel
+      type: object
+      properties:
+        locations:
+          title: IList<LocationSelectModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/LocationSelectModel'
+        workTypes:
+          title: IList<WorkTypeSelectModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/WorkTypeSelectModel'
+        defaultLocation:
+          $ref: '#/components/schemas/LocationSelectModel'
+        shiftConditions:
+          title: IList<ShiftConditionSelectModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ShiftConditionSelectModel'
+        locationShiftConditions:
+          title: IList<LocationShiftConditionsModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/LocationShiftConditionsModel'
+        reportingDimensionsEnabled:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        reportingDimensionGroups:
+          title: IList<NumericNullableSelectListItem>
+          type: array
+          items:
+            $ref: '#/components/schemas/NumericNullableSelectListItem'
+        reportingDimensionValues:
+          title: IList<ReportingDimensionValueSelectModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ReportingDimensionValueSelectModel'
+      additionalProperties: false
+    NzTimeAndAttendanceShiftModel:
+      title: NzTimeAndAttendanceShiftModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        startTimeLocal:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        startTimeUtc:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endTimeUtc:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        endTimeLocal:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        locationId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        locationFullyQualifiedName:
+          title: String
+          type: string
+          x-title: String
+        workTypeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        workTypeName:
+          title: String
+          type: string
+          x-title: String
+        kioskId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        kioskName:
+          title: String
+          type: string
+          x-title: String
+        timesheetLineId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employee:
+          $ref: '#/components/schemas/BasicKioskEmployeeModel'
+        breaks:
+          title: IList<TimeAndAttendanceBreakModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeAndAttendanceBreakModel'
+        shiftConditions:
+          title: IList<ShiftConditionModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ShiftConditionModel'
+        dimensionValues:
+          title: List<ReportingDimensionValueBaseApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ReportingDimensionValueBaseApiModel'
+      additionalProperties: false
+    SgTimeAndAttendanceShiftModel:
+      title: SgTimeAndAttendanceShiftModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        startTimeLocal:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        startTimeUtc:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endTimeUtc:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        endTimeLocal:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        locationId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        locationFullyQualifiedName:
+          title: String
+          type: string
+          x-title: String
+        workTypeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        workTypeName:
+          title: String
+          type: string
+          x-title: String
+        kioskId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        kioskName:
+          title: String
+          type: string
+          x-title: String
+        timesheetLineId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employee:
+          $ref: '#/components/schemas/BasicKioskEmployeeModel'
+        breaks:
+          title: IList<TimeAndAttendanceBreakModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeAndAttendanceBreakModel'
+        shiftConditions:
+          title: IList<ShiftConditionModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ShiftConditionModel'
+        dimensionValues:
+          title: List<ReportingDimensionValueBaseApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ReportingDimensionValueBaseApiModel'
+      additionalProperties: false
+    SgTimeAndAttendanceLookupDataModel:
+      title: SgTimeAndAttendanceLookupDataModel
+      type: object
+      properties:
+        locations:
+          title: IList<LocationSelectModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/LocationSelectModel'
+        workTypes:
+          title: IList<WorkTypeSelectModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/WorkTypeSelectModel'
+        defaultLocation:
+          $ref: '#/components/schemas/LocationSelectModel'
+        shiftConditions:
+          title: IList<ShiftConditionSelectModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ShiftConditionSelectModel'
+        locationShiftConditions:
+          title: IList<LocationShiftConditionsModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/LocationShiftConditionsModel'
+        reportingDimensionsEnabled:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        reportingDimensionGroups:
+          title: IList<NumericNullableSelectListItem>
+          type: array
+          items:
+            $ref: '#/components/schemas/NumericNullableSelectListItem'
+        reportingDimensionValues:
+          title: IList<ReportingDimensionValueSelectModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ReportingDimensionValueSelectModel'
+      additionalProperties: false
+    MarkNotesReadViewModel_2:
+      title: MarkNotesReadViewModel
+      type: object
+      properties:
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        noteIds:
+          title: Int32[]
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: Int32[]
+        read:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    UkTimeAndAttendanceShiftModel:
+      title: UkTimeAndAttendanceShiftModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        startTimeLocal:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        startTimeUtc:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endTimeUtc:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        endTimeLocal:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        locationId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        locationFullyQualifiedName:
+          title: String
+          type: string
+          x-title: String
+        workTypeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        workTypeName:
+          title: String
+          type: string
+          x-title: String
+        kioskId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        kioskName:
+          title: String
+          type: string
+          x-title: String
+        timesheetLineId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employee:
+          $ref: '#/components/schemas/BasicKioskEmployeeModel'
+        breaks:
+          title: IList<TimeAndAttendanceBreakModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeAndAttendanceBreakModel'
+        shiftConditions:
+          title: IList<ShiftConditionModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ShiftConditionModel'
+        dimensionValues:
+          title: List<ReportingDimensionValueBaseApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ReportingDimensionValueBaseApiModel'
+          x-title: List<ReportingDimensionValueBaseApiModel>
+      additionalProperties: false
+    UkTimeAndAttendanceLookupDataModel:
+      title: UkTimeAndAttendanceLookupDataModel
+      type: object
+      properties:
+        locations:
+          title: IList<LocationSelectModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/LocationSelectModel'
+        workTypes:
+          title: IList<WorkTypeSelectModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/WorkTypeSelectModel'
+        defaultLocation:
+          $ref: '#/components/schemas/LocationSelectModel'
+        shiftConditions:
+          title: IList<ShiftConditionSelectModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ShiftConditionSelectModel'
+        locationShiftConditions:
+          title: IList<LocationShiftConditionsModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/LocationShiftConditionsModel'
+        reportingDimensionsEnabled:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        reportingDimensionGroups:
+          title: IList<NumericNullableSelectListItem>
+          type: array
+          items:
+            $ref: '#/components/schemas/NumericNullableSelectListItem'
+        reportingDimensionValues:
+          title: IList<ReportingDimensionValueSelectModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ReportingDimensionValueSelectModel'
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

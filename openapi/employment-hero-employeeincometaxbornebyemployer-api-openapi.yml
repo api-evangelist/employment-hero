@@ -1,0 +1,430 @@
+openapi: 3.2.0
+info:
+  title: Singapore Employee Income Tax Borne By Employer API
+  version: SG
+  description: Employee Income Tax Borne By Employer
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: EmployeeIncomeTaxBorneByEmployer
+  description: Employee Income Tax Borne By Employer
+paths:
+  /api/v2/business/{businessId}/employee/{employeeId}/incometaxbornebyemployer:
+    get:
+      tags:
+      - EmployeeIncomeTaxBorneByEmployer
+      summary: Get income tax borne by employer
+      description: Gets the income tax borne by employer for the specified employee
+      operationId: SgIncomeTaxBorneByEmployer_GetAll
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<SgIncomeTaxBorneByEmployerModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+            application/xml:
+              schema:
+                title: IList<SgIncomeTaxBorneByEmployerModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+            text/plain:
+              schema:
+                title: IList<SgIncomeTaxBorneByEmployerModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+            application/octet-stream:
+              schema:
+                title: IList<SgIncomeTaxBorneByEmployerModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+            text/json:
+              schema:
+                title: IList<SgIncomeTaxBorneByEmployerModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+    post:
+      tags:
+      - EmployeeIncomeTaxBorneByEmployer
+      summary: Create income tax borne by employer
+      description: Creates a new income tax borne by employer
+      operationId: SgIncomeTaxBorneByEmployer_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/incometaxbornebyemployer/{id}:
+    get:
+      tags:
+      - EmployeeIncomeTaxBorneByEmployer
+      summary: Get income tax borne by employer
+      description: Gets a specific income tax borne by employer for the specified employee
+      operationId: SgIncomeTaxBorneByEmployer_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    put:
+      tags:
+      - EmployeeIncomeTaxBorneByEmployer
+      summary: Update an existing income tax borne by employer
+      operationId: SgIncomeTaxBorneByEmployer_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SgIncomeTaxBorneByEmployerModel'
+    delete:
+      tags:
+      - EmployeeIncomeTaxBorneByEmployer
+      summary: Delete income tax borne by employer
+      description: Deletes the income tax borne by employer with the specified ID.
+      operationId: SgIncomeTaxBorneByEmployer_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+components:
+  schemas:
+    SgIncomeTaxBorneByEmployerModel:
+      title: SgIncomeTaxBorneByEmployerModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        basisPeriod:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        taxBorneByEmployerType:
+          title: TaxBorneByEmployerType
+          enum:
+          - Fully
+          - FixedAmount
+          - Partially
+          type: string
+        borneByEmployerAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        borneByEmployeeAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-navigateMethodsByName: true

@@ -1,0 +1,306 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero User API
+  version: '1.0'
+  description: 'Operations tagged User across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: User
+  description: User
+paths:
+  /api/v2/user:
+    get:
+      tags:
+      - User
+      summary: Get User Details
+      description: Gets details about the user.
+      operationId: User_Get
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/UserModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/UserModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/UserModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/UserModel'
+    post:
+      tags:
+      - User
+      summary: Create New User
+      description: 'Creates a new user and sends an email to inform the user.
+
+
+        In order to make sure that the correct brand details are included in the email, be sure to `POST` the API request to `https://{yourbrand}.yourpayroll.com.au`.
+
+
+        To prevent sending of the new user email, set `apiOnly` to `true` in the request.'
+      operationId: User_Post_2
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewUserCreatedModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/NewUserCreatedModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/NewUserCreatedModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/NewUserCreatedModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/NewUserCreatedModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewUserModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/NewUserModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/NewUserModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/NewUserModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/NewUserModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/NewUserModel'
+    put:
+      tags:
+      - User
+      summary: Update User
+      description: 'This is currently restricted to updating the user''s "email confirmation" status only.
+
+        The API user (brand manager or reseller) must have brand exclusive access to the user
+
+        i.e. the user must only have access to businesses/employees that the API user manages.'
+      operationId: User_Put_3
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserUpdatedModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/UserUpdatedModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/UserUpdatedModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/UserUpdatedModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/UserUpdatedModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UpdateUserModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/UpdateUserModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserModel'
+components:
+  schemas:
+    NewUserCreatedModel:
+      title: NewUserCreatedModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        username:
+          title: String
+          type: string
+          x-title: String
+        displayName:
+          title: String
+          type: string
+          x-title: String
+        timeZone:
+          title: String
+          type: string
+          x-title: String
+        apiKey:
+          title: String
+          type: string
+          x-title: String
+        email:
+          title: String
+          type: string
+          x-title: String
+        emailConfirmed:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    UserUpdatedModel:
+      title: UserUpdatedModel
+      type: object
+      properties:
+        username:
+          title: String
+          type: string
+          x-title: String
+        emailConfirmed:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    UpdateUserModel:
+      title: UpdateUserModel
+      required:
+      - username
+      type: object
+      properties:
+        username:
+          title: String
+          minLength: 1
+          type: string
+          x-title: String
+        emailConfirmed:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    NewUserModel:
+      title: NewUserModel
+      required:
+      - displayName
+      - username
+      type: object
+      properties:
+        username:
+          title: String
+          minLength: 1
+          type: string
+          x-title: String
+        displayName:
+          title: String
+          minLength: 1
+          type: string
+          x-title: String
+        timeZone:
+          title: String
+          type: string
+          x-title: String
+        apiOnly:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        email:
+          title: String
+          type: string
+          x-title: String
+        emailConfirmed:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    UserModel:
+      title: UserModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        email:
+          title: String
+          type: string
+          x-title: String
+        displayName:
+          title: String
+          type: string
+          x-title: String
+        timeZone:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

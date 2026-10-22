@@ -1,0 +1,3221 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Chart Of Accounts API
+  version: '1.0'
+  description: 'Operations tagged ChartOfAccounts across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: Chart Of Accounts
+  description: Chart of Accounts
+paths:
+  /api/v2/business/{businessId}/accounts:
+    get:
+      tags:
+      - Chart Of Accounts
+      summary: Get Journal Accounts
+      description: Gets the list of available journal accounts for the business.
+      operationId: Accounts_Get
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: List<JournalAccountModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/JournalAccountModel'
+            application/xml:
+              schema:
+                title: List<JournalAccountModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/JournalAccountModel'
+            text/plain:
+              schema:
+                title: List<JournalAccountModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/JournalAccountModel'
+            application/octet-stream:
+              schema:
+                title: List<JournalAccountModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/JournalAccountModel'
+            text/json:
+              schema:
+                title: List<JournalAccountModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/JournalAccountModel'
+    post:
+      tags:
+      - Chart Of Accounts
+      summary: Create a new Journal Account
+      description: Create a new journal account for the Business.
+      operationId: Accounts_Post_2
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JournalAccountModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/JournalAccountModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/JournalAccountModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/JournalAccountModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/JournalAccountModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JournalAccountModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/JournalAccountModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/JournalAccountModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/JournalAccountModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/JournalAccountModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/JournalAccountModel'
+  /api/v2/business/{businessId}/accounts/bulk:
+    post:
+      tags:
+      - Chart Of Accounts
+      summary: Bulk insert Journal Accounts
+      description: Create new journal accounts for the Business. This will not replace any existing journal accounts.
+      operationId: Accounts_PostBulk
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JournalAccountBulkCreateModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/JournalAccountBulkCreateModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/JournalAccountBulkCreateModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/JournalAccountBulkCreateModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/JournalAccountBulkCreateModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: List<JournalAccountModel>
+              type: array
+              items:
+                $ref: '#/components/schemas/JournalAccountModel'
+              x-title: List<JournalAccountModel>
+          application/xml:
+            schema:
+              title: List<JournalAccountModel>
+              type: array
+              items:
+                $ref: '#/components/schemas/JournalAccountModel'
+              x-title: List<JournalAccountModel>
+          text/plain:
+            schema:
+              title: List<JournalAccountModel>
+              type: array
+              items:
+                $ref: '#/components/schemas/JournalAccountModel'
+              x-title: List<JournalAccountModel>
+          application/json-patch+json:
+            schema:
+              title: List<JournalAccountModel>
+              type: array
+              items:
+                $ref: '#/components/schemas/JournalAccountModel'
+              x-title: List<JournalAccountModel>
+          text/json:
+            schema:
+              title: List<JournalAccountModel>
+              type: array
+              items:
+                $ref: '#/components/schemas/JournalAccountModel'
+              x-title: List<JournalAccountModel>
+          application/*+json:
+            schema:
+              title: List<JournalAccountModel>
+              type: array
+              items:
+                $ref: '#/components/schemas/JournalAccountModel'
+              x-title: List<JournalAccountModel>
+  /api/v2/business/{businessId}/accounts/journalservice:
+    get:
+      tags:
+      - Chart Of Accounts
+      summary: Get Journal Service provider
+      description: Gets the name of the journal service provider.
+      operationId: Accounts_GetJournalService
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JournalServiceProviderModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/JournalServiceProviderModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/JournalServiceProviderModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/JournalServiceProviderModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/JournalServiceProviderModel'
+    put:
+      tags:
+      - Chart Of Accounts
+      summary: Update Journal Service provider
+      description: Updates the journal service provider.
+      operationId: Accounts_PutJournalService
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JournalServiceProviderModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/JournalServiceProviderModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/JournalServiceProviderModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/JournalServiceProviderModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/JournalServiceProviderModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JournalServiceProviderModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/JournalServiceProviderModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/JournalServiceProviderModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/JournalServiceProviderModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/JournalServiceProviderModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/JournalServiceProviderModel'
+  /api/v2/business/{businessId}/accounts/journalservices:
+    get:
+      tags:
+      - Chart Of Accounts
+      summary: Get Journal Service providers
+      description: Gets the Journal Service providers that can be configured via the API.
+      operationId: Accounts_GetJournalServices
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: List<String>
+                type: array
+                items:
+                  title: String
+                  type: string
+                  x-title: String
+                x-title: List<String>
+            application/xml:
+              schema:
+                title: List<String>
+                type: array
+                items:
+                  title: String
+                  type: string
+                  x-title: String
+                x-title: List<String>
+            text/plain:
+              schema:
+                title: List<String>
+                type: array
+                items:
+                  title: String
+                  type: string
+                  x-title: String
+                x-title: List<String>
+            application/octet-stream:
+              schema:
+                title: List<String>
+                type: array
+                items:
+                  title: String
+                  type: string
+                  x-title: String
+                x-title: List<String>
+            text/json:
+              schema:
+                title: List<String>
+                type: array
+                items:
+                  title: String
+                  type: string
+                  x-title: String
+                x-title: List<String>
+  /api/v2/business/{businessId}/accounts/types:
+    get:
+      tags:
+      - Chart Of Accounts
+      summary: Get Journal Account Types
+      description: Gets the reference list of Journal Account Types.
+      operationId: Accounts_GetAccountTypes
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: List<String>
+                type: array
+                items:
+                  title: String
+                  type: string
+                  x-title: String
+            application/xml:
+              schema:
+                title: List<String>
+                type: array
+                items:
+                  title: String
+                  type: string
+                  x-title: String
+            text/plain:
+              schema:
+                title: List<String>
+                type: array
+                items:
+                  title: String
+                  type: string
+                  x-title: String
+            application/octet-stream:
+              schema:
+                title: List<String>
+                type: array
+                items:
+                  title: String
+                  type: string
+                  x-title: String
+            text/json:
+              schema:
+                title: List<String>
+                type: array
+                items:
+                  title: String
+                  type: string
+                  x-title: String
+  /api/v2/business/{businessId}/accounts/{id}:
+    get:
+      tags:
+      - Chart Of Accounts
+      summary: Get Journal Account by ID
+      description: Gets the journal account with the specified ID.
+      operationId: Accounts_Get_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JournalAccountModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/JournalAccountModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/JournalAccountModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/JournalAccountModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/JournalAccountModel'
+    put:
+      tags:
+      - Chart Of Accounts
+      summary: Update an existing Journal Account
+      description: Update an existing journal account for the Business.
+      operationId: Accounts_Put_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JournalAccountModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/JournalAccountModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/JournalAccountModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/JournalAccountModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/JournalAccountModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JournalAccountModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/JournalAccountModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/JournalAccountModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/JournalAccountModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/JournalAccountModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/JournalAccountModel'
+    delete:
+      tags:
+      - Chart Of Accounts
+      summary: Delete an existing Journal Account
+      description: Delete an existing journal account for the Business.
+      operationId: Accounts_Delete_5
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /api/v2/business/{businessId}/chartofaccounts:
+    get:
+      tags:
+      - Chart Of Accounts
+      summary: Get Chart of Accounts
+      description: Gets the default chart of accounts configuration for the business.
+      operationId: AuChartOfAccounts_Get
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsModel'
+    post:
+      tags:
+      - Chart Of Accounts
+      summary: Update Chart of Accounts
+      description: Updates the default chart of accounts configuration for the business.
+      operationId: AuChartOfAccounts_Post_2
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuChartOfAccountsGroupModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuChartOfAccountsGroupModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuChartOfAccountsGroupModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuChartOfAccountsGroupModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuChartOfAccountsGroupModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuChartOfAccountsGroupModel'
+  /api/v2/business/{businessId}/chartofaccounts/employingEntity/{employingEntityId}:
+    get:
+      tags:
+      - Chart Of Accounts
+      summary: Get Employing Entity Specific Chart of Accounts
+      description: Gets the employingEntity specific chart of accounts configuration for a given employingEntity.
+      operationId: AuChartOfAccounts_GetForEmployingEntity
+      parameters:
+      - in: path
+        name: employingEntityId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsEmployingEntityGroupModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsEmployingEntityGroupModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsEmployingEntityGroupModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsEmployingEntityGroupModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsEmployingEntityGroupModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    post:
+      tags:
+      - Chart Of Accounts
+      summary: Update Employing Entity Specific Chart of Accounts
+      description: Updates the employingEntity specific chart of accounts configuration for the business.
+      operationId: AuChartOfAccounts_PostForEmployingEntity
+      parameters:
+      - in: path
+        name: employingEntityId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsEmployingEntityGroupModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsEmployingEntityGroupModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsEmployingEntityGroupModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsEmployingEntityGroupModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsEmployingEntityGroupModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuChartOfAccountsEmployingEntityGroupModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuChartOfAccountsEmployingEntityGroupModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuChartOfAccountsEmployingEntityGroupModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuChartOfAccountsEmployingEntityGroupModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuChartOfAccountsEmployingEntityGroupModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuChartOfAccountsEmployingEntityGroupModel'
+    delete:
+      tags:
+      - Chart Of Accounts
+      summary: Delete Employing Entity Specific Chart of Accounts
+      description: Deletes a employingEntity specific chart of accounts configuration for the business.
+      operationId: AuChartOfAccounts_DeleteForEmployingEntity
+      parameters:
+      - in: path
+        name: employingEntityId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /api/v2/business/{businessId}/chartofaccounts/location/{locationId}:
+    get:
+      tags:
+      - Chart Of Accounts
+      summary: Get Location Specific Chart of Accounts
+      description: Gets the location specific chart of accounts configuration for a given location.
+      operationId: AuChartOfAccounts_Get_3
+      parameters:
+      - in: path
+        name: locationId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsLocationGroupModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsLocationGroupModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsLocationGroupModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsLocationGroupModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsLocationGroupModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    post:
+      tags:
+      - Chart Of Accounts
+      summary: Update Location Specific Chart of Accounts
+      description: Updates the location specific chart of accounts configuration for the business.
+      operationId: AuChartOfAccounts_Post_4
+      parameters:
+      - in: path
+        name: locationId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsLocationGroupModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsLocationGroupModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsLocationGroupModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsLocationGroupModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuChartOfAccountsLocationGroupModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuChartOfAccountsLocationGroupModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuChartOfAccountsLocationGroupModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuChartOfAccountsLocationGroupModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuChartOfAccountsLocationGroupModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuChartOfAccountsLocationGroupModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuChartOfAccountsLocationGroupModel'
+    delete:
+      tags:
+      - Chart Of Accounts
+      summary: Delete Location Specific Chart of Accounts
+      description: Deletes a location specific chart of accounts configuration for the business.
+      operationId: AuChartOfAccounts_Delete_5
+      parameters:
+      - in: path
+        name: locationId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+components:
+  schemas:
+    ChartOfAccountsCategoryModel:
+      title: ChartOfAccountsCategoryModel
+      type: object
+      properties:
+        splitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        splitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        expenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    JournalAccountModel:
+      title: JournalAccountModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        accountCode:
+          title: String
+          type: string
+          x-title: String
+        accountName:
+          title: String
+          type: string
+          x-title: String
+        accountType:
+          title: ExternalAccountType
+          enum:
+          - Asset
+          - Expense
+          - Liability
+          - Equity
+          - Income
+          - Unknown
+          - NotAllowed
+          - CostOfGoodsSold
+          - AssetAndLiability
+          - CapitalsAndReserves
+          - Sales
+          - Purchases
+          - Overheads
+          type: string
+        externalReferenceId:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    AuChartOfAccountsEmployingEntityGroupModel:
+      title: AuChartOfAccountsEmployingEntityGroupModel
+      type: object
+      properties:
+        defaultAccounts:
+          $ref: '#/components/schemas/AuChartOfAccountsLocationAccountsModel'
+        leaveCategories:
+          title: List<ChartOfAccountsLocationLeaveCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationLeaveCategoryModel'
+        employingEntityId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        payCategories:
+          title: List<ChartOfAccountsLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationCategoryModel'
+        deductionCategories:
+          title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityLocationCategoryModel'
+        employeeExpenseCategories:
+          title: List<ChartOfAccountsLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationCategoryModel'
+          x-title: List<ChartOfAccountsLocationCategoryModel>
+        employerLiabilityCategories:
+          title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityLocationCategoryModel'
+          x-title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+      additionalProperties: false
+    ChartOfAccountsLiabilityLocationCategoryModel:
+      title: ChartOfAccountsLiabilityLocationCategoryModel
+      type: object
+      properties:
+        liabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        expenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    AuChartOfAccountsDefaultAccountsModel:
+      title: AuChartOfAccountsDefaultAccountsModel
+      type: object
+      properties:
+        paymentAccountSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        defaultExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employeeExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employerLiabilityExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employerLiabilityLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        defaultLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        paygLiabilityAccountSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        paygExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        superannuationExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        superannuationLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        paymentAccountSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        defaultExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        employeeExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        employerLiabilityExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        employerLiabilityLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        defaultLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        paygLiabilityAccountSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        paygExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        superannuationExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        superannuationLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        paygLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        paygExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        superannuationExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        superannuationLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        paymentAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        defaultExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerLiabilityExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerLiabilityLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        defaultLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    JournalServiceProviderModel:
+      title: JournalServiceProviderModel
+      type: object
+      properties:
+        journalService:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    ChartOfAccountsLocationLeaveCategoryModel:
+      title: ChartOfAccountsLocationLeaveCategoryModel
+      type: object
+      properties:
+        liabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        accrueFromContingentPeriod:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isLongServiceLeave:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        expenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    JournalAccountBulkCreateModel:
+      title: JournalAccountBulkCreateModel
+      type: object
+      properties:
+        errorMessages:
+          title: List<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: List<String>
+        createdJournalAccounts:
+          title: List<JournalAccountModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/JournalAccountModel'
+          x-title: List<JournalAccountModel>
+      additionalProperties: false
+    ChartOfAccountsLocationCategoryModel:
+      title: ChartOfAccountsLocationCategoryModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        expenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+    ChartOfAccountsLeaveCategoryModel:
+      title: ChartOfAccountsLeaveCategoryModel
+      type: object
+      properties:
+        liabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        accrueFromContingentPeriod:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isLongServiceLeave:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        splitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        splitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        expenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    AuChartOfAccountsModel:
+      title: AuChartOfAccountsModel
+      type: object
+      properties:
+        complete:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        chartofAccounts:
+          $ref: '#/components/schemas/AuChartOfAccountsGroupModel'
+        locationSpecificChartOfAccounts:
+          title: List<AuChartOfAccountsLocationGroupModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/AuChartOfAccountsLocationGroupModel'
+        employingEntitySpecificChartOfAccounts:
+          title: List<AuChartOfAccountsEmployingEntityGroupModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/AuChartOfAccountsEmployingEntityGroupModel'
+      additionalProperties: false
+    AuChartOfAccountsLocationAccountsModel:
+      title: AuChartOfAccountsLocationAccountsModel
+      type: object
+      properties:
+        paygLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        paygExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        superannuationExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        superannuationLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        paymentAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        defaultExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerLiabilityExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerLiabilityLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        defaultLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    AuChartOfAccountsLocationGroupModel:
+      title: AuChartOfAccountsLocationGroupModel
+      type: object
+      properties:
+        defaultAccounts:
+          $ref: '#/components/schemas/AuChartOfAccountsLocationAccountsModel'
+        leaveCategories:
+          title: List<ChartOfAccountsLocationLeaveCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationLeaveCategoryModel'
+          x-title: List<ChartOfAccountsLocationLeaveCategoryModel>
+        locationId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        payCategories:
+          title: List<ChartOfAccountsLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationCategoryModel'
+          x-title: List<ChartOfAccountsLocationCategoryModel>
+        deductionCategories:
+          title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityLocationCategoryModel'
+          x-title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+        employeeExpenseCategories:
+          title: List<ChartOfAccountsLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationCategoryModel'
+          x-title: List<ChartOfAccountsLocationCategoryModel>
+        employerLiabilityCategories:
+          title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityLocationCategoryModel'
+          x-title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+      additionalProperties: false
+    AuChartOfAccountsGroupModel:
+      title: AuChartOfAccountsGroupModel
+      type: object
+      properties:
+        defaultAccounts:
+          $ref: '#/components/schemas/AuChartOfAccountsDefaultAccountsModel'
+        leaveCategories:
+          title: List<ChartOfAccountsLeaveCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLeaveCategoryModel'
+        payCategories:
+          title: List<ChartOfAccountsCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsCategoryModel'
+        deductionCategories:
+          title: List<ChartOfAccountsLiabilityCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityCategoryModel'
+        employeeExpenseCategories:
+          title: List<ChartOfAccountsCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsCategoryModel'
+          x-title: List<ChartOfAccountsCategoryModel>
+        employerLiabilityCategories:
+          title: List<ChartOfAccountsLiabilityCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityCategoryModel'
+          x-title: List<ChartOfAccountsLiabilityCategoryModel>
+      additionalProperties: false
+    ChartOfAccountsLiabilityCategoryModel:
+      title: ChartOfAccountsLiabilityCategoryModel
+      type: object
+      properties:
+        liabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        splitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        splitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        expenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    MyChartOfAccountsDefaultAccountsModel:
+      title: MyChartOfAccountsDefaultAccountsModel
+      type: object
+      properties:
+        paymentAccountSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        defaultExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employeeExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employerLiabilityExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employerLiabilityLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        defaultLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        pcbLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        epfEmployerExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        epfEmployerLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        epfEmployeeLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        eisEmployerExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        eisEmployerLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        eisEmployeeLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        socsoEmployerExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        socsoEmployerLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        socsoEmployeeLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        hrdfEmployerExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        hrdfEmployerLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        pcbBorneByEmployerExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        pcbBorneByEmployerLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        cp38ExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        cp38LiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        benefitsInKindExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        benefitsInKindLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        paymentAccountSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        defaultExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        employeeExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        employerLiabilityExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        employerLiabilityLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        defaultLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        pcbLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        epfEmployerExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        epfEmployerLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        epfEmployeeLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        eisEmployerExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        eisEmployerLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        eisEmployeeLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        socsoEmployerExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        socsoEmployerLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        socsoEmployeeLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        hrdfEmployerExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        hrdfEmployerLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        pcbBorneByEmployerExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        pcbBorneByEmployerLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        cp38ExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        cp38LiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        benefitsInKindExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        benefitsInKindLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        pcbLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        epfEmployerExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        epfEmployerLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        epfEmployeeLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        eisEmployerExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        eisEmployerLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        eisEmployeeLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        socsoEmployerExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        socsoEmployerLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        socsoEmployeeLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        hrdfEmployerExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        hrdfEmployerLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        pcbBorneByEmployerExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        pcbBorneByEmployerLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        cp38ExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        cp38LiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        benefitsInKindExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        benefitsInKindLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        paymentAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        defaultExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerLiabilityExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerLiabilityLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        defaultLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    MyChartOfAccountsEmployingEntityGroupModel:
+      title: MyChartOfAccountsEmployingEntityGroupModel
+      type: object
+      properties:
+        defaultAccounts:
+          $ref: '#/components/schemas/MyChartOfAccountsLocationAccountsModel'
+        employingEntityId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        payCategories:
+          title: List<ChartOfAccountsLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationCategoryModel'
+        deductionCategories:
+          title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityLocationCategoryModel'
+        employeeExpenseCategories:
+          title: List<ChartOfAccountsLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationCategoryModel'
+          x-title: List<ChartOfAccountsLocationCategoryModel>
+        employerLiabilityCategories:
+          title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityLocationCategoryModel'
+          x-title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+      additionalProperties: false
+    MyChartOfAccountsModel:
+      title: MyChartOfAccountsModel
+      type: object
+      properties:
+        complete:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        chartofAccounts:
+          $ref: '#/components/schemas/MyChartOfAccountsGroupModel'
+        locationSpecificChartOfAccounts:
+          title: List<MyChartOfAccountsLocationGroupModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/MyChartOfAccountsLocationGroupModel'
+        employingEntitySpecificChartOfAccounts:
+          title: List<MyChartOfAccountsEmployingEntityGroupModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/MyChartOfAccountsEmployingEntityGroupModel'
+      additionalProperties: false
+    MyChartOfAccountsGroupModel:
+      title: MyChartOfAccountsGroupModel
+      type: object
+      properties:
+        defaultAccounts:
+          $ref: '#/components/schemas/MyChartOfAccountsDefaultAccountsModel'
+        payCategories:
+          title: List<ChartOfAccountsCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsCategoryModel'
+        deductionCategories:
+          title: List<ChartOfAccountsLiabilityCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityCategoryModel'
+        employeeExpenseCategories:
+          title: List<ChartOfAccountsCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsCategoryModel'
+          x-title: List<ChartOfAccountsCategoryModel>
+        employerLiabilityCategories:
+          title: List<ChartOfAccountsLiabilityCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityCategoryModel'
+          x-title: List<ChartOfAccountsLiabilityCategoryModel>
+      additionalProperties: false
+    MyChartOfAccountsLocationAccountsModel:
+      title: MyChartOfAccountsLocationAccountsModel
+      type: object
+      properties:
+        pcbLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        epfEmployerExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        epfEmployerLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        epfEmployeeLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        eisEmployerExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        eisEmployerLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        eisEmployeeLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        socsoEmployerExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        socsoEmployerLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        socsoEmployeeLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        hrdfEmployerExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        hrdfEmployerLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        pcbBorneByEmployerExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        pcbBorneByEmployerLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        cp38ExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        cp38LiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        benefitsInKindExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        benefitsInKindLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        paymentAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        defaultExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerLiabilityExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerLiabilityLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        defaultLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    MyChartOfAccountsLocationGroupModel:
+      title: MyChartOfAccountsLocationGroupModel
+      type: object
+      properties:
+        defaultAccounts:
+          $ref: '#/components/schemas/MyChartOfAccountsLocationAccountsModel'
+        locationId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        payCategories:
+          title: List<ChartOfAccountsLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationCategoryModel'
+          x-title: List<ChartOfAccountsLocationCategoryModel>
+        deductionCategories:
+          title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityLocationCategoryModel'
+          x-title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+        employeeExpenseCategories:
+          title: List<ChartOfAccountsLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationCategoryModel'
+          x-title: List<ChartOfAccountsLocationCategoryModel>
+        employerLiabilityCategories:
+          title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityLocationCategoryModel'
+          x-title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+      additionalProperties: false
+    NzChartOfAccountsModel:
+      title: NzChartOfAccountsModel
+      type: object
+      properties:
+        complete:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        chartofAccounts:
+          $ref: '#/components/schemas/NzChartOfAccountsGroupModel'
+        locationSpecificChartOfAccounts:
+          title: List<NzChartOfAccountsLocationGroupModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/NzChartOfAccountsLocationGroupModel'
+        employingEntitySpecificChartOfAccounts:
+          title: List<NzChartOfAccountsEmployingEntityGroupModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/NzChartOfAccountsEmployingEntityGroupModel'
+      additionalProperties: false
+    NzChartOfAccountsLocationAccountsModel:
+      title: NzChartOfAccountsLocationAccountsModel
+      type: object
+      properties:
+        payeLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        payeExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        kiwiSaverEmployerExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        kiwiSaverEmployerLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        kiwiSaverEmployeeLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        studentLoanLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        paymentAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        defaultExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerLiabilityExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerLiabilityLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        defaultLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    NzChartOfAccountsGroupModel:
+      title: NzChartOfAccountsGroupModel
+      type: object
+      properties:
+        defaultAccounts:
+          $ref: '#/components/schemas/NzChartOfAccountsDefaultAccountsModel'
+        payCategories:
+          title: List<ChartOfAccountsCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsCategoryModel'
+        deductionCategories:
+          title: List<ChartOfAccountsLiabilityCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityCategoryModel'
+        employeeExpenseCategories:
+          title: List<ChartOfAccountsCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsCategoryModel'
+          x-title: List<ChartOfAccountsCategoryModel>
+        employerLiabilityCategories:
+          title: List<ChartOfAccountsLiabilityCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityCategoryModel'
+          x-title: List<ChartOfAccountsLiabilityCategoryModel>
+      additionalProperties: false
+    NzChartOfAccountsDefaultAccountsModel:
+      title: NzChartOfAccountsDefaultAccountsModel
+      type: object
+      properties:
+        paymentAccountSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        defaultExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employeeExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employerLiabilityExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employerLiabilityLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        defaultLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        payeLiabilityAccountSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        payeExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        kiwiSaverEmployerExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        kiwiSaverEmployerLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        kiwiSaverEmployeeLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        studentLoanLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        paymentAccountSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        defaultExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        employeeExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        employerLiabilityExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        employerLiabilityLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        defaultLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        payeLiabilityAccountSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        payeExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        kiwiSaverEmployerExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        kiwiSaverEmployerLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        kiwiSaverEmployeeLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        studentLoanLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        payeLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        payeExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        kiwiSaverEmployerExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        kiwiSaverEmployerLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        kiwiSaverEmployeeLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        studentLoanLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        paymentAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        defaultExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerLiabilityExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerLiabilityLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        defaultLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    NzChartOfAccountsEmployingEntityGroupModel:
+      title: NzChartOfAccountsEmployingEntityGroupModel
+      type: object
+      properties:
+        defaultAccounts:
+          $ref: '#/components/schemas/NzChartOfAccountsLocationAccountsModel'
+        employingEntityId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        payCategories:
+          title: List<ChartOfAccountsLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationCategoryModel'
+        deductionCategories:
+          title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityLocationCategoryModel'
+        employeeExpenseCategories:
+          title: List<ChartOfAccountsLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationCategoryModel'
+          x-title: List<ChartOfAccountsLocationCategoryModel>
+        employerLiabilityCategories:
+          title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityLocationCategoryModel'
+          x-title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+      additionalProperties: false
+    NzChartOfAccountsLocationGroupModel:
+      title: NzChartOfAccountsLocationGroupModel
+      type: object
+      properties:
+        defaultAccounts:
+          $ref: '#/components/schemas/NzChartOfAccountsLocationAccountsModel'
+        locationId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        payCategories:
+          title: List<ChartOfAccountsLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationCategoryModel'
+          x-title: List<ChartOfAccountsLocationCategoryModel>
+        deductionCategories:
+          title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityLocationCategoryModel'
+          x-title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+        employeeExpenseCategories:
+          title: List<ChartOfAccountsLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationCategoryModel'
+          x-title: List<ChartOfAccountsLocationCategoryModel>
+        employerLiabilityCategories:
+          title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityLocationCategoryModel'
+          x-title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+      additionalProperties: false
+    SgChartOfAccountsModel:
+      title: SgChartOfAccountsModel
+      type: object
+      properties:
+        complete:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        chartofAccounts:
+          $ref: '#/components/schemas/SgChartOfAccountsGroupModel'
+        locationSpecificChartOfAccounts:
+          title: List<SgChartOfAccountsLocationGroupModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/SgChartOfAccountsLocationGroupModel'
+        employingEntitySpecificChartOfAccounts:
+          title: List<SgChartOfAccountsEmployingEntityGroupModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/SgChartOfAccountsEmployingEntityGroupModel'
+      additionalProperties: false
+    SgChartOfAccountsEmployingEntityGroupModel:
+      title: SgChartOfAccountsEmployingEntityGroupModel
+      type: object
+      properties:
+        defaultAccounts:
+          $ref: '#/components/schemas/SgChartOfAccountsLocationAccountsModel'
+        employingEntityId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        payCategories:
+          title: List<ChartOfAccountsLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationCategoryModel'
+        deductionCategories:
+          title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityLocationCategoryModel'
+        employeeExpenseCategories:
+          title: List<ChartOfAccountsLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationCategoryModel'
+          x-title: List<ChartOfAccountsLocationCategoryModel>
+        employerLiabilityCategories:
+          title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityLocationCategoryModel'
+          x-title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+      additionalProperties: false
+    SgChartOfAccountsLocationGroupModel:
+      title: SgChartOfAccountsLocationGroupModel
+      type: object
+      properties:
+        defaultAccounts:
+          $ref: '#/components/schemas/SgChartOfAccountsLocationAccountsModel'
+        locationId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        payCategories:
+          title: List<ChartOfAccountsLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationCategoryModel'
+          x-title: List<ChartOfAccountsLocationCategoryModel>
+        deductionCategories:
+          title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityLocationCategoryModel'
+          x-title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+        employeeExpenseCategories:
+          title: List<ChartOfAccountsLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationCategoryModel'
+          x-title: List<ChartOfAccountsLocationCategoryModel>
+        employerLiabilityCategories:
+          title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityLocationCategoryModel'
+          x-title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+      additionalProperties: false
+    SgChartOfAccountsDefaultAccountsModel:
+      title: SgChartOfAccountsDefaultAccountsModel
+      type: object
+      properties:
+        paymentAccountSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        defaultExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employeeExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employerLiabilityExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employerLiabilityLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        defaultLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        cpfEmployerExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        cpfEmployerLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        cpfEmployeeLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        sdlEmployerExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        sdlEmployerLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        taxLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        taxLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        paymentAccountSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        defaultExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        employeeExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        employerLiabilityExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        employerLiabilityLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        defaultLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        cpfEmployerExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        cpfEmployerLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        cpfEmployeeLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        sdlEmployerExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        sdlEmployerLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        cpfEmployerExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        cpfEmployerLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        cpfEmployeeLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        sdlEmployerExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        sdlEmployerLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        taxLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        paymentAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        defaultExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerLiabilityExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerLiabilityLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        defaultLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    SgChartOfAccountsGroupModel:
+      title: SgChartOfAccountsGroupModel
+      type: object
+      properties:
+        defaultAccounts:
+          $ref: '#/components/schemas/SgChartOfAccountsDefaultAccountsModel'
+        payCategories:
+          title: List<ChartOfAccountsCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsCategoryModel'
+        deductionCategories:
+          title: List<ChartOfAccountsLiabilityCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityCategoryModel'
+        employeeExpenseCategories:
+          title: List<ChartOfAccountsCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsCategoryModel'
+          x-title: List<ChartOfAccountsCategoryModel>
+        employerLiabilityCategories:
+          title: List<ChartOfAccountsLiabilityCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityCategoryModel'
+          x-title: List<ChartOfAccountsLiabilityCategoryModel>
+      additionalProperties: false
+    SgChartOfAccountsLocationAccountsModel:
+      title: SgChartOfAccountsLocationAccountsModel
+      type: object
+      properties:
+        cpfEmployerExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        cpfEmployerLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        cpfEmployeeLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        sdlEmployerExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        sdlEmployerLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        taxLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        paymentAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        defaultExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerLiabilityExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerLiabilityLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        defaultLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    UkChartOfAccountsEmployingEntityGroupModel:
+      title: UkChartOfAccountsEmployingEntityGroupModel
+      type: object
+      properties:
+        defaultAccounts:
+          $ref: '#/components/schemas/ChartOfAccountsLocationAccountsModel'
+        employingEntityId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        payCategories:
+          title: List<ChartOfAccountsLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationCategoryModel'
+        deductionCategories:
+          title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityLocationCategoryModel'
+        employeeExpenseCategories:
+          title: List<ChartOfAccountsLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationCategoryModel'
+          x-title: List<ChartOfAccountsLocationCategoryModel>
+        employerLiabilityCategories:
+          title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityLocationCategoryModel'
+          x-title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+      additionalProperties: false
+    UkChartOfAccountsDefaultAccountsModel:
+      title: UkChartOfAccountsDefaultAccountsModel
+      type: object
+      properties:
+        payeLiabilityAccountSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        payeExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        paymentAccountSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        defaultExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employeeExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employerLiabilityExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employerLiabilityLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        defaultLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employerPensionLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employerPensionExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        nationalInsuranceLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        nationalInsuranceExpenseSplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employeeNationalInsuranceLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employeePensionLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        studentLoanLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        postgraduateStudentLoanLiabilitySplitByLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        payeLiabilityAccountSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        payeExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        paymentAccountSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        defaultExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        employeeExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        employerLiabilityExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        employerLiabilityLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        defaultLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        employerPensionLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        employerPensionExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        nationalInsuranceLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        nationalInsuranceExpenseSplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        employeeNationalInsuranceLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        employeePensionLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        studentLoanLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        postgraduateStudentLoanLiabilitySplitByEmployingEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        payeLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        payeExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerPensionLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerPensionExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        nationalInsuranceLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        nationalInsuranceExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeePensionLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        studentLoanLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        postgraduateStudentLoanLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeNationalInsuranceLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        paymentAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        defaultExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerLiabilityExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerLiabilityLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        defaultLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    ChartOfAccountsLocationAccountsModel:
+      title: ChartOfAccountsLocationAccountsModel
+      type: object
+      properties:
+        paymentAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        defaultExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerLiabilityExpenseAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employerLiabilityLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        defaultLiabilityAccountId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    UkChartOfAccountsLocationGroupModel:
+      title: UkChartOfAccountsLocationGroupModel
+      type: object
+      properties:
+        defaultAccounts:
+          $ref: '#/components/schemas/ChartOfAccountsLocationAccountsModel'
+        locationId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        payCategories:
+          title: List<ChartOfAccountsLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationCategoryModel'
+          x-title: List<ChartOfAccountsLocationCategoryModel>
+        deductionCategories:
+          title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityLocationCategoryModel'
+          x-title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+        employeeExpenseCategories:
+          title: List<ChartOfAccountsLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLocationCategoryModel'
+          x-title: List<ChartOfAccountsLocationCategoryModel>
+        employerLiabilityCategories:
+          title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityLocationCategoryModel'
+          x-title: List<ChartOfAccountsLiabilityLocationCategoryModel>
+      additionalProperties: false
+    UkChartOfAccountsModel:
+      title: UkChartOfAccountsModel
+      type: object
+      properties:
+        complete:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        chartofAccounts:
+          $ref: '#/components/schemas/UkChartOfAccountsGroupModel'
+        locationSpecificChartOfAccounts:
+          title: List<UkChartOfAccountsLocationGroupModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/UkChartOfAccountsLocationGroupModel'
+        employingEntitySpecificChartOfAccounts:
+          title: List<UkChartOfAccountsEmployingEntityGroupModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/UkChartOfAccountsEmployingEntityGroupModel'
+      additionalProperties: false
+    UkChartOfAccountsGroupModel:
+      title: UkChartOfAccountsGroupModel
+      type: object
+      properties:
+        defaultAccounts:
+          $ref: '#/components/schemas/UkChartOfAccountsDefaultAccountsModel'
+        payCategories:
+          title: List<ChartOfAccountsCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsCategoryModel'
+        deductionCategories:
+          title: List<ChartOfAccountsLiabilityCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityCategoryModel'
+        employeeExpenseCategories:
+          title: List<ChartOfAccountsCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsCategoryModel'
+          x-title: List<ChartOfAccountsCategoryModel>
+        employerLiabilityCategories:
+          title: List<ChartOfAccountsLiabilityCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ChartOfAccountsLiabilityCategoryModel'
+          x-title: List<ChartOfAccountsLiabilityCategoryModel>
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

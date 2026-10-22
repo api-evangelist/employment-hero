@@ -1,0 +1,709 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Employee Groups API
+  version: '1.0'
+  description: 'Operations tagged EmployeeGroups across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: EmployeeGroups
+  description: Employee Groups
+paths:
+  /api/v2/business/{businessId}/employeegroup:
+    get:
+      tags:
+      - EmployeeGroups
+      summary: List Employee Groups
+      description: 'Lists all the employee groups for the business.
+
+
+        This operation supports OData queries.'
+      operationId: AuEmployeeGroup_GetGroups
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IQueryable<AuEmployeeGroupModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEmployeeGroupModel'
+            application/xml:
+              schema:
+                title: IQueryable<AuEmployeeGroupModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEmployeeGroupModel'
+            text/plain:
+              schema:
+                title: IQueryable<AuEmployeeGroupModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEmployeeGroupModel'
+            application/octet-stream:
+              schema:
+                title: IQueryable<AuEmployeeGroupModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEmployeeGroupModel'
+            text/json:
+              schema:
+                title: IQueryable<AuEmployeeGroupModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEmployeeGroupModel'
+    post:
+      tags:
+      - EmployeeGroups
+      summary: Create Employee Group
+      description: Creates a new employee group for the business.
+      operationId: AuEmployeeGroup_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeGroupModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeGroupModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeGroupModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeGroupModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeGroupModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeGroupModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeGroupModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeGroupModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeGroupModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeGroupModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeGroupModel'
+  /api/v2/business/{businessId}/employeegroup/{id}:
+    get:
+      tags:
+      - EmployeeGroups
+      summary: Get Employee Group by ID
+      description: Gets the employee group with the specified ID.
+      operationId: AuEmployeeGroup_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuDetailedEmployeeGroupModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuDetailedEmployeeGroupModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuDetailedEmployeeGroupModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuDetailedEmployeeGroupModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuDetailedEmployeeGroupModel'
+    put:
+      tags:
+      - EmployeeGroups
+      summary: Update Employee Group
+      description: Updates the specified employee group.
+      operationId: AuEmployeeGroup_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeGroupModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeGroupModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeGroupModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeGroupModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuEmployeeGroupModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeGroupModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeGroupModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeGroupModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeGroupModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeGroupModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuEmployeeGroupModel'
+    delete:
+      tags:
+      - EmployeeGroups
+      summary: Delete Employee Group
+      description: Deletes the employee group with the specified ID.
+      operationId: AuEmployeeGroup_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    AuEmployeeFilterModel:
+      title: AuEmployeeFilterModel
+      type: object
+      properties:
+        filterType:
+          title: AuFilterTypeEnum
+          enum:
+          - Location
+          - LocationOrParents
+          - Employee
+          - PaySchedule
+          - EmploymentType
+          - EmployingEntity
+          - Tag
+          type: string
+        operator:
+          title: FilterOperatorEnum
+          enum:
+          - In
+          - NotIn
+          type: string
+        value:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    AuEmployeeGroupModel:
+      title: AuEmployeeGroupModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        filterCombinationStrategy:
+          title: FilterCombinationStrategyEnum
+          enum:
+          - Or
+          - And
+          type: string
+          x-title: FilterCombinationStrategyEnum
+        filters:
+          title: IList<AuEmployeeFilterModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/AuEmployeeFilterModel'
+          x-title: IList<AuEmployeeFilterModel>
+      additionalProperties: false
+    AuDetailedEmployeeGroupModel:
+      title: AuDetailedEmployeeGroupModel
+      type: object
+      properties:
+        matchingEmployees:
+          title: IList<MatchingEmployeeModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/MatchingEmployeeModel'
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        filterCombinationStrategy:
+          title: FilterCombinationStrategyEnum
+          enum:
+          - Or
+          - And
+          type: string
+        filters:
+          title: IList<AuEmployeeFilterModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/AuEmployeeFilterModel'
+      additionalProperties: false
+    MatchingEmployeeModel:
+      title: MatchingEmployeeModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        name:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    MyEmployeeFilterModel:
+      title: MyEmployeeFilterModel
+      type: object
+      properties:
+        filterType:
+          title: MyFilterTypeEnum
+          enum:
+          - Location
+          - LocationOrParents
+          - Employee
+          - PaySchedule
+          - EmploymentType
+          - Tag
+          type: string
+        operator:
+          title: FilterOperatorEnum
+          enum:
+          - In
+          - NotIn
+          type: string
+        value:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    MyEmployeeGroupModel:
+      title: MyEmployeeGroupModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        filterCombinationStrategy:
+          title: FilterCombinationStrategyEnum
+          enum:
+          - Or
+          - And
+          type: string
+          x-title: FilterCombinationStrategyEnum
+        filters:
+          title: IList<MyEmployeeFilterModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/MyEmployeeFilterModel'
+          x-title: IList<MyEmployeeFilterModel>
+      additionalProperties: false
+    MyDetailedEmployeeGroupModel:
+      title: MyDetailedEmployeeGroupModel
+      type: object
+      properties:
+        matchingEmployees:
+          title: IList<MatchingEmployeeModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/MatchingEmployeeModel'
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        filterCombinationStrategy:
+          title: FilterCombinationStrategyEnum
+          enum:
+          - Or
+          - And
+          type: string
+        filters:
+          title: IList<MyEmployeeFilterModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/MyEmployeeFilterModel'
+      additionalProperties: false
+    NzDetailedEmployeeGroupModel:
+      title: NzDetailedEmployeeGroupModel
+      type: object
+      properties:
+        matchingEmployees:
+          title: IList<MatchingEmployeeModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/MatchingEmployeeModel'
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        filterCombinationStrategy:
+          title: FilterCombinationStrategyEnum
+          enum:
+          - Or
+          - And
+          type: string
+        filters:
+          title: IList<NzEmployeeFilterModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/NzEmployeeFilterModel'
+      additionalProperties: false
+    NzEmployeeFilterModel:
+      title: NzEmployeeFilterModel
+      type: object
+      properties:
+        filterType:
+          title: NzFilterTypeEnum
+          enum:
+          - Location
+          - LocationOrParents
+          - Employee
+          - PaySchedule
+          - EmploymentType
+          - Tag
+          type: string
+        operator:
+          title: FilterOperatorEnum
+          enum:
+          - In
+          - NotIn
+          type: string
+        value:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    NzEmployeeGroupModel:
+      title: NzEmployeeGroupModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        filterCombinationStrategy:
+          title: FilterCombinationStrategyEnum
+          enum:
+          - Or
+          - And
+          type: string
+          x-title: FilterCombinationStrategyEnum
+        filters:
+          title: IList<NzEmployeeFilterModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/NzEmployeeFilterModel'
+          x-title: IList<NzEmployeeFilterModel>
+      additionalProperties: false
+    SgDetailedEmployeeGroupModel:
+      title: SgDetailedEmployeeGroupModel
+      type: object
+      properties:
+        matchingEmployees:
+          title: IList<MatchingEmployeeModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/MatchingEmployeeModel'
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        filterCombinationStrategy:
+          title: FilterCombinationStrategyEnum
+          enum:
+          - Or
+          - And
+          type: string
+        filters:
+          title: IList<SgEmployeeFilterModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/SgEmployeeFilterModel'
+      additionalProperties: false
+    SgEmployeeGroupModel:
+      title: SgEmployeeGroupModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        filterCombinationStrategy:
+          title: FilterCombinationStrategyEnum
+          enum:
+          - Or
+          - And
+          type: string
+          x-title: FilterCombinationStrategyEnum
+        filters:
+          title: IList<SgEmployeeFilterModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/SgEmployeeFilterModel'
+          x-title: IList<SgEmployeeFilterModel>
+      additionalProperties: false
+    SgEmployeeFilterModel:
+      title: SgEmployeeFilterModel
+      type: object
+      properties:
+        filterType:
+          title: SgFilterTypeEnum
+          enum:
+          - Location
+          - LocationOrParents
+          - Employee
+          - PaySchedule
+          - EmploymentType
+          - Tag
+          type: string
+        operator:
+          title: FilterOperatorEnum
+          enum:
+          - In
+          - NotIn
+          type: string
+        value:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    UkEmployeeGroupModel:
+      title: UkEmployeeGroupModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        filterCombinationStrategy:
+          title: FilterCombinationStrategyEnum
+          enum:
+          - Or
+          - And
+          type: string
+          x-title: FilterCombinationStrategyEnum
+        filters:
+          title: IList<UkEmployeeFilterModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/UkEmployeeFilterModel'
+          x-title: IList<UkEmployeeFilterModel>
+      additionalProperties: false
+    UkEmployeeFilterModel:
+      title: UkEmployeeFilterModel
+      type: object
+      properties:
+        filterType:
+          title: UkFilterTypeEnum
+          enum:
+          - Location
+          - LocationOrParents
+          - Employee
+          - PaySchedule
+          - Tag
+          type: string
+        operator:
+          title: FilterOperatorEnum
+          enum:
+          - In
+          - NotIn
+          type: string
+        value:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    UkDetailedEmployeeGroupModel:
+      title: UkDetailedEmployeeGroupModel
+      type: object
+      properties:
+        matchingEmployees:
+          title: IList<MatchingEmployeeModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/MatchingEmployeeModel'
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        filterCombinationStrategy:
+          title: FilterCombinationStrategyEnum
+          enum:
+          - Or
+          - And
+          type: string
+        filters:
+          title: IList<UkEmployeeFilterModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/UkEmployeeFilterModel'
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

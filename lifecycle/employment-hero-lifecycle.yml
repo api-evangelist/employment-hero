@@ -1,0 +1,22 @@
+generated: '2026-10-20'
+method: searched
+source: https://developer.employmenthero.com/api-references/introduction/api-versioning-policy.md
+versioning:
+  scheme: url-path
+  example: https://api.employmenthero.com/api/v1/...
+  policy: '"This version number changes only when we introduce breaking changes." Breaking changes (removing/renaming a field, changing a field type, altering endpoint behaviour) "will always result in a new API version (e.g., v1 to v2)"; additive changes ship into the existing version.'
+  docs: https://developer.employmenthero.com/api-references/introduction/api-versioning-policy.md
+  current_version: v1
+deprecation:
+  policy: null
+  sunset_headers: not documented
+  notice_period: not documented
+  events:
+  - what: Non-PKCE OAuth 2.0 authorization-code flow; client credentials sent as query parameters or JSON
+    effective: '2026-09-30'
+    evidence: '"Requests without them will be rejected once the mandate takes effect." / "Sending them as query parameters or JSON is no longer accepted."'
+    docs: https://developer.employmenthero.com/api-references/authentication/obtain-access-token.md
+sla: null
+status_page: https://status.employmenthero.com
+deprecated_operations: []
+note: No deprecation notice period, Sunset/Deprecation header use or SLA is published in the developer docs.

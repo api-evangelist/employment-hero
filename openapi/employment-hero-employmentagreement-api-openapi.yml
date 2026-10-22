@@ -1,0 +1,1837 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Employment Agreement API
+  version: '1.0'
+  description: 'Operations tagged EmploymentAgreement across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: EmploymentAgreement
+  description: Employment Agreement
+paths:
+  /api/v2/business/{businessId}/employee/{employeeId}/timesheet/shiftcosting:
+    post:
+      tags:
+      - EmploymentAgreement
+      summary: Get Shift Costings for Employee
+      description: Gets the shift costings for the specified employee.
+      operationId: EmploymentAgreement_EvaluateEmployee
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShiftCostingsResponseModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ShiftCostingsResponseModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ShiftCostingsResponseModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ShiftCostingsResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ShiftCostingsResponseModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShiftCostingsRequestModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ShiftCostingsRequestModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/ShiftCostingsRequestModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ShiftCostingsRequestModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ShiftCostingsRequestModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ShiftCostingsRequestModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/timesheet/shiftperiods:
+    post:
+      tags:
+      - EmploymentAgreement
+      summary: Get Shift Periods for Employee
+      description: Gets the shift periods for the specified employee.
+      operationId: EmploymentAgreement_EmployeeShiftPeriods
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<ShiftPeriodModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShiftPeriodModel'
+            application/xml:
+              schema:
+                title: IList<ShiftPeriodModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShiftPeriodModel'
+            text/plain:
+              schema:
+                title: IList<ShiftPeriodModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShiftPeriodModel'
+            application/octet-stream:
+              schema:
+                title: IList<ShiftPeriodModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShiftPeriodModel'
+            text/json:
+              schema:
+                title: IList<ShiftPeriodModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShiftPeriodModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetShiftPeriodsModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GetShiftPeriodsModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/GetShiftPeriodsModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/GetShiftPeriodsModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetShiftPeriodsModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetShiftPeriodsModel'
+  /api/v2/business/{businessId}/employmentagreement:
+    get:
+      tags:
+      - EmploymentAgreement
+      summary: List Employment Agreements
+      description: 'Lists all of the employment agreements for the business.
+
+
+        This operation supports OData queries.'
+      operationId: AuEmploymentAgreement_GetAll
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IQueryable<BasicEmploymentAgreementModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BasicEmploymentAgreementModel'
+            application/xml:
+              schema:
+                title: IQueryable<BasicEmploymentAgreementModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BasicEmploymentAgreementModel'
+            text/plain:
+              schema:
+                title: IQueryable<BasicEmploymentAgreementModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BasicEmploymentAgreementModel'
+            application/octet-stream:
+              schema:
+                title: IQueryable<BasicEmploymentAgreementModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BasicEmploymentAgreementModel'
+            text/json:
+              schema:
+                title: IQueryable<BasicEmploymentAgreementModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BasicEmploymentAgreementModel'
+  /api/v2/business/{businessId}/employmentagreement/{id}:
+    get:
+      tags:
+      - EmploymentAgreement
+      summary: Get Employment Agreement by ID
+      description: Gets the employment agreement with the specified ID.
+      operationId: AuEmploymentAgreement_Get
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmploymentAgreementModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmploymentAgreementModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmploymentAgreementModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmploymentAgreementModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmploymentAgreementModel'
+  /api/v2/business/{businessId}/employmentagreement/{id}/shiftcosting:
+    post:
+      tags:
+      - EmploymentAgreement
+      summary: Evaluate Shift Costings
+      description: Evaluates shift costings for the employment agreement with the specified ID.
+      operationId: AuEmploymentAgreement_Evaluate
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShiftCostingsResponseModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ShiftCostingsResponseModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ShiftCostingsResponseModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ShiftCostingsResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ShiftCostingsResponseModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShiftCostingsRequestModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ShiftCostingsRequestModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/ShiftCostingsRequestModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ShiftCostingsRequestModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ShiftCostingsRequestModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ShiftCostingsRequestModel'
+  /api/v2/business/{businessId}/employmentagreement/{id}/shiftcosting/bulk:
+    post:
+      tags:
+      - EmploymentAgreement
+      summary: Bulk Evaluate Shift Costings
+      description: 'Bulk Evaluates shift costings for the employment agreement with the specified ID.
+
+        Limited to 100 entries per request'
+      operationId: AuEmploymentAgreement_BulkEvaluate
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: List<ShiftCostingsResponseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShiftCostingsResponseModel'
+            application/xml:
+              schema:
+                title: List<ShiftCostingsResponseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShiftCostingsResponseModel'
+            text/plain:
+              schema:
+                title: List<ShiftCostingsResponseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShiftCostingsResponseModel'
+            application/octet-stream:
+              schema:
+                title: List<ShiftCostingsResponseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShiftCostingsResponseModel'
+            text/json:
+              schema:
+                title: List<ShiftCostingsResponseModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShiftCostingsResponseModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: List<ShiftCostingsRequestModel>
+              type: array
+              items:
+                $ref: '#/components/schemas/ShiftCostingsRequestModel'
+          application/xml:
+            schema:
+              title: List<ShiftCostingsRequestModel>
+              type: array
+              items:
+                $ref: '#/components/schemas/ShiftCostingsRequestModel'
+          text/plain:
+            schema:
+              title: List<ShiftCostingsRequestModel>
+              type: array
+              items:
+                $ref: '#/components/schemas/ShiftCostingsRequestModel'
+          application/json-patch+json:
+            schema:
+              title: List<ShiftCostingsRequestModel>
+              type: array
+              items:
+                $ref: '#/components/schemas/ShiftCostingsRequestModel'
+          text/json:
+            schema:
+              title: List<ShiftCostingsRequestModel>
+              type: array
+              items:
+                $ref: '#/components/schemas/ShiftCostingsRequestModel'
+          application/*+json:
+            schema:
+              title: List<ShiftCostingsRequestModel>
+              type: array
+              items:
+                $ref: '#/components/schemas/ShiftCostingsRequestModel'
+  /api/v2/business/{businessId}/employmentagreement/{id}/shiftperiods:
+    post:
+      tags:
+      - EmploymentAgreement
+      summary: Get Shift Periods
+      description: Gets all the shift periods for the employment agreement with the specified ID.
+      operationId: AuEmploymentAgreement_ShiftPeriods
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<ShiftPeriodModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShiftPeriodModel'
+                x-title: IList<ShiftPeriodModel>
+            application/xml:
+              schema:
+                title: IList<ShiftPeriodModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShiftPeriodModel'
+                x-title: IList<ShiftPeriodModel>
+            text/plain:
+              schema:
+                title: IList<ShiftPeriodModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShiftPeriodModel'
+                x-title: IList<ShiftPeriodModel>
+            application/octet-stream:
+              schema:
+                title: IList<ShiftPeriodModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShiftPeriodModel'
+                x-title: IList<ShiftPeriodModel>
+            text/json:
+              schema:
+                title: IList<ShiftPeriodModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShiftPeriodModel'
+                x-title: IList<ShiftPeriodModel>
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetShiftPeriodsModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GetShiftPeriodsModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/GetShiftPeriodsModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/GetShiftPeriodsModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetShiftPeriodsModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetShiftPeriodsModel'
+components:
+  schemas:
+    EmploymentAgreementPayRateTemplateModel:
+      title: EmploymentAgreementPayRateTemplateModel
+      type: object
+      properties:
+        payRateTemplateId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        payRateTemplate:
+          $ref: '#/components/schemas/PayRateTemplateModel'
+        minAge:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        maxAge:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        minAnniversaryMonths:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        maxAnniversaryMonths:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    ShiftCostingsResponseModel:
+      title: ShiftCostingsResponseModel
+      type: object
+      properties:
+        transactionId:
+          format: uuid
+          title: Guid
+          type: string
+        transactionExternalId:
+          title: String
+          type: string
+          x-title: String
+        employmentAgreementId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employmentAgreementName:
+          title: String
+          type: string
+          x-title: String
+        payConditionRuleSetId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        payConditionRuleSetName:
+          title: String
+          type: string
+          x-title: String
+        shifts:
+          title: List<ShiftCostingsResponseShiftModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ShiftCostingsResponseShiftModel'
+      additionalProperties: false
+    EmploymentAgreementModel:
+      title: EmploymentAgreementModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        classification:
+          title: String
+          type: string
+          x-title: String
+        employmentType:
+          title: EmploymentTypeEnum
+          enum:
+          - Unknown
+          - FullTime
+          - PartTime
+          - LabourHire
+          - SuperannuationIncomeStream
+          - Casual
+          - NotApplicable
+          - IndependentContractor
+          - Management
+          - Contract
+          - Intern
+          - Other
+          - Volunteer
+          - Seasonal
+          - Consultant
+          type: string
+        payRateTemplateType:
+          title: PayRateTemplateTypeEnum
+          enum:
+          - DateOfBirth
+          - Anniversary
+          - AnniversaryInMonths
+          - DateOfBirthAndAnniversaryInMonths
+          type: string
+        payConditionRuleSetId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        payConditionRuleSet:
+          $ref: '#/components/schemas/PayConditionRuleSetModel'
+        leaveAllowanceTemplates:
+          title: IList<LeaveAllowanceTemplateModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/LeaveAllowanceTemplateModel'
+        leaveAllowanceTemplateIds:
+          title: IList<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: IList<Int32>
+        agePayRateTemplates:
+          title: IList<EmploymentAgreementPayRateTemplateModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/EmploymentAgreementPayRateTemplateModel'
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: ExternalService
+          enum:
+          - None
+          - Saasu
+          - Xero
+          - MYOB
+          - Deputy
+          - EmployeeTimePunch
+          - ClickSuper
+          - IntegratedTimesheets
+          - FileImport
+          - FileExport
+          - QuickBooks
+          - Harmony
+          - AwardStore
+          - Attache
+          - IntegratedRostering
+          - ReckonAccounts
+          - API
+          - MicroPower
+          - RosterLive
+          - NetSuite
+          - Kounta
+          - TimeAndAttendanceKiosk
+          - DetailedFileExport
+          - JonasPremier
+          - WageEasy
+          - Maestrano
+          - WorkZone
+          - EmployeePortal
+          - RosterTemplate
+          - Onboarding
+          - Admin
+          - WorkZoneClockOnOff
+          - NetSuiteOneWorld
+          - Sage50
+          - PensionSync
+          - FinancialsOffice
+          - ProntoXI
+          - PayRunDefault
+          - StandardWorkDay
+          - Beam
+          - PayRunAutomation
+          - BureauDashboard
+          - Wiise
+          - QBOMigrationTool
+          - AbridgedFileImport
+          - QBOForcedMigration
+          - HmrcDpsUpdate
+          - HmrcDpsStudentLoan
+          - HmrcDpsPostGradLoan
+          - Sage50FileImporter
+          - FPSFileImporter
+          - OAuth
+          - FreshBooks
+          - StarFileImporter
+          - ActiveCampaign
+          - SummaryAndDetailsExport
+          - Telleroo
+          - EmployeeAdvancedHoursUpload
+          - BusinessCentral
+          - Paytron
+          - AccessFinancials
+          - Comma
+          - Zoho
+          - FlatFileEmployeeImporter
+          - Twinfield
+          - SageAccounting
+          - Square
+          - Quickfile
+          - Tide
+          - TideSso
+          - FreeAgent
+          - Akahu
+          - InstaPay
+          - Zepto
+          - Slack
+          - Caxton
+          - QuickbooksStandalonePayroll
+          - ImportEmployeeSelfSetup
+          - XeroIdentityPayrollSignUp
+          - XeroIdentityHrSignUp
+          - SageIntacct
+          - InstaPayDaily
+          - Salesforce
+          - AutomatedPublicHolidayNotWorked
+          - EmployeePayRatesUpload
+          - Zapier
+          - StapledSuperFund
+          - Swag
+          - Crezco
+          - KafkaConsumer
+          - EmployeeLeaveRateCalculationMethodUpload
+          - MoneyMovement
+          - PayRunSettingsFlatFileImport
+          - Sage200
+          - RosterCostCalculation
+          - HeroClear
+          - BrightPay
+          - EmployeeLeaveYearStartDatesImport
+          - PayConditionComparisonUpload
+          - GlobalMoneyMovement
+          type: string
+          x-title: ExternalService
+        rank:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        awardId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        disableAutoProgression:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    TimesheetBreakModelv3:
+      title: TimesheetBreakModelv3
+      type: object
+      properties:
+        startTime:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        endTime:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        isPaidBreak:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    GetShiftPeriodsModel:
+      title: GetShiftPeriodsModel
+      type: object
+      properties:
+        firstShiftStartTime:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        lastShiftStartTime:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+      additionalProperties: false
+    ShiftCostingBreakdownModel:
+      title: ShiftCostingBreakdownModel
+      type: object
+      properties:
+        startTime:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        endTime:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        payCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        payCategoryName:
+          title: String
+          type: string
+          x-title: String
+        units:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        rate:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        cost:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        type:
+          title: String
+          type: string
+          x-title: String
+        isPaidBreak:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        liabilityCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        liabilityCategoryName:
+          title: String
+          type: string
+          x-title: String
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        locationName:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    ShiftCostingsResponseShiftModel:
+      title: ShiftCostingsResponseShiftModel
+      type: object
+      properties:
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        startTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        cost:
+          format: double
+          title: Decimal
+          type: number
+          readOnly: true
+          x-title: Decimal
+        evaluationResults:
+          title: IList<RuleEvaluationResult>
+          type: array
+          items:
+            $ref: '#/components/schemas/RuleEvaluationResult'
+        consolidatedShifts:
+          title: List<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: List<String>
+        costBreakdown:
+          title: List<ShiftCostingBreakdownModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ShiftCostingBreakdownModel'
+      additionalProperties: false
+    PayRateTemplateModel:
+      title: PayRateTemplateModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        primaryPayCategoryId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        superThresholdAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        payCategories:
+          title: List<PayRateTemplatePayCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/PayRateTemplatePayCategoryModel'
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        maximumQuarterlySuperContributionsBase:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        maximumAnnualSuperContributionsBase:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        higherOfSuperEnabled:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        higherOfSuperWeeklyAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        reapplyToLinkedEmployees:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    PayRateTemplatePayCategoryModel:
+      title: PayRateTemplatePayCategoryModel
+      type: object
+      properties:
+        payCategoryId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        payCategoryName:
+          title: String
+          type: string
+          x-title: String
+        userSuppliedRate:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        calculatedRate:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        standardWeeklyHours:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        superRate:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+      additionalProperties: false
+    Attachment:
+      title: Attachment
+      type: object
+      properties:
+        data:
+          format: byte
+          title: Byte[]
+          type: string
+          x-title: Byte[]
+        isDeleted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        id:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        friendlyName:
+          title: String
+          type: string
+          x-title: String
+        dateCreated:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        url:
+          title: String
+          type: string
+          x-title: String
+        dateScanned:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        isInfected:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+      additionalProperties: false
+    LeaveAllowanceTemplateModel:
+      title: LeaveAllowanceTemplateModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        leaveCategories:
+          title: IList<LeaveAllowanceTemplateLeaveCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/LeaveAllowanceTemplateLeaveCategoryModel'
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: ExternalService
+          enum:
+          - None
+          - Saasu
+          - Xero
+          - MYOB
+          - Deputy
+          - EmployeeTimePunch
+          - ClickSuper
+          - IntegratedTimesheets
+          - FileImport
+          - FileExport
+          - QuickBooks
+          - Harmony
+          - AwardStore
+          - Attache
+          - IntegratedRostering
+          - ReckonAccounts
+          - API
+          - MicroPower
+          - RosterLive
+          - NetSuite
+          - Kounta
+          - TimeAndAttendanceKiosk
+          - DetailedFileExport
+          - JonasPremier
+          - WageEasy
+          - Maestrano
+          - WorkZone
+          - EmployeePortal
+          - RosterTemplate
+          - Onboarding
+          - Admin
+          - WorkZoneClockOnOff
+          - NetSuiteOneWorld
+          - Sage50
+          - PensionSync
+          - FinancialsOffice
+          - ProntoXI
+          - PayRunDefault
+          - StandardWorkDay
+          - Beam
+          - PayRunAutomation
+          - BureauDashboard
+          - Wiise
+          - QBOMigrationTool
+          - AbridgedFileImport
+          - QBOForcedMigration
+          - HmrcDpsUpdate
+          - HmrcDpsStudentLoan
+          - HmrcDpsPostGradLoan
+          - Sage50FileImporter
+          - FPSFileImporter
+          - OAuth
+          - FreshBooks
+          - StarFileImporter
+          - ActiveCampaign
+          - SummaryAndDetailsExport
+          - Telleroo
+          - EmployeeAdvancedHoursUpload
+          - BusinessCentral
+          - Paytron
+          - AccessFinancials
+          - Comma
+          - Zoho
+          - FlatFileEmployeeImporter
+          - Twinfield
+          - SageAccounting
+          - Square
+          - Quickfile
+          - Tide
+          - TideSso
+          - FreeAgent
+          - Akahu
+          - InstaPay
+          - Zepto
+          - Slack
+          - Caxton
+          - QuickbooksStandalonePayroll
+          - ImportEmployeeSelfSetup
+          - XeroIdentityPayrollSignUp
+          - XeroIdentityHrSignUp
+          - SageIntacct
+          - InstaPayDaily
+          - Salesforce
+          - AutomatedPublicHolidayNotWorked
+          - EmployeePayRatesUpload
+          - Zapier
+          - StapledSuperFund
+          - Swag
+          - Crezco
+          - KafkaConsumer
+          - EmployeeLeaveRateCalculationMethodUpload
+          - MoneyMovement
+          - PayRunSettingsFlatFileImport
+          - Sage200
+          - RosterCostCalculation
+          - HeroClear
+          - BrightPay
+          - EmployeeLeaveYearStartDatesImport
+          - PayConditionComparisonUpload
+          - GlobalMoneyMovement
+          type: string
+          x-title: ExternalService
+        leaveLoadingCalculatedFromPayCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        leaveAccrualStartDateType:
+          title: Nullable<LeaveAccrualStartDateType>
+          enum:
+          - EmployeeStartDate
+          - SpecifiedDate
+          - CalendarYear
+          - CategorySpecificDate
+          type: string
+          x-title: Nullable<LeaveAccrualStartDateType>
+        leaveYearStart:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+      additionalProperties: false
+    ShiftCostingsEmployeeModel:
+      title: ShiftCostingsEmployeeModel
+      type: object
+      properties:
+        name:
+          title: String
+          type: string
+          x-title: String
+        dateOfBirth:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        anniversaryDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        standardHoursPerWeek:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        standardHoursPerDay:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        tags:
+          title: IList<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: IList<String>
+      additionalProperties: false
+    LeaveAllowanceTemplateLeaveCategoryModel:
+      title: LeaveAllowanceTemplateLeaveCategoryModel
+      type: object
+      properties:
+        leaveCategoryId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        units:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        unitType:
+          title: Nullable<LeaveAllowanceUnitEnum>
+          enum:
+          - Days
+          - Weeks
+          - HoursPerHourWorked
+          - HoursPerPayRun
+          - StandardDays
+          - StandardWeeks
+          - DayPerCalendarDay
+          - DayPerMonth
+          - StandardDaysPerMonth
+          type: string
+          x-title: Nullable<LeaveAllowanceUnitEnum>
+        leaveLoading:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        canApplyForLeave:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        contingentPeriod:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        entitlementPeriod:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        leaveAccrualRuleId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        leaveAccrualRuleAccrualType:
+          title: LeaveAccrualType
+          enum:
+          - Ongoing
+          - Yearly
+          - BasedOnLengthOfService
+          - Monthly
+          type: string
+          x-title: LeaveAccrualType
+        leaveAccrualRuleCapType:
+          title: LeaveAccrualCapType
+          enum:
+          - NotLimited
+          - Limited
+          type: string
+          x-title: LeaveAccrualCapType
+        leaveAccrualRuleUnitCap:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        leaveAccrualRuleCarryOverBehaviour:
+          title: LeaveAccrualCarryOverBehaviour
+          enum:
+          - CarryEntireAmount
+          - CarryHours
+          type: string
+          x-title: LeaveAccrualCarryOverBehaviour
+        leaveAccrualRuleCarryOverAmount:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        leaveAccrualRuleAccrueInAdvance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    RuleEvaluationResult:
+      title: RuleEvaluationResult
+      type: object
+      properties:
+        ruleName:
+          title: String
+          type: string
+          x-title: String
+        matchResult:
+          title: RuleMatchResult
+          enum:
+          - NoMatch
+          - Match
+          - DisabledForRuleSet
+          - DisabledForEmployee
+          - ExcludedCustomRule
+          type: string
+      additionalProperties: false
+    TimesheetShiftConditionModelv3:
+      title: TimesheetShiftConditionModelv3
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    ShiftPeriodModel:
+      title: ShiftPeriodModel
+      type: object
+      properties:
+        fromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        toDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+      additionalProperties: false
+    RateOverride:
+      title: RateOverride
+      type: object
+      properties:
+        payCategoryId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        rate:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        useRateAsIs:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+      additionalProperties: false
+    PayConditionRuleSetModel:
+      title: PayConditionRuleSetModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        description:
+          title: String
+          type: string
+          x-title: String
+        periodType:
+          title: RuleSetPeriodType
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - CalendarMonth
+          - FourWeekly
+          - SixWeekly
+          - ThreeWeekly
+          - EightWeekly
+          type: string
+          x-title: RuleSetPeriodType
+        dayOfWeekEnding:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        dayOfMonthEnding:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        periodEnding:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        shiftConsolidationOption:
+          title: Nullable<ShiftConsolidationOption>
+          enum:
+          - None
+          - Duration
+          - SameDay
+          type: string
+        shiftConsolidationThreshold:
+          format: date-span
+          title: Nullable<TimeSpan>
+          type: string
+          x-title: Nullable<TimeSpan>
+        rulesJson:
+          title: String
+          type: string
+          x-title: String
+        disabledRules:
+          title: IList<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: IList<String>
+      additionalProperties: false
+    BasicEmploymentAgreementModel:
+      title: BasicEmploymentAgreementModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        classification:
+          title: String
+          type: string
+          x-title: String
+        employmentType:
+          title: AuEmploymentTypeEnum
+          enum:
+          - Unknown
+          - FullTime
+          - PartTime
+          - LabourHire
+          - SuperannuationIncomeStream
+          - Casual
+          type: string
+        name:
+          title: String
+          type: string
+          x-title: String
+        awardName:
+          title: String
+          type: string
+          x-title: String
+        rank:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        awardId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        disableAutoProgression:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    ShiftCostingsRequestModel:
+      title: ShiftCostingsRequestModel
+      type: object
+      properties:
+        transactionExternalId:
+          title: String
+          type: string
+          x-title: String
+        locationIdType:
+          title: IdType
+          enum:
+          - Standard
+          - External
+          type: string
+          x-title: IdType
+        workTypeIdType:
+          title: IdType
+          enum:
+          - Standard
+          - External
+          type: string
+          x-title: IdType
+        includeEvaluationResults:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        employee:
+          $ref: '#/components/schemas/ShiftCostingsEmployeeModel'
+        shifts:
+          title: IList<ShiftCostingsRequestShiftModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ShiftCostingsRequestShiftModel'
+        overrideRates:
+          title: IList<RateOverride>
+          type: array
+          items:
+            $ref: '#/components/schemas/RateOverride'
+      additionalProperties: false
+    ShiftCostingsRequestShiftModel:
+      title: ShiftCostingsRequestShiftModel
+      type: object
+      properties:
+        shiftId:
+          title: String
+          type: string
+          readOnly: true
+          x-title: String
+        state:
+          title: String
+          type: string
+          x-title: String
+        overrideRates:
+          title: IList<RateOverride>
+          type: array
+          items:
+            $ref: '#/components/schemas/RateOverride'
+          x-title: IList<RateOverride>
+        classificationId:
+          title: String
+          type: string
+          x-title: String
+        classification:
+          title: String
+          type: string
+          x-title: String
+        locationIsDeleted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        startTime:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        endTime:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        units:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        workTypeId:
+          title: String
+          type: string
+          x-title: String
+        locationId:
+          title: String
+          type: string
+          x-title: String
+        comments:
+          title: String
+          type: string
+          x-title: String
+        breaks:
+          title: IList<TimesheetBreakModelv3>
+          type: array
+          items:
+            $ref: '#/components/schemas/TimesheetBreakModelv3'
+          x-title: IList<TimesheetBreakModelv3>
+        status:
+          title: String
+          type: string
+          x-title: String
+        rate:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        leaveCategoryId:
+          title: String
+          type: string
+          x-title: String
+        payCategoryId:
+          title: String
+          type: string
+          x-title: String
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: ExternalService
+          enum:
+          - None
+          - Saasu
+          - Xero
+          - MYOB
+          - Deputy
+          - EmployeeTimePunch
+          - ClickSuper
+          - IntegratedTimesheets
+          - FileImport
+          - FileExport
+          - QuickBooks
+          - Harmony
+          - AwardStore
+          - Attache
+          - IntegratedRostering
+          - ReckonAccounts
+          - API
+          - MicroPower
+          - RosterLive
+          - NetSuite
+          - Kounta
+          - TimeAndAttendanceKiosk
+          - DetailedFileExport
+          - JonasPremier
+          - WageEasy
+          - Maestrano
+          - WorkZone
+          - EmployeePortal
+          - RosterTemplate
+          - Onboarding
+          - Admin
+          - WorkZoneClockOnOff
+          - NetSuiteOneWorld
+          - Sage50
+          - PensionSync
+          - FinancialsOffice
+          - ProntoXI
+          - PayRunDefault
+          - StandardWorkDay
+          - Beam
+          - PayRunAutomation
+          - BureauDashboard
+          - Wiise
+          - QBOMigrationTool
+          - AbridgedFileImport
+          - QBOForcedMigration
+          - HmrcDpsUpdate
+          - HmrcDpsStudentLoan
+          - HmrcDpsPostGradLoan
+          - Sage50FileImporter
+          - FPSFileImporter
+          - OAuth
+          - FreshBooks
+          - StarFileImporter
+          - ActiveCampaign
+          - SummaryAndDetailsExport
+          - Telleroo
+          - EmployeeAdvancedHoursUpload
+          - BusinessCentral
+          - Paytron
+          - AccessFinancials
+          - Comma
+          - Zoho
+          - FlatFileEmployeeImporter
+          - Twinfield
+          - SageAccounting
+          - Square
+          - Quickfile
+          - Tide
+          - TideSso
+          - FreeAgent
+          - Akahu
+          - InstaPay
+          - Zepto
+          - Slack
+          - Caxton
+          - QuickbooksStandalonePayroll
+          - ImportEmployeeSelfSetup
+          - XeroIdentityPayrollSignUp
+          - XeroIdentityHrSignUp
+          - SageIntacct
+          - InstaPayDaily
+          - Salesforce
+          - AutomatedPublicHolidayNotWorked
+          - EmployeePayRatesUpload
+          - Zapier
+          - StapledSuperFund
+          - Swag
+          - Crezco
+          - KafkaConsumer
+          - EmployeeLeaveRateCalculationMethodUpload
+          - MoneyMovement
+          - PayRunSettingsFlatFileImport
+          - Sage200
+          - RosterCostCalculation
+          - HeroClear
+          - BrightPay
+          - EmployeeLeaveYearStartDatesImport
+          - PayConditionComparisonUpload
+          - GlobalMoneyMovement
+          type: string
+          x-title: ExternalService
+        attachmentId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        shiftConditionIds:
+          title: IList<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: IList<String>
+        workType:
+          title: String
+          type: string
+          x-title: String
+        fullyQualifiedLocationName:
+          title: String
+          type: string
+          x-title: String
+        shiftConditions:
+          title: List<TimesheetShiftConditionModelv3>
+          type: array
+          items:
+            $ref: '#/components/schemas/TimesheetShiftConditionModelv3'
+          x-title: List<TimesheetShiftConditionModelv3>
+        hiddenComments:
+          title: String
+          type: string
+          x-title: String
+        attachment:
+          $ref: '#/components/schemas/Attachment'
+        submittedByUser:
+          title: String
+          type: string
+          x-title: String
+        dimensionValueIds:
+          title: IList<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: IList<Int32>
+        leaveRequestId:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    ShiftCostingsResponseModel_2:
+      title: ShiftCostingsResponseModel
+      type: object
+      properties:
+        transactionId:
+          format: uuid
+          title: Guid
+          type: string
+          x-title: Guid
+        transactionExternalId:
+          title: String
+          type: string
+          x-title: String
+        employmentAgreementId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employmentAgreementName:
+          title: String
+          type: string
+          x-title: String
+        payConditionRuleSetId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        payConditionRuleSetName:
+          title: String
+          type: string
+          x-title: String
+        shifts:
+          title: List<ShiftCostingsResponseShiftModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ShiftCostingsResponseShiftModel'
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

@@ -1,18 +1,43 @@
-generated: '2026-07-11'
-method: derived
-source: openapi/employment-hero-openapi.yml
+generated: '2026-10-20'
+method: searched
+source: https://developer.employmenthero.com/api-references/authentication.md
+docs: https://developer.employmenthero.com/api-references/authentication.md
 summary:
-  types:
-  - oauth2
-  oauth2_flows:
-  - authorizationCode
+  types: [oauth2, http-basic, apiKey]
+  oauth2_flows: [authorizationCode]
 schemes:
 - name: oauth2
+  api: Employment Hero HR API (api.employmenthero.com)
   type: oauth2
   flows:
   - flow: authorizationCode
     authorizationUrl: https://oauth.employmenthero.com/oauth2/authorize
     tokenUrl: https://oauth.employmenthero.com/oauth2/token
-    scopes: 0
-  sources:
-  - openapi/employment-hero-openapi.yml
+    pkce: required from 2026-09-30 (code_challenge, code_challenge_method, code_verifier)
+  token_lifetime: access token expires after 15 minutes
+  refresh: '"The same refresh token can be used to refresh the access token each time."'
+  client_auth: client_id / client_secret as application/x-www-form-urlencoded body ("Sending them as query parameters or JSON is no longer accepted.")
+  credentials: registered as an OAuth 2.0 application in the Developer Portal (Platinum subscription and above); scopes are a one-time selection at application creation
+  usage: Bearer token in the HTTP Authorization header
+  sso_note: only one SSO-enforced organisation can be authorised per access token
+  sources: [openapi/_original/employment-hero-openapi.yml, https://developer.employmenthero.com/api-references/authentication/obtain-access-token.md, https://developer.employmenthero.com/api-references/authentication/refresh-access-token.md, https://developer.employmenthero.com/api-references/authentication/obtain-credentials.md]
+- name: basic
+  api: Employment Hero Payroll API
+  type: http
+  scheme: basic
+  description: '"The API Key will become the username of your request and the password can be left blank." API key generated under My Account in Employment Hero Payroll.'
+  sources: [openapi/_original/employment-hero-payroll-au-swagger.json, https://api.keypay.com.au/guides/BasicAuth.html]
+- name: oauth2-payroll
+  api: Employment Hero Payroll API
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://api.yourpayroll.com.au/oauth/authorise
+    tokenUrl: https://api.yourpayroll.com.au/oauth/token
+  credentials: client ID and secret issued on support request (application name, callback URL, logo)
+  note: The swagger declares an implicit flow at keypay.yourpayroll.com.au with scopes read/write; the guide documents the code flow above.
+  sources: [https://api.keypay.com.au/guides/OAuth2.html, openapi/_original/employment-hero-payroll-au-swagger.json]
+webhook_verification:
+  header: X-EmploymentHero-Signature
+  algorithm: HMAC SHA-256
+  docs: https://developer.employmenthero.com/api-references/webhook/verify-webhook-request.md

@@ -1,0 +1,10 @@
+generated: '2026-10-20'
+method: none
+source: https://api.keypay.com.au/guides/DotNetClient.html
+name: Employment Hero packages
+packages: []
+note: 'no first-party package: every candidate a model listed was unowned (harvest-packages.py --audit)'
+rejected:
+- name: KeyPayV2
+  registry: nuget
+  reason: 'registry metadata names neither the provider''s domain nor its GitHub org: official downgraded (harvest-packages.py --audit)'

@@ -1,0 +1,57 @@
+generated: '2026-10-20'
+method: searched
+source: https://developer.employmenthero.com/api-references/introduction.md
+auth:
+  style: OAuth 2.0 authorization code with PKCE (mandatory from 2026-09-30); Bearer access token in the Authorization header; access tokens expire after 15 minutes and are refreshed with a reusable refresh token
+  docs: https://developer.employmenthero.com/api-references/authentication.md
+  see: authentication/employment-hero-authentication.yml
+idempotency:
+  coverage: none
+  note: No Idempotency-Key header or replay protection is documented in the HR API docs or declared in the OpenAPI.
+pagination:
+  style: page-number
+  params: [page_index, item_per_page]
+  defaults: page_index 1 (min 1); item_per_page 20 (max 100)
+  response_fields: [data.page_index, data.item_per_page, data.total_items, data.total_pages]
+  docs: https://developer.employmenthero.com/api-references/employee/get-employees/v1.md
+  payroll_api:
+    style: offset (OData v3)
+    params: ['$skip', '$top']
+    note: '"$top : number of results to retrieve ... (note default value, if not specified, and maximum value is 100)"'
+    docs: https://api.keypay.com.au/guides/ODataFiltering.html
+field_selection:
+  hr_api: not documented
+  payroll_api: 'OData $select, "only currently supported for the Employee API"; $filter, $orderby supported; $expand not supported'
+regional_fields:
+  note: Regional fields "will only be present in the response if the employee's work location matches the specified region ... You should not expect to receive a null value for these fields"; employees in other regions default to Australian fields.
+  docs: https://developer.employmenthero.com/api-references/introduction/handling-regional-data.md
+request_id: not documented
+versioning:
+  style: url-path (/api/v1/)
+  see: lifecycle/employment-hero-lifecycle.yml
+errors:
+  envelope: not documented (HTTP status classes only)
+  see: errors/employment-hero-problem-types.yml
+rate_limit_signaling:
+  headers: not documented
+  see: rate-limits/employment-hero-rate-limits.yml
+webhooks:
+  signature_header: X-EmploymentHero-Signature
+  algorithm: HMAC SHA-256 over payload and timestamp
+  docs: https://developer.employmenthero.com/api-references/webhook/verify-webhook-request.md
+dry_run_mode: none documented
+reversibility:
+  coverage: partial
+  surfaces:
+  - write: certification (archive)
+    reversal_operation: certificationArchiveStatus
+    reversal: Archive or unarchive certification (the same operation restores an archived certification)
+    window: null
+    grade: documented
+    docs: https://developer.employmenthero.com/api-references
+  - write: deleteCertification
+    reversal_operation: null
+    note: No restore operation documented.
+  - write: quickAddEmployee, createCertification, createDepartment, uploadCertificationFile, uploadEmployeeDocument, updateCertification, updateDepartment
+    reversal_operation: null
+    note: No cancel/undo/delete counterpart is exposed in the published HR API spec; no reversal window is stated anywhere in the docs.

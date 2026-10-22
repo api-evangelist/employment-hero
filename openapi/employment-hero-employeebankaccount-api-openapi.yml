@@ -1,0 +1,715 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Employee Bank Account API
+  version: '1.0'
+  description: 'Operations tagged EmployeeBankAccount across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: EmployeeBankAccount
+  description: Employee Bank Accounts
+paths:
+  /api/v2/business/{businessId}/employee/{employeeId}/bankaccount:
+    get:
+      tags:
+      - EmployeeBankAccount
+      summary: List Bank Accounts
+      description: Lists all of the bank accounts for this employee.
+      operationId: AuBankAccount_List
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<AuBankAccountModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuBankAccountModel'
+            application/xml:
+              schema:
+                title: IEnumerable<AuBankAccountModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuBankAccountModel'
+            text/plain:
+              schema:
+                title: IEnumerable<AuBankAccountModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuBankAccountModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<AuBankAccountModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuBankAccountModel'
+            text/json:
+              schema:
+                title: IEnumerable<AuBankAccountModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuBankAccountModel'
+    post:
+      tags:
+      - EmployeeBankAccount
+      summary: Create Bank Account
+      description: Creates a new bank account for the employee.
+      operationId: AuBankAccount_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuSaveBankAccountResponseModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuSaveBankAccountResponseModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuSaveBankAccountResponseModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuSaveBankAccountResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuSaveBankAccountResponseModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuBankAccountModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuBankAccountModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuBankAccountModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuBankAccountModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuBankAccountModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuBankAccountModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/bankaccount/{bankAccountId}:
+    get:
+      tags:
+      - EmployeeBankAccount
+      summary: Get Bank Account by ID
+      description: Gets the bank account for this employee with the specified ID.
+      operationId: AuBankAccount_Get_2
+      parameters:
+      - in: path
+        name: bankAccountId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuBankAccountModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuBankAccountModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuBankAccountModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuBankAccountModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuBankAccountModel'
+    put:
+      tags:
+      - EmployeeBankAccount
+      summary: Update Bank Account
+      description: Updates the employee's bank account with the specified ID.
+      operationId: AuBankAccount_Put_3
+      parameters:
+      - in: path
+        name: bankAccountId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuSaveBankAccountResponseModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuSaveBankAccountResponseModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuSaveBankAccountResponseModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuSaveBankAccountResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuSaveBankAccountResponseModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuBankAccountModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuBankAccountModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuBankAccountModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuBankAccountModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuBankAccountModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuBankAccountModel'
+    delete:
+      tags:
+      - EmployeeBankAccount
+      summary: Delete Bank Account
+      description: Deletes the employee's bank account with the specified ID.
+      operationId: AuBankAccount_Delete_4
+      parameters:
+      - in: path
+        name: bankAccountId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuSaveBankAccountResponseModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuSaveBankAccountResponseModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuSaveBankAccountResponseModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuSaveBankAccountResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuSaveBankAccountResponseModel'
+components:
+  schemas:
+    AuBankAccountModel:
+      title: AuBankAccountModel
+      type: object
+      properties:
+        accountType:
+          title: BankAccountTypeEnum
+          enum:
+          - Electronic
+          - ManualDeposit
+          - CashOrCheque
+          - Bpay
+          type: string
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        bsb:
+          title: String
+          type: string
+          x-title: String
+        accountName:
+          title: String
+          type: string
+          x-title: String
+        accountNumber:
+          title: String
+          type: string
+          x-title: String
+        allocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        fixedAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        allocateBalance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isEmployeeEditable:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        canBeDeleted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        externalReferenceId:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    AuSaveBankAccountResponseModel:
+      title: AuSaveBankAccountResponseModel
+      type: object
+      properties:
+        validationWarning:
+          title: String
+          type: string
+          x-title: String
+        result:
+          $ref: '#/components/schemas/AuBankAccountModel'
+      additionalProperties: false
+    MyBankAccountModel:
+      title: MyBankAccountModel
+      type: object
+      properties:
+        accountType:
+          title: BankAccountTypeEnum
+          enum:
+          - Electronic
+          - ManualDeposit
+          - CashOrCheque
+          type: string
+          x-title: BankAccountTypeEnum
+        branchCode:
+          title: String
+          type: string
+          x-title: String
+        bankCode:
+          title: String
+          type: string
+          x-title: String
+        otherBankName:
+          title: String
+          type: string
+          x-title: String
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        bsb:
+          title: String
+          type: string
+          x-title: String
+        accountName:
+          title: String
+          type: string
+          x-title: String
+        accountNumber:
+          title: String
+          type: string
+          x-title: String
+        allocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        fixedAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        allocateBalance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isEmployeeEditable:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        canBeDeleted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        externalReferenceId:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    MySaveBankAccountResponseModel:
+      title: MySaveBankAccountResponseModel
+      type: object
+      properties:
+        validationWarning:
+          title: String
+          type: string
+          x-title: String
+        result:
+          $ref: '#/components/schemas/MyBankAccountModel'
+      additionalProperties: false
+    NzBankAccountModel:
+      title: NzBankAccountModel
+      type: object
+      properties:
+        fullAccountNumber:
+          title: String
+          type: string
+          x-title: String
+        accountType:
+          title: BankAccountTypeEnum
+          enum:
+          - Electronic
+          - ManualDeposit
+          - CashOrCheque
+          type: string
+          x-title: BankAccountTypeEnum
+        accountCode:
+          title: String
+          type: string
+          x-title: String
+        accountParticulars:
+          title: String
+          type: string
+          x-title: String
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        bsb:
+          title: String
+          type: string
+          x-title: String
+        accountName:
+          title: String
+          type: string
+          x-title: String
+        accountNumber:
+          title: String
+          type: string
+          x-title: String
+        allocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        fixedAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        allocateBalance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isEmployeeEditable:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        canBeDeleted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        externalReferenceId:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    NzSaveBankAccountResponseModel:
+      title: NzSaveBankAccountResponseModel
+      type: object
+      properties:
+        validationWarning:
+          title: String
+          type: string
+          x-title: String
+        result:
+          $ref: '#/components/schemas/NzBankAccountModel'
+      additionalProperties: false
+    SgSaveBankAccountResponseModel:
+      title: SgSaveBankAccountResponseModel
+      type: object
+      properties:
+        validationWarning:
+          title: String
+          type: string
+          x-title: String
+        result:
+          $ref: '#/components/schemas/SgBankAccountModel'
+      additionalProperties: false
+    SgBankAccountModel:
+      title: SgBankAccountModel
+      type: object
+      properties:
+        accountType:
+          title: BankAccountTypeEnum
+          enum:
+          - Electronic
+          - ManualDeposit
+          - CashOrCheque
+          type: string
+          x-title: BankAccountTypeEnum
+        bankSwift:
+          title: String
+          type: string
+          x-title: String
+        branchCode:
+          title: String
+          type: string
+          x-title: String
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        bsb:
+          title: String
+          type: string
+          x-title: String
+        accountName:
+          title: String
+          type: string
+          x-title: String
+        accountNumber:
+          title: String
+          type: string
+          x-title: String
+        allocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        fixedAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        allocateBalance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isEmployeeEditable:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        canBeDeleted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        externalReferenceId:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    UkSaveBankAccountResponseModel:
+      title: UkSaveBankAccountResponseModel
+      type: object
+      properties:
+        validationWarning:
+          title: String
+          type: string
+          x-title: String
+        result:
+          $ref: '#/components/schemas/UkBankAccountModel'
+      additionalProperties: false
+    UkBankAccountModel:
+      title: UkBankAccountModel
+      type: object
+      properties:
+        accountType:
+          title: BankAccountTypeEnum
+          enum:
+          - Electronic
+          - ManualDeposit
+          - CashOrCheque
+          type: string
+          x-title: BankAccountTypeEnum
+        rollNumber:
+          title: String
+          type: string
+          x-title: String
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        bsb:
+          title: String
+          type: string
+          x-title: String
+        accountName:
+          title: String
+          type: string
+          x-title: String
+        accountNumber:
+          title: String
+          type: string
+          x-title: String
+        allocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        fixedAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        allocateBalance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isEmployeeEditable:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        canBeDeleted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        externalReferenceId:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

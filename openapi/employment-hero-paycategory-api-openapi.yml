@@ -1,0 +1,1125 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Pay Category API
+  version: '1.0'
+  description: 'Operations tagged PayCategory across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: PayCategory
+  description: Pay Category
+paths:
+  /api/v2/business/{businessId}/paycategory:
+    post:
+      tags:
+      - PayCategory
+      summary: Create Pay Category
+      description: Creates a new pay category for the business.
+      operationId: AuPayCategory_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuPayCategoryModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuPayCategoryModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuPayCategoryModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuPayCategoryModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuPayCategoryModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuPayCategoryModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuPayCategoryModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuPayCategoryModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuPayCategoryModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuPayCategoryModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuPayCategoryModel'
+    get:
+      tags:
+      - PayCategory
+      summary: List Pay Categories
+      description: 'Lists all the pay categories for the business
+
+
+        This operation supports OData queries (only $filter, $orderby, $top, $skip).'
+      operationId: AuPayCategory_GetPayCategories
+      parameters:
+      - in: query
+        name: query
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<AuPayCategoryModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuPayCategoryModel'
+            application/xml:
+              schema:
+                title: IEnumerable<AuPayCategoryModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuPayCategoryModel'
+            text/plain:
+              schema:
+                title: IEnumerable<AuPayCategoryModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuPayCategoryModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<AuPayCategoryModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuPayCategoryModel'
+            text/json:
+              schema:
+                title: IEnumerable<AuPayCategoryModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuPayCategoryModel'
+  /api/v2/business/{businessId}/paycategory/{id}:
+    get:
+      tags:
+      - PayCategory
+      summary: Get Pay Category by ID
+      description: Gets the pay category with the specified ID.
+      operationId: AuPayCategory_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuPayCategoryModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuPayCategoryModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuPayCategoryModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuPayCategoryModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuPayCategoryModel'
+    put:
+      tags:
+      - PayCategory
+      summary: Update Pay Category
+      description: Updates the pay category with the specified ID.
+      operationId: AuPayCategory_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuPayCategoryModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuPayCategoryModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuPayCategoryModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuPayCategoryModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuPayCategoryModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuPayCategoryModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuPayCategoryModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuPayCategoryModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuPayCategoryModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuPayCategoryModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuPayCategoryModel'
+    delete:
+      tags:
+      - PayCategory
+      summary: Delete Pay Category
+      description: Deletes the pay category with the specified ID.
+      operationId: AuPayCategory_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    AuPayCategoryModel:
+      title: AuPayCategoryModel
+      type: object
+      properties:
+        paymentSummaryClassification:
+          title: Nullable<PayCategoryPaymentSummaryClassification>
+          enum:
+          - Default
+          - Allowance
+          - LumpSumATypeR
+          - LumpSumATypeT
+          - LumpSumB
+          - LumpSumD
+          - LumpSumE
+          - Exclude
+          - Cdep
+          - ExemptForeignEmploymentIncome
+          - AllowanceCar
+          - AllowanceTransport
+          - AllowanceLaundry
+          - AllowanceMeals
+          - AllowanceTravel
+          - GrossSalary
+          - Bonus
+          - DirectorsFees
+          - SgAllowances
+          - GrossCommission
+          - NotReportable
+          - MyGrossSalary
+          - MyFees
+          - MyGrossTips
+          - MyEsosBenefit
+          - MyGratuity
+          - MyBenefitsInKind
+          - MyValueOfLivingAccommodations
+          - MyRefundProvidentPensionFund
+          - MyCompensationForLossOfEmployment
+          - MyPension
+          - MyAnnuities
+          - MyCp38Deduction
+          - MyZakatPaidViaSalaryDeduction
+          - MyReliefClaimTp1
+          - MyZakatReliefClaimTp1
+          - MyTaxExemptAllowances
+          - MyArrearsIncomeA
+          - MyArrearsIncomeB
+          - None
+          - LeaveCashOutOfLeaveInService
+          - LeaveUnusedLeaveOnTermination
+          - LeavePaidParentalLeave
+          - LeaveWorkersCompensation
+          - LeaveAncillaryAndDefenceLeave
+          - LeaveOtherPaidLeave
+          - Overtime
+          - AllowanceTool
+          - AllowanceTasks
+          - AllowanceQualificationsCertificates
+          - EtpLifeBenefitCodeR
+          - EtpLifeBenefitCodeO
+          - EtpMultiplePaymentsCodeS
+          - EtpMultiplePaymentsCodeP
+          - EtpDeathBenefitCodeD
+          - EtpDeathBenefitCodeN
+          - EtpDeathBenefitCodeB
+          - EtpDeathBenefitCodeT
+          - ReturnToWorkPayment
+          - SgLumpSumPaymentGratuityNoticePayExGratiaPayment
+          - SgCompensationLossOfOffice
+          - SgPensionRetirementBenefitsFrom1993
+          - OrdinaryTime
+          - OtherPayment
+          - SeverancePay
+          type: string
+        allowanceDescription:
+          title: String
+          type: string
+          x-title: String
+        defaultSuperRate:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        superExpenseMappingCode:
+          title: String
+          type: string
+          x-title: String
+        superLiabilityMappingCode:
+          title: String
+          type: string
+          x-title: String
+        isPayrollTaxExempt:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        awardName:
+          title: String
+          type: string
+          x-title: String
+        awardId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        payCategoryType:
+          title: AuPayCategoryType
+          enum:
+          - Standard
+          - LeaveLoading
+          - GenuineRedundancyLeavePayment
+          - OpeningBalanceAllowances
+          - EtpTypeRTaxable
+          - EtpTypeRTaxFree
+          - EtpTypeOTaxable
+          - EtpTypeOTaxFree
+          - EtpLumpSumD
+          - GenuineRedundancyLeaveLoading
+          - MethodB2AdditionalPaymentsOpeningBalance
+          - EtpSuperableTypeOTaxable
+          - EtpSuperableTypeOTaxFree
+          - EtpTypeOUnusedLeavePayment
+          - GST
+          - EtpTypeSTaxable
+          - EtpTypeSTaxFree
+          - EtpTypePTaxable
+          - EtpTypePTaxFree
+          - EtpSuperableTypePTaxable
+          - EtpSuperableTypePTaxFree
+          - EtpTypePUnusedLeavePayment
+          - JobKeeperTier
+          - JobKeeperCancelTier
+          - JobMakerNomination
+          - JobMakerRenomination
+          - JobMakerPeriod
+          - JobMakerCancelNomination
+          - JobMakerCancelRenomination
+          - JobMakerCancelPeriod
+          - NormalTerminationLeaveLoading
+          - PublicHolidayWorked
+          - PublicHolidayNotWorked
+          - UnusedLeavePaymentNormalTermination
+          - BackPayment
+          - PaidFamilyAndDomesticViolenceLeave
+          - EtpTypeD
+          - EtpTypeN
+          - EtpTypeB
+          - EtpTypeT
+          - EtpSuperableLumpSumD
+          - EtpSuperableTypeRTaxable
+          - EtpSuperableTypeRTaxFree
+          type: string
+          x-title: AuPayCategoryType
+        excludeFromQualifyingEarnings:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        parentId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        name:
+          title: String
+          type: string
+          x-title: String
+        rateUnit:
+          title: RateUnitEnum
+          enum:
+          - Hourly
+          - Annually
+          - Fixed
+          - Daily
+          - Monthly
+          - Weekly
+          type: string
+        accruesLeave:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        rateLoadingPercent:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        penaltyLoadingPercent:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        isTaxExempt:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        generalLedgerMappingCode:
+          title: String
+          type: string
+          x-title: String
+        isSystemPayCategory:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        numberOfDecimalPlaces:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        roundingMethod:
+          title: Nullable<MidpointRounding>
+          enum:
+          - ToEven
+          - AwayFromZero
+          - ToZero
+          - ToNegativeInfinity
+          - ToPositiveInfinity
+          type: string
+        hideUnitsOnPaySlip:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isPrimary:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        queueStatus:
+          title: PayCategoryQueueStatusEnum
+          enum:
+          - Queued
+          - UpToDate
+          - Failed
+          type: string
+      additionalProperties: false
+    MyPayCategoryModel:
+      title: MyPayCategoryModel
+      type: object
+      properties:
+        isEpfExempt:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isSocsoExempt:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isEisExempt:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isHrdfExempt:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        parentId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        name:
+          title: String
+          type: string
+          x-title: String
+        rateUnit:
+          title: RateUnitEnum
+          enum:
+          - Hourly
+          - Annually
+          - Fixed
+          - Daily
+          - Monthly
+          - Weekly
+          type: string
+        accruesLeave:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        rateLoadingPercent:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        penaltyLoadingPercent:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        isTaxExempt:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        generalLedgerMappingCode:
+          title: String
+          type: string
+          x-title: String
+        isSystemPayCategory:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        numberOfDecimalPlaces:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        roundingMethod:
+          title: Nullable<MidpointRounding>
+          enum:
+          - ToEven
+          - AwayFromZero
+          - ToZero
+          - ToNegativeInfinity
+          - ToPositiveInfinity
+          type: string
+        hideUnitsOnPaySlip:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isPrimary:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        queueStatus:
+          title: PayCategoryQueueStatusEnum
+          enum:
+          - Queued
+          - UpToDate
+          - Failed
+          type: string
+      additionalProperties: false
+    NzPayCategoryModel:
+      title: NzPayCategoryModel
+      type: object
+      properties:
+        isKiwiSaverExempt:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        includeInAverageDailyPayDaysPaid:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isEmployeeShareScheme:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        excludeFromAverageEarnings:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        excludeFromOrdinaryEarnings:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isAccLevyExempt:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isParentalLeave:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isGstExempt:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isSuperannuationFund:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        remunerateAtRdpForAdpMethod:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        remunerateAtAdpForAdpMethod:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        payCategoryType:
+          title: NzPayCategoryType
+          enum:
+          - Standard
+          - OpeningBalanceAllowances
+          - ExtraPay
+          - RedundancyPayRetirementAllowance
+          - AnnualHolidaysCashOut
+          - HolidayPay
+          - AccLevy
+          - AverageEarnings
+          - TerminationHolidayPay
+          - TerminationAverageEarnings
+          - TerminationRelevantDailyPay
+          - RelevantDailyPay
+          - TerminationPublicHolidayPay
+          - GST
+          - PublicHolidayWorked
+          - PublicHolidayNotWorked
+          - AlternativeHolidaysCashOut
+          type: string
+          x-title: NzPayCategoryType
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        parentId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        name:
+          title: String
+          type: string
+          x-title: String
+        rateUnit:
+          title: RateUnitEnum
+          enum:
+          - Hourly
+          - Annually
+          - Fixed
+          - Daily
+          - Monthly
+          - Weekly
+          type: string
+        accruesLeave:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        rateLoadingPercent:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        penaltyLoadingPercent:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        isTaxExempt:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        generalLedgerMappingCode:
+          title: String
+          type: string
+          x-title: String
+        isSystemPayCategory:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        numberOfDecimalPlaces:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        roundingMethod:
+          title: Nullable<MidpointRounding>
+          enum:
+          - ToEven
+          - AwayFromZero
+          - ToZero
+          - ToNegativeInfinity
+          - ToPositiveInfinity
+          type: string
+        hideUnitsOnPaySlip:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isPrimary:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        queueStatus:
+          title: PayCategoryQueueStatusEnum
+          enum:
+          - Queued
+          - UpToDate
+          - Failed
+          type: string
+      additionalProperties: false
+    SgPayCategoryModel:
+      title: SgPayCategoryModel
+      type: object
+      properties:
+        paymentSummaryClassification:
+          title: Nullable<PayCategoryPaymentSummaryClassification>
+          enum:
+          - Default
+          - Allowance
+          - LumpSumATypeR
+          - LumpSumATypeT
+          - LumpSumB
+          - LumpSumD
+          - LumpSumE
+          - Exclude
+          - Cdep
+          - ExemptForeignEmploymentIncome
+          - AllowanceCar
+          - AllowanceTransport
+          - AllowanceLaundry
+          - AllowanceMeals
+          - AllowanceTravel
+          - GrossSalary
+          - Bonus
+          - DirectorsFees
+          - SgAllowances
+          - GrossCommission
+          - NotReportable
+          - MyGrossSalary
+          - MyFees
+          - MyGrossTips
+          - MyEsosBenefit
+          - MyGratuity
+          - MyBenefitsInKind
+          - MyValueOfLivingAccommodations
+          - MyRefundProvidentPensionFund
+          - MyCompensationForLossOfEmployment
+          - MyPension
+          - MyAnnuities
+          - MyCp38Deduction
+          - MyZakatPaidViaSalaryDeduction
+          - MyReliefClaimTp1
+          - MyZakatReliefClaimTp1
+          - MyTaxExemptAllowances
+          - MyArrearsIncomeA
+          - MyArrearsIncomeB
+          - None
+          - LeaveCashOutOfLeaveInService
+          - LeaveUnusedLeaveOnTermination
+          - LeavePaidParentalLeave
+          - LeaveWorkersCompensation
+          - LeaveAncillaryAndDefenceLeave
+          - LeaveOtherPaidLeave
+          - Overtime
+          - AllowanceTool
+          - AllowanceTasks
+          - AllowanceQualificationsCertificates
+          - EtpLifeBenefitCodeR
+          - EtpLifeBenefitCodeO
+          - EtpMultiplePaymentsCodeS
+          - EtpMultiplePaymentsCodeP
+          - EtpDeathBenefitCodeD
+          - EtpDeathBenefitCodeN
+          - EtpDeathBenefitCodeB
+          - EtpDeathBenefitCodeT
+          - ReturnToWorkPayment
+          - SgLumpSumPaymentGratuityNoticePayExGratiaPayment
+          - SgCompensationLossOfOffice
+          - SgPensionRetirementBenefitsFrom1993
+          - OrdinaryTime
+          - OtherPayment
+          - SeverancePay
+          type: string
+        cpfClassification:
+          title: Nullable<CpfClassification>
+          enum:
+          - None
+          - OrdinaryWage
+          - AdditionalWage
+          - ExcludeFromCpf
+          type: string
+        isShgExempt:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isSdlExempt:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        parentId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        name:
+          title: String
+          type: string
+          x-title: String
+        rateUnit:
+          title: RateUnitEnum
+          enum:
+          - Hourly
+          - Annually
+          - Fixed
+          - Daily
+          - Monthly
+          - Weekly
+          type: string
+        accruesLeave:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        rateLoadingPercent:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        penaltyLoadingPercent:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        isTaxExempt:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        generalLedgerMappingCode:
+          title: String
+          type: string
+          x-title: String
+        isSystemPayCategory:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        numberOfDecimalPlaces:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        roundingMethod:
+          title: Nullable<MidpointRounding>
+          enum:
+          - ToEven
+          - AwayFromZero
+          - ToZero
+          - ToNegativeInfinity
+          - ToPositiveInfinity
+          type: string
+        hideUnitsOnPaySlip:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isPrimary:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        queueStatus:
+          title: PayCategoryQueueStatusEnum
+          enum:
+          - Queued
+          - UpToDate
+          - Failed
+          type: string
+      additionalProperties: false
+    UkPayCategoryModel:
+      title: UkPayCategoryModel
+      type: object
+      properties:
+        isNationalInsuranceExempt:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isEmployeePensionable:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isEmployerPensionable:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        minimumWageCalculationImpact:
+          title: MinimumWageCalculationImpact
+          enum:
+          - Include
+          - IncludeBaseRate
+          - Exclude
+          type: string
+        payCategoryType:
+          title: UkPayCategoryType
+          enum:
+          - Standard
+          - StatutorySickPay
+          - StatutoryMaternityPay
+          - StatutoryAdoptionPay
+          - StatutoryPaternityPay
+          - StatutorySharedParentalPay
+          - KeepingInTouchDay
+          - StatutoryParentalBereavementPay
+          - RolledUpHolidayPay
+          - ShppInTouchPay
+          - StatutoryNeonatalCarePay
+          - PensionCommencementExcess
+          - StandAloneLumpSum
+          type: string
+          x-title: UkPayCategoryType
+        isClass1ANIable:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        is52WeekAverageEnabled:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isNetPayment:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        cisCategory:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        applyCisDeduction:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        cisType:
+          title: PayCategoryCisType
+          enum:
+          - Other
+          - Materials
+          - VAT
+          type: string
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        parentId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        name:
+          title: String
+          type: string
+          x-title: String
+        rateUnit:
+          title: RateUnitEnum
+          enum:
+          - Hourly
+          - Annually
+          - Fixed
+          - Daily
+          - Monthly
+          - Weekly
+          type: string
+        accruesLeave:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        rateLoadingPercent:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        penaltyLoadingPercent:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        isTaxExempt:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        generalLedgerMappingCode:
+          title: String
+          type: string
+          x-title: String
+        isSystemPayCategory:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        numberOfDecimalPlaces:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        roundingMethod:
+          title: Nullable<MidpointRounding>
+          enum:
+          - ToEven
+          - AwayFromZero
+          - ToZero
+          - ToNegativeInfinity
+          - ToPositiveInfinity
+          type: string
+        hideUnitsOnPaySlip:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isPrimary:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        queueStatus:
+          title: PayCategoryQueueStatusEnum
+          enum:
+          - Queued
+          - UpToDate
+          - Failed
+          type: string
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

@@ -1,0 +1,444 @@
+openapi: 3.2.0
+info:
+  title: Singapore Employee Iras Lump Sum API
+  version: SG
+  description: Employee Iras Lump Sum
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: EmployeeIrasLumpSum
+  description: Employee Iras Lump Sum
+paths:
+  /api/v2/business/{businessId}/employee/{employeeId}/lumpsum:
+    get:
+      tags:
+      - EmployeeIrasLumpSum
+      summary: Get lump sum
+      description: Gets the lump sum for the specified employee
+      operationId: SgEmployeeIrasLumpSum_GetAll
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<SgIrasLumpSumModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SgIrasLumpSumModel'
+            application/xml:
+              schema:
+                title: IList<SgIrasLumpSumModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SgIrasLumpSumModel'
+            text/plain:
+              schema:
+                title: IList<SgIrasLumpSumModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SgIrasLumpSumModel'
+            application/octet-stream:
+              schema:
+                title: IList<SgIrasLumpSumModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SgIrasLumpSumModel'
+            text/json:
+              schema:
+                title: IList<SgIrasLumpSumModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SgIrasLumpSumModel'
+    post:
+      tags:
+      - EmployeeIrasLumpSum
+      summary: Create IRAS lump sum details
+      description: Creates new IRAS lump sum details for the employee.
+      operationId: SgEmployeeIrasLumpSum_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SgIrasLumpSumModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SgIrasLumpSumModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SgIrasLumpSumModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/SgIrasLumpSumModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SgIrasLumpSumModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SgIrasLumpSumModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SgIrasLumpSumModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/SgIrasLumpSumModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SgIrasLumpSumModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SgIrasLumpSumModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SgIrasLumpSumModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/lumpsum/{id}:
+    get:
+      tags:
+      - EmployeeIrasLumpSum
+      summary: Get IRAS lump sum details for employee
+      description: Gets specific IRAS lump sum details for the specified employee
+      operationId: SgEmployeeIrasLumpSum_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SgIrasLumpSumModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SgIrasLumpSumModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SgIrasLumpSumModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/SgIrasLumpSumModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SgIrasLumpSumModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    put:
+      tags:
+      - EmployeeIrasLumpSum
+      summary: Update a lump sum
+      description: Update an existing lump sum.
+      operationId: SgEmployeeIrasLumpSum_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SgIrasLumpSumModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SgIrasLumpSumModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SgIrasLumpSumModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/SgIrasLumpSumModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SgIrasLumpSumModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SgIrasLumpSumModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SgIrasLumpSumModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/SgIrasLumpSumModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SgIrasLumpSumModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SgIrasLumpSumModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SgIrasLumpSumModel'
+    delete:
+      tags:
+      - EmployeeIrasLumpSum
+      summary: Delete lump sum
+      description: Deletes the IRAS lump sum details with the specified ID.
+      operationId: SgEmployeeIrasLumpSum_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+components:
+  schemas:
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+    SgIrasLumpSumModel:
+      title: SgIrasLumpSumModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employingEntityId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        basisPeriod:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        approved:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        dateOfApproval:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        paymentReason:
+          title: String
+          type: string
+          x-title: String
+        serviceLength:
+          title: String
+          type: string
+          x-title: String
+        paymentBasis:
+          title: String
+          type: string
+          x-title: String
+        retirementBenefitsFund:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-navigateMethodsByName: true

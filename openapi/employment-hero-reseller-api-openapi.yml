@@ -1,0 +1,150 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Reseller API
+  version: '1.0'
+  description: 'Operations tagged Reseller across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: Reseller
+  description: Reseller
+paths:
+  /api/v2/reseller:
+    get:
+      tags:
+      - Reseller
+      summary: List Resellers
+      description: Lists all the resellers to which you have access.
+      operationId: Reseller_GetResellers
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<ResellerModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ResellerModel'
+            application/xml:
+              schema:
+                title: IEnumerable<ResellerModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ResellerModel'
+            text/plain:
+              schema:
+                title: IEnumerable<ResellerModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ResellerModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<ResellerModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ResellerModel'
+            text/json:
+              schema:
+                title: IEnumerable<ResellerModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ResellerModel'
+  /api/v2/reseller/{id}:
+    get:
+      tags:
+      - Reseller
+      summary: Get Reseller by ID
+      description: Gets the resellers with the specified ID.
+      operationId: Reseller_Get
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResellerModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ResellerModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ResellerModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ResellerModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ResellerModel'
+components:
+  schemas:
+    ResellerModel:
+      title: ResellerModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

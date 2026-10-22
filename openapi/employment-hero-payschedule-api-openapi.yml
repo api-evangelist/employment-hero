@@ -1,0 +1,1963 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Pay Schedule API
+  version: '1.0'
+  description: 'Operations tagged PaySchedule across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: PaySchedule
+  description: Pay Schedules
+paths:
+  /api/v2/business/{businessId}/payschedule:
+    get:
+      tags:
+      - PaySchedule
+      summary: List Pay Schedules
+      description: 'Lists all the pay schedules for the business.
+
+
+        This operation supports OData queries (only $filter, $orderby, $top, $skip).'
+      operationId: AuPaySchedule_GetPaySchedules
+      parameters:
+      - in: query
+        name: query
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<AuPayScheduleModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuPayScheduleModel'
+            application/xml:
+              schema:
+                title: IEnumerable<AuPayScheduleModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuPayScheduleModel'
+            text/plain:
+              schema:
+                title: IEnumerable<AuPayScheduleModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuPayScheduleModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<AuPayScheduleModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuPayScheduleModel'
+            text/json:
+              schema:
+                title: IEnumerable<AuPayScheduleModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuPayScheduleModel'
+    post:
+      tags:
+      - PaySchedule
+      summary: Create Pay Schedule
+      description: Creates a new pay schedule for the business.
+      operationId: AuPaySchedule_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuPayScheduleModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuPayScheduleModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuPayScheduleModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuPayScheduleModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuPayScheduleModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuPayScheduleModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuPayScheduleModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuPayScheduleModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuPayScheduleModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuPayScheduleModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuPayScheduleModel'
+  /api/v2/business/{businessId}/payschedule/metadata:
+    get:
+      tags:
+      - PaySchedule
+      summary: Get Pay Schedule Metadata
+      description: Gets the list of all applicable reference data for Pay Schedules for this business.
+      operationId: AuPaySchedule_GetMetaData
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PayScheduleMetaDataModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/PayScheduleMetaDataModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PayScheduleMetaDataModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/PayScheduleMetaDataModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PayScheduleMetaDataModel'
+  /api/v2/business/{businessId}/payschedule/nextpaydates:
+    get:
+      tags:
+      - PaySchedule
+      summary: List Next Pay Dates
+      description: Gets the list of all next pay dates for each pay schedule.
+      operationId: PaySchedule_ListNextPayDates
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: List<PayScheduleDateForecastResultApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/PayScheduleDateForecastResultApiModel'
+            application/xml:
+              schema:
+                title: List<PayScheduleDateForecastResultApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/PayScheduleDateForecastResultApiModel'
+            text/plain:
+              schema:
+                title: List<PayScheduleDateForecastResultApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/PayScheduleDateForecastResultApiModel'
+            application/octet-stream:
+              schema:
+                title: List<PayScheduleDateForecastResultApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/PayScheduleDateForecastResultApiModel'
+            text/json:
+              schema:
+                title: List<PayScheduleDateForecastResultApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/PayScheduleDateForecastResultApiModel'
+  /api/v2/business/{businessId}/payschedule/{id}:
+    get:
+      tags:
+      - PaySchedule
+      summary: Get Pay Schedule by ID
+      description: Gets the pay schedule with the specified ID.
+      operationId: AuPaySchedule_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuPayScheduleModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuPayScheduleModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuPayScheduleModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuPayScheduleModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuPayScheduleModel'
+    put:
+      tags:
+      - PaySchedule
+      summary: Update Pay Schedule
+      description: Updates the pay schedule with the specified ID.
+      operationId: AuPaySchedule_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuPayScheduleModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuPayScheduleModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuPayScheduleModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuPayScheduleModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuPayScheduleModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuPayScheduleModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuPayScheduleModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuPayScheduleModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuPayScheduleModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuPayScheduleModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuPayScheduleModel'
+    delete:
+      tags:
+      - PaySchedule
+      summary: Delete Pay Schedule
+      description: Deletes the pay schedule with the specified ID.
+      operationId: AuPaySchedule_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /api/v2/business/{businessId}/payschedule/{payScheduleId}/nextpaydate:
+    get:
+      tags:
+      - PaySchedule
+      summary: Get Next Pay Date
+      description: Gets the next pay dates for the pay schedule with the specified ID.
+      operationId: PaySchedule_GetNextPayDate
+      parameters:
+      - in: path
+        name: payScheduleId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PayScheduleDateForecastResultApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/PayScheduleDateForecastResultApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PayScheduleDateForecastResultApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/PayScheduleDateForecastResultApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PayScheduleDateForecastResultApiModel'
+  /api/v2/business/{businessId}/import/pay-schedule:
+    post:
+      tags:
+      - PaySchedule
+      summary: Import a new pay schedule
+      description: 'Creates a new pay schedule for the business by importing from external data.
+
+        The pay schedule defines how frequently employees are paid and related configuration.
+
+
+        Example request body:
+
+        {
+
+        "name": "Weekly Pay Schedule",
+
+        "frequency": "Weekly",
+
+        "includedEmployees": "All",
+
+        "monthlyPaymentMode": false,
+
+        "proRataCalculations": true,
+
+        "unitType": "Days per year",
+
+        "unit": 260,
+
+        "qualifyingDays": "Working days",
+
+        "locations": [1, 2, 3],
+
+        "paySlipMessage": "Custom message for pay slips"
+
+        }'
+      operationId: ImportPaySchedule_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PayScheduleImportModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/PayScheduleImportModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/PayScheduleImportModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/PayScheduleImportModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/PayScheduleImportModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/PayScheduleImportModel'
+        description: The pay schedule import configuration containing all required and optional settings for the new pay schedule
+components:
+  schemas:
+    AuAutoPayConfigurationModel:
+      title: AuAutoPayConfigurationModel
+      type: object
+      properties:
+        enabled:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        paused:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        initialPayPeriodEnding:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        initialDatePaid:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        initialPayRunCreationDateTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        scheduledEndDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        nextScheduledCreationDateTimeUtc:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        finalise:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        timesheetImportOption:
+          title: TimesheetImportOption
+          enum:
+          - None
+          - ThisPayPeriod
+          - AllOutstanding
+          - CustomPeriod
+          type: string
+        exportJournals:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        lodgePayRun:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        publishPaySlips:
+          title: PublishPaySlipsPreference
+          enum:
+          - Manual
+          - Immediate
+          - Scheduled
+          type: string
+        publishPaySlipsHour:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        suppressNotifications:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        usersToNotify:
+          title: List<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: List<String>
+        runOnSpecificDayOfMonth:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        adjustRunDateToWorkDay:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        adjustDatePaidToWorkDay:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        specificDayOfMonth:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        weekOfMonth:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        dayOfWeek:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        reportPacksToRun:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+      additionalProperties: false
+    PayScheduleDateForecastResultApiModel:
+      title: PayScheduleDateForecastResultApiModel
+      type: object
+      properties:
+        payScheduleId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        nextScheduledFromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        nextScheduledToDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        nextScheduledPaidDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+      additionalProperties: false
+    PayRunFinaliseDefaultSettingsModel:
+      title: PayRunFinaliseDefaultSettingsModel
+      type: object
+      properties:
+        exportJournals:
+          title: PayRunFinaliseActionPreference
+          enum:
+          - Manual
+          - Immediate
+          - Scheduled
+          type: string
+        exportJournalsTimeline:
+          title: PayRunFinaliseActionTimeline
+          enum:
+          - Before
+          - After
+          - 'On'
+          type: string
+        exportJournalsDay:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        exportJournalsTimeOfDay:
+          format: date-span
+          title: Nullable<TimeSpan>
+          type: string
+          x-title: Nullable<TimeSpan>
+        lodgePayRun:
+          title: PayRunFinaliseActionPreference
+          enum:
+          - Manual
+          - Immediate
+          - Scheduled
+          type: string
+          x-title: PayRunFinaliseActionPreference
+        lodgePayRunDay:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        lodgePayRunTimeline:
+          title: PayRunFinaliseActionTimeline
+          enum:
+          - Before
+          - After
+          - 'On'
+          type: string
+          x-title: PayRunFinaliseActionTimeline
+        lodgePayRunTimeOfDay:
+          format: date-span
+          title: Nullable<TimeSpan>
+          type: string
+          x-title: Nullable<TimeSpan>
+        publishPaySlipsDay:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        publishPaySlipsTimeline:
+          title: PayRunFinaliseActionTimeline
+          enum:
+          - Before
+          - After
+          - 'On'
+          type: string
+          x-title: PayRunFinaliseActionTimeline
+        publishPaySlips:
+          title: PayRunFinaliseActionPreference
+          enum:
+          - Manual
+          - Immediate
+          - Scheduled
+          type: string
+          x-title: PayRunFinaliseActionPreference
+        publishPaySlipsTimeOfDay:
+          format: date-span
+          title: Nullable<TimeSpan>
+          type: string
+          x-title: Nullable<TimeSpan>
+        suppressNotifications:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        submitToPensionSync:
+          title: PayRunFinaliseActionPreference
+          enum:
+          - Manual
+          - Immediate
+          - Scheduled
+          type: string
+          x-title: PayRunFinaliseActionPreference
+        submitToPensionSyncTimeline:
+          title: PayRunFinaliseActionTimeline
+          enum:
+          - Before
+          - After
+          - 'On'
+          type: string
+          x-title: PayRunFinaliseActionTimeline
+        submitToPensionSyncDay:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        submitToPensionSyncTimeOfDay:
+          format: date-span
+          title: Nullable<TimeSpan>
+          type: string
+          x-title: Nullable<TimeSpan>
+        runReportPacks:
+          title: PayRunFinaliseActionPreference
+          enum:
+          - Manual
+          - Immediate
+          - Scheduled
+          type: string
+          x-title: PayRunFinaliseActionPreference
+        runReportPacksTimeline:
+          title: PayRunFinaliseActionTimeline
+          enum:
+          - Before
+          - After
+          - 'On'
+          type: string
+          x-title: PayRunFinaliseActionTimeline
+        runReportPacksDay:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        runReportPacksTimeOfDay:
+          format: date-span
+          title: Nullable<TimeSpan>
+          type: string
+          x-title: Nullable<TimeSpan>
+        reportPacksToRun:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: List<Int32>
+        superPayment:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        paymentAccountDebitSetting:
+          title: Nullable<PaymentAccountDebitSettingEnum>
+          enum:
+          - Manual
+          - Immediate
+          type: string
+      additionalProperties: false
+    PayScheduleMetaDataModel:
+      title: PayScheduleMetaDataModel
+      type: object
+      properties:
+        payRunWarnings:
+          title: List<PayRunWarningModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/PayRunWarningModel'
+        frequencies:
+          title: List<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: List<String>
+        employmentSelectionStrategies:
+          title: List<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: List<String>
+        timesheetImportOptions:
+          title: List<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: List<String>
+        publishPaySlipsPreferences:
+          title: List<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: List<String>
+        reportPacks:
+          title: List<ReportPackModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ReportPackModel'
+        usersToNotify:
+          title: List<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: List<String>
+      additionalProperties: false
+    AuPayScheduleModel:
+      title: AuPayScheduleModel
+      type: object
+      properties:
+        abaDetailsId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        paygAccountBsb:
+          title: String
+          type: string
+          x-title: String
+        paygAccountNumber:
+          title: String
+          type: string
+          x-title: String
+        paygAccountName:
+          title: String
+          type: string
+          x-title: String
+        paygReference:
+          title: String
+          type: string
+          x-title: String
+        autoPayConfiguration:
+          $ref: '#/components/schemas/AuAutoPayConfigurationModel'
+        frequency:
+          title: AuPayCycleFrequencyEnum
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - AdHoc
+          - Initial
+          type: string
+        paySchedulePaymentApprovalSettings:
+          $ref: '#/components/schemas/PayScheduleApprovalSettingsModel'
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        employeeSelectionStrategy:
+          title: Nullable<PayRunEmployeeSelectionStrategy>
+          enum:
+          - None
+          - PayRunDefault
+          - TimesheetLocations
+          - PayRunDefaultWithTimesheets
+          - ActiveSubcontractors
+          - EmployingEntity
+          type: string
+        lastDatePaid:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        lastPayRun:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        locations:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: List<Int32>
+        equalMonthlyPayments:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        ignoredPayRunWarnings:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: List<Int32>
+        defaultFinaliseSettings:
+          $ref: '#/components/schemas/PayRunFinaliseDefaultSettingsModel'
+        payScheduleApprovalSettings:
+          $ref: '#/components/schemas/PayScheduleApprovalSettingsModel'
+      additionalProperties: false
+    ReportPackModel:
+      title: ReportPackModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    PayRunWarningModel:
+      title: PayRunWarningModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        description:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    PayScheduleApprovalSettingsModel:
+      title: PayScheduleApprovalSettingsModel
+      type: object
+      properties:
+        requireApproval:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        reminderDay:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        notificationTemplate:
+          title: String
+          type: string
+          x-title: String
+        notificationSubject:
+          title: String
+          type: string
+          x-title: String
+        reminderTemplate:
+          title: String
+          type: string
+          x-title: String
+        reminderSubject:
+          title: String
+          type: string
+          x-title: String
+        sendReminder:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        approversToNotify:
+          title: List<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: List<String>
+      additionalProperties: false
+    MyAutoPayConfigurationModel:
+      title: MyAutoPayConfigurationModel
+      type: object
+      properties:
+        enabled:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        paused:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        initialPayPeriodEnding:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        initialDatePaid:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        initialPayRunCreationDateTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        scheduledEndDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        nextScheduledCreationDateTimeUtc:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        finalise:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        timesheetImportOption:
+          title: TimesheetImportOption
+          enum:
+          - None
+          - ThisPayPeriod
+          - AllOutstanding
+          - CustomPeriod
+          type: string
+        exportJournals:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        submitToPensionSync:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        lodgePayRun:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        publishPaySlips:
+          title: PublishPaySlipsPreference
+          enum:
+          - Manual
+          - Immediate
+          - Scheduled
+          type: string
+        publishPaySlipsHour:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        suppressNotifications:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        usersToNotify:
+          title: List<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: List<String>
+        runOnSpecificDayOfMonth:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        adjustRunDateToWorkDay:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        adjustDatePaidToWorkDay:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        specificDayOfMonth:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        weekOfMonth:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        dayOfWeek:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        reportPacksToRun:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: List<Int32>
+      additionalProperties: false
+    MyPayScheduleModel:
+      title: MyPayScheduleModel
+      type: object
+      properties:
+        autoPayConfiguration:
+          $ref: '#/components/schemas/MyAutoPayConfigurationModel'
+        frequency:
+          title: MyPayCycleFrequencyEnum
+          enum:
+          - Monthly
+          - AdHoc
+          - Initial
+          type: string
+        emptyPaysIncludeSystemDeductions:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        employeeSelectionStrategy:
+          title: Nullable<PayRunEmployeeSelectionStrategy>
+          enum:
+          - None
+          - PayRunDefault
+          - TimesheetLocations
+          - PayRunDefaultWithTimesheets
+          - ActiveSubcontractors
+          - EmployingEntity
+          type: string
+        lastDatePaid:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        lastPayRun:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        locations:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: List<Int32>
+        equalMonthlyPayments:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        ignoredPayRunWarnings:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: List<Int32>
+        defaultFinaliseSettings:
+          $ref: '#/components/schemas/PayRunFinaliseDefaultSettingsModel'
+        payScheduleApprovalSettings:
+          $ref: '#/components/schemas/PayScheduleApprovalSettingsModel'
+      additionalProperties: false
+    NzAutoPayConfigurationModel:
+      title: NzAutoPayConfigurationModel
+      type: object
+      properties:
+        enabled:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        paused:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        initialPayPeriodEnding:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        initialDatePaid:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        initialPayRunCreationDateTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        scheduledEndDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        nextScheduledCreationDateTimeUtc:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        finalise:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        timesheetImportOption:
+          title: TimesheetImportOption
+          enum:
+          - None
+          - ThisPayPeriod
+          - AllOutstanding
+          - CustomPeriod
+          type: string
+        exportJournals:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        publishPaySlips:
+          title: PublishPaySlipsPreference
+          enum:
+          - Manual
+          - Immediate
+          - Scheduled
+          type: string
+        publishPaySlipsHour:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        suppressNotifications:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        usersToNotify:
+          title: List<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: List<String>
+        runOnSpecificDayOfMonth:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        adjustRunDateToWorkDay:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        adjustDatePaidToWorkDay:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        specificDayOfMonth:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        weekOfMonth:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        dayOfWeek:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        reportPacksToRun:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: List<Int32>
+      additionalProperties: false
+    NzPayScheduleModel:
+      title: NzPayScheduleModel
+      type: object
+      properties:
+        autoPayConfiguration:
+          $ref: '#/components/schemas/NzAutoPayConfigurationModel'
+        frequency:
+          title: NzPayCycleFrequencyEnum
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - AdHoc
+          - Initial
+          - HistoricGrossEarnings
+          - HalfMonthly
+          type: string
+        paySchedulePaymentApprovalSettings:
+          $ref: '#/components/schemas/PayScheduleApprovalSettingsModel'
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        employeeSelectionStrategy:
+          title: Nullable<PayRunEmployeeSelectionStrategy>
+          enum:
+          - None
+          - PayRunDefault
+          - TimesheetLocations
+          - PayRunDefaultWithTimesheets
+          - ActiveSubcontractors
+          - EmployingEntity
+          type: string
+        lastDatePaid:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        lastPayRun:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        locations:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: List<Int32>
+        equalMonthlyPayments:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        ignoredPayRunWarnings:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: List<Int32>
+        defaultFinaliseSettings:
+          $ref: '#/components/schemas/PayRunFinaliseDefaultSettingsModel'
+        payScheduleApprovalSettings:
+          $ref: '#/components/schemas/PayScheduleApprovalSettingsModel'
+      additionalProperties: false
+    SgPayScheduleModel:
+      title: SgPayScheduleModel
+      type: object
+      properties:
+        autoPayConfiguration:
+          $ref: '#/components/schemas/SgAutoPayConfigurationModel'
+        frequency:
+          title: PayCycleFrequencyEnum
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - AdHoc
+          - Initial
+          - PreviousEmployer
+          - FourWeekly
+          - Quarterly
+          - Annually
+          - HistoricGrossEarnings
+          - HalfMonthly
+          - HistoricGrossEarningsOWP
+          - BiWeekly
+          - SemiMonthly
+          - Weekly52Or53
+          - OffCycle
+          type: string
+        emptyPaysIncludeSystemDeductions:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        employeeSelectionStrategy:
+          title: Nullable<PayRunEmployeeSelectionStrategy>
+          enum:
+          - None
+          - PayRunDefault
+          - TimesheetLocations
+          - PayRunDefaultWithTimesheets
+          - ActiveSubcontractors
+          - EmployingEntity
+          type: string
+        lastDatePaid:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        lastPayRun:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        locations:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: List<Int32>
+        equalMonthlyPayments:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        ignoredPayRunWarnings:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: List<Int32>
+        defaultFinaliseSettings:
+          $ref: '#/components/schemas/PayRunFinaliseDefaultSettingsModel'
+        payScheduleApprovalSettings:
+          $ref: '#/components/schemas/PayScheduleApprovalSettingsModel'
+      additionalProperties: false
+    SgAutoPayConfigurationModel:
+      title: SgAutoPayConfigurationModel
+      type: object
+      properties:
+        enabled:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        paused:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        initialPayPeriodEnding:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        initialDatePaid:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        initialPayRunCreationDateTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        scheduledEndDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        nextScheduledCreationDateTimeUtc:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        finalise:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        timesheetImportOption:
+          title: TimesheetImportOption
+          enum:
+          - None
+          - ThisPayPeriod
+          - AllOutstanding
+          - CustomPeriod
+          type: string
+        exportJournals:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        publishPaySlips:
+          title: PublishPaySlipsPreference
+          enum:
+          - Manual
+          - Immediate
+          - Scheduled
+          type: string
+        publishPaySlipsHour:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        suppressNotifications:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        usersToNotify:
+          title: List<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: List<String>
+        runOnSpecificDayOfMonth:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        adjustRunDateToWorkDay:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        adjustDatePaidToWorkDay:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        specificDayOfMonth:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        weekOfMonth:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        dayOfWeek:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        reportPacksToRun:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: List<Int32>
+      additionalProperties: false
+    PayScheduleProRataSettingsModel:
+      title: PayScheduleProRataSettingsModel
+      type: object
+      properties:
+        unitType:
+          title: PayScheduleProRataUnitType
+          enum:
+          - Months
+          - Weeks
+          - Days
+          type: string
+        unit:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        qualifyingDaysType:
+          title: PayScheduleProRataQualiyfingDayType
+          enum:
+          - WorkDays
+          - CalendarDays
+          type: string
+      additionalProperties: false
+    PayScheduleImportModel:
+      title: PayScheduleImportModel
+      type: object
+      properties:
+        name:
+          title: String
+          type: string
+          x-title: String
+        frequency:
+          title: String
+          type: string
+          x-title: String
+        monthlyPaymentMode:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        proRataCalculations:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        unitType:
+          title: String
+          type: string
+          x-title: String
+        unit:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        qualifyingDays:
+          title: String
+          type: string
+          x-title: String
+        includedEmployees:
+          title: String
+          type: string
+          x-title: String
+        locations:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: List<Int32>
+        paySlipMessage:
+          title: String
+          type: string
+          x-title: String
+        paymentFileId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        payeSchemeId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    UkPayScheduleModel:
+      title: UkPayScheduleModel
+      type: object
+      properties:
+        autoPayConfiguration:
+          $ref: '#/components/schemas/UkAutoPayConfigurationModel'
+        frequencyId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        frequency:
+          title: UkPayCycleFrequencyEnum
+          enum:
+          - Weekly
+          - Fortnightly
+          - Monthly
+          - AdHoc
+          - Initial
+          - PreviousEmployer
+          - FourWeekly
+          - Quarterly
+          - Annually
+          type: string
+        payScheduleProRataSettings:
+          $ref: '#/components/schemas/PayScheduleProRataSettingsModel'
+        payeSchemeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        employeeSelectionStrategy:
+          title: Nullable<PayRunEmployeeSelectionStrategy>
+          enum:
+          - None
+          - PayRunDefault
+          - TimesheetLocations
+          - PayRunDefaultWithTimesheets
+          - ActiveSubcontractors
+          - EmployingEntity
+          type: string
+        lastDatePaid:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        lastPayRun:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        locations:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: List<Int32>
+        equalMonthlyPayments:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        ignoredPayRunWarnings:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: List<Int32>
+        defaultFinaliseSettings:
+          $ref: '#/components/schemas/PayRunFinaliseDefaultSettingsModel'
+        payScheduleApprovalSettings:
+          $ref: '#/components/schemas/PayScheduleApprovalSettingsModel'
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+    UkAutoPayConfigurationModel:
+      title: UkAutoPayConfigurationModel
+      type: object
+      properties:
+        payOnSpecificDayOfMonth:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        specificPayDayOfMonth:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        payWeekOfMonth:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        payDayOfWeek:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        enabled:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        paused:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        initialPayPeriodEnding:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        initialDatePaid:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        initialPayRunCreationDateTime:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        scheduledEndDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        nextScheduledCreationDateTimeUtc:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        finalise:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        timesheetImportOption:
+          title: TimesheetImportOption
+          enum:
+          - None
+          - ThisPayPeriod
+          - AllOutstanding
+          - CustomPeriod
+          type: string
+        exportJournals:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        lodgePayRun:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        publishPaySlips:
+          title: PublishPaySlipsPreference
+          enum:
+          - Manual
+          - Immediate
+          - Scheduled
+          type: string
+        publishPaySlipsHour:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        suppressNotifications:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        usersToNotify:
+          title: List<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: List<String>
+        runOnSpecificDayOfMonth:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        adjustRunDateToWorkDay:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        adjustDatePaidToWorkDay:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        specificDayOfMonth:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        weekOfMonth:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        dayOfWeek:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        reportPacksToRun:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: List<Int32>
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

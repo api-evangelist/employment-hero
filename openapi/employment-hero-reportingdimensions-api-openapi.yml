@@ -1,0 +1,1070 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Reporting Dimensions API
+  version: '1.0'
+  description: 'Operations tagged ReportingDimensions across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: ReportingDimensions
+  description: Dimensions
+paths:
+  /api/v2/business/{businessId}/dimension:
+    get:
+      tags:
+      - ReportingDimensions
+      summary: List Dimensions
+      description: 'Lists all the dimensions defined for the business.
+
+
+        This operation supports OData queries (only $filter, $orderby, $top, $skip).'
+      operationId: ReportingDimension_GetDimensions
+      parameters:
+      - in: query
+        name: query
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<ReportingDimensionApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReportingDimensionApiModel'
+            application/xml:
+              schema:
+                title: IEnumerable<ReportingDimensionApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReportingDimensionApiModel'
+            text/plain:
+              schema:
+                title: IEnumerable<ReportingDimensionApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReportingDimensionApiModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<ReportingDimensionApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReportingDimensionApiModel'
+            text/json:
+              schema:
+                title: IEnumerable<ReportingDimensionApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReportingDimensionApiModel'
+    post:
+      tags:
+      - ReportingDimensions
+      summary: Create Dimension
+      description: Creates a new dimension for the business.
+      operationId: ReportingDimension_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionApiModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionApiModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionApiModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionApiModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionApiModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionApiModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionApiModel'
+  /api/v2/business/{businessId}/dimension/{dimensionId}/value:
+    get:
+      tags:
+      - ReportingDimensions
+      summary: List Dimension Values
+      description: 'Lists all the values defined for the specified dimension.
+
+
+        This operation supports OData queries (only $filter, $orderby, $top, $skip).'
+      operationId: ReportingDimensionValue_GetDimensionValues
+      parameters:
+      - in: path
+        name: dimensionId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: query
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<ReportingDimensionValueApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+            application/xml:
+              schema:
+                title: IEnumerable<ReportingDimensionValueApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+            text/plain:
+              schema:
+                title: IEnumerable<ReportingDimensionValueApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<ReportingDimensionValueApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+            text/json:
+              schema:
+                title: IEnumerable<ReportingDimensionValueApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    post:
+      tags:
+      - ReportingDimensions
+      summary: Create Dimension Value
+      description: Creates a new value for the specified dimension.
+      operationId: ReportingDimensionValue_Post
+      parameters:
+      - in: path
+        name: dimensionId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal Server Error
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+  /api/v2/business/{businessId}/dimension/{dimensionId}/value/{id}:
+    get:
+      tags:
+      - ReportingDimensions
+      summary: Get Dimension Value by ID
+      description: Gets the dimension value with the specified ID.
+      operationId: ReportingDimensionValue_Get_2
+      parameters:
+      - in: path
+        name: dimensionId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    put:
+      tags:
+      - ReportingDimensions
+      summary: Update Dimension Value
+      description: Updates the dimension value with the specified ID.
+      operationId: ReportingDimensionValue_Put_3
+      parameters:
+      - in: path
+        name: dimensionId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal Server Error
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionValueApiModel'
+    delete:
+      tags:
+      - ReportingDimensions
+      summary: Delete Dimension Value
+      description: Deletes the dimension value with the specified ID.
+      operationId: ReportingDimensionValue_Delete_4
+      parameters:
+      - in: path
+        name: dimensionId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /api/v2/business/{businessId}/dimension/{id}:
+    get:
+      tags:
+      - ReportingDimensions
+      summary: Get Dimension by ID
+      description: Gets the dimension with the specified ID.
+      operationId: ReportingDimension_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionApiModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    put:
+      tags:
+      - ReportingDimensions
+      summary: Update Dimension
+      description: Updates the dimension with the specified ID.
+      operationId: ReportingDimension_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ReportingDimensionApiModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionApiModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionApiModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionApiModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionApiModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionApiModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ReportingDimensionApiModel'
+    delete:
+      tags:
+      - ReportingDimensions
+      summary: Delete Dimension
+      description: Deletes the dimension with the specified ID.
+      operationId: ReportingDimension_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+components:
+  schemas:
+    ReportingDimensionValueFilterApiModel:
+      title: ReportingDimensionValueFilterApiModel
+      type: object
+      properties:
+        filterType:
+          title: String
+          type: string
+          x-title: String
+        value:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+    ReportingDimensionApiModel:
+      title: ReportingDimensionApiModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: ExternalService
+          enum:
+          - None
+          - Saasu
+          - Xero
+          - MYOB
+          - Deputy
+          - EmployeeTimePunch
+          - ClickSuper
+          - IntegratedTimesheets
+          - FileImport
+          - FileExport
+          - QuickBooks
+          - Harmony
+          - AwardStore
+          - Attache
+          - IntegratedRostering
+          - ReckonAccounts
+          - API
+          - MicroPower
+          - RosterLive
+          - NetSuite
+          - Kounta
+          - TimeAndAttendanceKiosk
+          - DetailedFileExport
+          - JonasPremier
+          - WageEasy
+          - Maestrano
+          - WorkZone
+          - EmployeePortal
+          - RosterTemplate
+          - Onboarding
+          - Admin
+          - WorkZoneClockOnOff
+          - NetSuiteOneWorld
+          - Sage50
+          - PensionSync
+          - FinancialsOffice
+          - ProntoXI
+          - PayRunDefault
+          - StandardWorkDay
+          - Beam
+          - PayRunAutomation
+          - BureauDashboard
+          - Wiise
+          - QBOMigrationTool
+          - AbridgedFileImport
+          - QBOForcedMigration
+          - HmrcDpsUpdate
+          - HmrcDpsStudentLoan
+          - HmrcDpsPostGradLoan
+          - Sage50FileImporter
+          - FPSFileImporter
+          - OAuth
+          - FreshBooks
+          - StarFileImporter
+          - ActiveCampaign
+          - SummaryAndDetailsExport
+          - Telleroo
+          - EmployeeAdvancedHoursUpload
+          - BusinessCentral
+          - Paytron
+          - AccessFinancials
+          - Comma
+          - Zoho
+          - FlatFileEmployeeImporter
+          - Twinfield
+          - SageAccounting
+          - Square
+          - Quickfile
+          - Tide
+          - TideSso
+          - FreeAgent
+          - Akahu
+          - InstaPay
+          - Zepto
+          - Slack
+          - Caxton
+          - QuickbooksStandalonePayroll
+          - ImportEmployeeSelfSetup
+          - XeroIdentityPayrollSignUp
+          - XeroIdentityHrSignUp
+          - SageIntacct
+          - InstaPayDaily
+          - Salesforce
+          - AutomatedPublicHolidayNotWorked
+          - EmployeePayRatesUpload
+          - Zapier
+          - StapledSuperFund
+          - Swag
+          - Crezco
+          - KafkaConsumer
+          - EmployeeLeaveRateCalculationMethodUpload
+          - MoneyMovement
+          - PayRunSettingsFlatFileImport
+          - Sage200
+          - RosterCostCalculation
+          - HeroClear
+          - BrightPay
+          - EmployeeLeaveYearStartDatesImport
+          - PayConditionComparisonUpload
+          - GlobalMoneyMovement
+          type: string
+          x-title: ExternalService
+        externalId:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    ReportingDimensionValueApiModel:
+      title: ReportingDimensionValueApiModel
+      type: object
+      properties:
+        source:
+          title: ExternalService
+          enum:
+          - None
+          - Saasu
+          - Xero
+          - MYOB
+          - Deputy
+          - EmployeeTimePunch
+          - ClickSuper
+          - IntegratedTimesheets
+          - FileImport
+          - FileExport
+          - QuickBooks
+          - Harmony
+          - AwardStore
+          - Attache
+          - IntegratedRostering
+          - ReckonAccounts
+          - API
+          - MicroPower
+          - RosterLive
+          - NetSuite
+          - Kounta
+          - TimeAndAttendanceKiosk
+          - DetailedFileExport
+          - JonasPremier
+          - WageEasy
+          - Maestrano
+          - WorkZone
+          - EmployeePortal
+          - RosterTemplate
+          - Onboarding
+          - Admin
+          - WorkZoneClockOnOff
+          - NetSuiteOneWorld
+          - Sage50
+          - PensionSync
+          - FinancialsOffice
+          - ProntoXI
+          - PayRunDefault
+          - StandardWorkDay
+          - Beam
+          - PayRunAutomation
+          - BureauDashboard
+          - Wiise
+          - QBOMigrationTool
+          - AbridgedFileImport
+          - QBOForcedMigration
+          - HmrcDpsUpdate
+          - HmrcDpsStudentLoan
+          - HmrcDpsPostGradLoan
+          - Sage50FileImporter
+          - FPSFileImporter
+          - OAuth
+          - FreshBooks
+          - StarFileImporter
+          - ActiveCampaign
+          - SummaryAndDetailsExport
+          - Telleroo
+          - EmployeeAdvancedHoursUpload
+          - BusinessCentral
+          - Paytron
+          - AccessFinancials
+          - Comma
+          - Zoho
+          - FlatFileEmployeeImporter
+          - Twinfield
+          - SageAccounting
+          - Square
+          - Quickfile
+          - Tide
+          - TideSso
+          - FreeAgent
+          - Akahu
+          - InstaPay
+          - Zepto
+          - Slack
+          - Caxton
+          - QuickbooksStandalonePayroll
+          - ImportEmployeeSelfSetup
+          - XeroIdentityPayrollSignUp
+          - XeroIdentityHrSignUp
+          - SageIntacct
+          - InstaPayDaily
+          - Salesforce
+          - AutomatedPublicHolidayNotWorked
+          - EmployeePayRatesUpload
+          - Zapier
+          - StapledSuperFund
+          - Swag
+          - Crezco
+          - KafkaConsumer
+          - EmployeeLeaveRateCalculationMethodUpload
+          - MoneyMovement
+          - PayRunSettingsFlatFileImport
+          - Sage200
+          - RosterCostCalculation
+          - HeroClear
+          - BrightPay
+          - EmployeeLeaveYearStartDatesImport
+          - PayConditionComparisonUpload
+          - GlobalMoneyMovement
+          type: string
+          x-title: ExternalService
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        allEmployees:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        specificEmployees:
+          title: String
+          type: string
+          x-title: String
+        filterCombinationStrategy:
+          title: String
+          type: string
+          x-title: String
+        filters:
+          title: IList<ReportingDimensionValueFilterApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ReportingDimensionValueFilterApiModel'
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        reportingDimensionId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

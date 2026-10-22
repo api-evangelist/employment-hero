@@ -1,0 +1,694 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Work Type API
+  version: '1.0'
+  description: 'Operations tagged WorkType across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: WorkType
+  description: Work Types
+paths:
+  /api/v2/business/{businessId}/worktype:
+    get:
+      tags:
+      - WorkType
+      summary: List Work Types
+      description: 'Lists all the work types for the business.
+
+
+        This operation supports OData queries (only $filter, $orderby, $top, $skip).'
+      operationId: AuBusinessWorkType_GetWorkTypes
+      parameters:
+      - in: query
+        name: query
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<AuWorkTypeModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuWorkTypeModel'
+            application/xml:
+              schema:
+                title: IEnumerable<AuWorkTypeModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuWorkTypeModel'
+            text/plain:
+              schema:
+                title: IEnumerable<AuWorkTypeModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuWorkTypeModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<AuWorkTypeModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuWorkTypeModel'
+            text/json:
+              schema:
+                title: IEnumerable<AuWorkTypeModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuWorkTypeModel'
+    post:
+      tags:
+      - WorkType
+      summary: Create Work Type
+      description: Creates a new work type for the business.
+      operationId: AuBusinessWorkType_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuWorkTypeModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuWorkTypeModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuWorkTypeModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuWorkTypeModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuWorkTypeModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuWorkTypeModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuWorkTypeModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuWorkTypeModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuWorkTypeModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuWorkTypeModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuWorkTypeModel'
+  /api/v2/business/{businessId}/worktype/{id}:
+    get:
+      tags:
+      - WorkType
+      summary: Get Work Type by ID
+      description: Gets the work type with the specified ID.
+      operationId: AuBusinessWorkType_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuWorkTypeModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuWorkTypeModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuWorkTypeModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuWorkTypeModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuWorkTypeModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    put:
+      tags:
+      - WorkType
+      summary: Update Work Type
+      description: Updates the work type with the specified ID.
+      operationId: AuBusinessWorkType_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuWorkTypeModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuWorkTypeModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuWorkTypeModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuWorkTypeModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuWorkTypeModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuWorkTypeModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuWorkTypeModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuWorkTypeModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuWorkTypeModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuWorkTypeModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuWorkTypeModel'
+    delete:
+      tags:
+      - WorkType
+      summary: Delete Work Type
+      description: Deletes the work type with the specified ID.
+      operationId: AuBusinessWorkType_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+components:
+  schemas:
+    AuWorkTypeModel:
+      title: AuWorkTypeModel
+      type: object
+      properties:
+        employmentTypes:
+          title: IList<AuEmploymentTypeEnum>
+          type: array
+          items:
+            title: AuEmploymentTypeEnum
+            enum:
+            - Unknown
+            - FullTime
+            - PartTime
+            - LabourHire
+            - SuperannuationIncomeStream
+            - Casual
+            type: string
+            x-title: AuEmploymentTypeEnum
+          x-title: IList<AuEmploymentTypeEnum>
+        awardPackageId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        awardPackageName:
+          title: String
+          type: string
+          x-title: String
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        payCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        leaveCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        accruesLeave:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        mappingType:
+          title: Nullable<WorkTypeMappingType>
+          enum:
+          - PayCategory
+          - LeaveCategory
+          - PrimaryPayCategory
+          - ShiftCondition
+          type: string
+          x-title: Nullable<WorkTypeMappingType>
+        shortCode:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+    MyWorkTypeModel:
+      title: MyWorkTypeModel
+      type: object
+      properties:
+        employmentTypes:
+          title: IList<MyEmploymentTypeEnum>
+          type: array
+          items:
+            title: MyEmploymentTypeEnum
+            enum:
+            - Unknown
+            - Permanent
+            - PartTime
+            - LabourHire
+            - SuperannuationIncomeStream
+            - Casual
+            - NotApplicable
+            - IndependentContractor
+            - Management
+            - Contract
+            - Intern
+            - Other
+            type: string
+            x-title: MyEmploymentTypeEnum
+          x-title: IList<MyEmploymentTypeEnum>
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        payCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        leaveCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        accruesLeave:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        mappingType:
+          title: Nullable<WorkTypeMappingType>
+          enum:
+          - PayCategory
+          - LeaveCategory
+          - PrimaryPayCategory
+          - ShiftCondition
+          type: string
+          x-title: Nullable<WorkTypeMappingType>
+        shortCode:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    NzWorkTypeModel:
+      title: NzWorkTypeModel
+      type: object
+      properties:
+        employmentTypes:
+          title: IList<NzEmploymentTypeEnum>
+          type: array
+          items:
+            title: NzEmploymentTypeEnum
+            enum:
+            - Unknown
+            - FullTime
+            - PartTime
+            - Casual
+            - IndependentContractor
+            type: string
+            x-title: NzEmploymentTypeEnum
+          x-title: IList<NzEmploymentTypeEnum>
+        applyingPieceRate:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        payCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        leaveCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        accruesLeave:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        mappingType:
+          title: Nullable<WorkTypeMappingType>
+          enum:
+          - PayCategory
+          - LeaveCategory
+          - PrimaryPayCategory
+          - ShiftCondition
+          type: string
+          x-title: Nullable<WorkTypeMappingType>
+        shortCode:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    SgWorkTypeModel:
+      title: SgWorkTypeModel
+      type: object
+      properties:
+        employmentTypes:
+          title: IList<EmploymentTypeEnum>
+          type: array
+          items:
+            title: EmploymentTypeEnum
+            enum:
+            - Unknown
+            - FullTime
+            - PartTime
+            - LabourHire
+            - SuperannuationIncomeStream
+            - Casual
+            - NotApplicable
+            - IndependentContractor
+            - Management
+            - Contract
+            - Intern
+            - Other
+            - Volunteer
+            - Seasonal
+            - Consultant
+            type: string
+            x-title: EmploymentTypeEnum
+          x-title: IList<EmploymentTypeEnum>
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        payCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        leaveCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        accruesLeave:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        mappingType:
+          title: Nullable<WorkTypeMappingType>
+          enum:
+          - PayCategory
+          - LeaveCategory
+          - PrimaryPayCategory
+          - ShiftCondition
+          type: string
+          x-title: Nullable<WorkTypeMappingType>
+        shortCode:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    UkWorkTypeModel:
+      title: UkWorkTypeModel
+      type: object
+      properties:
+        employmentTypes:
+          title: IList<UkEmploymentTypeEnum>
+          type: array
+          items:
+            title: UkEmploymentTypeEnum
+            enum:
+            - Unknown
+            - FullTime
+            - PartTime
+            - Casual
+            - NotApplicable
+            type: string
+            x-title: UkEmploymentTypeEnum
+          x-title: IList<UkEmploymentTypeEnum>
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        payCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        leaveCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        accruesLeave:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        mappingType:
+          title: Nullable<WorkTypeMappingType>
+          enum:
+          - PayCategory
+          - LeaveCategory
+          - PrimaryPayCategory
+          - ShiftCondition
+          type: string
+          x-title: Nullable<WorkTypeMappingType>
+        shortCode:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

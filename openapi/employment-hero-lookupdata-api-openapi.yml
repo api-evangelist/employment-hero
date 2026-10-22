@@ -1,0 +1,417 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Lookup Data API
+  version: '1.0'
+  description: 'Operations tagged LookupData across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: LookupData
+  description: Lookup Data
+paths:
+  /api/v2/business/{businessId}/lookupdata/timezones:
+    get:
+      tags:
+      - LookupData
+      summary: List Time Zone Types
+      description: Lists all of the time zone types.
+      operationId: LookupData_TimeZones
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+                x-title: List<NameIdPair>
+            application/xml:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+                x-title: List<NameIdPair>
+            text/plain:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+                x-title: List<NameIdPair>
+            application/octet-stream:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+                x-title: List<NameIdPair>
+            text/json:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+                x-title: List<NameIdPair>
+  /api/v2/lookupdata/countries:
+    get:
+      tags:
+      - LookupData
+      summary: List countries
+      operationId: LookupData_Countries
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+                x-title: List<NameIdPair>
+            application/xml:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+                x-title: List<NameIdPair>
+            text/plain:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+                x-title: List<NameIdPair>
+            application/octet-stream:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+                x-title: List<NameIdPair>
+            text/json:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+                x-title: List<NameIdPair>
+  /api/v2/lookupdata/employeegrouppermissions:
+    get:
+      tags:
+      - LookupData
+      summary: List Employee Group Permission Types
+      description: Lists all of the employee group permission types.
+      operationId: LookupData_EmployeeGroupPermissions
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+                x-title: List<NameIdPair>
+            application/xml:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+                x-title: List<NameIdPair>
+            text/plain:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+                x-title: List<NameIdPair>
+            application/octet-stream:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+                x-title: List<NameIdPair>
+            text/json:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+                x-title: List<NameIdPair>
+  /api/v2/lookupdata/genders:
+    get:
+      tags:
+      - LookupData
+      summary: List gender options
+      operationId: LookupData_Genders
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: List<String>
+                type: array
+                items:
+                  title: String
+                  type: string
+                  x-title: String
+                x-title: List<String>
+            application/xml:
+              schema:
+                title: List<String>
+                type: array
+                items:
+                  title: String
+                  type: string
+                  x-title: String
+                x-title: List<String>
+            text/plain:
+              schema:
+                title: List<String>
+                type: array
+                items:
+                  title: String
+                  type: string
+                  x-title: String
+                x-title: List<String>
+            application/octet-stream:
+              schema:
+                title: List<String>
+                type: array
+                items:
+                  title: String
+                  type: string
+                  x-title: String
+                x-title: List<String>
+            text/json:
+              schema:
+                title: List<String>
+                type: array
+                items:
+                  title: String
+                  type: string
+                  x-title: String
+                x-title: List<String>
+  /api/v2/lookupdata/industries:
+    get:
+      tags:
+      - LookupData
+      summary: List industry options
+      operationId: LookupData_Industries
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: List<String>
+                type: array
+                items:
+                  title: String
+                  type: string
+                  x-title: String
+                x-title: List<String>
+            application/xml:
+              schema:
+                title: List<String>
+                type: array
+                items:
+                  title: String
+                  type: string
+                  x-title: String
+                x-title: List<String>
+            text/plain:
+              schema:
+                title: List<String>
+                type: array
+                items:
+                  title: String
+                  type: string
+                  x-title: String
+                x-title: List<String>
+            application/octet-stream:
+              schema:
+                title: List<String>
+                type: array
+                items:
+                  title: String
+                  type: string
+                  x-title: String
+                x-title: List<String>
+            text/json:
+              schema:
+                title: List<String>
+                type: array
+                items:
+                  title: String
+                  type: string
+                  x-title: String
+                x-title: List<String>
+  /api/v2/lookupdata/reports:
+    get:
+      tags:
+      - LookupData
+      summary: List Report Types
+      description: Lists all of the report types.
+      operationId: LookupData_Reports
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+            application/xml:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+            text/plain:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+            application/octet-stream:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+            text/json:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+  /api/v2/lookupdata/timezones:
+    get:
+      tags:
+      - LookupData
+      summary: List Time Zone Types
+      description: Lists all of the time zone types.
+      operationId: LookupData_TimeZones_2
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+                x-title: List<NameIdPair>
+            application/xml:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+                x-title: List<NameIdPair>
+            text/plain:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+                x-title: List<NameIdPair>
+            application/octet-stream:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+                x-title: List<NameIdPair>
+            text/json:
+              schema:
+                title: List<NameIdPair>
+                type: array
+                items:
+                  $ref: '#/components/schemas/NameIdPair'
+                x-title: List<NameIdPair>
+components:
+  schemas:
+    NameIdPair:
+      title: NameIdPair
+      required:
+      - id
+      - name
+      type: object
+      properties:
+        id:
+          title: String
+          type: string
+          x-title: String
+        name:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

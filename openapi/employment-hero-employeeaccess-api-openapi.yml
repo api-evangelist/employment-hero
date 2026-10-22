@@ -1,0 +1,396 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Employee Access API
+  version: '1.0'
+  description: 'Operations tagged EmployeeAccess across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: EmployeeAccess
+  description: Employee Access
+paths:
+  /api/v2/business/{businessId}/employee/{employeeId}/access:
+    get:
+      tags:
+      - EmployeeAccess
+      summary: Get Users With Access to Employee
+      description: 'Gets a list of all users with access to this employee.
+
+
+        This operation supports OData queries.'
+      operationId: EmployeeAccess_GetAll
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IQueryable<EmployeeAccessModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeAccessModel'
+            application/xml:
+              schema:
+                title: IQueryable<EmployeeAccessModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeAccessModel'
+            text/plain:
+              schema:
+                title: IQueryable<EmployeeAccessModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeAccessModel'
+            application/octet-stream:
+              schema:
+                title: IQueryable<EmployeeAccessModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeAccessModel'
+            text/json:
+              schema:
+                title: IQueryable<EmployeeAccessModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeAccessModel'
+    post:
+      tags:
+      - EmployeeAccess
+      summary: Grant Employee Access
+      description: Grants a user access to the employee.
+      operationId: EmployeeAccess_AddEmployeeAccess
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Created
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateEmployeeAccessModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreateEmployeeAccessModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/CreateEmployeeAccessModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CreateEmployeeAccessModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CreateEmployeeAccessModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CreateEmployeeAccessModel'
+    put:
+      tags:
+      - EmployeeAccess
+      summary: Update Employee Access Record
+      description: Updates the employee access record for the specified user.
+      operationId: EmployeeAccess_UpdateUserAccess
+      parameters:
+      - in: query
+        name: email
+        title: String
+        schema:
+          type: string
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccessModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AccessModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AccessModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AccessModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AccessModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AccessModel'
+    delete:
+      tags:
+      - EmployeeAccess
+      summary: Revoke Employee Access
+      description: Revoke a user's access to the employee.
+      operationId: EmployeeAccess_DeleteEmployeeAccess
+      parameters:
+      - in: query
+        name: email
+        title: String
+        schema:
+          type: string
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /api/v2/business/{businessId}/employee/{employeeId}/access/email:
+    get:
+      tags:
+      - EmployeeAccess
+      summary: Get Employee Access for User
+      description: Gets a list of all employees to which the user (specified by email) has access.
+      operationId: EmployeeAccess_ListEmployeeAccess
+      parameters:
+      - in: query
+        name: email
+        title: String
+        schema:
+          type: string
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeAccessModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeeAccessModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EmployeeAccessModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EmployeeAccessModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeAccessModel'
+components:
+  schemas:
+    AccessModel:
+      title: AccessModel
+      type: object
+      properties:
+        name:
+          title: String
+          type: string
+          x-title: String
+        email:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+    CreateEmployeeAccessModel:
+      title: CreateEmployeeAccessModel
+      type: object
+      properties:
+        suppressNotificationEmails:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        name:
+          title: String
+          type: string
+          x-title: String
+        email:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    EmployeeAccessModel:
+      title: EmployeeAccessModel
+      type: object
+      properties:
+        name:
+          title: String
+          type: string
+          x-title: String
+        email:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

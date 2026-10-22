@@ -1,0 +1,860 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Invoices API
+  version: '1.0'
+  description: 'Operations tagged Invoices across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: Invoices
+  description: Invoices
+paths:
+  /api/v2/brand/{brandId}/Invoice:
+    get:
+      tags:
+      - Invoices
+      summary: Get Brand Invoices
+      description: Get invoices for the specified Brand.
+      operationId: BrandInvoice_GetBrandInvoices
+      parameters:
+      - in: path
+        name: brandId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: FromDate
+        title: Nullable<DateTime>
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: ToDate
+        title: Nullable<DateTime>
+        schema:
+          type: string
+          format: date-time
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<InvoiceModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/InvoiceModel'
+                x-title: IList<InvoiceModel>
+            application/xml:
+              schema:
+                title: IList<InvoiceModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/InvoiceModel'
+                x-title: IList<InvoiceModel>
+            text/plain:
+              schema:
+                title: IList<InvoiceModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/InvoiceModel'
+                x-title: IList<InvoiceModel>
+            application/octet-stream:
+              schema:
+                title: IList<InvoiceModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/InvoiceModel'
+                x-title: IList<InvoiceModel>
+            text/json:
+              schema:
+                title: IList<InvoiceModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/InvoiceModel'
+                x-title: IList<InvoiceModel>
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /api/v2/brand/{brandId}/Invoice/{id}:
+    get:
+      tags:
+      - Invoices
+      summary: Get Brand Invoice By ID
+      description: Gets the Brand invoice with the specified ID.
+      operationId: BrandInvoice_GetBrandInvoiceById
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: brandId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/InvoiceModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/InvoiceModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/InvoiceModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /api/v2/brand/{brandId}/Invoice/{id}/excel:
+    get:
+      tags:
+      - Invoices
+      summary: Get Brand Invoice Excel By ID
+      description: Gets the Brand invoice Excel with the specified ID.
+      operationId: BrandInvoice_GetBrandInvoiceExcelById
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: brandId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /api/v2/brand/{brandId}/Invoice/{id}/pdf:
+    get:
+      tags:
+      - Invoices
+      summary: Get Brand Invoice PDF By ID
+      description: Gets the Brand invoice PDF with the specified ID.
+      operationId: BrandInvoice_GetBrandInvoicePdfById
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: brandId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /api/v2/business/{businessId}/Invoice:
+    get:
+      tags:
+      - Invoices
+      summary: Get Business Invoices
+      description: Get invoices for the specified Business.
+      operationId: Invoice_GetBusinessInvoices
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: FromDate
+        title: Nullable<DateTime>
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: ToDate
+        title: Nullable<DateTime>
+        schema:
+          type: string
+          format: date-time
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<InvoiceModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/InvoiceModel'
+            application/xml:
+              schema:
+                title: IList<InvoiceModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/InvoiceModel'
+            text/plain:
+              schema:
+                title: IList<InvoiceModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/InvoiceModel'
+            application/octet-stream:
+              schema:
+                title: IList<InvoiceModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/InvoiceModel'
+            text/json:
+              schema:
+                title: IList<InvoiceModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/InvoiceModel'
+  /api/v2/business/{businessId}/Invoice/{id}:
+    get:
+      tags:
+      - Invoices
+      summary: Get Business Invoice By ID
+      description: Gets the Business invoice with the specified ID.
+      operationId: Invoice_GetBusinessInvoiceById
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/InvoiceModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/InvoiceModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/InvoiceModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceModel'
+  /api/v2/business/{businessId}/Invoice/{id}/pdf:
+    get:
+      tags:
+      - Invoices
+      summary: Get Business Invoice PDF By ID
+      description: Gets the Business invoice with the specified ID.
+      operationId: Invoice_GetBusinessInvoicePdfById
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+  /api/v2/reseller/{resellerId}/Invoice:
+    get:
+      tags:
+      - Invoices
+      summary: Get Reseller Invoices
+      description: Get invoices for the specified Reseller.
+      operationId: ResellerInvoice_GetResellerInvoices
+      parameters:
+      - in: path
+        name: resellerId
+        required: true
+        title: Nullable<Int32>
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: FromDate
+        title: Nullable<DateTime>
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: ToDate
+        title: Nullable<DateTime>
+        schema:
+          type: string
+          format: date-time
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<InvoiceModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/InvoiceModel'
+                x-title: IList<InvoiceModel>
+            application/xml:
+              schema:
+                title: IList<InvoiceModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/InvoiceModel'
+                x-title: IList<InvoiceModel>
+            text/plain:
+              schema:
+                title: IList<InvoiceModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/InvoiceModel'
+                x-title: IList<InvoiceModel>
+            application/octet-stream:
+              schema:
+                title: IList<InvoiceModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/InvoiceModel'
+                x-title: IList<InvoiceModel>
+            text/json:
+              schema:
+                title: IList<InvoiceModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/InvoiceModel'
+                x-title: IList<InvoiceModel>
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /api/v2/reseller/{resellerId}/Invoice/{id}:
+    get:
+      tags:
+      - Invoices
+      summary: Get Reseller Invoice By ID
+      description: Gets the Reseller invoice with the specified ID.
+      operationId: ResellerInvoice_GetResellerInvoiceById
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: resellerId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/InvoiceModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/InvoiceModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/InvoiceModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /api/v2/reseller/{resellerId}/Invoice/{id}/excel:
+    get:
+      tags:
+      - Invoices
+      summary: Get Reseller Invoice Excel By ID
+      description: Gets the Reseller invoice Excel with the specified ID.
+      operationId: ResellerInvoice_GetResellerInvoiceExcelById
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: resellerId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+  /api/v2/reseller/{resellerId}/Invoice/{id}/pdf:
+    get:
+      tags:
+      - Invoices
+      summary: Get Reseller Invoice PDF By ID
+      description: Gets the Reseller invoice PDF with the specified ID.
+      operationId: ResellerInvoice_GetResellerInvoicePdfById
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: resellerId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ByteArrayContent'
+components:
+  schemas:
+    StringStringIEnumerableKeyValuePair:
+      title: KeyValuePair<String,IEnumerable`1>
+      type: object
+      properties:
+        key:
+          title: String
+          type: string
+          x-title: String
+        value:
+          title: IEnumerable<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+      additionalProperties: false
+    ByteArrayContent:
+      title: ByteArrayContent
+      type: object
+      properties:
+        headers:
+          title: HttpContentHeaders
+          type: array
+          items:
+            $ref: '#/components/schemas/StringStringIEnumerableKeyValuePair'
+          readOnly: true
+      additionalProperties: false
+    InvoiceModel:
+      title: InvoiceModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        invoiceNumber:
+          title: String
+          type: string
+          x-title: String
+        date:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        totalExcludingGst:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        gst:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        totalIncludingGst:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        cultureName:
+          title: String
+          type: string
+          x-title: String
+        currency:
+          title: String
+          type: string
+          x-title: String
+        lineItems:
+          title: List<InvoiceLineItemModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/InvoiceLineItemModel'
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+    InvoiceLineItemDetailModel:
+      title: InvoiceLineItemDetailModel
+      type: object
+      properties:
+        groupName:
+          title: String
+          type: string
+          x-title: String
+        description:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    InvoiceLineItemModel:
+      title: InvoiceLineItemModel
+      type: object
+      properties:
+        abn:
+          title: String
+          type: string
+          x-title: String
+        businessNumber:
+          title: String
+          type: string
+          x-title: String
+        businessId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        billingPlan:
+          title: String
+          type: string
+          x-title: String
+        description:
+          title: String
+          type: string
+          x-title: String
+        unitPriceIncludingGst:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        quantity:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        totalIncludingGst:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        details:
+          title: List<InvoiceLineItemDetailModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/InvoiceLineItemDetailModel'
+        whiteLabelName:
+          title: String
+          type: string
+          x-title: String
+        brandName:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

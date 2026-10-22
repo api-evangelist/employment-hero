@@ -1,0 +1,241 @@
+name: Employment Hero MCP Server (candidate)
+type: MCPServer
+generated: '2026-10-20'
+method: generated
+status: candidate
+description: No official Employment Hero MCP server was found (web searches 2026-10-20; developer.employmenthero.com/llms.txt names no MCP; /.well-known/mcp.json on developer.employmenthero.com returned
+  404). Unified.to lists a third-party Employment Hero Payroll MCP integration (beta), which is not a provider product. This candidate tool list is derived one-to-one from the saved Employment Hero REST
+  OpenAPI operations.
+source:
+- https://developer.employmenthero.com/llms.txt
+- https://unified.to/integrations/employmentheropayroll.md
+deployment:
+  mode: none
+  auth: oauth
+  verified: derived
+auth:
+  type: oauth2
+  authorizationUrl: https://oauth.employmenthero.com/oauth2/authorize
+  tokenUrl: https://oauth.employmenthero.com/oauth2/token
+third_party:
+- name: Unified.to Employment Hero Payroll integration / MCP
+  url: https://unified.to/integrations/employmentheropayroll.md
+  official: false
+  note: Beta; HRIS employee and group models only (per search result).
+tools:
+- name: getEmployeeBankAccounts
+  description: Get employee bank accounts
+  method: GET
+  path: /api/v2/organisations/{organisation_id}/employees/{employee_id}/bank_accounts
+  operationId: getEmployeeBankAccounts
+  source_openapi: openapi/employment-hero-bank-accounts-api-openapi.yml
+  annotations:
+    readOnlyHint: true
+    destructiveHint: false
+- name: listCertifications
+  description: List certifications
+  method: GET
+  path: /api/v1/organisations/{organisation_id}/certifications
+  operationId: listCertifications
+  source_openapi: openapi/employment-hero-certifications-api-openapi.yml
+  annotations:
+    readOnlyHint: true
+    destructiveHint: false
+- name: createCertification
+  description: Create certification
+  method: POST
+  path: /api/v1/organisations/{organisation_id}/certifications
+  operationId: createCertification
+  source_openapi: openapi/employment-hero-certifications-api-openapi.yml
+  annotations:
+    readOnlyHint: false
+    destructiveHint: false
+- name: getCertification
+  description: Get certification
+  method: GET
+  path: /api/v1/organisations/{organisation_id}/certifications/{certification_id}
+  operationId: getCertification
+  source_openapi: openapi/employment-hero-certifications-api-openapi.yml
+  annotations:
+    readOnlyHint: true
+    destructiveHint: false
+- name: updateCertification
+  description: Update certification
+  method: PATCH
+  path: /api/v1/organisations/{organisation_id}/certifications/{certification_id}
+  operationId: updateCertification
+  source_openapi: openapi/employment-hero-certifications-api-openapi.yml
+  annotations:
+    readOnlyHint: false
+    destructiveHint: false
+- name: deleteCertification
+  description: Delete certification
+  method: DELETE
+  path: /api/v1/organisations/{organisation_id}/certifications/{certification_id}
+  operationId: deleteCertification
+  source_openapi: openapi/employment-hero-certifications-api-openapi.yml
+  annotations:
+    readOnlyHint: false
+    destructiveHint: true
+- name: certificationPollingStatus
+  description: Certification async polling status
+  method: GET
+  path: /api/v1/organisations/{organisation_id}/certifications/polling_status
+  operationId: certificationPollingStatus
+  source_openapi: openapi/employment-hero-certifications-api-openapi.yml
+  annotations:
+    readOnlyHint: true
+    destructiveHint: false
+- name: certificationArchiveStatus
+  description: Archive or unarchive certification
+  method: PATCH
+  path: /api/v1/organisations/{organisation_id}/certifications/{certification_id}/archive_status
+  operationId: certificationArchiveStatus
+  source_openapi: openapi/employment-hero-certifications-api-openapi.yml
+  annotations:
+    readOnlyHint: false
+    destructiveHint: false
+- name: uploadCertificationFile
+  description: Upload certification file
+  method: POST
+  path: /api/v1/organisations/{organisation_id}/certifications/file_uploads
+  operationId: uploadCertificationFile
+  source_openapi: openapi/employment-hero-certifications-api-openapi.yml
+  annotations:
+    readOnlyHint: false
+    destructiveHint: false
+- name: listCostCentres
+  description: List cost centres
+  method: GET
+  path: /api/v1/organisations/{organisation_id}/cost_centres
+  operationId: listCostCentres
+  source_openapi: openapi/employment-hero-cost-centres-api-openapi.yml
+  annotations:
+    readOnlyHint: true
+    destructiveHint: false
+- name: listCustomFields
+  description: List custom fields
+  method: GET
+  path: /api/v1/organisations/{organisation_id}/custom_fields
+  operationId: listCustomFields
+  source_openapi: openapi/employment-hero-custom-fields-api-openapi.yml
+  annotations:
+    readOnlyHint: true
+    destructiveHint: false
+- name: createDepartment
+  description: Create department
+  method: POST
+  path: /api/v1/organisations/{organisation_id}/departments
+  operationId: createDepartment
+  source_openapi: openapi/employment-hero-departments-api-openapi.yml
+  annotations:
+    readOnlyHint: false
+    destructiveHint: false
+- name: updateDepartment
+  description: Update department
+  method: PATCH
+  path: /api/v1/organisations/{organisation_id}/departments/{department_id}
+  operationId: updateDepartment
+  source_openapi: openapi/employment-hero-departments-api-openapi.yml
+  annotations:
+    readOnlyHint: false
+    destructiveHint: false
+- name: listEmployeeDocuments
+  description: List employee documents
+  method: GET
+  path: /api/v1/organisations/{organisation_id}/employees/{employee_id}/documents
+  operationId: listEmployeeDocuments
+  source_openapi: openapi/employment-hero-documents-api-openapi.yml
+  annotations:
+    readOnlyHint: true
+    destructiveHint: false
+- name: uploadEmployeeDocument
+  description: Upload employee document
+  method: POST
+  path: /api/v1/organisations/{organisation_id}/employees/{employee_id}/documents
+  operationId: uploadEmployeeDocument
+  source_openapi: openapi/employment-hero-documents-api-openapi.yml
+  annotations:
+    readOnlyHint: false
+    destructiveHint: false
+- name: listEmergencyContacts
+  description: List employee emergency contacts
+  method: GET
+  path: /api/v1/organisations/{organisation_id}/employees/{employee_id}/emergency_contacts
+  operationId: listEmergencyContacts
+  source_openapi: openapi/employment-hero-emergency-contacts-api-openapi.yml
+  annotations:
+    readOnlyHint: true
+    destructiveHint: false
+- name: listEmployees
+  description: List employees
+  method: GET
+  path: /api/v1/organisations/{organisation_id}/employees
+  operationId: listEmployees
+  source_openapi: openapi/employment-hero-employees-api-openapi.yml
+  annotations:
+    readOnlyHint: true
+    destructiveHint: false
+- name: getEmployee
+  description: Get employee
+  method: GET
+  path: /api/v1/organisations/{organisation_id}/employees/{id}
+  operationId: getEmployee
+  source_openapi: openapi/employment-hero-employees-api-openapi.yml
+  annotations:
+    readOnlyHint: true
+    destructiveHint: false
+- name: quickAddEmployee
+  description: Quick add employee
+  method: POST
+  path: /api/v1/organisations/{organisation_id}/employees/quick_add_employee
+  operationId: quickAddEmployee
+  source_openapi: openapi/employment-hero-employees-api-openapi.yml
+  annotations:
+    readOnlyHint: false
+    destructiveHint: false
+- name: listForms
+  description: List forms
+  method: GET
+  path: /api/v1/organisations/{organisation_id}/forms
+  operationId: listForms
+  source_openapi: openapi/employment-hero-forms-api-openapi.yml
+  annotations:
+    readOnlyHint: true
+    destructiveHint: false
+- name: getForm
+  description: Get form
+  method: GET
+  path: /api/v1/organisations/{organisation_id}/forms/{form_id}
+  operationId: getForm
+  source_openapi: openapi/employment-hero-forms-api-openapi.yml
+  annotations:
+    readOnlyHint: true
+    destructiveHint: false
+- name: listFormResponses
+  description: List form responses
+  method: GET
+  path: /api/v1/organisations/{organisation_id}/forms/{form_id}/responses
+  operationId: listFormResponses
+  source_openapi: openapi/employment-hero-forms-api-openapi.yml
+  annotations:
+    readOnlyHint: true
+    destructiveHint: false
+- name: getFormResponse
+  description: Get form response
+  method: GET
+  path: /api/v1/organisations/{organisation_id}/forms/{form_id}/responses/{response_id}
+  operationId: getFormResponse
+  source_openapi: openapi/employment-hero-forms-api-openapi.yml
+  annotations:
+    readOnlyHint: true
+    destructiveHint: false
+- name: getJobHistories
+  description: Get contractor job history
+  method: GET
+  path: /api/v1/organisations/{organisation_id}/employees/{employee_id}/job_histories
+  operationId: getJobHistories
+  source_openapi: openapi/employment-hero-job-histories-api-openapi.yml
+  annotations:
+    readOnlyHint: true
+    destructiveHint: false

@@ -1,0 +1,571 @@
+openapi: 3.2.0
+info:
+  title: Australia Employee Super Fund API
+  version: AU
+  description: Employee Super Funds
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: EmployeeSuperFund
+  description: Employee Super Funds
+paths:
+  /api/v2/business/{businessId}/employee/{employeeId}/superfund:
+    get:
+      tags:
+      - EmployeeSuperFund
+      summary: List Super Funds
+      description: Lists all of the super funds for this employee.
+      operationId: AuEmployeeSuperFund_List
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<SuperFundModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SuperFundModel'
+            application/xml:
+              schema:
+                title: IList<SuperFundModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SuperFundModel'
+            text/plain:
+              schema:
+                title: IList<SuperFundModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SuperFundModel'
+            application/octet-stream:
+              schema:
+                title: IList<SuperFundModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SuperFundModel'
+            text/json:
+              schema:
+                title: IList<SuperFundModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SuperFundModel'
+    post:
+      tags:
+      - EmployeeSuperFund
+      summary: Create Super Fund
+      description: Creates a new super fund for the employee.
+      operationId: AuEmployeeSuperFund_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaveSuperFundResponseModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SaveSuperFundResponseModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SaveSuperFundResponseModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/SaveSuperFundResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SaveSuperFundResponseModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaveSuperFundModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SaveSuperFundModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/SaveSuperFundModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SaveSuperFundModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SaveSuperFundModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SaveSuperFundModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/superfund/{superFundId}:
+    put:
+      tags:
+      - EmployeeSuperFund
+      summary: Update Super Fund
+      description: Updates the employee's super fund with the specified ID.
+      operationId: AuEmployeeSuperFund_Put_2
+      parameters:
+      - in: path
+        name: superFundId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaveSuperFundResponseModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SaveSuperFundResponseModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SaveSuperFundResponseModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/SaveSuperFundResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SaveSuperFundResponseModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaveSuperFundModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SaveSuperFundModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/SaveSuperFundModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SaveSuperFundModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SaveSuperFundModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SaveSuperFundModel'
+    delete:
+      tags:
+      - EmployeeSuperFund
+      summary: Delete Super Fund
+      description: Deletes the employee's super fund with the specified ID.
+      operationId: AuEmployeeSuperFund_Delete_3
+      parameters:
+      - in: path
+        name: superfundId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaveSuperFundResponseModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SaveSuperFundResponseModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SaveSuperFundResponseModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/SaveSuperFundResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SaveSuperFundResponseModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/superfund/{superfundId}:
+    get:
+      tags:
+      - EmployeeSuperFund
+      summary: Get Super Fund by ID
+      description: Gets the super fund for this employee with the specified ID.
+      operationId: AuEmployeeSuperFund_Get_4
+      parameters:
+      - in: path
+        name: superFundId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuperFundModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SuperFundModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SuperFundModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/SuperFundModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SuperFundModel'
+components:
+  schemas:
+    SaveSuperFundModel:
+      title: SaveSuperFundModel
+      type: object
+      properties:
+        memberNumber:
+          title: String
+          type: string
+          x-title: String
+        allocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        fixedAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        productCode:
+          title: String
+          type: string
+          x-title: String
+        fundName:
+          title: String
+          type: string
+          x-title: String
+        allocateBalance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isEmployerNominatedFund:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+      additionalProperties: false
+    SuperProductModel:
+      title: SuperProductModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        abn:
+          title: String
+          type: string
+          x-title: String
+        productCode:
+          title: String
+          type: string
+          x-title: String
+        productType:
+          title: String
+          type: string
+          x-title: String
+        businessName:
+          title: String
+          type: string
+          x-title: String
+        displayName:
+          title: String
+          type: string
+          x-title: String
+        productName:
+          title: String
+          type: string
+          x-title: String
+        accountNumber:
+          title: String
+          type: string
+          x-title: String
+        bsb:
+          title: String
+          type: string
+          x-title: String
+        accountName:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: ExternalService
+          enum:
+          - None
+          - Saasu
+          - Xero
+          - MYOB
+          - Deputy
+          - EmployeeTimePunch
+          - ClickSuper
+          - IntegratedTimesheets
+          - FileImport
+          - FileExport
+          - QuickBooks
+          - Harmony
+          - AwardStore
+          - Attache
+          - IntegratedRostering
+          - ReckonAccounts
+          - API
+          - MicroPower
+          - RosterLive
+          - NetSuite
+          - Kounta
+          - TimeAndAttendanceKiosk
+          - DetailedFileExport
+          - JonasPremier
+          - WageEasy
+          - Maestrano
+          - WorkZone
+          - EmployeePortal
+          - RosterTemplate
+          - Onboarding
+          - Admin
+          - WorkZoneClockOnOff
+          - NetSuiteOneWorld
+          - Sage50
+          - PensionSync
+          - FinancialsOffice
+          - ProntoXI
+          - PayRunDefault
+          - StandardWorkDay
+          - Beam
+          - PayRunAutomation
+          - BureauDashboard
+          - Wiise
+          - QBOMigrationTool
+          - AbridgedFileImport
+          - QBOForcedMigration
+          - HmrcDpsUpdate
+          - HmrcDpsStudentLoan
+          - HmrcDpsPostGradLoan
+          - Sage50FileImporter
+          - FPSFileImporter
+          - OAuth
+          - FreshBooks
+          - StarFileImporter
+          - ActiveCampaign
+          - SummaryAndDetailsExport
+          - Telleroo
+          - EmployeeAdvancedHoursUpload
+          - BusinessCentral
+          - Paytron
+          - AccessFinancials
+          - Comma
+          - Zoho
+          - FlatFileEmployeeImporter
+          - Twinfield
+          - SageAccounting
+          - Square
+          - Quickfile
+          - Tide
+          - TideSso
+          - FreeAgent
+          - Akahu
+          - InstaPay
+          - Zepto
+          - Slack
+          - Caxton
+          - QuickbooksStandalonePayroll
+          - ImportEmployeeSelfSetup
+          - XeroIdentityPayrollSignUp
+          - XeroIdentityHrSignUp
+          - SageIntacct
+          - InstaPayDaily
+          - Salesforce
+          - AutomatedPublicHolidayNotWorked
+          - EmployeePayRatesUpload
+          - Zapier
+          - StapledSuperFund
+          - Swag
+          - Crezco
+          - KafkaConsumer
+          - EmployeeLeaveRateCalculationMethodUpload
+          - MoneyMovement
+          - PayRunSettingsFlatFileImport
+          - Sage200
+          - RosterCostCalculation
+          - HeroClear
+          - BrightPay
+          - EmployeeLeaveYearStartDatesImport
+          - PayConditionComparisonUpload
+          - GlobalMoneyMovement
+          type: string
+          x-title: ExternalService
+        electronicServiceAddress:
+          title: String
+          type: string
+          x-title: String
+        email:
+          title: String
+          type: string
+          x-title: String
+        externalReferenceId:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    SuperFundModel:
+      title: SuperFundModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        memberNumber:
+          title: String
+          type: string
+          x-title: String
+        allocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        fixedAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        superProduct:
+          $ref: '#/components/schemas/SuperProductModel'
+        allocateBalance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        canBeDeleted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isEmployerNominatedFund:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+      additionalProperties: false
+    SaveSuperFundResponseModel:
+      title: SaveSuperFundResponseModel
+      type: object
+      properties:
+        validationWarning:
+          title: String
+          type: string
+          x-title: String
+        result:
+          $ref: '#/components/schemas/SuperFundModel'
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-navigateMethodsByName: true

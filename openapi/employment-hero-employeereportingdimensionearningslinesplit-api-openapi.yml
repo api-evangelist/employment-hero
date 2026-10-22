@@ -1,0 +1,571 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Employee Reporting Dimension Earnings Line…
+  version: '1.0'
+  description: 'Operations tagged EmployeeReportingDimensionEarningsLineSplit across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: EmployeeReportingDimensionEarningsLineSplit
+  description: Employee Reporting Dimension Earnings Line Split
+paths:
+  /api/v2/business/{businessId}/employee/{employeeId}/earningslinesplit/dimension:
+    get:
+      tags:
+      - EmployeeReportingDimensionEarningsLineSplit
+      summary: Get Employee Dimension Earnings Line Splits
+      description: 'Lists all the dimension earnings line splits for this employee.
+
+
+        This operation supports OData queries.'
+      operationId: GenericDimensionEarningsLineSplit_Get
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IQueryable<DimensionEarningsLineSplitApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/DimensionEarningsLineSplitApiModel'
+            application/xml:
+              schema:
+                title: IQueryable<DimensionEarningsLineSplitApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/DimensionEarningsLineSplitApiModel'
+            text/plain:
+              schema:
+                title: IQueryable<DimensionEarningsLineSplitApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/DimensionEarningsLineSplitApiModel'
+            application/octet-stream:
+              schema:
+                title: IQueryable<DimensionEarningsLineSplitApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/DimensionEarningsLineSplitApiModel'
+            text/json:
+              schema:
+                title: IQueryable<DimensionEarningsLineSplitApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/DimensionEarningsLineSplitApiModel'
+    post:
+      tags:
+      - EmployeeReportingDimensionEarningsLineSplit
+      summary: Create Dimension Earnings Line Split
+      description: Creates a dimension earnings line split for a specific employee
+      operationId: GenericDimensionEarningsLineSplit_Post_2
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DimensionEarningsLineSplitApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/DimensionEarningsLineSplitApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DimensionEarningsLineSplitApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/DimensionEarningsLineSplitApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DimensionEarningsLineSplitApiModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+    put:
+      tags:
+      - EmployeeReportingDimensionEarningsLineSplit
+      summary: Update Dimension Earnings Line Split
+      description: Updates a dimension earnings line split by matching against existing reporting dimension values
+      operationId: GenericDimensionEarningsLineSplit_Put_3
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DimensionEarningsLineSplitApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/DimensionEarningsLineSplitApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DimensionEarningsLineSplitApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/DimensionEarningsLineSplitApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DimensionEarningsLineSplitApiModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/earningslinesplit/dimension/{dimensionId}/value/{dimensionValueId}:
+    get:
+      tags:
+      - EmployeeReportingDimensionEarningsLineSplit
+      summary: Get Employee Dimension Earnings Line Split By Id
+      description: 'Lists all the dimension earnings line splits for this employee.
+
+
+        This operation supports OData queries.'
+      operationId: GenericDimensionEarningsLineSplit_GetById
+      parameters:
+      - in: path
+        name: dimensionId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: dimensionValueId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DimensionEarningsLineSplitApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/DimensionEarningsLineSplitApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DimensionEarningsLineSplitApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/DimensionEarningsLineSplitApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DimensionEarningsLineSplitApiModel'
+        '204':
+          description: No Content
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    delete:
+      tags:
+      - EmployeeReportingDimensionEarningsLineSplit
+      summary: Delete Dimension Earnings Line Split
+      description: Deletes the employee's earnings line split with the specified reporting dimension ID
+      operationId: GenericDimensionEarningsLineSplit_Delete_4
+      parameters:
+      - in: path
+        name: dimensionId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: dimensionValueId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+components:
+  schemas:
+    ReportingDimensionValueBaseApiModel:
+      title: ReportingDimensionValueBaseApiModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        reportingDimensionId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+    DimensionEarningsLineSplitApiModel:
+      title: DimensionEarningsLineSplitApiModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        reportingDimensionValues:
+          title: IList<ReportingDimensionValueBaseApiModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/ReportingDimensionValueBaseApiModel'
+        allocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        allocateBalance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    EarningsLineSplitEditModel:
+      title: EarningsLineSplitEditModel
+      type: object
+      properties:
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        allocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        allocateBalance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        reportingDimensionValueIds:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: List<Int32>
+      additionalProperties: false
+    EarningsLineSplitEditModel_2:
+      title: EarningsLineSplitEditModel
+      type: object
+      properties:
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        allocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        allocateBalance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        reportingDimensionValueIds:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+      additionalProperties: false
+    EarningsLineSplitEditModel_3:
+      title: EarningsLineSplitEditModel
+      type: object
+      properties:
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        allocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        allocateBalance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        reportingDimensionValueIds:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+      additionalProperties: false
+    EarningsLineSplitEditModel_4:
+      title: EarningsLineSplitEditModel
+      type: object
+      properties:
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        allocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        allocateBalance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        reportingDimensionValueIds:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

@@ -1,0 +1,18 @@
+generated: '2026-10-20'
+method: searched
+source: https://api.keypay.com.au/guides/Usage.html
+name: Employment Hero rate limits
+limit_count: 1
+limits:
+- name: Employment Hero Payroll API request rate
+  limit_text: The Employment Hero Payroll API is currently limited to 5 requests per second per API key per IP address.
+  max: 5
+  limit: 5
+  window: second
+  scope: per API key per IP address
+  api: Employment Hero Payroll API (api.yourpayroll.com.au / api.keypay.com.au)
+headers: []
+status_on_exhaustion: null
+note: >-
+  The Payroll guide states the limit only; it names no rate-limit response headers or exhaustion status code.
+  The Employment Hero HR API docs (developer.employmenthero.com, 316 indexed pages) publish no rate limit.

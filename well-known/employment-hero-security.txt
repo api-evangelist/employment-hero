@@ -1,0 +1,5 @@
+Contact: mailto:vuln@employmenthero.com
+Expires: 2026-12-31T15:59:00.000Z
+Preferred-Languages: en
+Canonical: https://employmenthero.com/.well-known/security.txt
+Policy: https://docs.google.com/document/d/10JdrewYyHzmB5C9qxqFDr-2Ya5g0cShWwz8ZeEukXnk

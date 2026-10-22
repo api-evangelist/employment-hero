@@ -1,0 +1,488 @@
+openapi: 3.2.0
+info:
+  title: Australia Pay Condition Comparison API
+  version: AU
+  description: Pay Conditions Comparison
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: PayConditionComparison
+  description: Pay Conditions Comparison
+paths:
+  /api/v2/business/{businessId}/employee/{employeeId}/payconditionscomparison:
+    get:
+      tags:
+      - PayConditionComparison
+      summary: Get Employee Pay Condition Comparisons
+      description: Gets all non-deleted pay condition comparisons for the specified employee.
+      operationId: AuPayConditionComparison_Get
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<PayConditionComparisonApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/PayConditionComparisonApiModel'
+            application/xml:
+              schema:
+                title: IList<PayConditionComparisonApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/PayConditionComparisonApiModel'
+            text/plain:
+              schema:
+                title: IList<PayConditionComparisonApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/PayConditionComparisonApiModel'
+            application/octet-stream:
+              schema:
+                title: IList<PayConditionComparisonApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/PayConditionComparisonApiModel'
+            text/json:
+              schema:
+                title: IList<PayConditionComparisonApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/PayConditionComparisonApiModel'
+    post:
+      tags:
+      - PayConditionComparison
+      summary: Create Pay Condition Comparison
+      description: Creates a new pay condition comparison for the specified employee.
+      operationId: AuPayConditionComparison_Post_2
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PayConditionComparisonApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/PayConditionComparisonApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PayConditionComparisonApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/PayConditionComparisonApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PayConditionComparisonApiModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePayConditionComparisonRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreatePayConditionComparisonRequest'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/CreatePayConditionComparisonRequest'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CreatePayConditionComparisonRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CreatePayConditionComparisonRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CreatePayConditionComparisonRequest'
+  /api/v2/business/{businessId}/employee/{employeeId}/payconditionscomparison/initialservicedate:
+    get:
+      tags:
+      - PayConditionComparison
+      summary: Get Initial Service Date
+      description: Gets the initial service date for the specified employee's pay condition comparison.
+      operationId: AuPayConditionComparison_GetServiceDate
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InitialServiceDateResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/InitialServiceDateResponse'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/InitialServiceDateResponse'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/InitialServiceDateResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/InitialServiceDateResponse'
+    post:
+      tags:
+      - PayConditionComparison
+      summary: Update Initial Service Date
+      description: Updates the initial service date for the specified employee's pay condition comparison.
+      operationId: AuPayConditionComparison_PostServiceDate
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateServiceStartDateRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UpdateServiceStartDateRequest'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/UpdateServiceStartDateRequest'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/UpdateServiceStartDateRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateServiceStartDateRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateServiceStartDateRequest'
+  /api/v2/business/{businessId}/employee/{employeeId}/payconditionscomparison/{id}:
+    delete:
+      tags:
+      - PayConditionComparison
+      summary: Delete Pay Condition Comparison
+      description: Deletes the pay condition comparison with the specified ID for the specified employee.
+      operationId: AuPayConditionComparison_Delete_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /api/v2/business/{businessId}/employee/{employeeId}/payconditionscomparison/{id}/enddate:
+    put:
+      tags:
+      - PayConditionComparison
+      summary: Set Pay Condition Comparison End Date
+      description: Sets, corrects, or clears the end date on the pay condition comparison with the specified ID for the specified employee.
+      operationId: AuPayConditionComparison_EndDate
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PayConditionComparisonApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/PayConditionComparisonApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PayConditionComparisonApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/PayConditionComparisonApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PayConditionComparisonApiModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EndPayConditionComparisonRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EndPayConditionComparisonRequest'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EndPayConditionComparisonRequest'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EndPayConditionComparisonRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EndPayConditionComparisonRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EndPayConditionComparisonRequest'
+components:
+  schemas:
+    CreatePayConditionComparisonRequest:
+      title: CreatePayConditionComparisonRequest
+      type: object
+      properties:
+        awardPackageId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employmentAgreementId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        comparisonStartDateType:
+          title: Nullable<ComparisonStartDateType>
+          enum:
+          - EmployeeStartDate
+          - SpecifiedDate
+          type: string
+        comparisonStartDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        tagIds:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: List<Int32>
+      additionalProperties: false
+    InitialServiceDateResponse:
+      title: InitialServiceDateResponse
+      type: object
+      properties:
+        serviceStartDateType:
+          title: ComparisonStartDateType
+          enum:
+          - EmployeeStartDate
+          - SpecifiedDate
+          type: string
+        serviceStartDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+      additionalProperties: false
+    UpdateServiceStartDateRequest:
+      title: UpdateServiceStartDateRequest
+      type: object
+      properties:
+        serviceStartDateType:
+          title: Nullable<ComparisonStartDateType>
+          enum:
+          - EmployeeStartDate
+          - SpecifiedDate
+          type: string
+          x-title: Nullable<ComparisonStartDateType>
+        serviceStartDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+      additionalProperties: false
+    AwardTagDto:
+      title: AwardTagDto
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        businessAwardPackageId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+      additionalProperties: false
+    EndPayConditionComparisonRequest:
+      title: EndPayConditionComparisonRequest
+      type: object
+      properties:
+        comparisonEndDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+      additionalProperties: false
+    IdAndName:
+      title: IdAndName
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    PayConditionComparisonApiModel:
+      title: PayConditionComparisonApiModel
+      required:
+      - businessAwardPackage
+      - employmentAgreement
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        awardPackageId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        businessAwardPackage:
+          $ref: '#/components/schemas/IdAndName'
+        employmentAgreement:
+          $ref: '#/components/schemas/IdAndName'
+        comparisonStartDateType:
+          title: ComparisonStartDateType
+          enum:
+          - EmployeeStartDate
+          - SpecifiedDate
+          type: string
+          x-title: ComparisonStartDateType
+        comparisonStartDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        comparisonEndDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        tags:
+          title: List<AwardTagDto>
+          type: array
+          items:
+            $ref: '#/components/schemas/AwardTagDto'
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-navigateMethodsByName: true

@@ -1,0 +1,1358 @@
+openapi: 3.2.0
+info:
+  title: United Kingdom Benefit Category API
+  version: UK
+  description: Benefit Categories
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: BenefitCategory
+  description: Benefit Categories
+paths:
+  /api/v2/business/{businessId}/benefitcategory:
+    get:
+      tags:
+      - BenefitCategory
+      summary: List Benefit Categories
+      description: Lists the benefit categories
+      operationId: UkBenefitCategory_List
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<UkBenefitCategoryReadModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+            application/xml:
+              schema:
+                title: IList<UkBenefitCategoryReadModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+            text/plain:
+              schema:
+                title: IList<UkBenefitCategoryReadModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+            application/octet-stream:
+              schema:
+                title: IList<UkBenefitCategoryReadModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+            text/json:
+              schema:
+                title: IList<UkBenefitCategoryReadModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+    post:
+      tags:
+      - BenefitCategory
+      summary: Create benefit category
+      description: Creates a new benefit category
+      operationId: UkBenefitCategory_Create
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UkBenefitCategoryEditModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UkBenefitCategoryEditModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/UkBenefitCategoryEditModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/UkBenefitCategoryEditModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UkBenefitCategoryEditModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UkBenefitCategoryEditModel'
+    put:
+      tags:
+      - BenefitCategory
+      summary: Update Benefit Category
+      description: Updates a benefit category
+      operationId: UkBenefitCategory_Update
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UkUpdateBenefitCategoryResult'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/UkUpdateBenefitCategoryResult'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/UkUpdateBenefitCategoryResult'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/UkUpdateBenefitCategoryResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/UkUpdateBenefitCategoryResult'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+  /api/v2/business/{businessId}/benefitcategory/multiple:
+    post:
+      tags:
+      - BenefitCategory
+      summary: Create benefit categories
+      description: Creates multiple new benefit categories
+      operationId: UkBenefitCategory_CreateMultiple
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateMultipleBenefitCategoriesResult'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CreateMultipleBenefitCategoriesResult'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CreateMultipleBenefitCategoriesResult'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/CreateMultipleBenefitCategoriesResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CreateMultipleBenefitCategoriesResult'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: UkBenefitCategoryEditModel[]
+              type: array
+              items:
+                $ref: '#/components/schemas/UkBenefitCategoryEditModel'
+          application/xml:
+            schema:
+              title: UkBenefitCategoryEditModel[]
+              type: array
+              items:
+                $ref: '#/components/schemas/UkBenefitCategoryEditModel'
+          text/plain:
+            schema:
+              title: UkBenefitCategoryEditModel[]
+              type: array
+              items:
+                $ref: '#/components/schemas/UkBenefitCategoryEditModel'
+          application/json-patch+json:
+            schema:
+              title: UkBenefitCategoryEditModel[]
+              type: array
+              items:
+                $ref: '#/components/schemas/UkBenefitCategoryEditModel'
+          text/json:
+            schema:
+              title: UkBenefitCategoryEditModel[]
+              type: array
+              items:
+                $ref: '#/components/schemas/UkBenefitCategoryEditModel'
+          application/*+json:
+            schema:
+              title: UkBenefitCategoryEditModel[]
+              type: array
+              items:
+                $ref: '#/components/schemas/UkBenefitCategoryEditModel'
+  /api/v2/business/{businessId}/benefitcategory/processingoptions:
+    get:
+      tags:
+      - BenefitCategory
+      summary: Get processing options
+      description: Gets p11d and/or payrolling of benefits active or inactive and registered from tax year
+      operationId: UkBenefitCategory_ProcessingOptions
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UkBenefitCategoriesProcessingOptions'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/UkBenefitCategoriesProcessingOptions'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/UkBenefitCategoriesProcessingOptions'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/UkBenefitCategoriesProcessingOptions'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/UkBenefitCategoriesProcessingOptions'
+    put:
+      tags:
+      - BenefitCategory
+      summary: Set processing options
+      description: Sets p11d and/or payrolling of benefits active or inactive and the business as having registered with HMRC from the given tax year
+      operationId: UkBenefitCategory_ProcessingOptions_2
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No Content
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaveBenefitCategoriesProcessingOptionsModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SaveBenefitCategoriesProcessingOptionsModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/SaveBenefitCategoriesProcessingOptionsModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SaveBenefitCategoriesProcessingOptionsModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SaveBenefitCategoriesProcessingOptionsModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SaveBenefitCategoriesProcessingOptionsModel'
+  /api/v2/business/{businessId}/benefitcategory/registeredfromtaxyearoptions:
+    get:
+      tags:
+      - BenefitCategory
+      summary: Get registered from tax year options
+      operationId: UkBenefitCategory_GetRegisteredFromTaxYearOptions
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<BenefitCategoryRegisteredFromTaxYearOption>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BenefitCategoryRegisteredFromTaxYearOption'
+            application/xml:
+              schema:
+                title: IList<BenefitCategoryRegisteredFromTaxYearOption>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BenefitCategoryRegisteredFromTaxYearOption'
+            text/plain:
+              schema:
+                title: IList<BenefitCategoryRegisteredFromTaxYearOption>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BenefitCategoryRegisteredFromTaxYearOption'
+            application/octet-stream:
+              schema:
+                title: IList<BenefitCategoryRegisteredFromTaxYearOption>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BenefitCategoryRegisteredFromTaxYearOption'
+            text/json:
+              schema:
+                title: IList<BenefitCategoryRegisteredFromTaxYearOption>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BenefitCategoryRegisteredFromTaxYearOption'
+  /api/v2/business/{businessId}/benefitcategory/{id}:
+    get:
+      tags:
+      - BenefitCategory
+      summary: Get Benefit Category by ID
+      description: Gets the benefit category with the specified ID
+      operationId: UkBenefitCategory_Get
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+    delete:
+      tags:
+      - BenefitCategory
+      summary: Delete benefit category
+      description: Deletes the benefit category with the specified ID
+      operationId: UkBenefitCategory_Delete_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No Content
+  /api/v2/business/{businessId}/import/benefit-categories:
+    post:
+      tags:
+      - BenefitCategory
+      summary: Create Import Benefit Categories
+      description: 'Example request:
+
+        {
+
+        "isPayrollingBenefit": false,
+
+        "taxYear": 2024,
+
+        "carryBenefitForward": true,
+
+        "benefitCategoryType": 13, // OtherItemsNoNic from BenefitCategoryTypeEnum
+
+        "benefitCategoryName": "Example benefit category",
+
+        "value": 99.50,
+
+        "internalBenefitCategoryEnumId": 2, // Other from BenefitCategoryOtherNoNicSubType
+
+        "description": "Custom benefit description",
+
+        "fuelType": 1, // For car benefits: DieselMeetingEuroStandards from BenefitCategoryCarFuelType
+
+        "engineSize": 2 // For car benefits: Between1401And2000 from BenefitCategoryCarEngineSize
+
+        }'
+      operationId: ImportBenefitCategories_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UkBenefitCategoryEditModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/UkBenefitCategoryEditModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/UkBenefitCategoryEditModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/UkBenefitCategoryEditModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/UkBenefitCategoryEditModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImportBenefitCategoryModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ImportBenefitCategoryModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/ImportBenefitCategoryModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ImportBenefitCategoryModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ImportBenefitCategoryModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ImportBenefitCategoryModel'
+components:
+  schemas:
+    UkEmployeeBenefitCategoryExtLoanEditModel:
+      title: UkEmployeeBenefitCategoryExtLoanEditModel
+      type: object
+      properties:
+        numberOfJointBorrowers:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        amountOutstandingAtStartOfYearOrLoan:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        amountOutstandingAtEndOfYearOrLoan:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        maximumAmountOutstandingDuringTheYear:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        dateLoanWasMadeIfThisYear:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        dateLoanWasDischargedIfThisYear:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        interestRate:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        amountForegoneUserEntered:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        interestDue:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+      additionalProperties: false
+    UkEmployeeBenefitCategoryExtCarEditModel:
+      title: UkEmployeeBenefitCategoryExtCarEditModel
+      type: object
+      properties:
+        opraAmountForegone:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        availableFromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        availableToDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        numberOfDaysUnavailable:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        accessories:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        capitalContributions:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        amountPaidByEmployeeForPrivateUse:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        isShared:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        sharedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        employerProvidesFuelForPrivateUse:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        fuel:
+          $ref: '#/components/schemas/UkEmployeeBenefitCategoryExtFuelEditModel'
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+    UkBenefitCategoryEditModel:
+      title: UkBenefitCategoryEditModel
+      type: object
+      properties:
+        name:
+          title: String
+          type: string
+          x-title: String
+        year:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        carryBenefitForward:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        benefitType:
+          title: String
+          type: string
+          x-title: String
+        niTreatment:
+          title: String
+          type: string
+          x-title: String
+        amountForegone:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        payrollingBenefit:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        description:
+          title: String
+          type: string
+          x-title: String
+        subType:
+          title: String
+          type: string
+          x-title: String
+        car:
+          $ref: '#/components/schemas/UkBenefitCategoryExtCarEditModel'
+        van:
+          $ref: '#/components/schemas/UkBenefitCategoryExtVanEditModel'
+        entertainment:
+          $ref: '#/components/schemas/UkBenefitCategoryExtEntertainmentEditModel'
+      additionalProperties: false
+    UkBenefitCategoryReadModel:
+      title: UkBenefitCategoryReadModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        linkedEmployees:
+          title: IList<UkEmployeeBenefitCategoryModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/UkEmployeeBenefitCategoryModel'
+        name:
+          title: String
+          type: string
+          x-title: String
+        year:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        carryBenefitForward:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        benefitType:
+          title: String
+          type: string
+          x-title: String
+        niTreatment:
+          title: String
+          type: string
+          x-title: String
+        amountForegone:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        payrollingBenefit:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        description:
+          title: String
+          type: string
+          x-title: String
+        subType:
+          title: String
+          type: string
+          x-title: String
+        car:
+          $ref: '#/components/schemas/UkBenefitCategoryExtCarEditModel'
+        van:
+          $ref: '#/components/schemas/UkBenefitCategoryExtVanEditModel'
+        entertainment:
+          $ref: '#/components/schemas/UkBenefitCategoryExtEntertainmentEditModel'
+      additionalProperties: false
+    SaveBenefitCategoriesProcessingOptionsModel:
+      title: SaveBenefitCategoriesProcessingOptionsModel
+      type: object
+      properties:
+        registeredFromTaxYear:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        isP11dBenefitsEnabled:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        isPayrollingBenefitsEnabled:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        isInformallyPayrollingEnabled:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+      additionalProperties: false
+    UkBenefitCategoriesProcessingOptions:
+      title: UkBenefitCategoriesProcessingOptions
+      type: object
+      properties:
+        registeredFromTaxYear:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        isP11dBenefitsEnabled:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isPayrollingBenefitsEnabled:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    BenefitCategoryRegisteredFromTaxYearOption:
+      title: BenefitCategoryRegisteredFromTaxYearOption
+      type: object
+      properties:
+        value:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        text:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    UkBenefitCategoryExtEntertainmentEditModel:
+      title: UkBenefitCategoryExtEntertainmentEditModel
+      type: object
+      properties:
+        isTradingOrganisation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    UkUpdateBenefitCategoryResult:
+      title: UkUpdateBenefitCategoryResult
+      type: object
+      properties:
+        benefitCategory:
+          $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+        employeeIdsToUpdate:
+          title: IList<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: IList<Int32>
+        employeeIdsUpdated:
+          title: IList<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: IList<Int32>
+      additionalProperties: false
+    UkBenefitCategoryExtVanEditModel:
+      title: UkBenefitCategoryExtVanEditModel
+      type: object
+      properties:
+        isZeroEmissions:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    UkEmployeeBenefitProRataCalculationModel:
+      title: UkEmployeeBenefitProRataCalculationModel
+      type: object
+      properties:
+        fullYearAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        startDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        endDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        useCalculatedValue:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        proRataInFirstPayRun:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    UkBenefitCategoryExtCarEditModel:
+      title: UkBenefitCategoryExtCarEditModel
+      type: object
+      properties:
+        registrationNumber:
+          title: String
+          type: string
+          x-title: String
+        makeAndModel:
+          title: String
+          type: string
+          x-title: String
+        dateRegistered:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        fuelType:
+          title: String
+          type: string
+          x-title: String
+        approvedCO2Emissions:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        noApprovedCO2Figure:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        engineSize:
+          title: String
+          type: string
+          x-title: String
+        zeroEmissionMileage:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+      additionalProperties: false
+    UkEmployeeBenefitCategoryExtFuelEditModel:
+      title: UkEmployeeBenefitCategoryExtFuelEditModel
+      type: object
+      properties:
+        opraAmountForegone:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        availableFromDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        availableToDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        reinstated:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        cashEquivalent:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        startFromPeriod:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        amountPayrolledToDate:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        amountToBePayrolledPerPeriod:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        proRataInFirstPayRun:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    CreateMultipleBenefitCategoriesResult:
+      title: CreateMultipleBenefitCategoriesResult
+      type: object
+      properties:
+        benefitCategories:
+          title: UkBenefitCategoryReadModel[]
+          type: array
+          items:
+            $ref: '#/components/schemas/UkBenefitCategoryReadModel'
+      additionalProperties: false
+    UkEmployeeBenefitCategoryModel:
+      title: UkEmployeeBenefitCategoryModel
+      type: object
+      properties:
+        benefitCategoryId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employeeName:
+          title: String
+          type: string
+          x-title: String
+        carryBenefitForward:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        amountForegone:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        amountMadeGood:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        cashEquivalent:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        startFromPeriod:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        amountPayrolledToDate:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        amountToBePayrolledPerPeriod:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        amountPayrolledToDateInPayRuns:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        hasLinkedPayRuns:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        hasFinalisedPayRuns:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        hasBeenSubmitted:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        additionalAmountPayrolledToDateInPayRuns:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        additionalHasLinkedPayRuns:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        additionalHasFinalisedPayRuns:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        dateCreatedUtc:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        benefitCategoryName:
+          title: String
+          type: string
+          x-title: String
+        benefitCategoryType:
+          title: String
+          type: string
+          x-title: String
+        benefitCategorySubType:
+          title: String
+          type: string
+          x-title: String
+        payrollingBenefit:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        year:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        calculationLogs:
+          title: IList<String>
+          type: array
+          items:
+            title: String
+            type: string
+            x-title: String
+          x-title: IList<String>
+        proRataCalculation:
+          $ref: '#/components/schemas/UkEmployeeBenefitProRataCalculationModel'
+        car:
+          $ref: '#/components/schemas/UkEmployeeBenefitCategoryExtCarEditModel'
+        van:
+          $ref: '#/components/schemas/UkEmployeeBenefitCategoryExtVanEditModel'
+        loan:
+          $ref: '#/components/schemas/UkEmployeeBenefitCategoryExtLoanEditModel'
+      additionalProperties: false
+    UkEmployeeBenefitCategoryExtVanEditModel:
+      title: UkEmployeeBenefitCategoryExtVanEditModel
+      type: object
+      properties:
+        opraAmountForegone:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        availableFromDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+        availableToDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        numberOfDaysUnavailable:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        amountPaidByEmployeeForPrivateUse:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        isShared:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        sharedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        employerProvidesFuelForPrivateUse:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        fuel:
+          $ref: '#/components/schemas/UkEmployeeBenefitCategoryExtVanFuelEditModel'
+      additionalProperties: false
+    ImportBenefitCategoryModel:
+      title: ImportBenefitCategoryModel
+      type: object
+      properties:
+        isPayrollingBenefit:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        taxYear:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        carryBenefitForward:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        benefitCategoryType:
+          title: BenefitCategoryTypeEnum
+          enum:
+          - None
+          - PrivateMedicalTreatmentOrInsurance
+          - CarsAndCarFuel
+          - AssetsTransferred
+          - PaymentsMadeOnBehalfOfTheEmployee
+          - VouchersAndCreditCards
+          - LivingAccommodation
+          - MileageAllowancePaymentsNotTaxedAtSource
+          - VansAndVanFuel
+          - InterestFreeLoans
+          - QualifyingRelocationExpenses
+          - ServicesSupplied
+          - AssetsPlacedAtTheEmployeesDisposal
+          - OtherItemsNoNic
+          - OtherItems1A
+          - ExpensesPaymentsMadeOnBehalfOfTheEmployee
+          - MedicalOrHealth
+          - CriticalIllness
+          - Dental
+          - Vision
+          - STD
+          - LTD
+          - LifeInsurance
+          - DependantLifeInsurance
+          - ADAndD
+          - TaxableBenefitInCash
+          - TaxableBenefitNonCash
+          - TFSA
+          - RRSPRestricted
+          - RRSPNonRestricted
+          - Custom
+          - DPSP
+          - RPP
+          type: string
+        benefitCategoryName:
+          title: String
+          type: string
+          x-title: String
+        value:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        benefitCategoryEnumId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        description:
+          title: String
+          type: string
+          x-title: String
+        registrationNumber:
+          title: String
+          type: string
+          x-title: String
+        makeAndModel:
+          title: String
+          type: string
+          x-title: String
+        fuelType:
+          title: Nullable<BenefitCategoryCarFuelType>
+          enum:
+          - None
+          - DieselMeetingEuroStandards
+          - Diesel
+          - Other
+          - Electric
+          type: string
+        dateFirstRegistered:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        listPrice:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        approvedCo2Emissions:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        noApprovedCo2Emissions:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        zeroEmissionMileage:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        engineSize:
+          title: Nullable<BenefitCategoryCarEngineSize>
+          enum:
+          - None
+          - LessThan1400
+          - Between1401And2000
+          - MoreThan2001
+          - Rotary
+          type: string
+        isVanZeroEmissions:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        tradingOrganisation:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+      additionalProperties: false
+    UkEmployeeBenefitCategoryExtVanFuelEditModel:
+      title: UkEmployeeBenefitCategoryExtVanFuelEditModel
+      type: object
+      properties:
+        amountForegone:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        opraAmountForegone:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        availableToDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        cashEquivalent:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        startFromPeriod:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        amountPayrolledToDate:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        amountToBePayrolledPerPeriod:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        proRataInFirstPayRun:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-navigateMethodsByName: true

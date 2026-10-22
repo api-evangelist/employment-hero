@@ -1,0 +1,332 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Employee Pay Rate Schedule API
+  version: '1.0'
+  description: 'Operations tagged EmployeePayRateSchedule across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: EmployeePayRateSchedule
+  description: Employee Pay Rate Schedule
+paths:
+  /api/v2/business/{businessId}/employee/{employeeId}/payrateschedule:
+    get:
+      tags:
+      - EmployeePayRateSchedule
+      summary: List pay rate adjustment schedule
+      description: Lists pay rate adjustment schedule for this employee.
+      operationId: EmployeePayRateSchedule_List
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<PayRateScheduleModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/PayRateScheduleModel'
+            application/xml:
+              schema:
+                title: IEnumerable<PayRateScheduleModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/PayRateScheduleModel'
+            text/plain:
+              schema:
+                title: IEnumerable<PayRateScheduleModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/PayRateScheduleModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<PayRateScheduleModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/PayRateScheduleModel'
+            text/json:
+              schema:
+                title: IEnumerable<PayRateScheduleModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/PayRateScheduleModel'
+    post:
+      tags:
+      - EmployeePayRateSchedule
+      summary: Create pay rate adjustment schedule record
+      description: Creates a new pay rate adjustment schedule record for the employee.
+      operationId: EmployeePayRateSchedule_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PayRateScheduleModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/PayRateScheduleModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PayRateScheduleModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/PayRateScheduleModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PayRateScheduleModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PayRateScheduleModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/PayRateScheduleModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/PayRateScheduleModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/PayRateScheduleModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/PayRateScheduleModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/PayRateScheduleModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/payrateschedule/{payRateScheduleId}:
+    get:
+      tags:
+      - EmployeePayRateSchedule
+      summary: Get pay rate adjustment schedule record by ID
+      description: Gets pay rate adjustment schedule record for this employee with the specified ID.
+      operationId: EmployeePayRateSchedule_Get_2
+      parameters:
+      - in: path
+        name: payRateScheduleId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PayRateScheduleModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/PayRateScheduleModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PayRateScheduleModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/PayRateScheduleModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PayRateScheduleModel'
+    put:
+      tags:
+      - EmployeePayRateSchedule
+      summary: Update pay rate adjustment schedule record
+      description: Updates the employee's pay rate adjustment schedule record with the specified ID.
+      operationId: EmployeePayRateSchedule_Put_3
+      parameters:
+      - in: path
+        name: payRateScheduleId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PayRateScheduleModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/PayRateScheduleModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PayRateScheduleModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/PayRateScheduleModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PayRateScheduleModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PayRateScheduleModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/PayRateScheduleModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/PayRateScheduleModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/PayRateScheduleModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/PayRateScheduleModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/PayRateScheduleModel'
+    delete:
+      tags:
+      - EmployeePayRateSchedule
+      summary: Delete pay rate adjustment schedule record
+      description: Deletes the employee's pay rate adjustment schedule record with the specified ID.
+      operationId: EmployeePayRateSchedule_Delete_4
+      parameters:
+      - in: path
+        name: payRateScheduleId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    PayRateScheduleModel:
+      title: PayRateScheduleModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        employeeId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        rate:
+          format: double
+          title: Decimal
+          type: number
+          x-title: Decimal
+        rateUnit:
+          title: String
+          type: string
+          x-title: String
+        commencementDate:
+          format: date-time
+          title: DateTime
+          type: string
+          x-title: DateTime
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

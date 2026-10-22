@@ -1,0 +1,471 @@
+openapi: 3.2.0
+info:
+  title: Singapore Employee Gains Or Profits Employee Share Plan API
+  version: SG
+  description: Employee Gains Or Profits Employee Share Plan
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: EmployeeGainsOrProfitsEmployeeSharePlan
+  description: Employee Gains Or Profits Employee Share Plan
+paths:
+  /api/v2/business/{businessId}/employee/{employeeId}/gainsorprofitsemployeeshareplan:
+    get:
+      tags:
+      - EmployeeGainsOrProfitsEmployeeSharePlan
+      summary: Get Gains or profits employee share plans
+      description: Gets the gains or profits employee share plans for the specified employee
+      operationId: SgGainsOrProfitsEmployeeSharePlan_GetAll
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IList<SgGainsOrProfitsEmployeeSharePlanModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+            application/xml:
+              schema:
+                title: IList<SgGainsOrProfitsEmployeeSharePlanModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+            text/plain:
+              schema:
+                title: IList<SgGainsOrProfitsEmployeeSharePlanModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+            application/octet-stream:
+              schema:
+                title: IList<SgGainsOrProfitsEmployeeSharePlanModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+            text/json:
+              schema:
+                title: IList<SgGainsOrProfitsEmployeeSharePlanModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+    post:
+      tags:
+      - EmployeeGainsOrProfitsEmployeeSharePlan
+      summary: Create Gains or profits employee share plan
+      description: Creates a new gains or profits employee share plan
+      operationId: SgGainsOrProfitsEmployeeSharePlan_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/gainsorprofitsemployeeshareplan/{id}:
+    get:
+      tags:
+      - EmployeeGainsOrProfitsEmployeeSharePlan
+      summary: Get Gains or profits employee share plan
+      description: Gets a specific gains or profits employee share plan for the specified employee
+      operationId: SgGainsOrProfitsEmployeeSharePlan_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    put:
+      tags:
+      - EmployeeGainsOrProfitsEmployeeSharePlan
+      summary: Update an existing Gains or profits employee share plan
+      description: Update an existing gains or profits employee share plan.
+      operationId: SgGainsOrProfitsEmployeeSharePlan_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SgGainsOrProfitsEmployeeSharePlanModel'
+    delete:
+      tags:
+      - EmployeeGainsOrProfitsEmployeeSharePlan
+      summary: Delete Gains or profits employee share plan
+      description: Deletes the Gains or profits employee share plan with the specified ID.
+      operationId: SgGainsOrProfitsEmployeeSharePlan_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+components:
+  schemas:
+    SgGainsOrProfitsEmployeeSharePlanModel:
+      title: SgGainsOrProfitsEmployeeSharePlanModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        basisPeriod:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        schemeType:
+          title: SchemeType
+          enum:
+          - EEBRScheme
+          - ERISSME
+          - ERISAll
+          - ERISStartup
+          type: string
+        companyName:
+          title: String
+          type: string
+          x-title: String
+        uen:
+          title: String
+          type: string
+          x-title: String
+        planType:
+          title: PlanType
+          enum:
+          - ESOP
+          - ESOW
+          type: string
+        incorporationDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        grantDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        exerciseVestingDate:
+          format: date-time
+          title: Nullable<DateTime>
+          type: string
+          x-title: Nullable<DateTime>
+        exercisePriceAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        marketValuePerShareDateOfGrantAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        marketValuePerShareDateOfExerciseVestingAmount:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        numberOfSharesAcquired:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-navigateMethodsByName: true

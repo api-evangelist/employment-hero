@@ -1,0 +1,539 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Employee Earnings Line Split API
+  version: '1.0'
+  description: 'Operations tagged EmployeeEarningsLineSplit across 5 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json, employment-hero-payroll-uk-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: EmployeeEarningsLineSplit
+  description: Employee Earnings Line Split
+paths:
+  /api/v2/business/{businessId}/employee/{employeeId}/earningslinesplit:
+    get:
+      tags:
+      - EmployeeEarningsLineSplit
+      summary: Get Employee location earnings line splits
+      description: 'Lists all the location earnings line splits for this employee.
+
+
+        This operation supports OData queries.'
+      operationId: GenericEarningsLineSplit_Get
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IQueryable<EarningsLineSplitApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EarningsLineSplitApiModel'
+            application/xml:
+              schema:
+                title: IQueryable<EarningsLineSplitApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EarningsLineSplitApiModel'
+            text/plain:
+              schema:
+                title: IQueryable<EarningsLineSplitApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EarningsLineSplitApiModel'
+            application/octet-stream:
+              schema:
+                title: IQueryable<EarningsLineSplitApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EarningsLineSplitApiModel'
+            text/json:
+              schema:
+                title: IQueryable<EarningsLineSplitApiModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/EarningsLineSplitApiModel'
+    post:
+      tags:
+      - EmployeeEarningsLineSplit
+      summary: Create Earnings line split
+      description: Creates a new earnings line split for the employee.
+      operationId: GenericEarningsLineSplit_Post_2
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EarningsLineSplitApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EarningsLineSplitApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EarningsLineSplitApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EarningsLineSplitApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EarningsLineSplitApiModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+  /api/v2/business/{businessId}/employee/{employeeId}/earningslinesplit/{locationId}:
+    get:
+      tags:
+      - EmployeeEarningsLineSplit
+      summary: Get Earnings line split by location ID
+      description: Gets the earnings line split for this employee with the specified location ID.
+      operationId: GenericEarningsLineSplit_Get_3
+      parameters:
+      - in: path
+        name: locationId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EarningsLineSplitApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EarningsLineSplitApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EarningsLineSplitApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EarningsLineSplitApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EarningsLineSplitApiModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    put:
+      tags:
+      - EmployeeEarningsLineSplit
+      summary: Update Earnings line split
+      description: Updates the employee's earnings line split for the specified location ID.
+      operationId: GenericEarningsLineSplit_Put_4
+      parameters:
+      - in: path
+        name: locationId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EarningsLineSplitApiModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EarningsLineSplitApiModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EarningsLineSplitApiModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/EarningsLineSplitApiModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EarningsLineSplitApiModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EarningsLineSplitEditModel'
+    delete:
+      tags:
+      - EmployeeEarningsLineSplit
+      summary: Delete Earnings line split
+      description: Deletes the employee's earnings line split with the specified location ID.
+      operationId: GenericEarningsLineSplit_Delete_5
+      parameters:
+      - in: path
+        name: locationId
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+components:
+  schemas:
+    EarningsLineSplitEditModel:
+      title: EarningsLineSplitEditModel
+      type: object
+      properties:
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        allocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        allocateBalance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        reportingDimensionValueIds:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: List<Int32>
+      additionalProperties: false
+    ProblemDetails:
+      title: ProblemDetails
+      type: object
+      properties:
+        type:
+          title: String
+          type: string
+          x-title: String
+        title:
+          title: String
+          type: string
+          x-title: String
+        status:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        detail:
+          title: String
+          type: string
+          x-title: String
+        instance:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties:
+        title: Object
+        x-title: Object
+        type: object
+    EarningsLineSplitApiModel:
+      title: EarningsLineSplitApiModel
+      type: object
+      properties:
+        locationId:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        locationName:
+          title: String
+          type: string
+          x-title: String
+        allocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        allocateBalance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+      additionalProperties: false
+    EarningsLineSplitEditModel_2:
+      title: EarningsLineSplitEditModel
+      type: object
+      properties:
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        allocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        allocateBalance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        reportingDimensionValueIds:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+      additionalProperties: false
+    EarningsLineSplitEditModel_3:
+      title: EarningsLineSplitEditModel
+      type: object
+      properties:
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        allocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        allocateBalance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        reportingDimensionValueIds:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+      additionalProperties: false
+    EarningsLineSplitEditModel_4:
+      title: EarningsLineSplitEditModel
+      type: object
+      properties:
+        locationId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        allocatedPercentage:
+          format: double
+          title: Nullable<Decimal>
+          type: number
+          x-title: Nullable<Decimal>
+        allocateBalance:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        reportingDimensionValueIds:
+          title: List<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json
+- employment-hero-payroll-uk-swagger.json

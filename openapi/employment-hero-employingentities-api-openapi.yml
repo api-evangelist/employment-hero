@@ -1,0 +1,660 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Employing Entities API
+  version: '1.0'
+  description: 'Operations tagged EmployingEntities across 4 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: EmployingEntities
+  description: Employing Entities
+paths:
+  /api/v2/business/{businessId}/employingentity:
+    get:
+      tags:
+      - EmployingEntities
+      summary: List Employing Entities
+      description: 'Lists the employing entities for the business (all entities by default; pass includeInactive=false to exclude inactive).
+
+
+        This operation supports OData queries (only $filter, $orderby, $top, $skip).'
+      operationId: AuEmployingEntity_GetEmployingEntities
+      parameters:
+      - in: query
+        name: query
+      - in: query
+        name: includeInactive
+        title: Boolean
+        schema:
+          type: boolean
+          default: true
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<AuEmployingEntityModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEmployingEntityModel'
+            application/xml:
+              schema:
+                title: IEnumerable<AuEmployingEntityModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEmployingEntityModel'
+            text/plain:
+              schema:
+                title: IEnumerable<AuEmployingEntityModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEmployingEntityModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<AuEmployingEntityModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEmployingEntityModel'
+            text/json:
+              schema:
+                title: IEnumerable<AuEmployingEntityModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuEmployingEntityModel'
+    post:
+      tags:
+      - EmployingEntities
+      summary: Create Employing Entity
+      description: Creates a new employing entity for the business.
+      operationId: AuEmployingEntity_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuEmployingEntityModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuEmployingEntityModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuEmployingEntityModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuEmployingEntityModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuEmployingEntityModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuEmployingEntityModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuEmployingEntityModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuEmployingEntityModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuEmployingEntityModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuEmployingEntityModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuEmployingEntityModel'
+  /api/v2/business/{businessId}/employingentity/{id}:
+    get:
+      tags:
+      - EmployingEntities
+      summary: Get Employing Entity By ID
+      description: Gets the employing entity with the specified ID.
+      operationId: AuEmployingEntity_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuEmployingEntityModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuEmployingEntityModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuEmployingEntityModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuEmployingEntityModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuEmployingEntityModel'
+    put:
+      tags:
+      - EmployingEntities
+      summary: Update Employing Entity
+      description: Updates the employing entity with the specified ID.
+      operationId: AuEmployingEntity_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuEmployingEntityModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuEmployingEntityModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuEmployingEntityModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuEmployingEntityModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuEmployingEntityModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuEmployingEntityModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuEmployingEntityModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuEmployingEntityModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuEmployingEntityModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuEmployingEntityModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuEmployingEntityModel'
+    delete:
+      tags:
+      - EmployingEntities
+      summary: Delete Employing Entity
+      description: Deletes the employing entity with the specified ID.
+      operationId: AuEmployingEntity_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    AuEmployingEntityModel:
+      title: AuEmployingEntityModel
+      type: object
+      properties:
+        abn:
+          title: String
+          type: string
+          x-title: String
+        suburb:
+          title: String
+          type: string
+          x-title: String
+        state:
+          title: String
+          type: string
+          x-title: String
+        branchCode:
+          title: String
+          type: string
+          x-title: String
+        isExemptFromFringeBenefitsTax:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        hasSeparateEntertainmentFringeBenefitsCap:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        fbtExemptOrganisationType:
+          title: Nullable<FbtExemptOrganisationTypeEnum>
+          enum:
+          - PublicBenevolentInstitution
+          - HealthPromotionCharity
+          - PublicAndNonProfitHospital
+          - PublicAmbulanceService
+          - PovertyRelief
+          - EducationAdvancement
+          - ReligionAdvancement
+          - CommunityBenefit
+          type: string
+        isForeignEntity:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+        foreignEntityCountry:
+          title: String
+          type: string
+          x-title: String
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        contactName:
+          title: String
+          type: string
+          x-title: String
+        signatoryName:
+          title: String
+          type: string
+          x-title: String
+        contactEmailAddress:
+          title: String
+          type: string
+          x-title: String
+        contactPhoneNumber:
+          title: String
+          type: string
+          x-title: String
+        contactFaxNumber:
+          title: String
+          type: string
+          x-title: String
+        addressLine1:
+          title: String
+          type: string
+          x-title: String
+        addressLine2:
+          title: String
+          type: string
+          x-title: String
+        postcode:
+          title: String
+          type: string
+          x-title: String
+        externalReferenceId:
+          title: String
+          type: string
+          x-title: String
+        paySlipFromEmailAddress:
+          title: String
+          type: string
+          x-title: String
+        isDeactivated:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+      additionalProperties: false
+    MyEmployingEntityModel:
+      title: MyEmployingEntityModel
+      type: object
+      properties:
+        crn:
+          title: String
+          type: string
+          x-title: String
+        registrationNumberValidationBypassed:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        addressLine3:
+          title: String
+          type: string
+          x-title: String
+        countryId:
+          title: String
+          type: string
+          x-title: String
+        blockNumber:
+          title: String
+          maxLength: 10
+          type: string
+          x-title: String
+        unitNumber:
+          title: String
+          maxLength: 5
+          type: string
+          x-title: String
+        levelNumber:
+          title: String
+          maxLength: 3
+          type: string
+          x-title: String
+        isInternationalAddress:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        contactName:
+          title: String
+          type: string
+          x-title: String
+        signatoryName:
+          title: String
+          type: string
+          x-title: String
+        contactEmailAddress:
+          title: String
+          type: string
+          x-title: String
+        contactPhoneNumber:
+          title: String
+          type: string
+          x-title: String
+        contactFaxNumber:
+          title: String
+          type: string
+          x-title: String
+        addressLine1:
+          title: String
+          type: string
+          x-title: String
+        addressLine2:
+          title: String
+          type: string
+          x-title: String
+        postcode:
+          title: String
+          type: string
+          x-title: String
+        externalReferenceId:
+          title: String
+          type: string
+          x-title: String
+        paySlipFromEmailAddress:
+          title: String
+          type: string
+          x-title: String
+        isDeactivated:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+      additionalProperties: false
+    NzEmployingEntityModel:
+      title: NzEmployingEntityModel
+      type: object
+      properties:
+        nzbn:
+          title: String
+          type: string
+          x-title: String
+        city:
+          title: String
+          type: string
+          x-title: String
+        region:
+          title: String
+          type: string
+          x-title: String
+        charitableOrganisation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        addressLine3:
+          title: String
+          type: string
+          x-title: String
+        irdNumber:
+          title: String
+          type: string
+          x-title: String
+        employerDeductionFilingFrequency:
+          title: Nullable<IrdPaymentFrequency>
+          enum:
+          - BiMonthly
+          - Monthly
+          type: string
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        contactName:
+          title: String
+          type: string
+          x-title: String
+        signatoryName:
+          title: String
+          type: string
+          x-title: String
+        contactEmailAddress:
+          title: String
+          type: string
+          x-title: String
+        contactPhoneNumber:
+          title: String
+          type: string
+          x-title: String
+        contactFaxNumber:
+          title: String
+          type: string
+          x-title: String
+        addressLine1:
+          title: String
+          type: string
+          x-title: String
+        addressLine2:
+          title: String
+          type: string
+          x-title: String
+        postcode:
+          title: String
+          type: string
+          x-title: String
+        externalReferenceId:
+          title: String
+          type: string
+          x-title: String
+        paySlipFromEmailAddress:
+          title: String
+          type: string
+          x-title: String
+        isDeactivated:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+      additionalProperties: false
+    SgEmployingEntityModel:
+      title: SgEmployingEntityModel
+      type: object
+      properties:
+        uen:
+          title: String
+          type: string
+          x-title: String
+        addressLine3:
+          title: String
+          type: string
+          x-title: String
+        countryId:
+          title: String
+          type: string
+          x-title: String
+        blockNumber:
+          title: String
+          maxLength: 10
+          type: string
+          x-title: String
+        unitNumber:
+          title: String
+          maxLength: 5
+          type: string
+          x-title: String
+        levelNumber:
+          title: String
+          maxLength: 3
+          type: string
+          x-title: String
+        isInternationalAddress:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        name:
+          title: String
+          type: string
+          x-title: String
+        contactName:
+          title: String
+          type: string
+          x-title: String
+        signatoryName:
+          title: String
+          type: string
+          x-title: String
+        contactEmailAddress:
+          title: String
+          type: string
+          x-title: String
+        contactPhoneNumber:
+          title: String
+          type: string
+          x-title: String
+        contactFaxNumber:
+          title: String
+          type: string
+          x-title: String
+        addressLine1:
+          title: String
+          type: string
+          x-title: String
+        addressLine2:
+          title: String
+          type: string
+          x-title: String
+        postcode:
+          title: String
+          type: string
+          x-title: String
+        externalReferenceId:
+          title: String
+          type: string
+          x-title: String
+        paySlipFromEmailAddress:
+          title: String
+          type: string
+          x-title: String
+        isDeactivated:
+          title: Nullable<Boolean>
+          type: boolean
+          x-title: Nullable<Boolean>
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json

@@ -1,0 +1,852 @@
+openapi: 3.2.0
+info:
+  title: Employment Hero Location API
+  version: '1.0'
+  description: 'Operations tagged Location across 4 of this provider''s published API definitions: employment-hero-payroll-au-swagger.json, employment-hero-payroll-my-swagger.json, employment-hero-payroll-nz-swagger.json, employment-hero-payroll-sg-swagger.json. Each path carries the servers of the definition it was published in.'
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: Location
+  description: Location
+paths:
+  /api/v2/business/{businessId}/employee/{employeeId}/location:
+    get:
+      tags:
+      - Location
+      summary: List Employee Locations
+      description: 'Lists all the locations for an employee.
+
+
+        This operation supports OData queries (only $filter, $orderby, $top, $skip).'
+      operationId: AuLocation_GetEmployeeLocations
+      parameters:
+      - in: query
+        name: query
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<AuLocationModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuLocationModel'
+            application/xml:
+              schema:
+                title: IEnumerable<AuLocationModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuLocationModel'
+            text/plain:
+              schema:
+                title: IEnumerable<AuLocationModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuLocationModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<AuLocationModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuLocationModel'
+            text/json:
+              schema:
+                title: IEnumerable<AuLocationModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuLocationModel'
+  /api/v2/business/{businessId}/location:
+    get:
+      tags:
+      - Location
+      summary: List Business Locations
+      description: 'Lists all the locations for a business.
+
+
+        This operation supports OData queries (only $filter, $orderby, $top, $skip).'
+      operationId: AuLocation_GetLocations
+      parameters:
+      - in: query
+        name: query
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<AuLocationModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuLocationModel'
+                x-title: IEnumerable<AuLocationModel>
+            application/xml:
+              schema:
+                title: IEnumerable<AuLocationModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuLocationModel'
+                x-title: IEnumerable<AuLocationModel>
+            text/plain:
+              schema:
+                title: IEnumerable<AuLocationModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuLocationModel'
+                x-title: IEnumerable<AuLocationModel>
+            application/octet-stream:
+              schema:
+                title: IEnumerable<AuLocationModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuLocationModel'
+                x-title: IEnumerable<AuLocationModel>
+            text/json:
+              schema:
+                title: IEnumerable<AuLocationModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuLocationModel'
+                x-title: IEnumerable<AuLocationModel>
+    post:
+      tags:
+      - Location
+      summary: Create Location
+      description: Creates a business location.
+      operationId: AuLocation_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuLocationModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuLocationModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuLocationModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuLocationModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuLocationModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuLocationModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuLocationModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuLocationModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuLocationModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuLocationModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuLocationModel'
+  /api/v2/business/{businessId}/location/{id}:
+    get:
+      tags:
+      - Location
+      summary: Get Location By Id
+      description: Retrieves the details of the location with the specified ID.
+      operationId: AuLocation_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuSingleLocationModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuSingleLocationModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuSingleLocationModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuSingleLocationModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuSingleLocationModel'
+    put:
+      tags:
+      - Location
+      summary: Update Location
+      description: Updates the business location with the specified ID.
+      operationId: AuLocation_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuLocationModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AuLocationModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AuLocationModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/AuLocationModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AuLocationModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuLocationModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuLocationModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/AuLocationModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuLocationModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuLocationModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuLocationModel'
+    delete:
+      tags:
+      - Location
+      summary: Delete Location
+      description: Deletes the location with the specified ID.
+      operationId: AuLocation_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    AuSingleLocationModel:
+      title: AuSingleLocationModel
+      type: object
+      properties:
+        nestedLocations:
+          title: List<AuLocationModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/AuLocationModel'
+        country:
+          title: String
+          type: string
+          x-title: String
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        parentId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        name:
+          title: String
+          type: string
+          x-title: String
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        externalAccountingLocationId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        fullyQualifiedName:
+          title: String
+          type: string
+          x-title: String
+        isGlobal:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isRollupReportingLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        generalLedgerMappingCode:
+          title: String
+          type: string
+          x-title: String
+        defaultShiftConditionIds:
+          title: IList<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: IList<Int32>
+        state:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    AuLocationModel:
+      title: AuLocationModel
+      type: object
+      properties:
+        country:
+          title: String
+          type: string
+          x-title: String
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        parentId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        name:
+          title: String
+          type: string
+          x-title: String
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        externalAccountingLocationId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        fullyQualifiedName:
+          title: String
+          type: string
+          x-title: String
+        isGlobal:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isRollupReportingLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        generalLedgerMappingCode:
+          title: String
+          type: string
+          x-title: String
+        defaultShiftConditionIds:
+          title: IList<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: IList<Int32>
+        state:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    MySingleLocationModel:
+      title: MySingleLocationModel
+      type: object
+      properties:
+        nestedLocations:
+          title: List<MyLocationModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/MyLocationModel'
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        parentId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        name:
+          title: String
+          type: string
+          x-title: String
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        externalAccountingLocationId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        fullyQualifiedName:
+          title: String
+          type: string
+          x-title: String
+        isGlobal:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isRollupReportingLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        generalLedgerMappingCode:
+          title: String
+          type: string
+          x-title: String
+        defaultShiftConditionIds:
+          title: IList<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: IList<Int32>
+        state:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    MyLocationModel:
+      title: MyLocationModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        parentId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        name:
+          title: String
+          type: string
+          x-title: String
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        externalAccountingLocationId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        fullyQualifiedName:
+          title: String
+          type: string
+          x-title: String
+        isGlobal:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isRollupReportingLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        generalLedgerMappingCode:
+          title: String
+          type: string
+          x-title: String
+        defaultShiftConditionIds:
+          title: IList<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: IList<Int32>
+        state:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    NzSingleLocationModel:
+      title: NzSingleLocationModel
+      type: object
+      properties:
+        nestedLocations:
+          title: List<NzLocationModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/NzLocationModel'
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        parentId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        name:
+          title: String
+          type: string
+          x-title: String
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        externalAccountingLocationId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        fullyQualifiedName:
+          title: String
+          type: string
+          x-title: String
+        isGlobal:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isRollupReportingLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        generalLedgerMappingCode:
+          title: String
+          type: string
+          x-title: String
+        defaultShiftConditionIds:
+          title: IList<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: IList<Int32>
+        state:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    NzLocationModel:
+      title: NzLocationModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        parentId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        name:
+          title: String
+          type: string
+          x-title: String
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        externalAccountingLocationId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        fullyQualifiedName:
+          title: String
+          type: string
+          x-title: String
+        isGlobal:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isRollupReportingLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        generalLedgerMappingCode:
+          title: String
+          type: string
+          x-title: String
+        defaultShiftConditionIds:
+          title: IList<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: IList<Int32>
+        state:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    SgLocationModel:
+      title: SgLocationModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        parentId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        name:
+          title: String
+          type: string
+          x-title: String
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        externalAccountingLocationId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        fullyQualifiedName:
+          title: String
+          type: string
+          x-title: String
+        isGlobal:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isRollupReportingLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        generalLedgerMappingCode:
+          title: String
+          type: string
+          x-title: String
+        defaultShiftConditionIds:
+          title: IList<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: IList<Int32>
+        state:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+    SgSingleLocationModel:
+      title: SgSingleLocationModel
+      type: object
+      properties:
+        nestedLocations:
+          title: List<SgLocationModel>
+          type: array
+          items:
+            $ref: '#/components/schemas/SgLocationModel'
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        parentId:
+          format: int32
+          title: Nullable<Int32>
+          type: integer
+          x-title: Nullable<Int32>
+        name:
+          title: String
+          type: string
+          x-title: String
+        externalId:
+          title: String
+          type: string
+          x-title: String
+        externalAccountingLocationId:
+          title: String
+          type: string
+          x-title: String
+        source:
+          title: String
+          type: string
+          x-title: String
+        fullyQualifiedName:
+          title: String
+          type: string
+          x-title: String
+        isGlobal:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        isRollupReportingLocation:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        generalLedgerMappingCode:
+          title: String
+          type: string
+          x-title: String
+        defaultShiftConditionIds:
+          title: IList<Int32>
+          type: array
+          items:
+            format: int32
+            title: Int32
+            type: integer
+            x-title: Int32
+          x-title: IList<Int32>
+        state:
+          title: String
+          type: string
+          x-title: String
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-refined-from:
+- employment-hero-payroll-au-swagger.json
+- employment-hero-payroll-my-swagger.json
+- employment-hero-payroll-nz-swagger.json
+- employment-hero-payroll-sg-swagger.json

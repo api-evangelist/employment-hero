@@ -1,0 +1,329 @@
+openapi: 3.2.0
+info:
+  title: Australia Aba Settings API
+  version: AU
+  description: ABA Settings
+security:
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+- basic: []
+- apiKey: []
+- oauth2:
+  - read
+  - write
+tags:
+- name: AbaSettings
+  description: ABA Settings
+paths:
+  /api/v2/business/{businessId}/aba:
+    get:
+      tags:
+      - AbaSettings
+      summary: List ABA Settings
+      description: 'Retrieves all the ABA settings associated with the business.
+
+
+        This operation supports OData queries (only $filter, $orderby, $top, $skip).'
+      operationId: AuAba_GetAbaDetails
+      parameters:
+      - in: query
+        name: query
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: IEnumerable<BusinessAbaModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BusinessAbaModel'
+            application/xml:
+              schema:
+                title: IEnumerable<BusinessAbaModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BusinessAbaModel'
+            text/plain:
+              schema:
+                title: IEnumerable<BusinessAbaModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BusinessAbaModel'
+            application/octet-stream:
+              schema:
+                title: IEnumerable<BusinessAbaModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BusinessAbaModel'
+            text/json:
+              schema:
+                title: IEnumerable<BusinessAbaModel>
+                type: array
+                items:
+                  $ref: '#/components/schemas/BusinessAbaModel'
+    post:
+      tags:
+      - AbaSettings
+      summary: Create ABA Settings Record
+      description: Creates a new ABA settings record for the business.
+      operationId: AuAba_Post
+      parameters:
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessAbaModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/BusinessAbaModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BusinessAbaModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/BusinessAbaModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BusinessAbaModel'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BusinessAbaModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/BusinessAbaModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/BusinessAbaModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/BusinessAbaModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BusinessAbaModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BusinessAbaModel'
+  /api/v2/business/{businessId}/aba/{id}:
+    get:
+      tags:
+      - AbaSettings
+      summary: Get ABA Settings Record by ID
+      description: Gets the details for the ABA settings record with the specified ID.
+      operationId: AuAba_Get_2
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessAbaModel'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/BusinessAbaModel'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BusinessAbaModel'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/BusinessAbaModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BusinessAbaModel'
+    put:
+      tags:
+      - AbaSettings
+      summary: Update ABA Settings Record
+      description: Updates the ABA settings record with the specified ID.
+      operationId: AuAba_Put_3
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BusinessAbaModel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/BusinessAbaModel'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/BusinessAbaModel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/BusinessAbaModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BusinessAbaModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BusinessAbaModel'
+    delete:
+      tags:
+      - AbaSettings
+      summary: Delete ABA Settings Record
+      description: Deletes the ABA settings record with the specified ID.
+      operationId: AuAba_Delete_4
+      parameters:
+      - in: path
+        name: id
+        required: true
+        title: Int32
+        schema:
+          type: integer
+          format: int32
+      - in: path
+        name: businessId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    BusinessAbaModel:
+      title: BusinessAbaModel
+      type: object
+      properties:
+        id:
+          format: int32
+          title: Int32
+          type: integer
+          x-title: Int32
+        bsb:
+          title: String
+          type: string
+          x-title: String
+        accountNumber:
+          title: String
+          type: string
+          x-title: String
+        accountName:
+          title: String
+          type: string
+          x-title: String
+        financialInstitutionCode:
+          title: String
+          type: string
+          x-title: String
+        lodgementReference:
+          title: String
+          type: string
+          x-title: String
+        userName:
+          title: String
+          type: string
+          x-title: String
+        userId:
+          title: String
+          type: string
+          x-title: String
+        includeSelfBalancingTransaction:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        mergeMultipleAccountPayments:
+          title: Boolean
+          type: boolean
+          x-title: Boolean
+        balanceLodgementReference:
+          title: String
+          type: string
+          x-title: String
+        paymentAdditionalContent:
+          title: Nullable<PaymentFilePaymentAdditionalContent>
+          enum:
+          - None
+          - PeriodEndingDate
+          - PaymentDate
+          - EmployeeId
+          - PayRunId
+          type: string
+        balanceAdditionalContent:
+          title: Nullable<PaymentFileBalanceAdditionalContent>
+          enum:
+          - None
+          - PeriodEndingDate
+          - PaymentDate
+          - PayRunId
+          type: string
+      additionalProperties: false
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+      description: Your API key should be the username and the password can be left blank
+    apiKey:
+      type: apiKey
+      in: header
+      description: API Key Authentication
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            read: Read access to protected resources
+            write: Write access to protected resources
+          authorizationUrl: https://keypay.yourpayroll.com.au/oauth/authorise
+      description: OAuth2 Implicit Grant
+x-navigateMethodsByName: true
