@@ -84,3 +84,503 @@
     builder: Fivetran
   status: not-a-workflow
   arazzo: null
+- slug: employment-hero-agrimaster
+  label: Agrimaster
+  partner_name: Agrimaster
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/agrimaster/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-freshbooks
+  label: Freshbooks
+  partner: freshbooks
+  partner_name: Freshbooks
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/freshbooks/
+  source: edge
+  status: pending-generation
+  arazzo: null
+- slug: employment-hero-odoo
+  label: Odoo
+  partner: odoo
+  partner_name: Odoo
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/odoo/
+  source: edge
+  status: pending-generation
+  arazzo: null
+- slug: employment-hero-quickbooks
+  label: QuickBooks
+  partner: quickbooks
+  partner_name: QuickBooks
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/quickbooks-online-accounting/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-sage-intacct
+  label: Sage Intacct
+  partner: sage-intacct
+  partner_name: Sage Intacct
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/sage-intacct/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-zoho-books
+  label: Zoho Books
+  partner: zoho-books
+  partner_name: Zoho Books
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/zoho-books/
+  source: edge
+  status: pending-generation
+  arazzo: null
+- slug: employment-hero-microsoft-dynamics-business-central
+  label: Microsoft Dynamics Business Central
+  partner_name: Microsoft Dynamics Business Central
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/microsoft-dynamics-365-business-central/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-wiise
+  label: Wiise
+  partner_name: Wiise
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/wiise/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-myob-accountright-payroll
+  label: MYOB AccountRight Payroll
+  partner: myob
+  partner_name: MYOB AccountRight Payroll
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/myob/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-beam
+  label: Beam
+  partner_name: Beam
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/beam/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-cashd
+  label: CashD
+  partner_name: CashD
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/cashd/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-nine25
+  label: Nine25
+  partner_name: Nine25
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/nine25/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-ofx
+  label: OFX
+  partner: ofx
+  partner_name: OFX
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/ofx/
+  source: edge
+  status: pending-generation
+  arazzo: null
+- slug: employment-hero-paytime
+  label: Paytime
+  partner_name: Paytime
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/paytime/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-tip-sheet
+  label: Tip Sheet
+  partner_name: Tip Sheet
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/tip-sheet/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-crewcard-file-export
+  label: CrewCard File Export
+  partner_name: CrewCard File Export
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/crewcard/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-myp
+  label: MYP
+  partner_name: MYP
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/myp/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-note-it
+  label: Note It
+  partner_name: Note It
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/note-it/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-shiftcare-hr
+  label: ShiftCare (HR)
+  partner_name: ShiftCare (HR)
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/shiftcare-hr/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-shiftcare-payroll
+  label: ShiftCare (Payroll)
+  partner_name: ShiftCare (Payroll)
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/shiftcare-payroll/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-t-tou
+  label: Tātou
+  partner_name: Tātou
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/tatou/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-visualcare
+  label: Visualcare
+  partner_name: Visualcare
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/visualcare/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-wageloch
+  label: Wageloch
+  partner_name: Wageloch
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/wageloch/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-keen-care
+  label: Keen Care
+  partner_name: Keen Care
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/keen-care/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-aussie-time-sheets
+  label: Aussie Time Sheets
+  partner_name: Aussie Time Sheets
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/aussie-time-sheets/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-doorkeeper-pro-by-nirovision
+  label: Doorkeeper Pro by Nirovision
+  partner_name: Doorkeeper Pro by Nirovision
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/doorkeeper-pro/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-noahface
+  label: NoahFace
+  partner_name: NoahFace
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/noahface/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-kynection
+  label: Kynection
+  partner_name: Kynection
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/kynection/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-simpro-via-sync-ezy
+  label: Simpro via Sync Ezy
+  partner_name: Simpro via Sync Ezy
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/simpro/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-traffio
+  label: Traffio
+  partner_name: Traffio
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/traffio/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-karmly
+  label: Karmly
+  partner_name: Karmly
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/karmly/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-projectworks
+  label: Projectworks
+  partner_name: Projectworks
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/projectworks/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-sprintsuite
+  label: SprintSuite
+  partner_name: SprintSuite
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/sprintsuite/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-timesite-pro
+  label: TimeSite Pro
+  partner_name: TimeSite Pro
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/timesite-pro/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-square
+  label: Square
+  partner: square
+  partner_name: Square
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/square/
+  source: edge
+  status: pending-generation
+  arazzo: null
+- slug: employment-hero-jobadder
+  label: JobAdder
+  partner: jobadder
+  partner_name: JobAdder
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/jobadder/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-staffd
+  label: Staffd
+  partner_name: Staffd
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/staffd/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-etrainu
+  label: etrainu
+  partner_name: etrainu
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/etrainu/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-go1
+  label: Go1
+  partner: go1
+  partner_name: Go1
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/go1/
+  source: edge
+  status: pending-generation
+  arazzo: null
+- slug: employment-hero-allara-global
+  label: Allara Global
+  partner_name: Allara Global
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/allara-global/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-superpath
+  label: Superpath
+  partner_name: Superpath
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/superpath/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-google-workspace-account
+  label: Google Workspace Account
+  partner: google-workspace
+  partner_name: Google Workspace Account
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/google-workspace/
+  source: edge
+  status: pending-generation
+  arazzo: null
+- slug: employment-hero-microsoft-365-account
+  label: Microsoft 365 Account
+  partner: microsoft-365
+  partner_name: Microsoft 365 Account
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/microsoft-365/
+  source: edge
+  status: pending-generation
+  arazzo: null
+- slug: employment-hero-slack
+  label: Slack
+  partner: slack
+  partner_name: Slack
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/slack/
+  source: edge
+  status: pending-generation
+  arazzo: null
+- slug: employment-hero-liverem
+  label: LiveRem
+  partner_name: LiveRem
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/liverem/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-power-bi-via-syncezy
+  label: Power BI via SyncEzy
+  partner_name: Power BI via SyncEzy
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/power-bi/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-employeeconnect
+  label: EmployeeConnect
+  partner_name: EmployeeConnect
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/employeeconnect/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-roubler
+  label: Roubler
+  partner_name: Roubler
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/roubler/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-worknice
+  label: Worknice
+  partner_name: Worknice
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/worknice/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-mitti-via-bravas-sync
+  label: Mitti via Bravas Sync
+  partner_name: Mitti via Bravas Sync
+  type: claimed
+  channel: provider-listing
+  evidence: https://employmenthero.com/integrations/mitti-bravas-sync/
+  source: edge
+  status: pending-partner-spec
+  arazzo: null
+- slug: employment-hero-bank-of-canada-rpaa-registry-of-payment-service-providers
+  label: Bank of Canada RPAA registry of payment service providers
+  partner_name: Bank of Canada RPAA registry of payment service providers
+  category: Canadian retail payment activities (RPAA) PSP registration
+  type: register
+  channel: regulator-register
+  evidence: https://www.bankofcanada.ca/core-functions/retail-payments-supervision/psp-registry/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: Bank of Canada RPAA registry of payment service providers
+    spec_file: null
+    standard: null
+    role: registered-psp
+    registrations:
+    - registered_name: Humi Payroll Ltd
+      register_status: registered
+      register_country: CA
+      register_id: e8aa7dea-4c98-ef11-8a68-000d3a84a24c
+      matched_domain: employmenthero.com
+      matched_by: domain+name-among-holders
+      evidence_url: https://www.bankofcanada.ca/core-functions/retail-payments-supervision/psp-registry/psp-registry-details/?account_id=e8aa7dea-4c98-ef11-8a68-000d3a84a24c
+      licences:
+      - RPAA registered PSP
+      brand: Employment Hero
+      registration_date: '2025-12-08'
+      head_office_country: Canada
+      trade_names:
+      - Humi Payroll
+      - Humi Payroll
+      has_violations: false
+    signal_note: 'participation only: a regulator registration / payment-system membership; no API conformance is
+      published by this register'
+    detected_by: sweep-canada-rpaa-psp-registry.py
+    detected: '2026-10-22'
+  status: not-a-workflow
+  arazzo: null

@@ -1,4 +1,29 @@
-generated: '2026-10-15'
+generated: '2026-10-20'
+method: searched
+source:
+- https://zapier.com/api/v4/apps/
+- https://zapier.com/apps/employment-hero/integrations
+- https://n8n.io/integrations/employment-hero/
+- https://composio.dev/toolkits/employment-hero
+- https://monid.ai/tools/employment-hero
+checked:
+- https://connectors.airbyte.com/files/registries/v0/cloud_registry.json
+- https://connectors.airbyte.com/files/registries/v0/oss_registry.json
+- https://fivetran.com/docs-sitemap.xml
+- https://fivetran.com/docs/connectors/partner-built-program
+- https://zapier.com/api/v4/apps/
+- https://composio.dev/toolkits/employment-hero
+- https://monid.ai/tools/employment-hero
+- https://n8n.io/integrations/employment-hero/
+- https://zapier.com/apps/employment-hero/integrations
+- https://employmenthero.com/integrations/
+- https://www.bankofcanada.ca/core-functions/retail-payments-supervision/psp-registry/
+- https://www.bankofcanada.ca/rps-api/cif2/accounts/list
+- https://www.payments.ca/payment-resources/directories?field_directory_type=10
+- https://www.payments.ca/payment-resources/directories?field_directory_type=13
+- https://www.payments.ca/payment-resources/directories?field_directory_type=14
+summary: null
+marketplace_apps: []
 edges:
 - partner_name: Zapier
   partner: zapier
@@ -81,12 +106,391 @@ edges:
     builder: Fivetran
   detected_by: sweep-data-integration.py
   first_seen: '2026-10-18'
-method: searched
-checked:
-- https://connectors.airbyte.com/files/registries/v0/cloud_registry.json
-- https://connectors.airbyte.com/files/registries/v0/oss_registry.json
-- https://fivetran.com/docs-sitemap.xml
-- https://fivetran.com/docs/connectors/partner-built-program
-- https://zapier.com/api/v4/apps/
-source:
-- https://zapier.com/api/v4/apps/
+- partner_name: Agrimaster
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/agrimaster/
+  category: null
+- partner_name: Freshbooks
+  partner: freshbooks
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/freshbooks/
+  category: null
+- partner_name: Odoo
+  partner: odoo
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/odoo/
+  category: null
+- partner_name: QuickBooks
+  partner: quickbooks
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/quickbooks-online-accounting/
+  category: null
+- partner_name: Sage Intacct
+  partner: sage-intacct
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/sage-intacct/
+  category: null
+- partner_name: Zoho Books
+  partner: zoho-books
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/zoho-books/
+  category: null
+- partner_name: Microsoft Dynamics Business Central
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/microsoft-dynamics-365-business-central/
+  category: null
+- partner_name: Wiise
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/wiise/
+  category: null
+- partner_name: MYOB AccountRight Payroll
+  partner: myob
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/myob/
+  category: null
+- partner_name: Beam
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/beam/
+  category: null
+- partner_name: CashD
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/cashd/
+  category: null
+- partner_name: Nine25
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/nine25/
+  category: null
+- partner_name: OFX
+  partner: ofx
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/ofx/
+  category: null
+- partner_name: Paytime
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/paytime/
+  category: null
+- partner_name: Tip Sheet
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/tip-sheet/
+  category: null
+- partner_name: CrewCard File Export
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/crewcard/
+  category: null
+- partner_name: MYP
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/myp/
+  category: null
+- partner_name: Note It
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/note-it/
+  category: null
+- partner_name: ShiftCare (HR)
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/shiftcare-hr/
+  category: null
+- partner_name: ShiftCare (Payroll)
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/shiftcare-payroll/
+  category: null
+- partner_name: Tātou
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/tatou/
+  category: null
+- partner_name: Visualcare
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/visualcare/
+  category: null
+- partner_name: Wageloch
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/wageloch/
+  category: null
+- partner_name: Keen Care
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/keen-care/
+  category: null
+- partner_name: Aussie Time Sheets
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/aussie-time-sheets/
+  category: null
+- partner_name: Doorkeeper Pro by Nirovision
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/doorkeeper-pro/
+  category: null
+- partner_name: NoahFace
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/noahface/
+  category: null
+- partner_name: Kynection
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/kynection/
+  category: null
+- partner_name: Simpro via Sync Ezy
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/simpro/
+  category: null
+- partner_name: Traffio
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/traffio/
+  category: null
+- partner_name: Karmly
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/karmly/
+  category: null
+- partner_name: Projectworks
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/projectworks/
+  category: null
+- partner_name: SprintSuite
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/sprintsuite/
+  category: null
+- partner_name: TimeSite Pro
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/timesite-pro/
+  category: null
+- partner_name: Square
+  partner: square
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/square/
+  category: null
+- partner_name: JobAdder
+  partner: jobadder
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/jobadder/
+  category: null
+- partner_name: Staffd
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/staffd/
+  category: null
+- partner_name: etrainu
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/etrainu/
+  category: null
+- partner_name: Go1
+  partner: go1
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/go1/
+  category: null
+- partner_name: Allara Global
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/allara-global/
+  category: null
+- partner_name: Superpath
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/superpath/
+  category: null
+- partner_name: Google Workspace Account
+  partner: google-workspace
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/google-workspace/
+  category: null
+- partner_name: Microsoft 365 Account
+  partner: microsoft-365
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/microsoft-365/
+  category: null
+- partner_name: Slack
+  partner: slack
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/slack/
+  category: null
+- partner_name: LiveRem
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/liverem/
+  category: null
+- partner_name: Power BI via SyncEzy
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/power-bi/
+  category: null
+- partner_name: EmployeeConnect
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/employeeconnect/
+  category: null
+- partner_name: Roubler
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/roubler/
+  category: null
+- partner_name: Worknice
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/worknice/
+  category: null
+- partner_name: Mitti via Bravas Sync
+  partner: null
+  type: claimed
+  channel: provider-listing
+  direction: unknown
+  evidence: https://employmenthero.com/integrations/mitti-bravas-sync/
+  category: null
+- partner_name: Bank of Canada RPAA registry of payment service providers
+  partner: null
+  partner_match: register
+  type: register
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.bankofcanada.ca/core-functions/retail-payments-supervision/psp-registry/
+  category: Canadian retail payment activities (RPAA) PSP registration
+  contract_reference:
+    register: Bank of Canada RPAA registry of payment service providers
+    spec_file: null
+    standard: null
+    role: registered-psp
+    registrations:
+    - registered_name: Humi Payroll Ltd
+      register_status: registered
+      register_country: CA
+      register_id: e8aa7dea-4c98-ef11-8a68-000d3a84a24c
+      matched_domain: employmenthero.com
+      matched_by: domain+name-among-holders
+      evidence_url: https://www.bankofcanada.ca/core-functions/retail-payments-supervision/psp-registry/psp-registry-details/?account_id=e8aa7dea-4c98-ef11-8a68-000d3a84a24c
+      licences:
+      - RPAA registered PSP
+      brand: Employment Hero
+      registration_date: '2025-12-08'
+      head_office_country: Canada
+      trade_names:
+      - Humi Payroll
+      - Humi Payroll
+      has_violations: false
+    signal_note: 'participation only: a regulator registration / payment-system membership; no API conformance is
+      published by this register'
+    detected_by: sweep-canada-rpaa-psp-registry.py
+    detected: '2026-10-22'
+  detected_by: sweep-canada-rpaa-psp-registry.py
+  first_seen: '2026-10-22'
+templates: []
